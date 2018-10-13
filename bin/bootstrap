@@ -19,6 +19,12 @@ brew cask install dotnet-sdk
 brew install vim --env=std --with-override-system-vi --build-from-source
 brew install macvim --env=std --build-from-source
 
+# Fonts
+brew tap homebrew/cask-fonts
+brew cask install font-hasklig font-fira-code font-inconsolata \
+  font-roboto-mono font-source-code-pro font-bitstream-vera \
+  font-cousine font-space-mono
+
 # Basic tooling
 brew install wget curl tree
 
