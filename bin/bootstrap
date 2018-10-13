@@ -32,5 +32,12 @@ brew install wget curl tree
 brew cask install iTerm2
 ln -s ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
 
+# Productivity (or not)
+brew cask install google-chrome whatsapp spotify \
+  alfred sync dropbox skype skype-for-business
+
+# Programming
+brew cask install tunnelblick sequel-pro tableplus rowanj-gitx
+
 # OS/X settings
 bin/osx
