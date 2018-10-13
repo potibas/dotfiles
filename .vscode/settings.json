@@ -1,0 +1,152 @@
+{
+  "files.exclude": {
+    // Version Control
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    // NodeJS
+    "**/node_modules/": true,
+    // Elixir
+    "**/dist/": true,
+    "**/_build/": true,
+    "**/deps/": true,
+    "**/.elixir_ls/": true,
+    // Python
+    "**/__pycache__/": true,
+    "**/*.picklecache": true,
+    // OS
+    "**/.DS_Store": true
+  },
+
+  // Appearance
+  "editor.fontFamily": "Operator Mono Ssm Lig",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "workbench.fontAliasing": "antialiased",
+  "explorer.openEditors.visible": 0,
+  "editor.roundedSelection": false,
+  "editor.renderLineHighlight": "all",
+  "editor.smoothScrolling": true,
+  "editor.renderIndentGuides": true,
+  "window.nativeTabs": true,
+  "editor.lineNumbers": "relative",
+  "editor.glyphMargin": true,
+  "editor.rulers": [100],
+  "prettier.printWidth": 100,
+  "editor.minimap.enabled": false,
+
+  // Behaviour
+  "editor.scrollBeyondLastLine": true,
+  "editor.mouseWheelZoom": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultSettings": false,
+  "workbench.settings.openDefaultKeybindings": false,
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 0,
+
+  // Editing
+  "editor.tabSize": 2,
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.autoIndent": true,
+  "editor.autoClosingQuotes": "beforeWhitespace",
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.dragAndDrop": false,
+  "editor.folding": true,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "json.format.enable": true,
+
+  // Integrated Terminal
+  "terminal.integrated.fontFamily": "Menlo, monospace",
+  "terminal.integrated.fontWeightBold": "100",
+  "terminal.integrated.fontWeight": "100",
+  "terminal.integrated.drawBoldTextInBrightColors": true,
+  "terminal.integrated.fontSize": 11,
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+  // GoLang
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+  // Python
+  "[python]": {
+    "editor.renderIndentGuides": true,
+    "editor.tabSize": 4
+  },
+  // Elixir
+  "[elixir]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnType": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.trimAutoWhitespace": false
+  },
+  "elixirLS.fetchDeps": false,
+  // theme customizations
+  "workbench.colorCustomizations": {
+    "[One Monokai]": {
+      "editor.background": "#16161aff"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      // Comments always in italic
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      // Ruby
+      {
+        "scope": "variable.other.readwrite.instance.ruby",
+        "settings": {
+          "foreground": "#ddbc60"
+        }
+      },
+      // Crystal
+      {
+        "scope": "variable.other.readwrite.instance.crystal",
+        "settings": {
+          "foreground": "#c678dd"
+        }
+      },
+      {
+        "scope": "variable.other.readwrite.class.crystal",
+        "settings": {
+          "foreground": "#9bd3b4"
+        }
+      },
+      // Elixir
+      {
+        "scope": "keyword.other.special-method.elixir",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "variable.other.readwrite.module.elixir",
+        "settings": {
+          "foreground": "#f8d14f"
+        }
+      },
+      {
+        "scope": "variable.other.constant.elixir",
+        "settings": {
+          "foreground": "#61afef"
+        }
+      }
+    ]
+  },
+  // Colours
+  "workbench.colorTheme": "One Monokai"
+}
