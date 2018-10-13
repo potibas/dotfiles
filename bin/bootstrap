@@ -49,5 +49,11 @@ code --install-extension azemoh.one-monokai \
      --install-extension jakebecker.elixir-ls \
      --install-extension esbenp.prettier-vscode
 
+# Oh-my-zsh
+brew install zsh
+SHELL=zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+CURRENT_SHELL=$(dscl . -read /Users/$USER UserShell | cut -f 2 -d' ')
+sudo dscl . -change /Users/$USER UserShell $CURRENT_SHELL /usr/local/bin/zsh
+
 # OS/X settings
 bin/osx
