@@ -26,7 +26,7 @@ brew cask install font-hasklig font-fira-code font-inconsolata \
   font-cousine font-space-mono
 
 # Basic tooling
-brew install wget curl tree
+brew install wget curl tree git
 
 # iTerm2
 brew cask install iTerm2
