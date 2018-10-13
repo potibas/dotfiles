@@ -19,5 +19,8 @@ brew cask install dotnet-sdk
 brew install vim --env=std --with-override-system-vi --build-from-source
 brew install macvim --env=std --build-from-source
 
+# Basic tooling
+brew install wget curl tree
+
 # OS/X settings
 bin/osx
