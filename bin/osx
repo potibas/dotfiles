@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo
+printf "Writing default OS/X settings..."
 # 
 # Remap CapsLock to Control
 #
@@ -13,3 +15,87 @@
 src='"HIDKeyboardModifierMappingSrc":30064771129'
 dst='"HIDKeyboardModifierMappingDst":30064771300'
 hidutil property --set "{\"UserKeyMapping\": [{ $src, $dst }]}" > /dev/null
+
+# Disable natural mouse scroll direction
+defaults write -g com.apple.swipescrolldirection -bool NO
+
+# Enable subpizel font rendering on non-Apple LCDs (1-light, 2-medium, 3-big)
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
+
+# Disable window animations and getInfo animations in Finder
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+# Remove slow animations when holding shift
+defaults write NSGlobalDomain FXEnableSlowAnimation -bool false
+
+# Expand save and print panels by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Don't animate opening applications from the Dock
+defaults write com.apple.dock launchanim -bool false
+
+# Set a faster keyboard repeat rate and initial delays
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
+# Use F1 F2 as standard function keys
+defaults write ~/Library/Preferences/.GlobalPreferences com.apple.keyboard.fnState 1
+
+# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable opening and closing window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# Don't create .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Show all filename extensions in Finder
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show path bar & status bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Display full POSIX path as Finder window title"
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Show item info below desktop icons
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" \
+    ~/Library/Preferences/com.apple.finder.plist
+
+# Enable snap-to-grid for desktop icons
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" \
+    ~/Library/Preferences/com.apple.finder.plist
+
+# Minimize effect suck
+defaults write com.apple.dock mineffect -string "suck"
+
+# Make the animation for showing Dock faster and reduce the delay before it starts
+defaults write com.apple.dock autohide-time-modifier -float 0.6
+
+# Remove the delay for showing the Dock in full screen
+defaults write com.apple.dock autohide-fullscreen-delayed -bool false
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Show remaining battery time & percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowTime -string "YES"
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+echo "done!"
+echo "(You must logout for your new OS/X settings to take effect)"
