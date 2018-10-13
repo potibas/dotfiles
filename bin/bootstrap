@@ -28,5 +28,9 @@ brew cask install font-hasklig font-fira-code font-inconsolata \
 # Basic tooling
 brew install wget curl tree
 
+# iTerm2
+brew cask install iTerm2
+ln -s ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
+
 # OS/X settings
 bin/osx
