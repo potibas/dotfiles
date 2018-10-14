@@ -34,7 +34,8 @@ ln -s ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # Productivity (or not)
 brew cask install google-chrome whatsapp spotify \
-  alfred sync dropbox skype skype-for-business
+  alfred sync dropbox skype skype-for-business \
+  keybase electrum
 
 # Programming
 brew cask install tunnelblick sequel-pro tableplus rowanj-gitx
