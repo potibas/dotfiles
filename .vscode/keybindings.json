@@ -20,22 +20,22 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+l",
+    "key": "ctrl+.",
     "command": "workbench.action.nextEditor",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+h",
+    "key": "ctrl+,",
     "command": "workbench.action.previousEditor",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+shift+l",
+    "key": "ctrl+l",
     "command": "workbench.action.focusNextGroup",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+shift+h",
+    "key": "ctrl+h",
     "command": "workbench.action.focusPreviousGroup",
     "when": "editorTextFocus"
   },
