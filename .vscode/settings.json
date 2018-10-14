@@ -25,6 +25,7 @@
   "editor.fontFamily": "Operator Mono Ssm Lig",
   "editor.fontSize": 13,
   "editor.fontLigatures": true,
+  "editor.fontWeight": "200",
   "workbench.fontAliasing": "antialiased",
   "explorer.openEditors.visible": 0,
   "editor.roundedSelection": false,
