@@ -180,6 +180,10 @@
     { "before": ["leader", "F", "n"], "commands": ["fileutils.newFile"] },
     { "before": ["leader", "F", "r"], "commands": ["fileutils.renameFile"] },
     { "before": ["leader", "F", "d"], "commands": ["fileutils.removeFile"] },
+    {
+      "before": ["leader", "leader"],
+      "commands": ["workbench.action.openPreviousRecentlyUsedEditor"]
+    },
 
     // Toggle line numbers
     {
