@@ -175,7 +175,7 @@
   "vim.normalModeKeyBindings": [
     { "before": ["<space>"], "commands": [":nohl"] },
     { "before": ["leader", "w"], "commands": [":w"] },
-    { "before": ["leader", "q"], "commands": [":q"] },
+    { "before": ["leader", "q"], "commands": ["workbench.action.closeActiveEditor"] },
     { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
     { "before": ["leader", "F", "n"], "commands": ["fileutils.newFile"] },
     { "before": ["leader", "F", "r"], "commands": ["fileutils.renameFile"] },
