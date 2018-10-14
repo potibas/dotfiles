@@ -60,6 +60,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Show all filename extensions in Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+# Show hidden files
+defaults write NSGlobalDomain AppleShowAllFiles -bool true
+
 # Show path bar & status bar in Finder
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -97,8 +100,14 @@ defaults write com.apple.menuextra.battery ShowTime -string "YES"
 # Do not quarantine apps downloaded from the Internet
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+# Show fast user switching menu as: Account name
+defaults write -g userMenuExtraStyle -int 1
+
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Keyboard and mouse shortcuts
+defaults import com.apple.symbolichotkeys bin/.com.apple.symbolichotkeys
 
 echo "done!"
 echo "(You must logout for your new OS/X settings to take effect)"
