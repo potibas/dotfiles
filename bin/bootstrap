@@ -26,7 +26,11 @@ function brew_install () {
 function cask_install () {
   for cask in "$@"; do
     printf "Installing cask $cask..."
-    has_cask "$cask" || brew cask install $cask
+    has_cask "$cask" || {
+      brew cask install $cask
+      APP=`brew cask info $cask | grep \(App\) | cut -f1 -d'.'`
+      xattr -dr com.apple.quarantine "/Applications/$APP.app"
+    }
     echo ✔︎
   done
 }
