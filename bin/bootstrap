@@ -5,6 +5,32 @@ if [ ! "$(which brew)" ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+CASKS=$(brew cask ls)
+function has_cask () {
+  test ! -z "$(echo $CASKS | grep -o $1)"
+}
+
+FORMULAE=$(brew ls)
+function has_formula () {
+  test ! -z "$(echo $FORMULAE | grep -o $1)"
+}
+
+function brew_install () {
+  for formula in "$@"; do
+    printf "Installing $formula..."
+    has_formula "$formula" || brew install $formula > /dev/null
+    echo ✔︎
+  done
+}
+
+function cask_install () {
+  for cask in "$@"; do
+    printf "Installing cask $cask..."
+    has_cask "$cask" || brew install $formula > /dev/null 2>&1
+    echo ✔︎
+  done
+}
+
 # Sudo without password
 sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 
@@ -12,50 +38,55 @@ sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudo
 sudo xcode-select -switch /Applications/Xcode.app/
 
 # Programming languages
-brew install ruby python python@2 node erlang elixir rust crystal
-brew cask install dotnet-sdk
+brew_install ruby python python@2 node erlang elixir rust crystal
+cask_install dotnet-sdk
 
 # Vim & MacVim
-brew install vim --env=std --with-override-system-vi --build-from-source
-brew install macvim --env=std --build-from-source
+has_formula vim || brew install vim --env=std --with-override-system-vi --build-from-source
+has_formula macvim || brew install macvim --env=std --build-from-source
+has_cask macvim || brew cask install macvim
 
 # Fonts
 brew tap homebrew/cask-fonts
-brew cask install font-hasklig font-fira-code font-inconsolata \
+cask_install font-hasklig font-fira-code font-inconsolata \
   font-roboto-mono font-source-code-pro font-bitstream-vera \
   font-cousine font-space-mono
 
 # Basic tooling
-brew install wget curl tree git
+brew_install wget curl tree git gnupg
 
 # iTerm2
-brew cask install iTerm2
+cask_install iTerm2
+rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
 
 # Productivity (or not)
-brew cask install google-chrome whatsapp spotify \
+cask_install google-chrome whatsapp spotify \
   alfred sync dropbox skype skype-for-business \
   keybase electrum
 
 # Programming
-brew cask install tunnelblick sequel-pro tableplus rowanj-gitx
+cask_install tunnelblick sequel-pro tableplus rowanj-gitx
 
 # VSCode
-brew cask install visual-studio-code
+cask_install visual-studio-code
 mkdir -p ~/Library/Application\ Support/Code/User
-ln -s ~/.vscode/settings.json ~/Library/Application\ Support/Code/User
-ln -s ~/.vscode/keybindings.json ~/Library/Application\ Support/Code/User
-ln -s ~/.vscode/snippets ~/Library/Application\ Support/Code/User
+for file in settings.json keybindings.json snippets; do
+  rm -rf ~/Library/Application\ Support/Code/User/$file
+  ln -s ~/.vscode/$file ~/Library/Application\ Support/Code/User
+done
 code --install-extension azemoh.one-monokai \
      --install-extension jakebecker.elixir-ls \
      --install-extension esbenp.prettier-vscode \
      --install-extension lencerf.beancount
 
 # Oh-my-zsh
-brew install zsh
-SHELL=zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-CURRENT_SHELL=$(dscl . -read /Users/$USER UserShell | cut -f 2 -d' ')
-sudo dscl . -change /Users/$USER UserShell $CURRENT_SHELL /usr/local/bin/zsh
+brew_install zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+  SHELL=zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  CURRENT_SHELL=$(dscl . -read /Users/$USER UserShell | cut -f 2 -d' ')
+  sudo dscl . -change /Users/$USER UserShell $CURRENT_SHELL /usr/local/bin/zsh
+fi
 
 # OS/X settings
 bin/osx
