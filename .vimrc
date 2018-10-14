@@ -65,6 +65,7 @@ nnoremap <leader><leader> <c-^>
 
 " Common shortcuts
 map <leader>w :w<cr>
+map <leader>q :q<cr>
 map <leader>n :set invnumber<cr>
 
 " Quick edit vim configuration:
