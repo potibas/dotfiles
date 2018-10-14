@@ -52,6 +52,7 @@ test -f ~/.composer/vendor/bin/valet || composer global require laravel/valet
 # PostgreSQL
 has_formula postgresql || {
   brew_install postgresql 
+  createuser -s postgres
   brew services start postgresql
 }
 
