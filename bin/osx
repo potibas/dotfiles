@@ -22,18 +22,18 @@ defaults write -g com.apple.swipescrolldirection -bool NO
 # Enable subpizel font rendering on non-Apple LCDs (1-light, 2-medium, 3-big)
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
-# Disable window animations and getInfo animations in Finder
-defaults write com.apple.finder DisableAllAnimations -bool true
-
-# Remove slow animations when holding shift
+# Disable all animations I can find
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 defaults write NSGlobalDomain FXEnableSlowAnimation -bool false
+defaults write NSGlobalDomain QLPanelAnimationDuration -float 0
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.Dock autohide-delay -float 0
 
 # Expand save and print panels by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-
-# Don't animate opening applications from the Dock
-defaults write com.apple.dock launchanim -bool false
 
 # Set a faster keyboard repeat rate and initial delays
 defaults write NSGlobalDomain KeyRepeat -int 1
