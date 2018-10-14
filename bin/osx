@@ -111,3 +111,5 @@ defaults import com.apple.symbolichotkeys bin/.com.apple.symbolichotkeys
 
 echo "done!"
 echo "(You must logout for your new OS/X settings to take effect)"
+
+osascript -e 'tell application "System Events" to log out'
