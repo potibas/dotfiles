@@ -15,6 +15,8 @@
     // Python
     "**/__pycache__/": true,
     "**/*.picklecache": true,
+    // Php
+    "vendor": true,
     // OS
     "**/.DS_Store": true
   },
@@ -76,11 +78,19 @@
     "editor.formatOnSave": true,
     "editor.tabSize": 4
   },
+
+  // Php
+  "[php]": {
+    "editor.renderIndentGuides": true,
+    "editor.tabSize": 4
+  },
+
   // Python
   "[python]": {
     "editor.renderIndentGuides": true,
     "editor.tabSize": 4
   },
+
   // Elixir
   "[elixir]": {
     "editor.insertSpaces": true,
@@ -91,6 +101,7 @@
     "editor.trimAutoWhitespace": false
   },
   "elixirLS.fetchDeps": false,
+
   // theme customizations
   "workbench.colorCustomizations": {
     "[One Monokai]": {
@@ -147,6 +158,7 @@
       }
     ]
   },
-  // Colours
+
+  // ColorScheme
   "workbench.colorTheme": "One Monokai"
 }
