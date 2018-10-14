@@ -18,7 +18,7 @@ function has_formula () {
 function brew_install () {
   for formula in "$@"; do
     printf "Installing $formula..."
-    has_formula "$formula" || brew install $formula > /dev/null
+    has_formula "$formula" || brew install $formula
     echo ✔︎
   done
 }
@@ -26,7 +26,7 @@ function brew_install () {
 function cask_install () {
   for cask in "$@"; do
     printf "Installing cask $cask..."
-    has_cask "$cask" || brew install $formula > /dev/null 2>&1
+    has_cask "$cask" || brew cask install $cask
     echo ✔︎
   done
 }
@@ -56,7 +56,7 @@ cask_install font-hasklig font-fira-code font-inconsolata \
 brew_install wget curl tree git gnupg
 
 # iTerm2
-cask_install iTerm2
+cask_install iterm2
 rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
 
