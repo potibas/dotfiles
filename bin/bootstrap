@@ -51,8 +51,12 @@ test -f ~/.composer/vendor/bin/valet || composer global require laravel/valet
 
 # Vim & MacVim
 has_formula vim || brew install vim --env=std --with-override-system-vi --build-from-source
-has_formula macvim || brew install macvim --env=std --build-from-source
-cask_install macvim
+has_formula macvim || {
+  brew install macvim --env=std --build-from-source
+  dir=$(brew info macvim | grep /usr/local | cut -f 1 -d' ') 
+  rm -rf /Applications.MacVim.app
+  mv $dir/MacVim.app /Applications
+}
 
 # Fonts
 brew tap homebrew/cask-fonts
