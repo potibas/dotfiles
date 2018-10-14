@@ -35,6 +35,14 @@ function cask_install () {
   done
 }
 
+function composer_install () {
+  for package in "$@"; do
+    printf "Installing composer package $package..."
+    test -d ~/.composer/vendor/$package || composer global require $package
+    echo ✔︎
+  done
+}
+
 # Sudo without password
 sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 
@@ -46,8 +54,7 @@ brew_install ruby python python@2 node erlang elixir rust crystal
 cask_install dotnet-sdk
 has_formula php || brew install php --env=std --build-from-source
 brew_install composer
-test -f ~/.composer/vendor/bin/laravel || composer global require laravel/installer
-test -f ~/.composer/vendor/bin/valet || composer global require laravel/valet
+composer_install laravel/installer laravel/valet
 
 # PostgreSQL
 has_formula postgresql || {
