@@ -49,6 +49,12 @@ brew_install composer
 test -f ~/.composer/vendor/bin/laravel || composer global require laravel/installer
 test -f ~/.composer/vendor/bin/valet || composer global require laravel/valet
 
+# PostgreSQL
+has_formula postgresql || {
+  brew_install postgresql 
+  brew services start postgresql
+}
+
 # Vim & MacVim
 has_formula vim || brew install vim --env=std --with-override-system-vi --build-from-source
 has_formula macvim || {
