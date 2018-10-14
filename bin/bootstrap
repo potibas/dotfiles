@@ -54,7 +54,8 @@ brew_install ruby python python@2 node erlang elixir rust crystal
 cask_install dotnet-sdk
 has_formula php || brew install php --env=std --build-from-source
 brew_install composer
-composer_install laravel/installer laravel/valet phpunit/phpunit
+composer_install laravel/installer laravel/valet phpunit/phpunit \
+  friendsofphp/php-cs-fixer
 
 # PostgreSQL
 has_formula postgresql || {
@@ -115,6 +116,10 @@ code --install-extension azemoh.one-monokai \
      --install-extension vscodevim.vim \
      --install-extension rebornix.toggle \
      --install-extension sleistner.vscode-fileutils \
+     --install-extension calebporzio.better-phpunit \
+     --install-extension bmewburn.vscode-intelephense-client \
+     --install-extension junstyle.php-cs-fixer \
+     --install-extension ryannaddy.laravel-artisan \
      --install-extension lencerf.beancount
 
 # Oh-my-zsh

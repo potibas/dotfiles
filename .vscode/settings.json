@@ -63,6 +63,8 @@
   "editor.folding": true,
   "editor.insertSpaces": true,
   "editor.trimAutoWhitespace": true,
+  "editor.tabCompletion": "onlySnippets",
+  "editor.snippetSuggestions": "top",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "json.format.enable": true,
@@ -88,6 +90,8 @@
     "editor.renderIndentGuides": true,
     "editor.tabSize": 4
   },
+  "php-cs-fixer.onsave": true,
+  "php-cs-fixer.rules": "@PSR2",
 
   // Python
   "[python]": {
@@ -184,6 +188,11 @@
       "before": ["leader", "leader"],
       "commands": ["workbench.action.openPreviousRecentlyUsedEditor"]
     },
+
+    // PhpUnit
+    { "before": ["leader", "T"], "commands": ["better-phpunit.run"] },
+    { "before": ["leader", "t"], "commands": ["better-phpunit.run-previous"] },
+    { "before": ["leader", "A"], "commands": ["better-phpunit.run-suite"] },
 
     // Toggle line numbers
     {
