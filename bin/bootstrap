@@ -107,4 +107,4 @@ for plugin in zsh-syntax-highlighting zsh-autosuggestions; do
 done
 
 # OS/X settings
-bin/osx
+~/bin/osx

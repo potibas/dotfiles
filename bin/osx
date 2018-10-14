@@ -107,7 +107,7 @@ defaults write -g userMenuExtraStyle -int 1
 chflags nohidden ~/Library
 
 # Keyboard and mouse shortcuts
-defaults import com.apple.symbolichotkeys bin/.com.apple.symbolichotkeys
+defaults import com.apple.symbolichotkeys ~/bin/.com.apple.symbolichotkeys
 
 echo "done!"
 echo "(You must logout for your new OS/X settings to take effect)"
