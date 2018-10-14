@@ -56,9 +56,11 @@ cask_install font-hasklig font-fira-code font-inconsolata \
 brew_install wget curl tree git gnupg
 
 # iTerm2
-cask_install iterm2
-rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
-ln -s ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
+has_cask iterm2 || {
+  brew cask install iterm2
+  rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
+  cp ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
+}
 
 # Productivity (or not)
 cask_install google-chrome whatsapp spotify \
