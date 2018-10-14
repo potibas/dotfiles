@@ -38,7 +38,7 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Use F1 F2 as standard function keys
-defaults write g com.apple.keyboard.fnState -bool true
+defaults write NSGlobalDomain com.apple.keyboard.fnState -int 1
 
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
