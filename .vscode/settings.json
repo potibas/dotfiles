@@ -33,7 +33,7 @@
   "editor.smoothScrolling": true,
   "editor.renderIndentGuides": true,
   "window.nativeTabs": true,
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "relative",
   "editor.cursorBlinking": "solid",
   "editor.glyphMargin": true,
   "editor.rulers": [100],
