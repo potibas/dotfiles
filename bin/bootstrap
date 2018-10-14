@@ -54,7 +54,13 @@ cask_install macvim
 brew tap homebrew/cask-fonts
 cask_install font-hasklig font-fira-code font-inconsolata \
   font-roboto-mono font-source-code-pro font-bitstream-vera \
-  font-cousine font-space-mono
+  font-cousine font-space-mono \
+  font-anonymice-powerline font-inconsolata-for-powerline font-inconsolata-g-for-powerline \
+  font-inconsolata-dz-for-powerline font-monofur-for-powerline \
+  font-noto-mono-for-powerline font-consolas-for-powerline font-roboto-mono-for-powerline \
+  font-dejavu-sans-mono-for-powerline font-liberation-mono-for-powerline font-menlo-for-powerline \
+  font-source-code-pro-for-powerline font-droid-sans-mono-for-powerline \
+  font-ubuntu-mono-derivative-powerline font-fira-mono-for-powerline font-meslo-for-powerline
 
 # Basic tooling
 brew_install wget curl tree git gnupg
