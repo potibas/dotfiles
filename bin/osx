@@ -11,10 +11,8 @@ printf "Writing default OS/X settings..."
 # Or, for bluetooth device ids, use:
 # ioreg -n IOHIDKeyboard -r | grep -e 'class IOHIDKeyboard' -e VendorID\" -e Product
 # (ref: https://apple.stackexchange.com/questions/13598)
-#
-src='"HIDKeyboardModifierMappingSrc":30064771129'
-dst='"HIDKeyboardModifierMappingDst":30064771300'
-hidutil property --set "{\"UserKeyMapping\": [{ $src, $dst }]}" > /dev/null
+defaults write -g com.apple.keyboard.modifiermapping.1452-591-0 \
+  -array '{"HIDKeyboardModifierMappingDst" = 2; "HIDKeyboardModifierMappingSrc" = 0;}'
 
 # Disable natural mouse scroll direction
 defaults write -g com.apple.swipescrolldirection -bool NO
