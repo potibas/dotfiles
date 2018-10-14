@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-
-
 export ZSH="/Users/potibas/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
@@ -24,6 +21,10 @@ alias ls="ls -G"
 alias la="ls -lpAG"
 alias g="git"
 alias m="mix"
+
+# Keybindings
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 # PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
