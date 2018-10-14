@@ -29,7 +29,7 @@ function cask_install () {
     has_cask "$cask" || {
       brew cask install $cask
       APP=`brew cask info $cask | grep \(App\) | cut -f1 -d'.'`
-      xattr -dr com.apple.quarantine "/Applications/$APP.app"
+      test ! -z "$APP" && xattr -dr com.apple.quarantine "/Applications/$APP.app"
     }
     echo ✔︎
   done
