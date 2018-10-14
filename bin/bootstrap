@@ -100,5 +100,11 @@ if [ ! -d ~/.oh-my-zsh ]; then
   sudo dscl . -change /Users/$USER UserShell $CURRENT_SHELL /usr/local/bin/zsh
 fi
 
+# Zsh plugins
+for plugin in zsh-syntax-highlighting zsh-autosuggestions; do
+  dir=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$plugin
+  test -d $dir || git clone https://github.com/zsh-users/$plugin.git $dir
+done
+
 # OS/X settings
 bin/osx
