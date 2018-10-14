@@ -105,7 +105,7 @@ done
 code --install-extension azemoh.one-monokai \
      --install-extension jakebecker.elixir-ls \
      --install-extension esbenp.prettier-vscode \
-     --install-extension vscode.vim \
+     --install-extension vscodevim.vim \
      --install-extension rebornix.toggle \
      --install-extension lencerf.beancount
 
