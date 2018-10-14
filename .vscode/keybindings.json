@@ -54,6 +54,10 @@
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && vim.mode != 'Insert"
   },
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
   // Exit insert mode with ctrl+enter
   {
     "key": "ctrl+enter",
