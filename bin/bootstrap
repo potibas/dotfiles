@@ -114,6 +114,7 @@ code --install-extension azemoh.one-monokai \
      --install-extension esbenp.prettier-vscode \
      --install-extension vscodevim.vim \
      --install-extension rebornix.toggle \
+     --install-extension sleistner.vscode-fileutils \
      --install-extension lencerf.beancount
 
 # Oh-my-zsh
