@@ -33,7 +33,8 @@
   "editor.smoothScrolling": true,
   "editor.renderIndentGuides": true,
   "window.nativeTabs": true,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "off",
+  "editor.cursorBlinking": "solid",
   "editor.glyphMargin": true,
   "editor.rulers": [100],
   "prettier.printWidth": 100,
@@ -73,6 +74,7 @@
   "terminal.integrated.fontSize": 11,
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.rightClickBehavior": "copyPaste",
+
   // GoLang
   "[go]": {
     "editor.insertSpaces": false,
@@ -159,6 +161,21 @@
       }
     ]
   },
+
+  // Vim
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.showcmd": true,
+  "vim.cursorStylePerMode.normal": "block",
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<space>"], "commands": [":nohl"] },
+    { "before": ["leader", "w"], "commands": [":w"] },
+    { "before": ["leader", "q"], "commands": [":q"] },
+  ],
 
   // ColorScheme
   "workbench.colorTheme": "One Monokai"
