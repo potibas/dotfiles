@@ -171,7 +171,7 @@
   "vim.showcmd": true,
   "vim.cursorStylePerMode.normal": "block",
 
-  "vim.normalModeKeyBindingsNonRecursive": [
+  "vim.normalModeKeyBindings": [
     { "before": ["<space>"], "commands": [":nohl"] },
     { "before": ["leader", "w"], "commands": [":w"] },
     { "before": ["leader", "q"], "commands": [":q"] },

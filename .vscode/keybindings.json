@@ -43,5 +43,11 @@
     "key": "ctrl+shift+s",
     "command": "editor.action.inspectTMScopes",
     "when": "editorTextFocus"
+  },
+  // Exit insert mode with ctrl+enter
+  {
+    "key": "ctrl+enter",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.mode == 'Insert'"
   }
 ]
