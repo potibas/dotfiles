@@ -26,5 +26,9 @@ alias m="mix"
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# executables
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+# composer
+export PATH=$HOME/.composer/vendor/bin:$PATH
+
