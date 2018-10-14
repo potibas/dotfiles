@@ -175,6 +175,19 @@
     { "before": ["<space>"], "commands": [":nohl"] },
     { "before": ["leader", "w"], "commands": [":w"] },
     { "before": ["leader", "q"], "commands": [":q"] },
+    // Toggle line numbers
+    {
+      "before": ["leader", "n"],
+      "commands": [
+        {
+          "command": "toggle",
+          "args": {
+            "id": "lineNumbers",
+            "value": [{ "editor.lineNumbers": "relative" }, { "editor.lineNumbers": "off" }]
+          }
+        }
+      ]
+    }
   ],
 
   // ColorScheme
