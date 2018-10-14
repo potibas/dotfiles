@@ -48,7 +48,7 @@ cask_install dotnet-sdk
 # Vim & MacVim
 has_formula vim || brew install vim --env=std --with-override-system-vi --build-from-source
 has_formula macvim || brew install macvim --env=std --build-from-source
-has_cask macvim || brew cask install macvim
+cask_install macvim
 
 # Fonts
 brew tap homebrew/cask-fonts
@@ -61,7 +61,7 @@ brew_install wget curl tree git gnupg
 
 # iTerm2
 has_cask iterm2 || {
-  brew cask install iterm2
+  cask_install iterm2
   rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
   cp ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
 }
