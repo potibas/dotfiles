@@ -48,7 +48,8 @@ ln -s ~/.vscode/keybindings.json ~/Library/Application\ Support/Code/User
 ln -s ~/.vscode/snippets ~/Library/Application\ Support/Code/User
 code --install-extension azemoh.one-monokai \
      --install-extension jakebecker.elixir-ls \
-     --install-extension esbenp.prettier-vscode
+     --install-extension esbenp.prettier-vscode \
+     --install-extension lencerf.beancount
 
 # Oh-my-zsh
 brew install zsh
