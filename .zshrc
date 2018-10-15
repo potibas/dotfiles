@@ -21,6 +21,7 @@ alias ls="ls -G"
 alias la="ls -lpAG"
 alias g="git"
 alias m="mix"
+alias https='http --default-scheme=https'
 
 # Keybindings
 bindkey '^p' history-search-backward
