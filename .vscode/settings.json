@@ -52,6 +52,7 @@
   "workbench.settings.openDefaultKeybindings": false,
   "extensions.ignoreRecommendations": true,
   "explorer.confirmDragAndDrop": false,
+  "diffEditor.renderSideBySide": false,
   "window.zoomLevel": 0,
 
   // Editing
