@@ -67,7 +67,7 @@
   "editor.insertSpaces": true,
   "editor.trimAutoWhitespace": true,
   "editor.tabCompletion": "onlySnippets",
-  "editor.snippetSuggestions": "top",
+  "editor.snippetSuggestions": "inline",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "json.format.enable": true,
