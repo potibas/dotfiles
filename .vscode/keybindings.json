@@ -20,22 +20,22 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+.",
+    "key": "ctrl+l",
     "command": "workbench.action.nextEditor",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+,",
+    "key": "ctrl+h",
     "command": "workbench.action.previousEditor",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+l",
+    "key": "ctrl+shift+l",
     "command": "workbench.action.focusNextGroup",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+h",
+    "key": "ctrl+shift+h",
     "command": "workbench.action.focusPreviousGroup",
     "when": "editorTextFocus"
   },
@@ -57,6 +57,10 @@
   {
     "key": "ctrl+b",
     "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "editor.action.showContextMenu"
   },
   // Exit insert mode with ctrl+enter
   {
