@@ -96,6 +96,7 @@
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
   "php-cs-fixer.onsave": true,
   "php-cs-fixer.rules": "@PSR2",
+  "php.suggest.basic": false,
 
   // Python
   "[python]": {
