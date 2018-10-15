@@ -34,3 +34,5 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # composer
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
+# XDebug
+export XDEBUG_CONFIG="idekey=VSCODE"
