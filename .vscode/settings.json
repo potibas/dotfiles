@@ -192,6 +192,9 @@
       "commands": ["workbench.action.openPreviousRecentlyUsedEditor"]
     },
 
+    // Git
+    { "before": ["leader", "g"], "commands": ["git.openChange"] },
+
     // PhpUnit
     { "before": ["leader", "T"], "commands": ["better-phpunit.run"] },
     { "before": ["leader", "t"], "commands": ["better-phpunit.run-previous"] },
@@ -209,6 +212,14 @@
           }
         }
       ]
+    }
+  ],
+
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Git stage selection
+    {
+      "before": ["leader", "s"],
+      "commands": [{ "command": "git.stageSelectedRanges" }, { "command": "extension.vim_escape" }]
     }
   ],
 
