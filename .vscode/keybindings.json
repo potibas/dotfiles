@@ -55,6 +55,14 @@
     "when": "editorTextFocus && vim.mode != 'Insert"
   },
   {
+    "key": "cmd+r",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "cmd+shift+r",
+    "command": "workbench.action.showAllSymbols"
+  },
+  {
     "key": "ctrl+b",
     "command": "workbench.action.openGlobalKeybindingsFile"
   },
