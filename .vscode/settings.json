@@ -22,10 +22,10 @@
   },
 
   // Appearance
-  "editor.fontFamily": "Operator Mono Ssm Lig",
-  "editor.fontSize": 13,
+  "editor.fontFamily": "Roboto Mono, Menlo, Operator Mono Ssm Lig",
   "editor.fontLigatures": true,
-  "editor.fontWeight": "200",
+  "editor.fontWeight": "400",
+  "editor.fontSize": 12,
   "workbench.fontAliasing": "antialiased",
   "explorer.openEditors.visible": 0,
   "editor.roundedSelection": false,
