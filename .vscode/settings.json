@@ -98,6 +98,7 @@
   "php-cs-fixer.onsave": true,
   "php-cs-fixer.rules": "@PSR2",
   "php.suggest.basic": false,
+  "better-phpunit.phpunitBinary": "XDEBUG_CONFIG='idekey=VSCODE' vendor/bin/phpunit",
 
   // Python
   "[python]": {
