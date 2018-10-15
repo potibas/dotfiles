@@ -45,12 +45,12 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "cmd+j",
+    "key": "alt+j",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus && vim.mode != 'Insert"
   },
   {
-    "key": "cmd+k",
+    "key": "alt+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && vim.mode != 'Insert"
   },
