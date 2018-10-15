@@ -25,7 +25,7 @@
   "editor.fontFamily": "Roboto Mono, Menlo, Operator Mono Ssm Lig",
   "editor.fontLigatures": true,
   "editor.fontWeight": "400",
-  "editor.fontSize": 12,
+  "editor.fontSize": 15,
   "workbench.fontAliasing": "antialiased",
   "explorer.openEditors.visible": 0,
   "editor.roundedSelection": false,
@@ -73,11 +73,11 @@
   "json.format.enable": true,
 
   // Integrated Terminal
-  "terminal.integrated.fontFamily": "Menlo, monospace",
-  "terminal.integrated.fontWeightBold": "100",
-  "terminal.integrated.fontWeight": "100",
+  "terminal.integrated.fontFamily": "Roboto Mono",
+  "terminal.integrated.fontWeightBold": "400",
+  "terminal.integrated.fontWeight": "400",
   "terminal.integrated.drawBoldTextInBrightColors": true,
-  "terminal.integrated.fontSize": 11,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.rightClickBehavior": "copyPaste",
 
