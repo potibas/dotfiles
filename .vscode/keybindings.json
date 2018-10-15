@@ -55,6 +55,11 @@
     "when": "editorTextFocus && vim.mode != 'Insert"
   },
   {
+    "key": "cmd+l",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
     "key": "cmd+r",
     "command": "workbench.action.gotoSymbol"
   },
