@@ -93,6 +93,7 @@
     "editor.renderIndentGuides": true,
     "editor.tabSize": 4
   },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
   "php-cs-fixer.onsave": true,
   "php-cs-fixer.rules": "@PSR2",
 
