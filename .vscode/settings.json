@@ -44,6 +44,8 @@
   // Behaviour
   "editor.scrollBeyondLastLine": true,
   "editor.mouseWheelZoom": true,
+  "window.openFilesInNewWindow": "on",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.settings.editor": "json",
   "workbench.settings.openDefaultSettings": false,
