@@ -56,10 +56,16 @@ has_formula php || brew install php --env=std --build-from-source
 brew_install composer
 composer_install laravel/installer laravel/valet phpunit/phpunit \
   friendsofphp/php-cs-fixer
+test -z "$(pecl list | grep xdebug)" && {
+  pecl install xdebug
+  inifile=$(php --ini | grep \(php.ini\) | rev | cut -d' ' -f 1 | rev)
+  inifile="$inifile/php.ini"
+  echo -n "[xdebug]\nxdebug.remote_enable = 1" >> $inifile
+}
 
 # PostgreSQL
 has_formula postgresql || {
-  brew_install postgresql 
+  brew_install postgresql
   brew services start postgresql
   createuser -s postgres
 }
