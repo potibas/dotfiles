@@ -60,8 +60,8 @@ composer_install laravel/installer laravel/valet phpunit/phpunit \
 # PostgreSQL
 has_formula postgresql || {
   brew_install postgresql 
-  createuser -s postgres
   brew services start postgresql
+  createuser -s postgres
 }
 
 # Vim & MacVim
@@ -86,7 +86,7 @@ cask_install font-hasklig font-fira-code font-inconsolata \
   font-ubuntu-mono-derivative-powerline font-fira-mono-for-powerline font-meslo-for-powerline
 
 # Basic tooling
-brew_install wget curl httpie tree git gnupg
+brew_install wget curl httpie tree git gnupg pgcli
 
 # iTerm2
 has_cask iterm2 || {

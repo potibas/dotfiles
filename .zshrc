@@ -22,6 +22,7 @@ alias la="ls -lpAG"
 alias g="git"
 alias m="mix"
 alias https='http --default-scheme=https'
+alias psql='pgcli -U postgres --less-chatty --auto-vertical-output'
 
 # Keybindings
 bindkey '^p' history-search-backward
