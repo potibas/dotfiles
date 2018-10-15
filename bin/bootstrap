@@ -137,5 +137,8 @@ for plugin in zsh-syntax-highlighting zsh-autosuggestions; do
   test -d $dir || git clone https://github.com/zsh-users/$plugin.git $dir
 done
 
+# reset original .zshrc
+git checkout -- .zshrc
+
 # OS/X settings
 ~/bin/osx
