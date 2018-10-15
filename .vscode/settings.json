@@ -126,9 +126,12 @@
       // Comments always in italic
       {
         "scope": "comment",
-        "settings": {
-          "fontStyle": "italic"
-        }
+        "settings": { "fontStyle": "italic" }
+      },
+      // PHP
+      {
+        "scope": "comment.block.documentation.phpdoc.php keyword.other.phpdoc.php",
+        "settings": { "foreground": "#be9296", "fontStyle": "italic bold" }
       },
       // Ruby
       {
