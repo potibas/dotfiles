@@ -181,7 +181,7 @@
   "vim.incsearch": true,
   "vim.hlsearch": true,
   "vim.leader": ",",
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
   "vim.showcmd": true,
   "vim.cursorStylePerMode.normal": "block",
