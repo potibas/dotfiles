@@ -52,6 +52,7 @@ sudo xcode-select -switch /Applications/Xcode.app/
 # Programming languages
 brew_install ruby python python@2 node erlang elixir rust crystal
 cask_install dotnet-sdk
+pip install --upgrade pip setuptools wheel
 has_formula php || brew install php --env=std --build-from-source
 brew_install composer
 composer_install laravel/installer laravel/valet phpunit/phpunit \
