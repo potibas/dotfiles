@@ -90,7 +90,8 @@ cask_install font-hasklig font-fira-code font-inconsolata \
   font-noto-mono-for-powerline font-consolas-for-powerline font-roboto-mono-for-powerline \
   font-dejavu-sans-mono-for-powerline font-liberation-mono-for-powerline font-menlo-for-powerline \
   font-source-code-pro-for-powerline font-droid-sans-mono-for-powerline \
-  font-ubuntu-mono-derivative-powerline font-fira-mono-for-powerline font-meslo-for-powerline
+  font-ubuntu-mono-derivative-powerline font-fira-mono-for-powerline font-meslo-for-powerline \
+  font-iosevka
 
 # Get SF mono from Terminal.app
 test -f ~/Library/Fonts/SFMono-Medium.otf || {
