@@ -55,8 +55,14 @@ cask_install dotnet-sdk
 pip install --upgrade pip setuptools wheel
 has_formula php || brew install php --env=std --build-from-source
 brew_install composer
-composer_install laravel/installer laravel/valet phpunit/phpunit \
-  friendsofphp/php-cs-fixer
+composer_install laravel/installer phpunit/phpunit friendsofphp/php-cs-fixer
+
+# Laravel valet
+test -d ~/.composer/vendor/laravel/valet || {
+  composer global require laravel/valet
+  valet install
+}
+
 test -z "$(pecl list | grep xdebug)" && {
   pecl install xdebug
   inifile=$(php --ini | grep \(php.ini\) | rev | cut -d' ' -f 1 | rev)
