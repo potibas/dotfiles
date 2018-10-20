@@ -22,7 +22,7 @@
   },
 
   // Appearance
-  "editor.fontFamily": "Roboto Mono, Menlo, Operator Mono Ssm Lig",
+  "editor.fontFamily": "Operator Mono, Roboto, Menlo",
   "editor.fontLigatures": true,
   "editor.fontWeight": "400",
   "editor.fontSize": 15,
@@ -70,12 +70,11 @@
   "editor.snippetSuggestions": "inline",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "json.format.enable": true,
 
   // Integrated Terminal
-  "terminal.integrated.fontFamily": "Roboto Mono",
-  "terminal.integrated.fontWeightBold": "400",
-  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.fontFamily": "Iosevka",
+  "terminal.integrated.fontWeightBold": "300",
+  "terminal.integrated.fontWeight": "300",
   "terminal.integrated.drawBoldTextInBrightColors": true,
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorStyle": "block",
@@ -99,6 +98,9 @@
   "php-cs-fixer.rules": "@PSR2",
   "php.suggest.basic": false,
   "better-phpunit.phpunitBinary": "XDEBUG_CONFIG='idekey=VSCODE' vendor/bin/phpunit",
+  "emmet.includeLanguages": {
+    "php": "html"
+  },
 
   // Python
   "[python]": {
@@ -117,63 +119,42 @@
   },
   "elixirLS.fetchDeps": false,
 
+  // JSON
+  "json.format.enable": false,
+  "prettier.disableLanguages": ["jsonc"],
+
   // theme customizations
   "workbench.colorCustomizations": {
     "[One Monokai]": {
       "editor.background": "#16161aff"
     }
   },
+
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       // Comments always in italic
-      {
-        "scope": "comment",
-        "settings": { "fontStyle": "italic" }
-      },
-      // PHP
+      { "scope": "comment", "settings": { "fontStyle": "italic" } },
+
+      // Blade tags in strong yellow
+      { "scope": "keyword.blade", "settings": { "foreground": "#ffcb6bff" }},
+
+      // PHP Doc tags
       {
         "scope": "comment.block.documentation.phpdoc.php keyword.other.phpdoc.php",
-        "settings": { "foreground": "#be9296", "fontStyle": "italic bold" }
+        "settings": { "foreground": "#ffcb6bff", "fontStyle": "italic" }
       },
-      // Ruby
-      {
-        "scope": "variable.other.readwrite.instance.ruby",
-        "settings": {
-          "foreground": "#ddbc60"
-        }
-      },
+
+      // Ruby vars
+      { "scope": "variable.other.readwrite.instance.ruby", "settings": { "foreground": "#ffcb6bff" } },
+
       // Crystal
-      {
-        "scope": "variable.other.readwrite.instance.crystal",
-        "settings": {
-          "foreground": "#c678dd"
-        }
-      },
-      {
-        "scope": "variable.other.readwrite.class.crystal",
-        "settings": {
-          "foreground": "#9bd3b4"
-        }
-      },
+      { "scope": "variable.other.readwrite.instance.crystal", "settings": { "foreground": "#c678dd" } },
+      { "scope": "variable.other.readwrite.class.crystal", "settings": { "foreground": "#9bd3b4" } },
+
       // Elixir
-      {
-        "scope": "keyword.other.special-method.elixir",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": "variable.other.readwrite.module.elixir",
-        "settings": {
-          "foreground": "#f8d14f"
-        }
-      },
-      {
-        "scope": "variable.other.constant.elixir",
-        "settings": {
-          "foreground": "#61afef"
-        }
-      }
+      { "scope": "keyword.other.special-method.elixir", "settings": { "fontStyle": "italic" } },
+      { "scope": "variable.other.readwrite.module.elixir", "settings": { "foreground": "#f8d14f" } },
+      { "scope": "variable.other.constant.elixir", "settings": { "foreground": "#61afef" } }
     ]
   },
 
@@ -188,48 +169,29 @@
 
   "vim.normalModeKeyBindings": [
     { "before": ["<space>"], "commands": [":nohl"] },
-    { "before": ["leader", "w"], "commands": [":w"] },
+    { "before": ["H"], "commands": ["cursorHome"] },
+    { "before": ["L"], "commands": ["cursorEnd"] },
+    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
     { "before": ["leader", "q"], "commands": ["workbench.action.closeActiveEditor"] },
-    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
     { "before": ["leader", "F", "n"], "commands": ["fileutils.newFile"] },
     { "before": ["leader", "F", "r"], "commands": ["fileutils.renameFile"] },
     { "before": ["leader", "F", "d"], "commands": ["fileutils.removeFile"] },
-    {
-      "before": ["leader", "leader"],
-      "commands": ["workbench.action.openPreviousRecentlyUsedEditor"]
-    },
+    { "before": ["leader", "leader"], "commands": ["workbench.action.openPreviousRecentlyUsedEditor"] },
 
     // Git
     { "before": ["leader", "g"], "commands": ["git.openChange"] },
+  ],
 
-    // PhpUnit
-    { "before": ["leader", "T"], "commands": ["better-phpunit.run"] },
-    { "before": ["leader", "t"], "commands": ["better-phpunit.run-previous"] },
-    { "before": ["leader", "A"], "commands": ["better-phpunit.run-suite"] },
-
-    // Toggle line numbers
-    {
-      "before": ["leader", "n"],
-      "commands": [
-        {
-          "command": "toggle",
-          "args": {
-            "id": "lineNumbers",
-            "value": [{ "editor.lineNumbers": "relative" }, { "editor.lineNumbers": "off" }]
-          }
-        }
-      ]
-    }
+  "vim.insertModeKeyBindingsNonRecursive": [
+    // Close parameter hints when exiting insert mode
+    { "before": ["<esc>"], "commands": [ "closeParameterHints", "extension.vim_escape" ]}
   ],
 
   "vim.visualModeKeyBindingsNonRecursive": [
-    // Git stage selection
-    {
-      "before": ["leader", "s"],
-      "commands": [{ "command": "git.stageSelectedRanges" }, { "command": "extension.vim_escape" }]
-    }
+    // leader+s stage the selection and exit insert mode
+    { "before": ["leader", "s"], "commands": [{ "command": "git.stageSelectedRanges" }, { "command": "extension.vim_escape" }] }
   ],
 
   // ColorScheme
-  "workbench.colorTheme": "Slime"
+  "workbench.colorTheme": "One Monokai"
 }

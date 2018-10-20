@@ -1,84 +1,41 @@
 [
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.terminal.focus",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.nextEditor",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.previousEditor",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "command": "workbench.action.focusNextGroup",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+h",
-    "command": "workbench.action.focusPreviousGroup",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+s",
-    "command": "editor.action.inspectTMScopes",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+j",
-    "command": "editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && vim.mode != 'Insert'"
-  },
-  {
-    "key": "alt+k",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && vim.mode != 'Insert'"
-  },
-  {
-    "key": "cmd+l",
-    "command": "workbench.action.terminal.clear",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+r",
-    "command": "workbench.action.gotoSymbol"
-  },
-  {
-    "key": "cmd+shift+r",
-    "command": "workbench.action.showAllSymbols"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "workbench.action.openGlobalKeybindingsFile"
-  },
-  {
-    "key": "ctrl+.",
-    "command": "editor.action.showContextMenu"
-  },
-  // Exit insert mode with ctrl+enter
-  {
-    "key": "ctrl+enter",
-    "command": "extension.vim_escape",
-    "when": "editorTextFocus && vim.mode == 'Insert'"
-  }
+  // Pane navigation
+  { "key": "ctrl+h", "command": "workbench.action.previousEditor", "when": "editorTextFocus" },
+  { "key": "ctrl+l", "command": "workbench.action.nextEditor", "when": "editorTextFocus" },
+  { "key": "ctrl+shift+h", "command": "workbench.action.focusPreviousGroup", "when": "editorTextFocus" },
+  { "key": "ctrl+shift+l", "command": "workbench.action.focusNextGroup", "when": "editorTextFocus" },
+
+  // Integrated terminal navigation
+  { "key": "ctrl+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus" },
+  { "key": "ctrl+j", "command": "workbench.action.terminal.focus", "when": "!terminalFocus" },
+  { "key": "ctrl+k", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" },
+  { "key": "ctrl+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
+  { "key": "cmd+j", "command": "-workbench.action.togglePanel" },
+  // Clear terminal with Cmd+L since Ctrl+L is not available
+  { "key": "cmd+l", "command": "workbench.action.terminal.clear", "when": "terminalFocus" },
+
+  // Inspect syntax highlgighting scopes
+  { "key": "ctrl+shift+s", "command": "editor.action.inspectTMScopes", "when": "editorTextFocus" },
+
+  // Move lines up and down
+  { "key": "alt+j", "command": "editor.action.moveLinesDownAction"},
+  { "key": "alt+k", "command": "editor.action.moveLinesUpAction" },
+
+  // Open this keybindings file
+  { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" },
+
+  // Parameter hints
+  { "key": "ctrl+;", "command": "editor.action.triggerParameterHints", "when": "editorHasSignatureHelpProvider && !parameterHintsVisible && editorTextFocus" },
+  { "key": "ctrl+;", "command": "closeParameterHints", "when": "parameterHintsVisible" },
+  { "key": "alt+j", "command": "showNextParameterHint", "when": "parameterHintsVisible" },
+  { "key": "alt+k", "command": "showPrevParameterHint", "when": "parameterHintsVisible" },
+
+  // Open contextual menu
+  { "key": "ctrl+.", "command": "editor.action.showContextMenu" },
+
+  // PhpUnit
+  { "key": "cmd+t", "command": ["better-phpunit.run"] },
+  { "key": "cmd+l", "commands": ["better-phpunit.run-previous"] },
+  { "key": "cmd+shift+t", "commands": ["better-phpunit.run-suite"] },
+  { "key": "cmd+t", "command": "-workbench.action.showAllSymbols" },
 ]
