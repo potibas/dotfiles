@@ -63,6 +63,7 @@ test -d ~/.composer/vendor/laravel/valet || {
   valet install
 }
 
+# PHP XDebug
 test -z "$(pecl list | grep xdebug)" && {
   pecl install xdebug
   inifile=$(php --ini | grep \(php.ini\) | rev | cut -d' ' -f 1 | rev)
