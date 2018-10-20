@@ -105,12 +105,14 @@ cask_install google-chrome whatsapp spotify \
 cask_install tunnelblick sequel-pro tableplus rowanj-gitx
 
 # VSCode
-cask_install visual-studio-code
-mkdir -p ~/Library/Application\ Support/Code/User
-for file in settings.json keybindings.json snippets; do
-  rm -rf ~/Library/Application\ Support/Code/User/$file
-  ln -s ~/.vscode/$file ~/Library/Application\ Support/Code/User
-done
+has_cask visual-studio-code || {
+  cask_install visual-studio-code
+  mkdir -p ~/Library/Application\ Support/Code/User
+  for file in settings.json keybindings.json snippets; do
+    rm -rf ~/Library/Application\ Support/Code/User/$file
+    ln -s ~/.vscode/$file ~/Library/Application\ Support/Code/User
+  done
+}
 code --install-extension azemoh.one-monokai \
      --install-extension jakebecker.elixir-ls \
      --install-extension esbenp.prettier-vscode \
