@@ -58,7 +58,7 @@ let mapleader = ","
 " File and window navigation
 set wildignore+=*.o,*.obj,.git,vendor
 let g:NERDTreeIgnore=['\~$\', 'vendor']
-let g:CommandTFileScanner='git'
+let g:CommandTFileScanner='find'
 map <leader>f :CommandT<cr>
 map <leader>z :NERDTreeToggle<cr>
 nnoremap <leader><leader> <c-^>
