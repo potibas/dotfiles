@@ -10,8 +10,8 @@
   { "key": "ctrl+j", "command": "workbench.action.terminal.focus", "when": "!terminalFocus" },
   { "key": "ctrl+k", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" },
   { "key": "ctrl+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
-  // Clear terminal with Cmd+L since Ctrl+L is not available
-  { "key": "cmd+l", "command": "workbench.action.terminal.clear", "when": "terminalFocus" },
+  // Clear terminal with Alt+L since Ctrl+L is not available
+  { "key": "alt+l", "command": "workbench.action.terminal.clear", "when": "terminalFocus" },
 
   // Inspect syntax highlgighting scopes
   { "key": "ctrl+shift+s", "command": "editor.action.inspectTMScopes", "when": "editorTextFocus" },
@@ -34,7 +34,7 @@
 
   // PhpUnit
   { "key": "cmd+t", "command": "better-phpunit.run" },
-  { "key": "cmd+l", "command": "better-phpunit.run-previous", "when": "!terminalFocus" },
+  { "key": "cmd+l", "command": "better-phpunit.run-previous" },
   { "key": "cmd+shift+t", "command": "better-phpunit.run-suite" },
   { "key": "cmd+t", "command": "-workbench.action.showAllSymbols" },
 ]
