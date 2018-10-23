@@ -178,13 +178,11 @@
     { "before": ["leader", "F", "d"], "commands": ["fileutils.removeFile"] },
     { "before": ["leader", "leader"], "commands": ["workbench.action.openPreviousRecentlyUsedEditor"] },
 
+    // Close parameter hints with escape
+    { "before": ["escape"], "commands": ["closeParameterHints"], "when": "paremeterHintsVisible" },
+
     // Git
     { "before": ["leader", "g"], "commands": ["git.openChange"] },
-  ],
-
-  "vim.insertModeKeyBindingsNonRecursive": [
-    // Close parameter hints when exiting insert mode
-    { "before": ["<esc>"], "commands": [ "closeParameterHints", "extension.vim_escape" ]}
   ],
 
   "vim.visualModeKeyBindingsNonRecursive": [
