@@ -72,6 +72,10 @@ map <leader>w :w<cr>
 map <leader>q :q<cr>
 map <leader>n :set invnumber<cr>
 
+" I can't live without Home/End
+nnoremap L $
+nnoremap H _
+
 " Quick edit vim configuration:
 map <leader>v :e ~/.vimrc<cr>
 map <leader>V :e ~/.gvimrc<cr>
