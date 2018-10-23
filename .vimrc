@@ -31,6 +31,7 @@ set history=10000
 set ignorecase smartcase
 set backspace=indent,eol,start
 set showcmd cmdheight=1
+set number
 
 " Indentation
 set tabstop=2 shiftwidth=2 softtabstop=2
@@ -50,6 +51,9 @@ if !has("gui_running")
     set t_Co=256
     set background=dark
     silent! color distinguished " might not be there yet
+    highlight clear CursorLine
+    " highlight CursorLine ctermfg=231 ctermbg=237 guibg=Grey40
+    silent! highlight CursorLine ctermbg=237 guibg=Grey40
 end
 
 " Shortcuts
