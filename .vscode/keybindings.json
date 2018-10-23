@@ -10,7 +10,6 @@
   { "key": "ctrl+j", "command": "workbench.action.terminal.focus", "when": "!terminalFocus" },
   { "key": "ctrl+k", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" },
   { "key": "ctrl+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
-  { "key": "cmd+j", "command": "-workbench.action.togglePanel" },
   // Clear terminal with Cmd+L since Ctrl+L is not available
   { "key": "cmd+l", "command": "workbench.action.terminal.clear", "when": "terminalFocus" },
 
@@ -27,15 +26,15 @@
   // Parameter hints
   { "key": "ctrl+;", "command": "editor.action.triggerParameterHints", "when": "editorHasSignatureHelpProvider && !parameterHintsVisible && editorTextFocus" },
   { "key": "ctrl+;", "command": "closeParameterHints", "when": "parameterHintsVisible" },
-  { "key": "alt+j", "command": "showNextParameterHint", "when": "parameterHintsVisible" },
-  { "key": "alt+k", "command": "showPrevParameterHint", "when": "parameterHintsVisible" },
+  { "key": "ctrl+j", "command": "showNextParameterHint", "when": "parameterHintsVisible" },
+  { "key": "ctrl+k", "command": "showPrevParameterHint", "when": "parameterHintsVisible" },
 
   // Open contextual menu
   { "key": "ctrl+.", "command": "editor.action.showContextMenu" },
 
   // PhpUnit
-  { "key": "cmd+t", "command": ["better-phpunit.run"] },
-  { "key": "cmd+l", "commands": ["better-phpunit.run-previous"] },
-  { "key": "cmd+shift+t", "commands": ["better-phpunit.run-suite"] },
+  { "key": "cmd+t", "command": "better-phpunit.run" },
+  { "key": "cmd+l", "command": "better-phpunit.run-previous", "when": "!terminalFocus" },
+  { "key": "cmd+shift+t", "command": "better-phpunit.run-suite" },
   { "key": "cmd+t", "command": "-workbench.action.showAllSymbols" },
 ]
