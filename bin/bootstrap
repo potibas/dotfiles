@@ -97,6 +97,12 @@ has_cask iterm2 || {
   cp ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
 }
 
+# Karabiner-elements
+has_cask karabiner-elements || {
+  cask_install karabiner-elements
+  # How to add the keys?
+}
+
 # Productivity (or not)
 cask_install google-chrome whatsapp spotify \
   alfred sync dropbox skype skype-for-business \
