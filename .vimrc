@@ -76,6 +76,9 @@ map <leader>n :set invnumber<cr>
 nnoremap L $
 nnoremap H _
 
+" Current file's directory with %%
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 " Quick edit vim configuration:
 map <leader>v :e ~/.vimrc<cr>
 map <leader>V :e ~/.gvimrc<cr>
