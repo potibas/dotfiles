@@ -37,6 +37,6 @@
     ll = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(un italic blue)%an (%ae)%C(reset)%n %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%n'
     la = !git l --all
     lla = !git ll --all
-    r = !git l -20
+    r = !git l -10
     ra = !git r --all
 
