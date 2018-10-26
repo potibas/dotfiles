@@ -67,6 +67,12 @@ map <leader>f :CommandT<cr>
 map <leader>z :NERDTreeToggle<cr>
 nnoremap <leader><leader> <c-^>
 
+" Pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
 " Common shortcuts
 map <leader>w :w<cr>
 map <leader>q :q<cr>
