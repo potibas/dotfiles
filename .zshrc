@@ -1,5 +1,5 @@
 export ZSH="/Users/potibas/.oh-my-zsh"
-ZSH_THEME="avit"
+ZSH_THEME="awesomepanda"
 
 plugins=(
   git
