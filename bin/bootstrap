@@ -68,12 +68,8 @@ test -z "$(pecl list | grep xdebug)" && {
   pecl install xdebug
   inifile=$(php --ini | grep \(php.ini\) | rev | cut -d' ' -f 1 | rev)
   inifile="$inifile/php.ini"
-  echo "[xdebug]
-  xdebug.remote_enable = 1
-  xdebug.remote_host=localhost
-  xdebug.remote_port=9000
-  xdebug.remote_handler=dbgp
-" >> $inifile
+  echo -n "[xdebug]\nzend_extension=\"xdebug.so\"\nxdebug.remote_enable = 1\n" >> $inifile
+}
 
 # PostgreSQL
 has_formula postgresql || {
