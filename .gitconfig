@@ -28,6 +28,7 @@
     pr = pull --rebase
     ri = rebase --interactive --autosquash
     rc = rebase --continue
+    rh = reset --hard
     fa = fetch --all
     amend = commit --amend
     squash = commit --amend --no-edit
