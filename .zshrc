@@ -32,6 +32,9 @@ bindkey '^n' history-search-forward
 # executables
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# Python
+export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+
 # composer
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
