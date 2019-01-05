@@ -7,12 +7,12 @@ fi
 
 CASKS=$(brew cask ls)
 function has_cask () {
-  test ! -z "$(echo $CASKS | grep -o $1)"
+  echo "${CASKS}" | grep --quiet --line-regexp --fixed-strings "$1"
 }
 
 FORMULAE=$(brew ls)
 function has_formula () {
-  test ! -z "$(echo $FORMULAE | grep -o $1)"
+  echo "${FORMULAE}" | grep --quiet --line-regexp --fixed-strings "$1"
 }
 
 function brew_install () {
