@@ -48155,12 +48155,10 @@
 	<integer>270592</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{720, 448}</string>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -48192,27 +48190,12 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>363 83 445 77 0 0 1920 1058 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1333 851 400 129 0 0 1920 1057 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 508 620 392 0 0 1920 1057 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 128 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>427 511 918 452 0 0 1920 1058 </string>
+	<string>777 211 918 423 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1068 172 812 538 0 0 1920 1058 </string>
+	<string>744 201 1036 708 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1024 78 812 538 0 0 1920 1058 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>831 127 812 470 0 0 1920 1057 </string>
+	<string>247 107 812 538 0 0 1920 1058 </string>
 	<key>NeverWarnAboutShortLivedSessions_9D79D046-2966-4896-9957-FC73E6821756</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_9D79D046-2966-4896-9957-FC73E6821756_selection</key>
@@ -48452,7 +48435,7 @@
 			<key>Background Image Is Tiled</key>
 			<true/>
 			<key>Background Image Location</key>
-			<string>/Users/potibas/.iterm2/solarized_darcula.jpg</string>
+			<string>/Users/pfc/.iterm2/solarized_darcula.jpg</string>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -48955,7 +48938,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>4</integer>
+			<integer>3</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -48983,15 +48966,13 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>F944E06A-A5F2-4E11-9559-DED5F2F9C2E7</string>
+	<string>E4360AF9-A212-4C1D-A7B4-DC92CC755324</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>1</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>535318704.19662702</real>
+	<real>568564660.97424603</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -49039,18 +49020,16 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
-	<key>SUAutomaticallyUpdate</key>
-	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=65</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=71</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-26T21:13:19Z</date>
+	<date>2019-01-07T14:38:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
