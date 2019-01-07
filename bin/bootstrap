@@ -63,14 +63,6 @@ test -d ~/.composer/vendor/laravel/valet || {
   valet install
 }
 
-# PHP XDebug
-test -z "$(pecl list | grep xdebug)" && {
-  pecl install xdebug
-  inifile=$(php --ini | grep \(php.ini\) | rev | cut -d' ' -f 1 | rev)
-  inifile="$inifile/php.ini"
-  echo -n "[xdebug]\nzend_extension=\"xdebug.so\"\nxdebug.remote_enable = 1\n" >> $inifile
-}
-
 # PostgreSQL
 has_formula postgresql || {
   brew_install postgresql
