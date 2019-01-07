@@ -22,7 +22,7 @@
   },
 
   // Appearance
-  "editor.fontFamily": "Operator Mono, Roboto, Menlo",
+  "editor.fontFamily": "Roboto Mono",
   "editor.fontLigatures": true,
   "editor.fontWeight": "400",
   "editor.fontSize": 15,
@@ -72,11 +72,11 @@
   "files.insertFinalNewline": true,
 
   // Integrated Terminal
-  "terminal.integrated.fontFamily": "Iosevka",
+  "terminal.integrated.fontFamily": "Roboto Mono",
   "terminal.integrated.fontWeightBold": "300",
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.drawBoldTextInBrightColors": true,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 12,
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.rightClickBehavior": "copyPaste",
 
@@ -191,5 +191,5 @@
   ],
 
   // ColorScheme
-  "workbench.colorTheme": "One Monokai"
+  "workbench.colorTheme": "One Dark+ (Sublime)"
 }
