@@ -38,3 +38,6 @@ export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 # composer
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+alias be="bundle exec"
