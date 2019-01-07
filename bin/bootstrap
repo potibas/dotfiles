@@ -88,7 +88,7 @@ has_formula macvim || {
 }
 
 # Basic tooling
-brew_install wget curl httpie tree git gnupg pgcli
+brew_install wget curl httpie tree git gnupg pgcli asciinema
 
 # iTerm2
 has_cask iterm2 || {
