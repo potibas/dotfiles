@@ -18,6 +18,7 @@ Plug 'tpope/vim-surround'
 
 " Language support
 Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 " Colorschemes
 Plug 'Lokaltog/vim-distinguished'
