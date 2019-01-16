@@ -131,6 +131,12 @@
   },
 
   "editor.tokenColorCustomizations": {
+    "[One Dark+ (Sublime)]": {
+      "textMateRules": [
+        { "scope": "constant.other.symbol.elixir", "settings": { "foreground": "#ffcb6bff" } }
+      ]
+    },
+
     "textMateRules": [
       // Comments always in italic
       { "scope": "comment", "settings": { "fontStyle": "italic" } },
@@ -154,7 +160,10 @@
       // Elixir
       { "scope": "keyword.other.special-method.elixir", "settings": { "fontStyle": "italic" } },
       { "scope": "variable.other.readwrite.module.elixir", "settings": { "foreground": "#f8d14f" } },
-      { "scope": "variable.other.constant.elixir", "settings": { "foreground": "#61afef" } }
+      { "scope": "variable.other.constant.elixir", "settings": { "foreground": "#61afef" } },
+
+      // Rust
+      { "scope": "entity.name.type.mod.rust", "settings":{ "foreground": "#e5c07bff" } }
     ]
   },
 
@@ -192,4 +201,6 @@
 
   // ColorScheme
   "workbench.colorTheme": "One Dark+ (Sublime)"
+  "workbench.colorTheme": "One Dark+ (Sublime)",
+  "explorer.confirmDelete": false,
 }
