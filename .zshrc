@@ -64,3 +64,6 @@ if command_exists nvim ; then
   alias vim="nvim"
 fi
 
+# asdf
+[[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
+[[ -f $HOME/.asdf/completions/adsf.bash ]] && . $HOME/.asdf/completions/adsf.bash
