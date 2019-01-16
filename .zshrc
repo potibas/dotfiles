@@ -41,13 +41,17 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Python
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 
 # composer
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # Ruby
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
 alias be="bundle exec"
+
+# Rust
+export PATH=$HOME/.cargo/bin:$PATH
 
 # Ctags
 if command_exists brew ; then
