@@ -9,6 +9,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Helper to see if a command exists
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
 # User configuration
 # ==================
 
@@ -41,3 +46,15 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 alias be="bundle exec"
+
+# Ctags
+if command_exists brew ; then
+  alias ctags="`brew --prefix`/bin/ctags"
+fi
+
+# Neovim
+if command_exists nvim ; then
+  alias vi="nvim"
+  alias vim="nvim"
+fi
+
