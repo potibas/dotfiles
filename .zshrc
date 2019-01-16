@@ -29,6 +29,8 @@ alias m="mix"
 alias https='http --default-scheme=https'
 alias psql='PAGER=cat pgcli -U postgres --less-chatty --auto-vertical-output'
 alias pa='php artisan'
+alias d='docker'
+alias dc='docker-compose'
 
 # Keybindings
 bindkey '^p' history-search-backward
