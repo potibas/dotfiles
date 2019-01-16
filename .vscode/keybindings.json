@@ -32,9 +32,18 @@
   // Open contextual menu
   { "key": "ctrl+.", "command": "editor.action.showContextMenu" },
 
-  // PhpUnit
-  { "key": "cmd+t", "command": "better-phpunit.run" },
-  { "key": "cmd+l", "command": "better-phpunit.run-previous" },
-  { "key": "cmd+shift+t", "command": "better-phpunit.run-suite" },
+  // Testing
   { "key": "cmd+t", "command": "-workbench.action.showAllSymbols" },
+  // php
+  { "key": "cmd+t", "command": "better-phpunit.run", "when": "editorLangId == 'php'" },
+  { "key": "cmd+l", "command": "better-phpunit.run-previous" }, // "when": "editorLangId == 'php'" },
+  { "key": "cmd+shift+t", "command": "better-phpunit.run-suite", "when": "editorLangId == 'php'" },
+  // elixir
+  { "key": "cmd+t", "command": "workbench.action.tasks.runTask", "args": "mix test", "when": "editorLangId == 'elixir'" },
+  // go
+  { "key": "cmd+t", "command": "go.test.cursor", "when": "editorLangId == 'go'" },
+  { "key": "cmd+l", "command": "go.test.previous", "when": "editorLangId == 'go'" },
+  { "key": "cmd+shift+t", "command": "go.test.workspace", "when": "editorLangId == 'go'" },
+  { "key": "cmd+r cmd+f", "command": "go.test.file", "when": "editorLangId == 'go'" },
+  { "key": "cmd+r cmd+p", "command": "go.test.package", "when": "editorLangId == 'go'" }
 ]
