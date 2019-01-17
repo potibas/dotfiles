@@ -121,6 +121,9 @@
     "editor.trimAutoWhitespace": false
   },
   "elixirLS.fetchDeps": false,
+  "elixirLS.suggestSpecs": true,
+  "elixirLS.dialyzerEnabled": true,
+  "elixirLS.mixEnv": "dev",
 
   // JSON
   "json.format.enable": false,
