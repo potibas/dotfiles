@@ -89,13 +89,22 @@
     "editor.tabSize": 4
   },
 
+  // Ruby
+  "[ruby]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "ruby.intellisense": "rubyLocate",
+  "rufo.exe": "/usr/local/lib/ruby/gems/2.6.0/bin/rufo",
+  "rufo.useBundler": false,
+
   // Php
   "[php]": {
     "editor.renderIndentGuides": true,
     "editor.tabSize": 4
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1539567764656,
+  "php-cs-fixer.lastDownload": 1546953657312,
   "php-cs-fixer.onsave": true,
   "php-cs-fixer.rules": "@PSR2",
   "php.suggest.basic": false,
@@ -110,6 +119,23 @@
     "editor.renderIndentGuides": true,
     "editor.tabSize": 4
   },
+
+  // Rust
+  "[rust]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+  },
+  "rust.build_lib": true,
+  "rust.cfg_test": true,
+  "rust.show_warnings": true,
+
+  // .NET
+  "[csharp]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "csharp.format.enable": true,
+  "csharp.testsCodeLens.enabled": true,
 
   // Elixir
   "[elixir]": {
