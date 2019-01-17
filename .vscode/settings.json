@@ -100,6 +100,7 @@
   "php-cs-fixer.rules": "@PSR2",
   "php.suggest.basic": false,
   "better-phpunit.phpunitBinary": "XDEBUG_CONFIG='idekey=VSCODE' vendor/bin/phpunit",
+  "better-phpunit.commandSuffix": "--stop-on-failure",
   "emmet.includeLanguages": {
     "php": "html"
   },
