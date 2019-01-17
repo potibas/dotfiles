@@ -232,7 +232,6 @@
   ],
 
   // ColorScheme
-  "workbench.colorTheme": "One Dark+ (Sublime)"
   "workbench.colorTheme": "One Dark+ (Sublime)",
   "explorer.confirmDelete": false,
 }
