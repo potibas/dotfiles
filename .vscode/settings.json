@@ -15,6 +15,8 @@
     // Python
     "**/__pycache__/": true,
     "**/*.picklecache": true,
+    // dotnet
+    "**/obj/": true,
     // Php
     "vendor": true,
     // OS
