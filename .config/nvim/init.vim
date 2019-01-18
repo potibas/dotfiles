@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'slashmili/alchemist.vim'
     let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 
+  " Seamless window navigation between vim & tmux
   Plug 'christoomey/vim-tmux-navigator'
 
   Plug 'scrooloose/nerdtree'
@@ -93,10 +94,6 @@ nnoremap L $
 nnoremap H _
 
 " Window navigation
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
 nnoremap <leader><leader> <c-^>
 
 " Expand %% to the current file's directory
