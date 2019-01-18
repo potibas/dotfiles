@@ -119,3 +119,10 @@ augroup jtle
 
 augroup END
 
+augroup tabs
+  autocmd!
+
+  autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+augroup END
