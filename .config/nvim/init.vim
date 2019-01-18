@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
     map <leader>B :NERDTreeFind<cr>
     let NERDTreeQuitOnOpen = 1
     let NERDTreeAutoDeleteBuffer = 1
+    let NERDTreeMinimalUI = 1
 
   Plug 'cloudhead/neovim-fuzzy'
     nnoremap <leader>f :FuzzyOpen<cr>
