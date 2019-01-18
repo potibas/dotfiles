@@ -3,6 +3,7 @@ set nocompatible
 set history=10000
 set backspace=indent,eol,start
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent 
+set nobackup nowritebackup noswapfile
 set encoding=utf-8
 set showcmd cmdheight=1
 set number relativenumber
@@ -20,6 +21,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'slashmili/alchemist.vim'
     let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+
+  Plug 'christoomey/vim-tmux-navigator'
 
   Plug 'scrooloose/nerdtree'
     map <leader>b :NERDTreeToggle<cr>
@@ -101,7 +104,7 @@ cnoremap %% <c-r>=expand('%:h').'/'<cr>
 
 " Quick edit vim configuration:
 map <leader>v :e ~/.config/nvim/init.vim<cr>
-map <leader>R :w \| :so % \| :nohlsearch<cr>
+map <leader>R :w \| :so ~/.config/nvim/init.vim \| :nohlsearch<cr>
 
 augroup jtle
     autocmd!
