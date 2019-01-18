@@ -97,6 +97,10 @@ nnoremap H _
 " Window navigation
 nnoremap <leader><leader> <c-^>
 
+" Auto maximize windows vertically (kinda)
+:silent! set winheight=10 winminheight=10
+:silent! set winheight=9999
+
 " Expand %% to the current file's directory
 cnoremap %% <c-r>=expand('%:h').'/'<cr>
 
