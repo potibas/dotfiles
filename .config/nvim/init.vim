@@ -7,6 +7,7 @@ set nobackup nowritebackup noswapfile
 set encoding=utf-8
 set showcmd cmdheight=1
 set number relativenumber
+set noautochdir
 let g:mapleader=','
 
 " Plugins
