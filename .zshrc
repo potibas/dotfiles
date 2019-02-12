@@ -71,3 +71,7 @@ fi
 # asdf
 [[ -f $HOME/.asdf/asdf.sh ]] && . $HOME/.asdf/asdf.sh
 [[ -f $HOME/.asdf/completions/adsf.bash ]] && . $HOME/.asdf/completions/adsf.bash
+
+# Google cloud
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
