@@ -53,6 +53,10 @@ alias be="bundle exec"
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH
 
+# Go
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
 # Ctags
 if command_exists brew ; then
   alias ctags="`brew --prefix`/bin/ctags"
