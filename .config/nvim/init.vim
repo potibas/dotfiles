@@ -45,6 +45,8 @@ call plug#begin('~/.config/nvim/plugged')
       autocmd! BufWritePost * Neomake
     augroup END
 
+  Plug 'nathangrigg/vim-beancount'
+
   " Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
   let g:neomake_elixir_enabled_makers = ['mycredo']
   function! NeomakeCredoErrorType(entry)
