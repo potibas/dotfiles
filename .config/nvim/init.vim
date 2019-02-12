@@ -90,6 +90,10 @@ map <space> :nohlsearch<cr>
 hi Search cterm=underline ctermfg=Yellow ctermbg=Black
 hi IncSearch cterm=underline ctermfg=Yellow ctermbg=Black
 
+" Show characters after column 80 in red
+hi OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " Shortcuts
 map <leader>w :w<cr>
 map <leader>q :q<cr>
