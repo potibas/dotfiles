@@ -141,6 +141,13 @@ augroup tabs
   autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
 
+augroup misc
+  autocmd!
+
+  " Don't wrap CSV files
+  au BufRead,BufNewFile *.csv set nowrap
+augroup END
+
 " ========= MASTERING VIM TIPS ==========
 "
 " Use :w!! (quickly) to save a file as sudo
