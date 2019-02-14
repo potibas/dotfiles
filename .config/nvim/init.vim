@@ -2,7 +2,7 @@
 set nocompatible
 set history=10000
 set backspace=indent,eol,start
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent 
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent
 set nobackup nowritebackup noswapfile
 set encoding=utf-8
 set showcmd cmdheight=1
@@ -132,7 +132,7 @@ map <leader>R :w \| :so ~/.config/nvim/init.vim \| :nohlsearch<cr>
 
 augroup jtle
     autocmd!
-    
+
     " Jump to last edit when opening file
     autocmd BufReadPost *
         \ if line("\"") > 0 && line("'\"") <= line("$") |
