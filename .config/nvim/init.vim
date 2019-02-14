@@ -102,6 +102,10 @@ hi IncSearch cterm=underline ctermfg=Yellow ctermbg=Black
 hi OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+" Show trailing whitespace in red
+hi TrailingWhitespace ctermbg=red ctermfg=red guibg=#990000
+match TrailingWhitespace /\s\+$/
+
 " Shortcuts
 map <leader>w :w<cr>
 map <leader>q :q<cr>
