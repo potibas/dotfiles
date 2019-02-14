@@ -15,6 +15,12 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Color themes
   Plug 'KeitaNakamura/neodark.vim'
+  Plug 'drewtempelmeyer/palenight.vim'
+  Plug 'ayu-theme/ayu-vim'
+  Plug 'morhetz/gruvbox'
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'rakr/vim-one'
+  Plug 'mhartington/oceanic-next'
 
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-projectionist'
@@ -80,7 +86,7 @@ call plug#end()
 syntax on
 set background=dark
 set termguicolors
-color neodark
+color OceanicNext
 set scrolloff=4
 set cursorline
 highlight Comment gui=italic cterm=italic
@@ -151,3 +157,12 @@ augroup END
 "
 " Use :w!! (quickly) to save a file as sudo
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Switch colorschemes
+nmap <F3> :color OceanicNext<cr>
+nmap <F4> :color palenight<cr>
+nmap <F5> :color neodark<cr>
+nmap <F6> :color ayu<cr>
+nmap <F7> :color gruvbox<cr>
+nmap <F8> :color one<cr>
+nmap <F9> :color nord<cr>
