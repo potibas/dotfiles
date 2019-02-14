@@ -140,3 +140,8 @@ augroup tabs
   autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
   autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
+
+" ========= MASTERING VIM TIPS ==========
+"
+" Use :w!! (quickly) to save a file as sudo
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
