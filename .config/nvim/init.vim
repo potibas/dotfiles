@@ -27,8 +27,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'sheerun/vim-polyglot'
   Plug 'elixir-editors/vim-elixir'
+  Plug 'mhinz/vim-mix-format'
   Plug 'slashmili/alchemist.vim'
     let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
+    augroup elixir
+       au BufRead,BufNewFile *.ex,*.exs,*.eex nmap <leader>. :w \| :MixFormat<cr>
+    augroup END
 
   " Seamless window navigation between vim & tmux
   Plug 'christoomey/vim-tmux-navigator'
