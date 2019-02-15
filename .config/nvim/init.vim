@@ -90,7 +90,7 @@ call plug#end()
 syntax on
 set background=dark
 set termguicolors
-color OceanicNext
+color one
 set scrolloff=4
 set cursorline
 highlight Comment gui=italic cterm=italic
