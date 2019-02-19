@@ -86,29 +86,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 call plug#end()
 
-" Appearance
-syntax on
-set background=dark
-set termguicolors
-color one
-set scrolloff=4
-set cursorline
-highlight Comment gui=italic cterm=italic
 
 " Searching
 set showmatch incsearch hlsearch ignorecase smartcase
 map <cr> :nohlsearch<cr>
 map <space> :nohlsearch<cr>
-hi Search cterm=underline ctermfg=Yellow ctermbg=Black
-hi IncSearch cterm=underline ctermfg=Yellow ctermbg=Black
-
-" Show characters after column 80 in red
-hi OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
-" Show trailing whitespace in red
-hi TrailingWhitespace ctermbg=red ctermfg=red guibg=#990000
-match TrailingWhitespace /\s\+$/
 
 " Shortcuts
 map <leader>w :w<cr>
@@ -166,6 +148,36 @@ augroup END
 " Use :w!! (quickly) to save a file as sudo
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" ==== COLOR CUSTOMIZATIONS
+
+" Trailing whitespace
+augroup TrailingWhitespace
+  autocmd!
+  autocmd ColorScheme *
+        \ hi TrailingWhitespace ctermbg=red ctermfg=red guibg=#990000
+  autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+  autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+  autocmd WinEnter * match TrailingWhitespace /\s\+$/
+augroup END
+
+" Characters after column 80
+augroup OverLength
+  autocmd!
+  autocmd ColorScheme *
+        \ hi TrailingWhitespace ctermbg=red ctermfg=red guibg=#990000
+  autocmd WinEnter * match TrailingWhitespace /\%101v.\+/
+augroup END
+
+augroup SearchAndCommends
+  autocmd ColorScheme * hi Search
+        \ ctermfg=180 ctermbg=16 guifg=#e5c07b guibg=#282c384
+        \ cterm=underline gui=underline |
+        \ hi IncSearch
+        \ ctermfg=180 ctermbg=16 guifg=#e5c07b guibg=#282c384
+        \ cterm=underline gui=underline |
+        \ hi Comment gui=italic cterm=italic
+augroup END
+
 " Switch colorschemes
 nmap <F3> :color OceanicNext<cr>
 nmap <F4> :color palenight<cr>
@@ -174,3 +186,11 @@ nmap <F6> :color ayu<cr>
 nmap <F7> :color gruvbox<cr>
 nmap <F8> :color one<cr>
 nmap <F9> :color nord<cr>
+
+" Appearance
+syntax on
+set background=dark
+set termguicolors
+set scrolloff=4
+set cursorline
+color one
