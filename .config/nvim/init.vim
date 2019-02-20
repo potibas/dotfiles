@@ -167,7 +167,7 @@ augroup END
 augroup OverLength
   autocmd!
   autocmd ColorScheme *
-        \ hi TrailingWhitespace ctermbg=red ctermfg=red guibg=#990000
+        \ hi OverLength ctermbg=red ctermfg=red guibg=#990000
   autocmd WinEnter * match TrailingWhitespace /\%101v.\+/
 augroup END
 
