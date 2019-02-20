@@ -37,6 +37,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Seamless window navigation between vim & tmux
   Plug 'christoomey/vim-tmux-navigator'
 
+  " Prettier
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
   Plug 'scrooloose/nerdtree'
     map <leader>b :NERDTreeToggle<cr>
     map <leader>B :NERDTreeFind<cr>
