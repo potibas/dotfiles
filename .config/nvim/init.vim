@@ -39,6 +39,9 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+    augroup prettier
+      autocmd Filetype javascript,javascript.jsx nmap <silent> <leader>. :Prettier<cr>
+    augroup END
 
   Plug 'scrooloose/nerdtree'
     map <leader>b :NERDTreeToggle<cr>
