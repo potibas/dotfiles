@@ -163,15 +163,15 @@ augroup TrailingWhitespace
         \ hi TrailingWhitespace ctermbg=red ctermfg=red guibg=#990000
   autocmd InsertLeave * match TrailingWhitespace /\s\+$/
   autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
-  autocmd WinEnter * match TrailingWhitespace /\s\+$/
+  autocmd VimEnter,BufEnter,WinEnter * match TrailingWhitespace /\s\+$/
 augroup END
 
-" Characters after column 80
+" Characters after column 99
 augroup OverLength
   autocmd!
   autocmd ColorScheme *
         \ hi OverLength ctermbg=red ctermfg=red guibg=#990000
-  autocmd WinEnter * match TrailingWhitespace /\%101v.\+/
+  autocmd VimEnter,BufEnter,WinEnter * match OverLength /\%99v.\+/
 augroup END
 
 augroup SearchAndCommends
