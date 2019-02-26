@@ -47,7 +47,7 @@ export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # Ruby
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+eval "$(rbenv init -)"
 alias be="bundle exec"
 
 # Rust
@@ -75,3 +75,8 @@ fi
 # Google cloud
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+# HomeBrew autocomplete
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
