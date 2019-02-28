@@ -186,6 +186,10 @@ augroup SearchAndCommends
         \ hi Comment gui=italic cterm=italic
 augroup END
 
+" Don't open help when I accidentaly hit F1
+nmap <F1> <nop>
+imap <F1> <nop>
+
 " Switch colorschemes
 nmap <F3> :color OceanicNext<cr>
 nmap <F4> :color palenight<cr>
