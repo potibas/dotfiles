@@ -32,6 +32,8 @@ call plug#begin('~/.config/nvim/plugged')
     let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
     augroup elixir
        au BufRead,BufNewFile *.ex,*.exs,*.eex nmap <leader>. :w \| :MixFormat<cr>
+       au BufRead,BufNewFile *.ex,*.exs,*.eex nmap <leader>a :w \| :!mix test<cr>
+       au BufRead,BufNewFile *.ex,*.exs,*.eex nmap <leader>t :w \| :!mix test %<cr>
     augroup END
 
   " Seamless window navigation between vim & tmux
