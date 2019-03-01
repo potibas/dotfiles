@@ -179,3 +179,13 @@ set termguicolors
 set scrolloff=4
 set cursorline
 color one
+
+" Gzip
+augroup gzip_local
+  autocmd!
+  autocmd BufReadPre,FileReadPre     *.dia setlocal bin
+  autocmd BufReadPost,FileReadPost   *.dia call gzip#read("gzip -dn -S .dia")
+  autocmd BufWritePost,FileWritePost *.dia call gzip#write("gzip -S .dia")
+  autocmd FileAppendPre              *.dia call gzip#appre("gzip -dn -S .dia")
+  autocmd FileAppendPost             *.dia call gzip#write("gzip -S .dia")
+augroup END
