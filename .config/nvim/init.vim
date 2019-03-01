@@ -141,6 +141,12 @@ augroup TrailingWhitespace
   autocmd VimEnter,BufEnter,WinEnter * match TrailingWhitespace /\s\+$/
 augroup END
 
+" Transparent background
+augroup TransparentBackground
+  autocmd!
+  autocmd ColorScheme * hi Normal guibg=NONE ctermbg=NONE
+augroup END
+
 " Characters after column 99
 augroup OverLength
   autocmd!
