@@ -8,6 +8,7 @@ set encoding=utf-8
 set showcmd cmdheight=1
 set number relativenumber
 set noautochdir
+set hidden
 let g:mapleader=','
 
 " Plugins
