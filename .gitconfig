@@ -12,6 +12,9 @@
 [push]
     default = current
 
+[pull]
+	rebase = true
+
 [alias]
     # Short status output
     s = status -s
@@ -43,4 +46,3 @@
     lla = !git ll --all
     r = !git l -10
     ra = !git r --all
-
