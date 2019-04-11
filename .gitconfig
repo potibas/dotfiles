@@ -15,6 +15,12 @@
 [pull]
 	rebase = true
 
+[url "git@github.com:Kanamobi/"]
+	insteadOf = "kanamobi:"
+
+[url "git@github.com:"]
+	insteadOf = "github:"
+
 [alias]
     # Short status output
     s = status -s
