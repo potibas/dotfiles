@@ -16,11 +16,14 @@
 [pull]
 	rebase = true
 
-[url "git@github.com:Kanamobi/"]
-	insteadOf = "kanamobi:"
+[url "git@github.com:gok-dev/"]
+	insteadOf = "gok:"
 
 [url "git@github.com:"]
 	insteadOf = "github:"
+
+[url "git@github.com:potibas/"]
+	insteadOf = "potibas:"
 
 [alias]
     # Short status output
@@ -43,7 +46,6 @@
     squash = commit --amend --no-edit
     sh = !git add --all && git stash push
     sp = stash pop
-
 
     # Colored logs
     l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(ul italic cyan)%an%C(reset)'
