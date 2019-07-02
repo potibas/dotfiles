@@ -1,5 +1,6 @@
 set nocompatible
 set nobackup nowritebackup noswapfile
+set visualbell
 
 " Install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
