@@ -1,6 +1,16 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="awesomepanda"
 
+CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
+
+if [ ! -d $CUSTOM/zsh-autosuggestions ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions $CUSTOM/zsh-autosuggestions
+fi
+
+if [ ! -d $CUSTOM/zsh-syntax-highlighting ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $CUSTOM/zsh-syntax-highlighting
+fi
+
 plugins=(
   git
   zsh-autosuggestions
