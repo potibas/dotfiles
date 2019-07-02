@@ -57,7 +57,7 @@ export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # Ruby
-eval "$(rbenv init -)"
+which rbenv > /dev/null && eval "$(rbenv init -)"
 alias be="bundle exec"
 
 # Rust
