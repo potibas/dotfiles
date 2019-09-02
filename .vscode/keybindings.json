@@ -13,6 +13,8 @@
   // Clear terminal with Alt+L since Ctrl+L is not available
   { "key": "alt+l", "command": "workbench.action.terminal.clear", "when": "terminalFocus" },
 
+  // Split terminal window with Ctrl+\
+  { "key": "ctrl+\\", "command": "workbench.action.terminal.split", "when": "terminalFocus" },
   // Inspect syntax highlgighting scopes
   { "key": "ctrl+shift+s", "command": "editor.action.inspectTMScopes", "when": "editorTextFocus" },
 
