@@ -33,7 +33,7 @@ export GIT_EDITOR='vim'
 
 # Aliases
 alias ls="ls -G"
-alias la="ls -lpAG"
+alias la="ls -lhpAG"
 alias g="git"
 alias m="mix"
 alias https='http --default-scheme=https'
