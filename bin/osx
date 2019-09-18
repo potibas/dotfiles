@@ -1,0 +1,119 @@
+#!/bin/bash
+
+echo
+printf "Writing default OS/X settings..."
+#
+# Remap CapsLock to Control
+#
+# To get device ids, use:
+# ioreg -p IOUSB -c IOUSBDevice | grep -e class -e idVendor -e idProduct
+#
+# Or, for bluetooth device ids, use:
+# ioreg -n IOHIDKeyboard -r | grep -e 'class IOHIDKeyboard' -e VendorID\" -e Product
+# (ref: https://apple.stackexchange.com/questions/13598)
+defaults write -g com.apple.keyboard.modifiermapping.1452-591-0 \
+  -array '{"HIDKeyboardModifierMappingDst" = 2; "HIDKeyboardModifierMappingSrc" = 0;}'
+
+# Disable natural mouse scroll direction
+defaults write -g com.apple.swipescrolldirection -bool NO
+
+# Enable subpizel font rendering on non-Apple LCDs (1-light, 2-medium, 3-big)
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
+
+# Fix blurry fonts
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+
+# Disable all animations I can find
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+defaults write NSGlobalDomain FXEnableSlowAnimation -bool false
+defaults write NSGlobalDomain QLPanelAnimationDuration -float 0
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock autohide-time-modifier -int 0
+
+# Show the dock only after 2 seconds mouse hover 
+defaults write com.apple.Dock autohide-delay -int 2
+
+# Expand save and print panels by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Set a faster keyboard repeat rate and initial delays
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
+# Use F1 F2 as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -int 1
+
+# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable opening and closing window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# Don't create .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Show all filename extensions in Finder
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show hidden files
+defaults write NSGlobalDomain AppleShowAllFiles -bool true
+
+# Show path bar & status bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Display full POSIX path as Finder window title"
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Show item info below desktop icons
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" \
+    ~/Library/Preferences/com.apple.finder.plist
+
+# Enable snap-to-grid for desktop icons
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" \
+    ~/Library/Preferences/com.apple.finder.plist
+
+# Minimize effect suck
+defaults write com.apple.dock mineffect -string "suck"
+
+# Make the animation for showing Dock faster and reduce the delay before it starts
+defaults write com.apple.dock autohide-time-modifier -float 0.6
+
+# Remove the delay for showing the Dock in full screen
+defaults write com.apple.dock autohide-fullscreen-delayed -bool false
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Show remaining battery time & percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowTime -string "YES"
+
+# Do not quarantine apps downloaded from the Internet
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Show fast user switching menu as: Account name
+defaults write -g userMenuExtraStyle -int 1
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+# Keyboard and mouse shortcuts
+defaults import com.apple.symbolichotkeys ~/bin/.com.apple.symbolichotkeys
+
+echo "done!"
+echo "(You must logout for your new OS/X settings to take effect)"
+
+osascript -e 'tell application "System Events" to log out'

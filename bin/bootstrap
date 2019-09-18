@@ -1,0 +1,124 @@
+#!/bin/sh
+
+# Install Homebrew
+if [ ! "$(which brew)" ]; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+CASKS=$(brew cask ls)
+function has_cask () {
+  echo "${CASKS}" | grep --quiet --line-regexp --fixed-strings "$1"
+}
+
+FORMULAE=$(brew ls)
+function has_formula () {
+  echo "${FORMULAE}" | grep --quiet --line-regexp --fixed-strings "$1"
+}
+
+function brew_install () {
+  for formula in "$@"; do
+    printf "Installing $formula..."
+    has_formula "$formula" || brew install $formula
+    echo ✔︎
+  done
+}
+
+function cask_install () {
+  for cask in "$@"; do
+    printf "Installing cask $cask..."
+    has_cask "$cask" || {
+      brew cask install $cask
+      APP=`brew cask info $cask | grep \(App\) | cut -f1 -d'.'`
+      test ! -z "$APP" && xattr -dr com.apple.quarantine "/Applications/$APP.app"
+    }
+    echo ✔︎
+  done
+}
+
+function composer_install () {
+  for package in "$@"; do
+    printf "Installing composer package $package..."
+    test -d ~/.composer/vendor/$package || composer global require $package
+    echo ✔︎
+  done
+}
+
+# Sudo without password
+sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
+
+# Select the correct Xcode
+sudo xcode-select -switch /Applications/Xcode.app/
+
+# Programming languages
+brew_install ruby python python@2 node erlang elixir rust crystal
+cask_install dotnet-sdk
+pip install --upgrade pip setuptools wheel
+has_formula php || brew install php --env=std --build-from-source
+brew_install composer
+composer_install laravel/installer phpunit/phpunit friendsofphp/php-cs-fixer
+
+# Laravel valet
+test -d ~/.composer/vendor/laravel/valet || {
+  composer global require laravel/valet
+  valet install
+}
+
+# PostgreSQL
+has_formula postgresql || {
+  brew_install postgresql
+  brew services start postgresql
+  createuser -s postgres
+}
+
+# Basic tooling
+brew_install vim wget curl httpie tree git gnupg pgcli mycli asciinema
+
+# iTerm2
+has_cask iterm2 || {
+  cask_install iterm2
+  rm -f ~/Library/Preferences/com.googlecode.iterm2.plist
+  cp ~/.iterm2 ~/Library/Preferences/com.googlecode.iterm2.plist
+}
+
+# Karabiner-elements
+has_cask karabiner-elements || {
+  cask_install karabiner-elements
+  # How to add the keys?
+}
+
+# Productivity (or not)
+cask_install google-chrome whatsapp \
+  alfred dropbox boxcryptor keybase electrum gnucash
+
+# Programming
+cask_install sequel-pro tableplus rowanj-gitx
+
+# VSCode
+has_cask visual-studio-code || {
+  cask_install visual-studio-code
+  mkdir -p ~/Library/Application\ Support/Code/User
+  for file in settings.json keybindings.json snippets; do
+    rm -rf ~/Library/Application\ Support/Code/User/$file
+    ln -s ~/.vscode/$file ~/Library/Application\ Support/Code/User
+  done
+}
+code --install-extension azemoh.one-monokai \
+     --install-extension jakebecker.elixir-ls \
+     --install-extension esbenp.prettier-vscode \
+     --install-extension sleistner.vscode-fileutils \
+     --install-extension joshpeng.theme-onedark-sublime \
+     --force
+
+# Oh-my-zsh
+brew_install zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+  SHELL=zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  CURRENT_SHELL=$(dscl . -read /Users/$USER UserShell | cut -f 2 -d' ')
+  sudo dscl . -change /Users/$USER UserShell $CURRENT_SHELL /usr/local/bin/zsh
+fi
+
+# reset original .zshrc
+git checkout -- .zshrc
+
+# OS/X settings
+~/bin/osx
