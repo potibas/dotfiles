@@ -1,0 +1,237 @@
+{
+  "files.exclude": {
+    // Version Control
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    // NodeJS
+    "**/node_modules/": true,
+    // Elixir
+    "**/dist/": true,
+    "**/_build/": true,
+    "**/deps/": true,
+    "**/.elixir_ls/": true,
+    // Python
+    "**/__pycache__/": true,
+    "**/*.picklecache": true,
+    // dotnet
+    "**/obj/": true,
+    // Php
+    "vendor": true,
+    // OS
+    "**/.DS_Store": true
+  },
+
+  // Appearance
+  "editor.fontFamily": "Roboto Mono",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "400",
+  "editor.fontSize": 14,
+  "workbench.fontAliasing": "antialiased",
+  "explorer.openEditors.visible": 0,
+  "editor.roundedSelection": false,
+  "editor.renderLineHighlight": "all",
+  "editor.smoothScrolling": true,
+  "editor.renderIndentGuides": true,
+  "window.nativeTabs": true,
+  "editor.lineNumbers": "relative",
+  "editor.cursorBlinking": "solid",
+  "editor.glyphMargin": true,
+  "editor.rulers": [100],
+  "prettier.printWidth": 100,
+  "editor.minimap.enabled": false,
+
+  // Behaviour
+  "editor.scrollBeyondLastLine": true,
+  "editor.mouseWheelZoom": true,
+  "files.autoSave": "onFocusChange",
+  "window.openFilesInNewWindow": "on",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.settings.editor": "json",
+  "workbench.settings.openDefaultSettings": false,
+  "workbench.settings.openDefaultKeybindings": false,
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDragAndDrop": false,
+  "diffEditor.renderSideBySide": false,
+  "window.zoomLevel": 0,
+
+  // Editing
+  "editor.tabSize": 2,
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.autoIndent": true,
+  "editor.autoClosingQuotes": "beforeWhitespace",
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.dragAndDrop": false,
+  "editor.folding": true,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.tabCompletion": "onlySnippets",
+  "editor.snippetSuggestions": "inline",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // Integrated Terminal
+  "terminal.integrated.fontFamily": "Consolas",
+  "terminal.integrated.fontWeightBold": "400",
+  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.drawBoldTextInBrightColors": true,
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+
+  // GoLang
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+
+  // Ruby
+  "[ruby]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "ruby.intellisense": "rubyLocate",
+  "rufo.exe": "/usr/local/lib/ruby/gems/2.6.0/bin/rufo",
+  "rufo.useBundler": false,
+
+  // Php
+  "[php]": {
+    "editor.renderIndentGuides": true,
+    "editor.tabSize": 4
+  },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 1546953657312,
+  "php-cs-fixer.onsave": true,
+  "php-cs-fixer.rules": "@PSR2",
+  "php.suggest.basic": false,
+  "better-phpunit.phpunitBinary": "XDEBUG_CONFIG='idekey=VSCODE' vendor/bin/phpunit",
+  "better-phpunit.commandSuffix": "--stop-on-failure",
+  "emmet.includeLanguages": {
+    "php": "html"
+  },
+
+  // Python
+  "[python]": {
+    "editor.renderIndentGuides": true,
+    "editor.tabSize": 4
+  },
+
+  // Rust
+  "[rust]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+  },
+  "rust.build_lib": true,
+  "rust.cfg_test": true,
+  "rust.show_warnings": true,
+
+  // .NET
+  "[csharp]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "csharp.format.enable": true,
+  "csharp.testsCodeLens.enabled": true,
+
+  // Elixir
+  "[elixir]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnType": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.trimAutoWhitespace": false
+  },
+  "elixirLS.fetchDeps": false,
+  "elixirLS.suggestSpecs": true,
+  "elixirLS.dialyzerEnabled": true,
+  "elixirLS.mixEnv": "dev",
+
+  // JSON
+  "json.format.enable": false,
+  "prettier.disableLanguages": ["jsonc"],
+
+  // theme customizations
+  "workbench.colorCustomizations": {
+    "[One Monokai]": {
+      "editor.background": "#16161aff"
+    }
+  },
+
+  "editor.tokenColorCustomizations": {
+    "[One Dark+ (Sublime)]": {
+      "textMateRules": [
+        { "scope": "constant.other.symbol.elixir", "settings": { "foreground": "#ffcb6bff" } }
+      ]
+    },
+
+    "textMateRules": [
+      // Comments always in italic
+      { "scope": "comment", "settings": { "fontStyle": "italic" } },
+
+      // Blade tags in strong yellow
+      { "scope": "keyword.blade", "settings": { "foreground": "#ffcb6bff" }},
+
+      // PHP Doc tags
+      {
+        "scope": "comment.block.documentation.phpdoc.php keyword.other.phpdoc.php",
+        "settings": { "foreground": "#ffcb6bff", "fontStyle": "italic" }
+      },
+
+      // Ruby vars
+      { "scope": "variable.other.readwrite.instance.ruby", "settings": { "foreground": "#ffcb6bff" } },
+
+      // Crystal
+      { "scope": "variable.other.readwrite.instance.crystal", "settings": { "foreground": "#c678dd" } },
+      { "scope": "variable.other.readwrite.class.crystal", "settings": { "foreground": "#9bd3b4" } },
+
+      // Elixir
+      { "scope": "keyword.other.special-method.elixir", "settings": { "fontStyle": "italic" } },
+      { "scope": "variable.other.readwrite.module.elixir", "settings": { "foreground": "#f8d14f" } },
+      { "scope": "variable.other.constant.elixir", "settings": { "foreground": "#61afef" } },
+
+      // Rust
+      { "scope": "entity.name.type.mod.rust", "settings":{ "foreground": "#e5c07bff" } }
+    ]
+  },
+
+  // Vim
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": true,
+  "vim.showcmd": true,
+  "vim.cursorStylePerMode.normal": "block",
+
+  "vim.normalModeKeyBindings": [
+    { "before": ["<space>"], "commands": [":nohl"] },
+    { "before": ["H"], "commands": ["cursorHome"] },
+    { "before": ["L"], "commands": ["cursorEnd"] },
+    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
+    { "before": ["leader", "q"], "commands": ["workbench.action.closeActiveEditor"] },
+    { "before": ["leader", "F", "n"], "commands": ["fileutils.newFile"] },
+    { "before": ["leader", "F", "r"], "commands": ["fileutils.renameFile"] },
+    { "before": ["leader", "F", "d"], "commands": ["fileutils.removeFile"] },
+    { "before": ["leader", "leader"], "commands": ["workbench.action.openPreviousRecentlyUsedEditor"] },
+
+    // Close parameter hints with escape
+    { "before": ["escape"], "commands": ["closeParameterHints"], "when": "paremeterHintsVisible" },
+
+    // Git
+    { "before": ["leader", "g"], "commands": ["git.openChange"] },
+  ],
+
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // leader+s stage the selection and exit insert mode
+    { "before": ["leader", "s"], "commands": [{ "command": "git.stageSelectedRanges" }, { "command": "extension.vim_escape" }] }
+  ],
+
+  // ColorScheme
+  "workbench.colorTheme": "One Dark+ (Sublime)",
+  "explorer.confirmDelete": false,
+}
