@@ -9,6 +9,23 @@ set showcmd cmdheight=1
 set number relativenumber
 set scrolloff=4 cursorline
 
+" Install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+"Utilities
+Plug 'tpope/vim-surround'
+
+" Colorschemes
+Plug 'KeitaNakamura/neodark.vim'
+
+call plug#end()
+
 " Default indentation
 set tabstop=2 shiftwidth=2 softtabstop=2
 set expandtab autoindent
