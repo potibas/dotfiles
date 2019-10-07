@@ -46,6 +46,9 @@ alias k='kubectl'
 # executables
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# Homebrew Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # Python
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
