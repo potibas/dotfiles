@@ -50,7 +50,7 @@ map <leader>v :e ~/.vimrc<cr>
 map <leader>R :w \| :so %<cr>
 
 " File and window navigation
-set wildignore+=*.o,*.obj,.git,*/vendor
+set wildignore+=*.o,*.obj,.git,*/vendor,*/_build,*/deps
 let g:CommandTFileScanner='find'
 map <leader>f :CommandT<cr>
 map <leader>z :NERDTreeToggle<cr>
