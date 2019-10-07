@@ -19,6 +19,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 "Utilities
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && { make clean; ruby extconf.rb && make; }' }
 Plug 'tpope/vim-surround'
 
