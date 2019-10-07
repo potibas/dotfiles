@@ -19,6 +19,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 "Utilities
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && { make clean; ruby extconf.rb && make; }' }
 Plug 'tpope/vim-surround'
 
 " Colorschemes
@@ -47,3 +48,11 @@ let mapleader = ","
 " Quick edit vim configuration:
 map <leader>v :e ~/.vimrc<cr>
 map <leader>R :w \| :so %<cr>
+
+" File and window navigation
+set wildignore+=*.o,*.obj,.git,*/vendor
+let g:CommandTFileScanner='find'
+map <leader>f :CommandT<cr>
+map <leader>z :NERDTreeToggle<cr>
+nnoremap <leader><leader> <c-^>
+
