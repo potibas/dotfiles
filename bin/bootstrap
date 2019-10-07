@@ -71,7 +71,11 @@ has_formula postgresql || {
 }
 
 # Basic tooling
-brew_install vim wget curl httpie tree git gnupg pgcli mycli asciinema
+brew_install vim tmux wget curl httpie tree git gnupg pgcli mycli asciinema
+
+# Tmux terminal
+tic -x .tic/tmux-2256color.terminfo
+tic -x .tic/xterm-256color-italic.terminfo
 
 # iTerm2
 has_cask iterm2 || {
