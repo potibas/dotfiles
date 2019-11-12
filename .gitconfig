@@ -25,6 +25,9 @@
 [url "git@github.com:potibas/"]
 	insteadOf = "potibas:"
 
+[url "git@github.com:kovihq/"]
+	insteadOf = "kovihq:"
+
 [alias]
     # Short status output
     s = status -s
