@@ -7,3 +7,21 @@ fi
 
 # Sudo without password
 sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
+
+CASKS=$(brew cask ls)
+
+function has_cask () {
+  echo "${CASKS}" | grep --quiet --line-regexp --fixed-strings "$1"
+}
+
+function cask_install () {
+  for cask in "$@"; do
+    printf "Installing cask $cask..."
+    has_cask "$cask" || {
+      brew cask install $cask
+      APP=`brew cask info $cask | grep \(App\) | cut -f1 -d'.'`
+      test ! -z "$APP" && xattr -dr com.apple.quarantine "/Applications/$APP.app"
+    }
+    echo ✔︎
+  done
+}
