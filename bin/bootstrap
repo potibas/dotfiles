@@ -26,7 +26,11 @@ function cask_install () {
   done
 }
 
+# Developer tools
 cask_install docker
+
+# Applications
+cask_install whatsapp
 
 
 printf "\n\n--== REMEMBER to use: \`sudo trimforce enable\` if using a 3rd-party SSD ==--\n\n"
