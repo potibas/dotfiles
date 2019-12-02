@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo
+printf "Writing default OS/X settings..."
+
+# Disable natural mouse scroll direction
+defaults write -g com.apple.swipescrolldirection -bool NO
+
+
+printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
+osascript -e 'tell application "System Events" to log out'
