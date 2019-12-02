@@ -1,0 +1,42 @@
+[user]
+    name = Potiguar Faga
+    email = potiguar@potiguar.net
+
+[color]
+    ui = auto
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+[push]
+    # push current branch by default
+    default = current
+
+[alias]
+    # Short status output
+    s = status -s
+
+    # Common operations
+    co = checkout
+    st = status
+    ci = commit
+    di = diff
+    dc = diff --cached
+    cp = cherry-pick
+    cpn = cherry-pick --no-commit
+    aa = add --all
+    pr = pull --rebase
+    ri = rebase --interactive --autosquash
+    rc = rebase --continue
+    fa = fetch --all
+    amend = commit --amend
+    squash = commit --amend --no-edit
+
+    # Colored logs
+    l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(ul italic blue)%an%C(reset)'
+    ll = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(un italic blue)%an (%ae)%C(reset)%n %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%n'
+    la = !git l --all
+    lla = !git ll --all
+    r = !git l -20
+    ra = !git r --all
+
