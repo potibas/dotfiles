@@ -27,3 +27,6 @@ function cask_install () {
 }
 
 cask_install docker
+
+
+printf "\n\n--== REMEMBER to use: \`sudo trimforce enable\` if using a 3rd-party SSD ==--\n\n"
