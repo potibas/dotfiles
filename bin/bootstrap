@@ -25,3 +25,5 @@ function cask_install () {
     echo ✔︎
   done
 }
+
+cask_install docker
