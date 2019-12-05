@@ -39,11 +39,8 @@ function brew_install () {
   done
 }
 
-# Developer tools
-cask_install docker rowanj-gitx
-
-# Applications
-cask_install whatsapp slack boxcryptor dropbox 1password gnucash
+# Programming languages
+brew_install ruby python node rust golang
 
 # Erlang & Elixir
 has_formula elixir || {
@@ -51,6 +48,12 @@ has_formula elixir || {
   mix local.hex --force
   mix local.rebar --force
 }
+
+# Developer tools
+cask_install docker rowanj-gitx
+
+# Applications
+cask_install whatsapp slack boxcryptor dropbox 1password gnucash
 
 # PostgreSQL
 has_formula postgresql || {
