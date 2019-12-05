@@ -27,7 +27,7 @@ function cask_install () {
 }
 
 # Developer tools
-cask_install docker
+cask_install docker rowanj-gitx
 
 # Applications
 cask_install whatsapp slack dropbox 1password gnucash
