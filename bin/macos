@@ -6,6 +6,9 @@ printf "Writing default OS/X settings..."
 # Disable natural mouse scroll direction
 defaults write -g com.apple.swipescrolldirection -bool NO
 
+# Show Finder status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
 
 printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
 osascript -e 'tell application "System Events" to log out'
