@@ -9,6 +9,9 @@ defaults write -g com.apple.swipescrolldirection -bool NO
 # Show Finder status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
+# Prevent iTunes from popping up on device connect
+defaults write com.apple.iTunesHelper ignore-devices 1
+
 
 printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
 osascript -e 'tell application "System Events" to log out'
