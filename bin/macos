@@ -16,6 +16,10 @@ defaults write com.apple.iTunesHelper ignore-devices 1
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
+# Expand save and print panels by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
 
 printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
 osascript -e 'tell application "System Events" to log out'
