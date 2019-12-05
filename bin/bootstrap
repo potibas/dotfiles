@@ -30,7 +30,7 @@ function cask_install () {
 cask_install docker rowanj-gitx
 
 # Applications
-cask_install whatsapp slack dropbox 1password gnucash
+cask_install whatsapp slack boxcryptor dropbox 1password gnucash
 
 
 printf "\n\n--== REMEMBER to use: \`sudo trimforce enable\` if using a 3rd-party SSD ==--\n\n"
