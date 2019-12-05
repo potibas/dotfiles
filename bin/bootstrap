@@ -52,4 +52,12 @@ has_formula elixir || {
   mix local.rebar --force
 }
 
+# PostgreSQL
+has_formula postgresql || {
+  brew_install postgresql
+  brew services start postgresql
+  sleep 2
+  createuser -s postgres
+}
+
 printf "\n\n--== REMEMBER to use: \`sudo trimforce enable\` if using a 3rd-party SSD ==--\n\n"
