@@ -49,6 +49,9 @@ has_formula elixir || {
   mix local.rebar --force
 }
 
+# Basic tooling
+brew_install wget curl httpie tree git gnupg pgcli asciinema
+
 # Developer tools
 cask_install docker rowanj-gitx
 
