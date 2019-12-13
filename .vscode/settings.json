@@ -1,40 +1,40 @@
 {
-    // Appearance
-    "explorer.openEditors.visible": 0,
-    "breadcrumbs.enabled": false,
-    "workbench.editor.showTabs": true,
+  // Appearance
+  "explorer.openEditors.visible": 0,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": true,
 
-    // Behaviour
-    "workbench.startupEditor": "none",
-    "workbench.settings.editor": "json",
+  // Behaviour
+  "workbench.startupEditor": "none",
+  "workbench.settings.editor": "json",
 
-    // Editing
-    "editor.tabSize": 2,
-    "editor.autoIndent": "advanced",
-    "editor.autoClosingQuotes": "beforeWhitespace",
-    "editor.autoClosingBrackets": "beforeWhitespace",
-    "editor.dragAndDrop": false,
-    "editor.insertSpaces": true,
-    "editor.trimAutoWhitespace": true,
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
+  // Editing
+  "editor.tabSize": 2,
+  "editor.autoIndent": "advanced",
+  "editor.autoClosingQuotes": "beforeWhitespace",
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.dragAndDrop": false,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
 
-    // File ignores
-    "files.exclude": {
-        // Version Control
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        // NodeJS
-        "**/node_modules/": true,
-        // Elixir
-        "**/dist/": true,
-        "**/_build/": true,
-        "**/deps/": true,
-        "**/.elixir_ls/": true,
-        // Python
-        "**/__pycache__/": true,
-        "**/*.picklecache": true,
-    },
+  // File ignores
+  "files.exclude": {
+    // Version Control
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    // NodeJS
+    "**/node_modules/": true,
+    // Elixir
+    "**/dist/": true,
+    "**/_build/": true,
+    "**/deps/": true,
+    "**/.elixir_ls/": true,
+    // Python
+    "**/__pycache__/": true,
+    "**/*.picklecache": true,
+  },
 }
