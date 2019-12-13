@@ -1,4 +1,7 @@
 {
+    // Behaviour
+    "workbench.settings.editor": "json",
+
     // File ignores
     "files.exclude": {
         // Version Control
