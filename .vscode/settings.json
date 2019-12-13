@@ -1,5 +1,6 @@
 {
     // Behaviour
+    "workbench.startupEditor": "none",
     "workbench.settings.editor": "json",
 
     // File ignores
