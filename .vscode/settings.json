@@ -1,4 +1,9 @@
 {
+    // Appearance
+    "explorer.openEditors.visible": 0,
+    "breadcrumbs.enabled": false,
+    "workbench.editor.showTabs": true,
+
     // Behaviour
     "workbench.startupEditor": "none",
     "workbench.settings.editor": "json",
