@@ -56,7 +56,7 @@ brew_install wget curl httpie tree git gnupg pgcli asciinema
 cask_install docker rowanj-gitx
 
 # Applications
-cask_install whatsapp slack boxcryptor dropbox 1password gnucash
+cask_install whatsapp slack boxcryptor dropbox 1password gnucash keybase
 
 # VSCode
 has_cask visual-studio-code || {
