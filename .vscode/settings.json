@@ -19,6 +19,7 @@
   "editor.trimAutoWhitespace": true,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
+  "editor.formatOnSave": true,
 
   // File ignores
   "files.exclude": {
@@ -37,5 +38,10 @@
     // Python
     "**/__pycache__/": true,
     "**/*.picklecache": true,
+  },
+
+  // JSON
+  "[jsonc]": {
+    "editor.formatOnSave": false
   },
 }
