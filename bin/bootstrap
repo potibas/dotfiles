@@ -40,7 +40,7 @@ function brew_install () {
 }
 
 # Programming languages
-brew_install ruby python node yarn rust golang
+brew_install ruby python node yarn rust golang php composer
 
 # Erlang & Elixir
 has_formula elixir || {
