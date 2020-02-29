@@ -68,6 +68,10 @@ has_cask visual-studio-code || {
   done
 }
 
+# VSCode extensions
+code --install-extension nikoskornarakis.predawn-twilight \
+     --force
+
 # PostgreSQL
 has_formula postgresql || {
   brew_install postgresql
