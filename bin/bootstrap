@@ -57,9 +57,15 @@ has_formula elixir || {
   mix local.rebar --force
 }
 
-# PHP & composer
+# PHP, Composer, Laravel
 brew_install php composer
-composer_install laravel/valet laravel/installer
+composer_install laravel/installer
+test -d ~/.composer/vendor/valet || {
+  composer_install laravel/valet
+  valet install
+  mkdir ~/Sites
+  cd ~/Sites && valet park
+}
 
 # Basic tooling
 brew_install wget curl httpie tree git gnupg pgcli asciinema
