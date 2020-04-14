@@ -4,6 +4,7 @@
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": true,
   "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false,
 
   // Behaviour
   "workbench.startupEditor": "none",
