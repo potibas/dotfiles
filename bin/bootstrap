@@ -60,7 +60,7 @@ has_formula elixir || {
 # PHP, Composer, Laravel
 brew_install php composer
 composer_install laravel/installer
-test -d ~/.composer/vendor/valet || {
+test -f ~/.composer/vendor/bin/valet || {
   composer_install laravel/valet
   valet install
   mkdir ~/Sites
