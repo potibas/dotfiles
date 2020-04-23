@@ -48,7 +48,7 @@ function composer_install () {
 }
 
 # Programming languages
-brew_install ruby python node yarn rust golang
+brew_install ruby python node yarn rust go
 
 # Erlang & Elixir
 has_formula elixir || {
