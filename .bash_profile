@@ -1,3 +1,3 @@
-export PATH=$PATH:$HOME/.composer/vendor/bin
+source $HOME/bin/shell/paths.sh
+source $HOME/bin/shell/aliases.sh
 
-alias pa='php artisan'
