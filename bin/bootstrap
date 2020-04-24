@@ -106,6 +106,9 @@ if [ ! -d ~/.oh-my-zsh ]; then
   SHELL=zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   CURRENT_SHELL=$(dscl . -read /Users/$USER UserShell | cut -f 2 -d' ')
   sudo dscl . -change /Users/$USER UserShell $CURRENT_SHELL /usr/local/bin/zsh
+
+  # reset original .zshrc
+  git checkout -- .zshrc
 fi
 
 # Zsh plugins
@@ -114,10 +117,9 @@ for plugin in zsh-syntax-highlighting zsh-autosuggestions; do
   test -d $dir || git clone https://github.com/zsh-users/$plugin.git $dir
 done
 
-# reset original .zshrc
-git checkout -- .zshrc
-
 # Change default shell to ZSh
-chsh -s /bin/zsh
+if [[ "$SHELL" != "/bin/zsh" ]]; then
+  chsh -s /bin/zsh
+fi
 
 printf "\n\n--== REMEMBER to use: \`sudo trimforce enable\` if using a 3rd-party SSD ==--\n\n"
