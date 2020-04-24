@@ -9,6 +9,10 @@
   { "key": "cmd+k cmd+d", "command": "workbench.view.debug" },
   { "key": "cmd+k cmd+x", "command": "workbench.extensions.action.showInstalledExtensions" },
 
+  // File Explorer shortcuts:
+  // Cmd+D: Duplicate file
+  { "key": "cmd+d", "command": "duplicate.execute", "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus" },
+
   // Cmd+K, Cmd+F: Open this keybindings file
   { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" }
 ]

@@ -87,8 +87,10 @@ has_cask visual-studio-code || {
 }
 
 # VSCode extensions
-code --install-extension nikoskornarakis.predawn-twilight \
-     --force
+code --install-extension \
+    nikoskornarakis.predawn-twilight \
+    mrmlnc.vscode-duplicate \
+    force
 
 # PostgreSQL
 has_formula postgresql || {
