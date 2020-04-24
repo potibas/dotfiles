@@ -8,4 +8,7 @@
   { "key": "cmd+k cmd+v", "command": "workbench.view.scm" },
   { "key": "cmd+k cmd+d", "command": "workbench.view.debug" },
   { "key": "cmd+k cmd+x", "command": "workbench.extensions.action.showInstalledExtensions" },
+
+  // Cmd+K, Cmd+F: Open this keybindings file
+  { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" }
 ]
