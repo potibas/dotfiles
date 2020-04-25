@@ -68,7 +68,7 @@ test -f ~/.composer/vendor/bin/valet || {
 }
 
 # Basic tooling
-brew_install wget curl httpie tree git gnupg pgcli asciinema
+brew_install wget curl httpie tree git gnupg pgcli asciinema fswatch
 
 # Developer tools
 cask_install docker rowanj-gitx
