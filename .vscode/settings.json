@@ -1,9 +1,14 @@
 {
   // Appearance
   "breadcrumbs.enabled": false,
-  "workbench.editor.showTabs": true,
   "editor.minimap.enabled": false,
   "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Predawn Twilight",
+  "workbench.editor.showTabs": false,
+  "workbench.editor.labelFormat": "long",
+  "editor.fontFamily": "Operator Mono",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
 
   // Sidebar & File Explorer
   "workbench.sideBar.location": "right",
