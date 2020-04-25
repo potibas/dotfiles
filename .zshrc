@@ -26,6 +26,9 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/bin/shell/paths.sh
 source $HOME/bin/shell/aliases.sh
 
+# Vi editing mode
+bindkey -v
+
 # HomeBrew autocomplete
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
