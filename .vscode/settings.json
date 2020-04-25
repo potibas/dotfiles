@@ -1,10 +1,15 @@
 {
   // Appearance
-  "explorer.openEditors.visible": 0,
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": true,
   "editor.minimap.enabled": false,
   "workbench.activityBar.visible": false,
+
+  // Sidebar & File Explorer
+  "workbench.sideBar.location": "right",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 16,
+  "explorer.openEditors.visible": 0,
 
   // Behaviour
   "workbench.startupEditor": "none",
