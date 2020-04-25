@@ -19,6 +19,8 @@
   // Behaviour
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
+  "editor.mouseWheelZoom": true,
+  "window.zoomLevel": 0,
 
   // Terminal
   "terminal.integrated.shell.osx": "/bin/zsh",
