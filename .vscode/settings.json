@@ -17,6 +17,7 @@
   "explorer.openEditors.visible": 0,
 
   // Behaviour
+  "explorer.confirmDragAndDrop": false,
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
   "editor.mouseWheelZoom": true,
