@@ -11,7 +11,13 @@
 
   // File Explorer shortcuts:
   // Cmd+D: Duplicate file
+  // Cmd+N: Create file
+  // Cmd+Shift+N: Create folder
+  // Cmd+R: Refresh
   { "key": "cmd+d", "command": "duplicate.execute", "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus" },
+  { "key": "cmd+n", "command": "explorer.newFile", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
+  { "key": "shift+cmd+n", "command": "explorer.newFolder", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
+  { "key": "cmd+r", "command": "workbench.files.action.refreshFilesExplorer", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
 
   // Cmd+K, Cmd+F: Open this keybindings file
   { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" }
