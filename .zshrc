@@ -30,3 +30,6 @@ source $HOME/bin/shell/aliases.sh
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+
+# Enable history in IEx
+export ERL_AFLAGS="-kernel shell_history enabled"
