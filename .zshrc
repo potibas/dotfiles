@@ -29,6 +29,10 @@ source $HOME/bin/shell/aliases.sh
 # Vi editing mode
 bindkey -v
 
+# History search with ^P/^N
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
 # HomeBrew autocomplete
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
