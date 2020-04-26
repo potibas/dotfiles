@@ -61,4 +61,12 @@
   "[jsonc]": {
     "editor.formatOnSave": false
   },
+
+  // Elixir-specific
+  "[elixir]": {
+    // Disable spec suggestions all over the place
+    "editor.codeLens": false,
+    "editor.rulers": [98],
+  },
+  "elixirLS.fetchDeps": false,
 }
