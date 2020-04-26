@@ -69,4 +69,12 @@
     "editor.rulers": [98],
   },
   "elixirLS.fetchDeps": false,
+
+  // Elixir color customizations
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      { "scope": "keyword.other.special-method.elixir", "settings": { "fontStyle": "italic" } },
+      { "scope": "constant.other.symbol.elixir","settings": { "foreground": "#61afef" } }
+    ]
+  },
 }
