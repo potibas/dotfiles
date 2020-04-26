@@ -30,8 +30,8 @@ source $HOME/bin/shell/aliases.sh
 bindkey -v
 
 # History search with ^P/^N
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
+bindkey "^P" up-line-or-beginning-search
+bindkey "^N" down-line-or-beginning-search
 
 # HomeBrew autocomplete
 if type brew &>/dev/null; then
