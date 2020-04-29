@@ -19,6 +19,10 @@
   { "key": "shift+cmd+n", "command": "explorer.newFolder", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
   { "key": "cmd+r", "command": "workbench.files.action.refreshFilesExplorer", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
 
+  // Terminal navigation:
+  { "key": "ctrl+;", "command": "workbench.panel.terminal.focus", "when": "!terminalFocus" },
+  { "key": "ctrl+;", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" },
+
   // Select previous editor by default on Cmd+p
   { "key": "cmd+p", "command": "workbench.action.quickOpenPreviousEditor" },
 
