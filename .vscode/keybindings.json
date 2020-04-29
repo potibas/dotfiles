@@ -19,6 +19,9 @@
   { "key": "shift+cmd+n", "command": "explorer.newFolder", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
   { "key": "cmd+r", "command": "workbench.files.action.refreshFilesExplorer", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
 
+  // Select previous editor by default on Cmd+p
+  { "key": "cmd+p", "command": "workbench.action.quickOpenPreviousEditor" },
+
   // Cmd+K, Cmd+F: Open this keybindings file
   { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" }
 ]
