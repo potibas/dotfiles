@@ -70,6 +70,9 @@ test -f ~/.composer/vendor/bin/valet || {
 # Basic tooling
 brew_install wget curl httpie tree git gnupg pgcli asciinema fswatch
 
+# Vim & tmux
+brew_install vim tmux
+
 # Developer tools
 cask_install docker rowanj-gitx
 
