@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary'
 
 " Colorschemes
 Plug 'Lokaltog/vim-distinguished'
+Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end()
 
