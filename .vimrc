@@ -14,6 +14,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
+" Language Support
+Plug 'elixir-editors/vim-elixir'
+
 " Colorschemes
 Plug 'Lokaltog/vim-distinguished'
 Plug 'KeitaNakamura/neodark.vim'
