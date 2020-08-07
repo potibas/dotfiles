@@ -14,6 +14,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
+" Colorschemes
+Plug 'Lokaltog/vim-distinguished'
+
 call plug#end()
 
 " No beeping
