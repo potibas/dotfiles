@@ -10,6 +10,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
+" Essentials
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 " No beeping
