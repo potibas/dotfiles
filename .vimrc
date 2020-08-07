@@ -21,6 +21,15 @@ Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
+" Appearance
+syntax on
+
+set scrolloff=4
+set number cursorline
+set showcmd cmdheight=1
+set termguicolors background=dark t_Co=256
+silent! color jellybeans
+
 " No beeping
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
