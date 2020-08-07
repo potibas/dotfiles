@@ -12,6 +12,9 @@ let mapleader = ","
 " Fast switch to the last edited file with ,,
 nnoremap <leader><leader> <c-^>
 
+" Current file's directory with %%
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 " Search history with C-P/C-N
 cnoremap <expr> <C-P> wildmenumode() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> wildmenumode() ? "\<C-N>" : "\<Down>"
