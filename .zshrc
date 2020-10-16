@@ -45,3 +45,6 @@ fi
 
 # Enable history in IEx
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Enable asdf
+. ~/.asdf/asdf.sh
