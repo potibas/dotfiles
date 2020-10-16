@@ -13,10 +13,15 @@ if [ ! -d $CUSTOM/zsh-syntax-highlighting ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $CUSTOM/zsh-syntax-highlighting
 fi
 
+if [ ! -d $CUSTOM/zsh-z ]; then
+  git clone https://github.com/agkozak/zsh-z.git $CUSTOM/zsh-z
+fi
+
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh
