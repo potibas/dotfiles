@@ -36,6 +36,10 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+
+;; Yes, I want to quit.
+(setq confirm-kill-emacs nil)
+
 ;; Persist Emacs’ initial frame position, dimensions
 ;; and/or full-screen state across sessions
 (when-let (dims (doom-store-get 'last-frame-size))
