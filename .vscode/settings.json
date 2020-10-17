@@ -77,4 +77,5 @@
       { "scope": "constant.other.symbol.elixir","settings": { "foreground": "#61afef" } }
     ]
   },
+  "editor.accessibilitySupport": "off",
 }
