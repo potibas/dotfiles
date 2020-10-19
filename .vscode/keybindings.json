@@ -27,5 +27,8 @@
   { "key": "cmd+p", "command": "workbench.action.quickOpenPreviousEditor" },
 
   // Cmd+K, Cmd+F: Open this keybindings file
-  { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" }
+  { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" },
+
+  // Cmd+K, Cmd+C: Copy relative path of active file
+  { "key": "cmd+k cmd+c", "command": "copyRelativeFilePath" }
 ]
