@@ -9,6 +9,9 @@
     excludesfile = ~/.gitignore_global
 	pager = less -F -X
 
+[pull]
+    rebase = true
+
 [push]
     # push current branch by default
     default = current
