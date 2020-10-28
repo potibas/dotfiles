@@ -16,6 +16,12 @@
     # push current branch by default
     default = current
 
+[url "git@github.com:potibas/"]
+	insteadOf = "potibas:"
+
+[url "git@github.com:"]
+	insteadOf = "github:"
+
 [alias]
     # Short status output
     s = status -s
