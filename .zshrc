@@ -47,4 +47,6 @@ fi
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Enable asdf
-. ~/.asdf/asdf.sh
+if [ -d $HOME/.asdf ]; then
+  . $HOME/.asdf/asdf.sh
+fi
