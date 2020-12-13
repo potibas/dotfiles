@@ -39,14 +39,6 @@ function brew_install () {
   done
 }
 
-function composer_install () {
-  for package in "$@"; do
-    printf "Installing composer package $package..."
-    test -d ~/.composer/vendor/$package || composer global require $package
-    echo ✔︎
-  done
-}
-
 # Programming languages
 brew_install ruby python node yarn rust go
 
@@ -55,16 +47,6 @@ has_formula elixir || {
   brew_install erlang elixir
   mix local.hex --force
   mix local.rebar --force
-}
-
-# PHP, Composer, Laravel
-brew_install php composer
-composer_install laravel/installer
-test -f ~/.composer/vendor/bin/valet || {
-  composer_install laravel/valet
-  valet install
-  mkdir ~/Sites
-  cd ~/Sites && valet park
 }
 
 # Basic tooling
