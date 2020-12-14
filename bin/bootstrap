@@ -56,7 +56,7 @@ brew_install wget curl httpie tree git gnupg pgcli asciinema fswatch
 brew_install vim tmux
 
 # Developer tools
-cask_install docker rowanj-gitx
+cask_install docker rowanj-gitx karabiner-elements
 
 # Applications
 cask_install whatsapp dropbox 1password gnucash keybase
