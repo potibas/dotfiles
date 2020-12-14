@@ -104,7 +104,9 @@ has_formula postgresql || {
 # Oh-my-zsh
 brew_install zsh
 if [ ! -d ~/.oh-my-zsh ]; then
+  # This for some reason breaks out of the shell script
   SHELL=zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
   CURRENT_SHELL=$(dscl . -read /Users/$USER UserShell | cut -f 2 -d' ')
   sudo dscl . -change /Users/$USER UserShell $CURRENT_SHELL /usr/local/bin/zsh
 
