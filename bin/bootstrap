@@ -50,7 +50,7 @@ has_formula elixir || {
 }
 
 # Basic tooling
-brew_install wget curl httpie tree git gnupg pgcli asciinema fswatch
+brew_install wget curl httpie tree git pgcli asciinema fswatch
 
 # Vim & tmux
 brew_install vim tmux
