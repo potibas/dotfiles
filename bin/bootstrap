@@ -59,7 +59,7 @@ brew_install vim tmux
 cask_install docker rowanj-gitx
 
 # Applications
-cask_install whatsapp slack boxcryptor dropbox 1password gnucash keybase
+cask_install whatsapp dropbox 1password gnucash keybase
 
 # VSCode
 has_cask visual-studio-code || {
