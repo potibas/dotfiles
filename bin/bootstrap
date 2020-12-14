@@ -60,7 +60,7 @@ cask_install docker rowanj-gitx karabiner-elements
 
 # Applications
 cask_install whatsapp dropbox 1password gnucash keybase
-cask_install microsoft-teams
+cask_install microsoft-teams alfred
 
 # VSCode
 has_cask visual-studio-code || {
