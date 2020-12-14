@@ -40,7 +40,10 @@ function brew_install () {
 }
 
 # Programming languages
-brew_install ruby python node yarn rust go
+brew_install ruby python node yarn rust go java
+
+# Symlink JDK
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 # Erlang & Elixir
 has_formula elixir || {
