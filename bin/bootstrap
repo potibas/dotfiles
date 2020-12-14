@@ -45,12 +45,23 @@ brew_install ruby python node yarn rust go java
 # Symlink JDK
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
+# asdf
+if [ ! -d $HOME/.asdf ]; then
+  git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
+  cd $HOME/.asdf
+  git checkout "$(git describe --abbrev=0 --tags)"
+  . $HOME/.asdf/asdf.sh
+fi
+
 # Erlang & Elixir
-has_formula elixir || {
-  brew_install erlang elixir
-  mix local.hex --force
-  mix local.rebar --force
-}
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf install erlang 23.1.5
+asdf global erlang 23.1.5
+asdf install elixir 1.11.2-otp-23
+asdf global elixir 1.11.2-otp-23
+mix local.hex --force
+mix local.rebar --force
 
 # Basic tooling
 brew_install wget curl httpie tree git pgcli asciinema fswatch
