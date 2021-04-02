@@ -43,6 +43,9 @@ bindkey -v
 bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
 
+# Don't save commands prepended with a space to history
+setopt histignorespace
+
 # HomeBrew autocomplete
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
