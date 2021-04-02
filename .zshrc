@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 # ==================
 source $HOME/bin/shell/paths.sh
 source $HOME/bin/shell/aliases.sh
+[ -f "$HOME/bin/shell/local.sh" ] && . "$HOME/bin/shell/local.sh"
 
 # Vi editing mode
 bindkey -v
