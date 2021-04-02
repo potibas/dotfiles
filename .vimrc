@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 " Essentials
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Language Support
 Plug 'elixir-editors/vim-elixir'
