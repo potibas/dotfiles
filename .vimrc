@@ -55,3 +55,14 @@ cnoremap <expr> <C-N> wildmenumode() ? "\<C-N>" : "\<Down>"
 map <leader>v :e ~/.vimrc<cr>
 map <leader>V :e ~/.gvimrc<cr>
 map <leader>R :w \| :so %<cr>
+
+augroup vimrc
+    autocmd!
+
+    " Jump to last edit when opening file
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+
+augroup END
