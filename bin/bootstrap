@@ -67,7 +67,7 @@ mix local.rebar --force
 brew_install wget curl httpie tree git pgcli asciinema fswatch
 
 # Vim & tmux
-brew_install vim tmux
+brew_install vim tmux fzf ag rg bat
 
 # Developer tools
 cask_install docker rowanj-gitx karabiner-elements

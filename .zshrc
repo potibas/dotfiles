@@ -58,3 +58,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 if [ -d $HOME/.asdf ]; then
   . $HOME/.asdf/asdf.sh
 fi
+
+# FZF
+export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*,**/_build/*,**/deps/*,**/.elixir_ls/*}'"

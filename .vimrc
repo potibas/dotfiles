@@ -14,6 +14,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Language Support
 Plug 'elixir-editors/vim-elixir'
@@ -43,6 +45,11 @@ let mapleader = ","
 
 " Fast switch to the last edited file with ,,
 nnoremap <leader><leader> <c-^>
+
+" FZF
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :GFiles<CR>
+nnoremap <C-f> :Rg<CR>
 
 " Current file's directory with %%
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
