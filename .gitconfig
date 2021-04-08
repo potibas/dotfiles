@@ -46,10 +46,8 @@
     squash = commit --amend --no-edit
 
     # Colored logs
-    l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(ul italic blue)%an%C(reset)'
-    ll = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(un italic blue)%an (%ae)%C(reset)%n %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%n'
+    l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(italic cyan)%an%C(reset)'
     la = !git l --all
-    lla = !git ll --all
     r = !git l -20
     ra = !git r --all
 
