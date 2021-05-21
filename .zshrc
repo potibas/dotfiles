@@ -57,6 +57,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Enable asdf
 if [ -d $HOME/.asdf ]; then
   . $HOME/.asdf/asdf.sh
+  export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl)"
 fi
 
 # FZF
