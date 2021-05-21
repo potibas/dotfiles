@@ -62,3 +62,11 @@ fi
 
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*,**/_build/*,**/deps/*,**/.elixir_ls/*}'"
+
+# zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
