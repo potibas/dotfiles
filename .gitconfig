@@ -19,6 +19,9 @@
 [url "git@github.com:potibas/"]
 	insteadOf = "potibas:"
 
+[url "git@github.com:Mathison-Inc/"]
+	insteadOf = "mathison:"
+
 [url "git@github.com:"]
 	insteadOf = "github:"
 	insteadOf = "https://github.com/"
