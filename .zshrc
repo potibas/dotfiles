@@ -75,3 +75,6 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+# Prompt (source: https://twitter.com/thingskatedid/status/1316081732467081217)
+PS1='%F{cyan}%B%1~%b%f %(?.%(!.#.;).%F{red}%B;%b%f) '
