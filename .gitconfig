@@ -55,3 +55,5 @@
     r = !git l -20
     ra = !git r --all
 
+[init]
+	defaultBranch = main
