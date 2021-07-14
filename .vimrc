@@ -20,6 +20,9 @@ Plug 'junegunn/fzf.vim'
 " Language Support
 Plug 'elixir-editors/vim-elixir'
 
+" Nice to haves
+Plug 'mhinz/vim-signify'
+
 " Colorschemes
 Plug 'Lokaltog/vim-distinguished'
 Plug 'KeitaNakamura/neodark.vim'
@@ -39,6 +42,9 @@ silent! color jellybeans
 " No beeping
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
+
+" Makes vim-signify quicker
+set updatetime=100
 
 " Shortcuts
 let mapleader = ","
