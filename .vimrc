@@ -46,6 +46,10 @@ let mapleader = ","
 " Fast switch to the last edited file with ,,
 nnoremap <leader><leader> <c-^>
 
+" Indentation
+set tabstop=2 shiftwidth=2 softtabstop=2
+set expandtab autoindent
+
 " FZF
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
