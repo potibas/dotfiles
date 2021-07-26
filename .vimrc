@@ -44,8 +44,21 @@ silent! color jellybeans
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Makes vim-signify quicker
+" Configures vim-signify nicely
 set updatetime=100
+
+nnoremap <leader>hd :SignifyHunkDiff<cr>
+nnoremap <leader>hu :SignifyHunkUndo<cr>
+
+" hunk jumping
+nmap <leader>h <plug>(signify-next-hunk)
+nmap <leader>H <plug>(signify-prev-hunk)
+
+" hunk text object
+omap ic <plug>(signify-motion-inner-pending)
+xmap ic <plug>(signify-motion-inner-visual)
+omap ac <plug>(signify-motion-outer-pending)
+xmap ac <plug>(signify-motion-outer-visual)
 
 " Shortcuts
 let mapleader = ","
