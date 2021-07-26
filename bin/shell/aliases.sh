@@ -1,6 +1,7 @@
 alias ls="ls -G"
 alias la="ls -lhpAG"
 
+alias v="vim"
 alias g="git"
 alias m="mix"
 alias d='docker'
