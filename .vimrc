@@ -49,6 +49,8 @@ set updatetime=100
 
 " Shortcuts
 let mapleader = ","
+nnoremap <leader>w :w<cr>
+nnoremap <silent> <leader>q :bd<cr>
 
 " Fast switch to the last edited file with ,,
 nnoremap <leader><leader> <c-^>
