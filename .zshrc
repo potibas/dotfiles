@@ -40,6 +40,10 @@ export TERM=xterm-256color
 bindkey -v
 
 # History search with ^P/^N
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
 bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
 
