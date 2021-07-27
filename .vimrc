@@ -50,10 +50,6 @@ set updatetime=100
 nnoremap <leader>hd :SignifyHunkDiff<cr>
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 
-" hunk jumping
-nmap <leader>h <plug>(signify-next-hunk)
-nmap <leader>H <plug>(signify-prev-hunk)
-
 " hunk text object
 omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
