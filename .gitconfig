@@ -55,5 +55,9 @@
     r = !git l -20
     ra = !git r --all
 
+    # Searching
+    ls = "!git l -p -S "
+    lg = "!git l -p -G "
+
 [init]
 	defaultBranch = main
