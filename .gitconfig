@@ -33,6 +33,9 @@
     # Short status output
     s = status -s
 
+    # Not everything is bad
+    praise = blame
+
     # Common operations
     co = checkout
     st = status
