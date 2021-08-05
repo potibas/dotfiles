@@ -51,8 +51,8 @@ nnoremap <leader>hd :SignifyHunkDiff<cr>
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 
 " Vertical spacing focus
+set winheight=9999
 set winminheight=10
-set winheight=9999999
 
 " hunk text object
 omap ic <plug>(signify-motion-inner-pending)
