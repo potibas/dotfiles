@@ -50,6 +50,10 @@ set updatetime=100
 nnoremap <leader>hd :SignifyHunkDiff<cr>
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 
+" Vertical spacing focus
+set winminheight=10
+set winheight=9999999
+
 " hunk text object
 omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
