@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 " Essentials
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
