@@ -176,7 +176,7 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
   #primary:
   #  background: '#1d1f21'
@@ -267,10 +267,11 @@ font:
   #  background: CellForeground
 
   # Normal colors
-  #normal:
+  normal:
   #  black:   '#1d1f21'
   #  red:     '#cc6666'
   #  green:   '#b5bd68'
+    green:   '#2dbb00'
   #  yellow:  '#f0c674'
   #  blue:    '#81a2be'
   #  magenta: '#b294bb'
