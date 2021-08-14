@@ -99,6 +99,10 @@ map <leader>v :e ~/.vimrc<cr>
 map <leader>V :e ~/.gvimrc<cr>
 map <leader>R :w \| :so %<cr>
 
+" Jump around quickfix window
+nnoremap <silent> <F3> :cprev<cr>
+nnoremap <silent> <F4> :cnext<cr>
+
 augroup vimrc
     autocmd!
 
