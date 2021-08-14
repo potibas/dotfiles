@@ -45,6 +45,9 @@ silent! color jellybeans
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+" Faster faster
+set noesckeys
+
 " Configures vim-signify nicely
 set updatetime=100
 
