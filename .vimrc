@@ -58,6 +58,12 @@ set noesckeys
 " Configures vim-signify nicely
 set updatetime=100
 
+" Shortcuts
+let mapleader = ","
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>b :bd<cr>
+
 " Undo the current hunk
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 
@@ -66,12 +72,6 @@ omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
 omap ac <plug>(signify-motion-outer-pending)
 xmap ac <plug>(signify-motion-outer-visual)
-
-" Shortcuts
-let mapleader = ","
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>b :bd<cr>
 
 " Save file: ctrl+s
 inoremap <silent> <C-s> <C-O>:update<cr>
