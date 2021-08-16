@@ -58,7 +58,7 @@ set noesckeys
 " Configures vim-signify nicely
 set updatetime=100
 
-nnoremap <leader>hd :SignifyHunkDiff<cr>
+" Undo the current hunk
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 
 " Vertical spacing focus
