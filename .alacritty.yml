@@ -726,6 +726,8 @@ key_bindings:
   - { key: J,        mods: Alt,     chars: "\x1bj"                       }
   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
+  - { key: LBracket, mods: Alt,     chars: "\x1b["                       }
+  - { key: RBracket, mods: Alt,     chars: "\x1b]"                       }
 
   # Map some cmd shorctuts to ctrl
   - { key: S,        mods: Command, chars: "\x13"                        }
