@@ -137,3 +137,24 @@ function! InsertTabWrapper()
 endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
+
+" vim-projectionist
+let g:projectionist_heuristics = {
+       \ 'mix.exs': {
+         \ 'lib/*.ex': {
+           \ 'type': 'lib',
+           \ 'alternate':  'test/{}_test.exs',
+           \ 'template': ['defmodule {camelcase|capitalize|dot} do', '', 'end']
+           \ },
+         \ 'test/*_test.exs': {
+           \ 'type': 'test',
+           \ 'alternate': 'lib/{}.ex',
+           \ 'template': [
+             \ 'defmodule {camelcase|capitalize|dot}Test do',
+             \ '  use ExUnit.Case',
+             \ '',
+             \ '  alias {camelcase|capitalize|dot}',
+             \ 'end'
+           \ ]}
+         \}
+       \}
