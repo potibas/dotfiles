@@ -727,8 +727,9 @@ key_bindings:
   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
 
-  # Map cmd+s to ctrl+s
+  # Map some cmd shorctuts to ctrl
   - { key: S,        mods: Command, chars: "\x13"                        }
+  - { key: P,        mods: Command, chars: "\x10"                        }
    
   # Fixes ctrl+q for some reason
   - { key: Q,        mods: Control, chars: "\x11"                        }
