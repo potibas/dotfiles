@@ -721,13 +721,16 @@ colors:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
+  # Map alt+hjkl
+  - { key: H,        mods: Alt,     chars: "\x1bh"                       }
   - { key: J,        mods: Alt,     chars: "\x1bj"                       }
   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
-  - { key: H,        mods: Alt,     chars: "\x1bh"                       }
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
 
   # Map cmd+s to ctrl+s
   - { key: S,        mods: Command, chars: "\x13"                        }
+   
+  # Fixes ctrl+q for some reason
   - { key: Q,        mods: Control, chars: "\x11"                        }
 
   #- { key: Paste,                                       action: Paste          }
