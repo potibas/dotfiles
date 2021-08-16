@@ -61,10 +61,6 @@ set updatetime=100
 " Undo the current hunk
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 
-" Vertical spacing focus
-set winheight=9999
-set winminheight=10
-
 " hunk text object
 omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
@@ -75,6 +71,16 @@ xmap ac <plug>(signify-motion-outer-visual)
 let mapleader = ","
 nnoremap <leader>w :w<cr>
 nnoremap <silent> <leader>q :bd<cr>
+
+" Window navigation and resizing
+nnoremap vv <C-w>v
+nnoremap vs <C-w>s
+nnoremap <silent> vq :q<cr>
+
+nnoremap <ESC>h <C-w>5<
+nnoremap <ESC>j <C-w>-
+nnoremap <ESC>k <C-w>+
+nnoremap <ESC>l <C-w>5>
 
 " Fast switch to the last edited file with ,,
 nnoremap <leader><leader> <c-^>
