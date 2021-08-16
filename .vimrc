@@ -70,7 +70,12 @@ xmap ac <plug>(signify-motion-outer-visual)
 " Shortcuts
 let mapleader = ","
 nnoremap <leader>w :w<cr>
-nnoremap <silent> <leader>q :bd<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>b :bd<cr>
+
+" Save file: ctrl+s
+inoremap <silent> <C-s> <C-O>:update<cr>
+nnoremap <silent> <C-s> :update<cr>
 
 " Window navigation and resizing
 nnoremap vv <C-w>v
