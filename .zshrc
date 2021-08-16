@@ -69,6 +69,7 @@ fi
 
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*,**/_build/*,**/deps/*,**/.elixir_ls/*}'"
+export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 
 # zsh-completions
 if type brew &>/dev/null; then
