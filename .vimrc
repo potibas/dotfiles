@@ -82,10 +82,11 @@ nnoremap vv <C-w>v
 nnoremap vs <C-w>s
 nnoremap <silent> vq :q<cr>
 
-nnoremap <ESC>h <C-w>5<
-nnoremap <ESC>j <C-w>-
-nnoremap <ESC>k <C-w>+
-nnoremap <ESC>l <C-w>5>
+" Pane resizing
+nnoremap <C-f>h <C-w>5<
+nnoremap <C-f>j <C-w>-
+nnoremap <C-f>k <C-w>+
+nnoremap <C-f>l <C-w>5>
 
 " Fast switch to the last edited file with ,,
 nnoremap <leader><leader> <c-^>
