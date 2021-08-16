@@ -48,6 +48,10 @@ silent! color jellybeans
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+" Eh, mouse
+set ttymouse=xterm2
+set mouse=a
+
 " Faster faster
 set noesckeys
 
