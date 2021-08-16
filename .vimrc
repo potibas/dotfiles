@@ -38,7 +38,7 @@ call plug#end()
 " Appearance
 syntax on
 
-set scrolloff=15
+set scrolloff=5
 set number cursorline
 set showcmd cmdheight=1
 set termguicolors background=dark t_Co=256
