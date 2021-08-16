@@ -88,9 +88,8 @@ set showmatch incsearch hlsearch ignorecase
 nmap <space> :nohlsearch<cr>
 
 " FZF
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :GFiles<CR>
-nnoremap <C-f> :Rg<CR>
+nnoremap <silent> <C-P> :Files<CR>
+nnoremap <silent> <F3> :Rg<cr>
 
 " Current file's directory with %%
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -105,8 +104,9 @@ map <leader>V :e ~/.gvimrc<cr>
 map <leader>R :w \| :so %<cr>
 
 " Jump around quickfix window
-nnoremap <silent> <F3> :cprev<cr>
+set <S-F4>=[1;2S
 nnoremap <silent> <F4> :cnext<cr>
+nnoremap <silent> <S-F4> :cprev<cr>
 
 augroup vimrc
     autocmd!
