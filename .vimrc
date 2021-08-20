@@ -64,6 +64,9 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>b :bd<cr>
 
+" Toggle paste mode with F2
+nnoremap <silent> <F2> :set paste!<cr>
+
 " Undo the current hunk
 nnoremap <leader>hu :SignifyHunkUndo<cr>
 
