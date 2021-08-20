@@ -67,6 +67,9 @@ fi
 # nfm
 [ -s "/opt/homebrew/bin/fnm" ] && eval "$(fnm env)"
 
+# Rust
+[ -s "$HOME/.asdf/installs/rust/1.54.0" ] && source "$HOME/.asdf/installs/rust/1.54.0/env"
+
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*,**/_build/*,**/deps/*,**/.elixir_ls/*}'"
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
