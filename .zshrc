@@ -50,9 +50,11 @@ bindkey "^N" down-line-or-beginning-search
 # Don't save commands prepended with a space to history
 setopt histignorespace
 
-# HomeBrew autocomplete
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+# Homebrew
+if [ -s "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  # Autocomplete
+  FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
 fi
 
 # Enable history in IEx
@@ -65,7 +67,7 @@ if [ -d $HOME/.asdf ]; then
 fi
 
 # nfm
-[ -s "/opt/homebrew/bin/fnm" ] && eval "$(fnm env)"
+[ -s "/opt/homebrew/bin/fnm" ] && eval "$(/opt/homebrew/bin/fnm env)"
 
 # Rust
 [ -s "$HOME/.asdf/installs/rust/1.54.0" ] && source "$HOME/.asdf/installs/rust/1.54.0/env"
