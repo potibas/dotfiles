@@ -2,16 +2,17 @@
   // Appearance
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "workbench.colorTheme": "Predawn Twilight",
   "workbench.editor.showTabs": true,
   "workbench.editor.labelFormat": "long",
-  "editor.fontFamily": "Operator Mono",
-  "editor.fontSize": 13,
+  // "editor.fontFamily": "Inconsolata-dz for Powerline",
+  "editor.fontFamily": "Operator Mono Lig",
+  "editor.fontSize": 16,
   "editor.fontLigatures": true,
 
   // Sidebar & File Explorer
-  "workbench.sideBar.location": "right",
+  "workbench.sideBar.location": "left",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
   "explorer.openEditors.visible": 0,
@@ -21,10 +22,10 @@
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
   "editor.mouseWheelZoom": true,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
 
   // Terminal
-  "terminal.integrated.shell.osx": "/bin/zsh",
+  // "terminal.integrated.shell.osx": "/bin/zsh",
 
   // Editing
   "editor.tabSize": 2,
@@ -50,7 +51,7 @@
     // Elixir
     "**/dist/": true,
     "**/_build/": true,
-    "**/deps/": true,
+    // "**/deps/": true,
     "**/.elixir_ls/": true,
     // Python
     "**/__pycache__/": true,
@@ -78,4 +79,14 @@
     ]
   },
   "editor.accessibilitySupport": "off",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "files.associations": {
+    "*.livemd": "markdown"
+  },
 }

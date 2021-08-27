@@ -86,3 +86,6 @@ fi
 
 # Prompt (source: https://twitter.com/thingskatedid/status/1316081732467081217)
 PS1='%(?.%(!.#.;).%F{red}%B;%b%f) '
+
+# Faster faster!
+ulimit -n 3000

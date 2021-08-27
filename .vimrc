@@ -22,16 +22,27 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'dense-analysis/ale'
+
 " Language Support
 Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 " Nice to haves
 Plug 'mhinz/vim-signify'
+Plug 'vim-test/vim-test'
+
+" Eccentricities
+Plug 'itchyny/lightline.vim'
 
 " Colorschemes
 Plug 'Lokaltog/vim-distinguished'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -39,10 +50,50 @@ call plug#end()
 syntax on
 
 set scrolloff=5
-set number cursorline
-set showcmd cmdheight=1
-set termguicolors background=dark t_Co=256
-silent! color jellybeans
+set number relativenumber cursorline noshowmode
+set showcmd cmdheight=1 laststatus=2
+set background=dark t_Co=256
+set fillchars-=vert:\|
+set fillchars+=vert:│
+set signcolumn=yes
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
+      \ },
+      \ 'component': {
+      \   'helloworld': '💩'
+      \ },
+      \ }
+
+
+let g:signify_sign_add='→'
+let g:signify_sign_change='❗️'
+let g:signify_sign_delete='❌'
+let g:signify_sign_delete_first_line='❌'
+let g:signify_sign_change_delete='❗️❌'
+
+command! LightlineReload call LightlineReload()
+
+function! LightlineReload()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
+
+nnoremap ,l :call LightlineReload()<cr>
+
+let g:gruvbox_italic=1
+silent! color gruvbox
+
+" Elixir
+let g:ale_linters = {
+      \ 'elixir': ['credo', 'dialyzer']
+      \ }
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:mix_format_on_save = 1
 
 " No beeping
 set noerrorbells visualbell t_vb=
@@ -54,21 +105,34 @@ set mouse=a
 
 " Faster faster
 set noesckeys
+set timeoutlen=400
+set ttimeoutlen=0
+set ttyfast
+
+set autowrite
+set backspace=indent,eol,start
 
 " Configures vim-signify nicely
-set updatetime=100
+set updatetime=50
 
 " Shortcuts
 let mapleader = ","
 nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>b :bd<cr>
+nnoremap <leader>q :bd<cr>
+nnoremap <leader>b :Buffers<cr>
 
 " Toggle paste mode with F2
 nnoremap <silent> <F2> :set paste!<cr>
 
+" Toggle wrap with F6
+nnoremap <silent> <F6> :set wrap!<cr>
+
 " Undo the current hunk
-nnoremap <leader>hu :SignifyHunkUndo<cr>
+nnoremap <leader>u :SignifyHunkUndo<cr>
+
+" Undo with <ctrl+u>
+nnoremap <c-f>z u
+inoremap <C-f>z <esc>u
 
 " hunk text object
 omap ic <plug>(signify-motion-inner-pending)
@@ -81,8 +145,9 @@ inoremap <silent> <C-s> <C-O>:update<cr>
 nnoremap <silent> <C-s> :update<cr>
 
 " Window navigation and resizing
+set splitright
 nnoremap vv <C-w>v
-nnoremap vs <C-w>s
+nnoremap vh <C-w>s
 nnoremap <silent> vq :q<cr>
 
 " Pane resizing
@@ -96,11 +161,20 @@ nnoremap <leader><leader> <c-^>
 
 " Indentation
 set tabstop=2 shiftwidth=2 softtabstop=2
-set expandtab autoindent
+set expandtab autoindent smartindent
 
 " Searching
 set showmatch incsearch hlsearch ignorecase
+set smartcase " case sensitive if at least one uppercase
 nmap <space> :nohlsearch<cr>
+
+" highlight white space
+set list
+set listchars=""
+set listchars+=tab:>\ 
+set listchars+=trail:•
+set listchars+=extends:#
+set listchars+=nbsp:•
 
 " FZF
 nnoremap <silent> <C-P> :Files<CR>
@@ -153,6 +227,9 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
+" Test with dispatch
+let test#strategy = "dispatch"
+
 " vim-projectionist
 let g:projectionist_heuristics = {
        \ 'mix.exs': {
@@ -173,3 +250,5 @@ let g:projectionist_heuristics = {
            \ ]}
          \}
        \}
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
