@@ -16,6 +16,7 @@ call plug#end()
 
 " Behaviour
 let mapleader=','
+set hidden
 
 " Quick edit/reload vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
