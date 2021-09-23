@@ -18,6 +18,12 @@ call plug#end()
 " Behaviour
 let mapleader=','
 set hidden
+set lazyredraw nowrap noerrorbells mouse=a
+set noswapfile nobackup nowritebackup
+set showmatch matchtime=1 updatetime=50 timeoutlen=400 ttimeoutlen=0
+set shiftwidth=2 softtabstop=2 tabstop=2
+set expandtab autoindent smartindent shiftround
+set nopaste pastetoggle=<F2>
 
 " Shortcuts
 nmap <leader>w :w<cr>
