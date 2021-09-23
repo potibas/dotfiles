@@ -45,6 +45,10 @@ set <S-F4>=[1;2S
 nmap <silent> <F4> :cnext<cr>
 nmap <silent> <S-F4> :cprev<cr>
 
+" Toggle line-wrapping
+nmap <silent> <F6> :set wrap!<cr>
+imap <silent> <F6> <C-O>:set wrap!<cr>
+
 " Search history with C-P/C-N
 cnoremap <expr> <C-P> wildmenumode() ? "\<C-P>" : "\<Up>"
 cnoremap <expr> <C-N> wildmenumode() ? "\<C-N>" : "\<Down>"
