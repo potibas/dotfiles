@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 " Plugins
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-scriptease'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
