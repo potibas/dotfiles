@@ -12,3 +12,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 call plug#end()
+
+" Behaviour
+let mapleader=','
+
+" Quick edit/reload vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<cr>
+nmap <silent> <leader>sv :so $MYVIMRC \| echo "Vim configuration reloaded"<cr>
