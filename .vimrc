@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-scriptease'
 
 call plug#end()
 
