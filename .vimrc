@@ -18,6 +18,35 @@ call plug#end()
 let mapleader=','
 set hidden
 
+" Shortcuts
+nmap <leader>w :w<cr>
+nmap <leader>q :q<cr>
+nmap <leader>x :bd<cr>
+
+" Home/End
+nmap H 0
+nmap L $
+
+" Switch to alternate file
+nmap <leader><leader> <C-^>
+
+" Expand current file's directory
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" Jump around quickfix window
+set <S-F4>=[1;2S
+nmap <silent> <F4> :cnext<cr>
+nmap <silent> <S-F4> :cprev<cr>
+
+" Search history with C-P/C-N
+cnoremap <expr> <C-P> wildmenumode() ? "\<C-P>" : "\<Up>"
+cnoremap <expr> <C-N> wildmenumode() ? "\<C-N>" : "\<Down>"
+
+" Window navigation and resizing
+set splitright
+nmap vv <C-w>v
+nmap vh <C-w>s
+
 " Quick edit/reload vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC \| echo "Vim configuration reloaded"<cr>
