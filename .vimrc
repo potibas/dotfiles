@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-scriptease'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -30,6 +31,25 @@ if !isdirectory($HOME."/.vim/undo")
   call mkdir($HOME."/.vim/undo", "", 0700)
 endif
 set undofile undodir=~/.vim/undo
+
+" Appearance
+set scrolloff=5
+set number relativenumber cursorline
+set showcmd cmdheight=1 laststatus=2
+set signcolumn=yes
+
+" Disable Background Color Erase (BCE)
+set ttyfast t_ut=
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+set background=dark
+let g:one_allow_italics = 1
+silent! color one
 
 " Shortcuts
 nmap <leader>w :w<cr>
