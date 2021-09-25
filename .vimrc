@@ -25,6 +25,12 @@ set shiftwidth=2 softtabstop=2 tabstop=2
 set expandtab autoindent smartindent shiftround
 set nopaste pastetoggle=<F2>
 
+" Persistent undo
+if !isdirectory($HOME."/.vim/undo")
+  call mkdir($HOME."/.vim/undo", "", 0700)
+endif
+set undofile undodir=~/.vim/undo
+
 " Shortcuts
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
