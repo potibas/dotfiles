@@ -51,6 +51,11 @@ set background=dark
 let g:one_allow_italics = 1
 silent! color one
 
+" Searching
+set incsearch hlsearch ignorecase smartcase
+nnoremap <silent> <leader>/ :nohlsearch<cr>
+nnoremap <silent> <leader>\ :let @/=""<cr>
+
 " Shortcuts
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
