@@ -60,6 +60,13 @@ nmap <leader>x :bd<cr>
 nmap H 0
 nmap L $
 
+" Make Y consistent with C and D.
+nnoremap Y y$
+
+" Make j/k movement more natural when text is wrapped
+nnoremap j gj
+nnoremap k gk
+
 " Switch to alternate file
 nmap <leader><leader> <C-^>
 
