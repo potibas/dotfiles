@@ -2,16 +2,15 @@
   // Appearance
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Predawn Twilight",
-  "workbench.editor.showTabs": true,
-  "workbench.editor.labelFormat": "long",
-  "editor.fontFamily": "Operator Mono",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "BitstreamVeraSansMono Nerd Font Mono",
   "editor.fontSize": 13,
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": false,
+
+  // Inline diff
+  "diffEditor.renderSideBySide": false,
 
   // Sidebar & File Explorer
-  "workbench.sideBar.location": "right",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
   "explorer.openEditors.visible": 0,
@@ -20,11 +19,14 @@
   "explorer.confirmDragAndDrop": false,
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
-  "editor.mouseWheelZoom": true,
-  "window.zoomLevel": 0,
+  "editor.mouseWheelZoom": false,
+  "editor.snippetSuggestions": "inline",
 
   // Terminal
-  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.fontSize": 10,
+  "terminal.integrated.fontFamily": "Inconsolata-dz for Powerline",
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.gpuAcceleration": "on",
 
   // Editing
   "editor.tabSize": 2,
@@ -40,12 +42,7 @@
 
   // File ignores
   "files.exclude": {
-    // Version Control
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    // NodeJS
+    // Node
     "**/node_modules/": true,
     // Elixir
     "**/dist/": true,
@@ -54,10 +51,10 @@
     "**/.elixir_ls/": true,
     // Python
     "**/__pycache__/": true,
-    "**/*.picklecache": true,
+    "**/*.picklecache": true
   },
 
-  // JSON
+  // Don't autoformat this settings file.
   "[jsonc]": {
     "editor.formatOnSave": false
   },
@@ -68,14 +65,8 @@
     "editor.codeLens": false,
     "editor.rulers": [98],
   },
-  "elixirLS.fetchDeps": false,
 
-  // Elixir color customizations
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      { "scope": "keyword.other.special-method.elixir", "settings": { "fontStyle": "italic" } },
-      { "scope": "constant.other.symbol.elixir","settings": { "foreground": "#61afef" } }
-    ]
-  },
-  "editor.accessibilitySupport": "off",
+  // Convenient last-liners
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Predawn Twilight"
 }
