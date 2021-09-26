@@ -118,7 +118,7 @@ nmap <C-f>l <C-w>5>
 
 " Quick edit/reload vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
-nmap <silent> <leader>sv :so $MYVIMRC \| echo "Vim configuration reloaded"<cr>
+nmap <silent> <leader>sv :so $MYVIMRC \| redraw \| echo "Vim configuration reloaded"<cr>
 
 " Git shortcuts
 nnoremap <silent> <C-f>G :Git<cr>
