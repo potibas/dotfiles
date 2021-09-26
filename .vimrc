@@ -63,6 +63,12 @@ nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
 nmap <leader>x :bd<cr>
 
+" Mac-like shortcuts w/ alacritty
+nmap <c-f>s :w<cr>
+imap <c-f>s <C-O>:w<cr>
+nmap <c-f>w :q<cr>
+imap <c-f>w <esc>:q<cr>
+
 " Home/End
 nmap H 0
 nmap L $
