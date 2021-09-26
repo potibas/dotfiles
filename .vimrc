@@ -97,6 +97,10 @@ cnoremap <expr> <C-N> wildmenumode() ? "\<C-N>" : "\<Down>"
 set splitright
 nmap vv <C-w>v
 nmap vh <C-w>s
+nmap <C-f>h <C-w>5<
+nmap <C-f>j <C-w>-
+nmap <C-f>k <C-w>+
+nmap <C-f>l <C-w>5>
 
 " Quick edit/reload vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
