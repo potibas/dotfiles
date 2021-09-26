@@ -19,6 +19,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
+Plug 'tpope/vim-endwise'
+
 call plug#end()
 
 " Behaviour
@@ -124,3 +129,7 @@ nnoremap <silent> <C-f>p :Files!<CR>
 nnoremap <silent> <C-f>b :Buffers!<CR>
 nnoremap <silent> <C-f>f :Rg!<cr>
 nnoremap <silent> <F3> g* :Rg! <c-r>/<cr>
+
+" Elixir
+let g:mix_format_on_save = 1
+let g:mix_format_silent_errors = 1
