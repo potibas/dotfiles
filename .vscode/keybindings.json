@@ -36,6 +36,10 @@
   // Cmd+K, Cmd+F: Open this keybindings file
   { "key": "cmd+k cmd+f", "command": "workbench.action.openGlobalKeybindingsFile" },
 
+  // Ctrl+H, Ctrl+L to move between editor groups
+  { "key": "ctrl+h", "command": "workbench.action.focusPreviousGroup" },
+  { "key": "ctrl+l", "command": "workbench.action.focusNextGroup" },
+
   // Cmd+K, Cmd+C: Copy relative path of active file
   { "key": "cmd+k cmd+c", "command": "copyRelativeFilePath" }
 ]
