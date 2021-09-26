@@ -722,10 +722,6 @@ shell:
 # in the order they were defined in.
 key_bindings:
 
-  # Use cmd+shift+[ and cmd+shift+] to navigate between tmux's tabs (<c-a>n/<c-a>p)
-  - { key: LBracket, mods: Shift|Command,     chars: "\x01p"             }
-  - { key: RBracket, mods: Shift|Command,     chars: "\x01n"             }
-
   # Map cmd+hjkl to <c-f>hjkl, used in vim for resizing panes
   - { key: H,        mods: Command, chars: "\x06\x68"                    }
   - { key: J,        mods: Command, chars: "\x06\x6a"                    }
@@ -738,6 +734,12 @@ key_bindings:
    
   # Fixes ctrl+q for some reason
   - { key: Q,        mods: Control, chars: "\x11"                        }
+
+  # Map alt+key to meta+key
+  - { key: J, mods: Alt, chars: "\x1bj" }
+  - { key: K, mods: Alt, chars: "\x1bk" }
+  - { key: H, mods: Alt, chars: "\x1bh" }
+  - { key: L, mods: Alt, chars: "\x1bl" }
 
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
