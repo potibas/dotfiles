@@ -9,6 +9,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Plugins
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-scriptease'
 Plug 'christoomey/vim-tmux-navigator'
