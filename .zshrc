@@ -32,10 +32,6 @@ source $HOME/bin/shell/paths.sh
 source $HOME/bin/shell/aliases.sh
 [ -f "$HOME/bin/shell/local.sh" ] && . "$HOME/bin/shell/local.sh"
 
-# Tmux/vim colors etc
-# ref: https://vi.stackexchange.com/questions/10708/no-syntax-highlighting-in-tmux
-export TERM=xterm-256color
-
 # Vi editing mode
 bindkey -v
 
