@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-scriptease'
@@ -111,3 +112,6 @@ nmap <C-f>l <C-w>5>
 " Quick edit/reload vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC \| echo "Vim configuration reloaded"<cr>
+
+" Git shortcuts
+nnoremap <silent> <C-f>G :Git<cr>
