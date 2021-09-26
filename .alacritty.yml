@@ -722,13 +722,6 @@ shell:
 # in the order they were defined in.
 key_bindings:
 
-  # Map some cmd shorctuts to ctrl
-  - { key: S,        mods: Command, chars: "\x13"                        }
-  - { key: P,        mods: Command, chars: "\x10"                        }
-   
-  # Fixes ctrl+q for some reason
-  - { key: Q,        mods: Control, chars: "\x11"                        }
-
   # Map alt+key to meta+key
   - { key: J, mods: Alt, chars: "\x1bj" }
   - { key: K, mods: Alt, chars: "\x1bk" }
@@ -789,6 +782,9 @@ key_bindings:
   - { key: X, mods: Shift|Command, chars: "\x06X" }
   - { key: Y, mods: Shift|Command, chars: "\x06Y" }
   - { key: Z, mods: Shift|Command, chars: "\x06Z" }
+
+  # Fixes ctrl+q on terminals
+  - { key: Q, mods: Control, chars: "\x11" }
 
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
