@@ -15,6 +15,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-scriptease'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 
 call plug#end()
@@ -115,3 +117,10 @@ nmap <silent> <leader>sv :so $MYVIMRC \| echo "Vim configuration reloaded"<cr>
 
 " Git shortcuts
 nnoremap <silent> <C-f>G :Git<cr>
+nnoremap <silent> <C-f>g :GitFiles?<CR>
+
+" FZF shortcuts
+nnoremap <silent> <C-f>p :Files!<CR>
+nnoremap <silent> <C-f>b :Buffers!<CR>
+nnoremap <silent> <C-f>f :Rg!<cr>
+nnoremap <silent> <F3> g* :Rg! <c-r>/<cr>
