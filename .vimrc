@@ -65,6 +65,8 @@ silent! color one
 set incsearch hlsearch ignorecase smartcase
 nnoremap <silent> <leader>/ :nohlsearch<cr>
 nnoremap <silent> <leader>\ :let @/=""<cr>
+highlight Search ctermbg=bg ctermfg=fg cterm=underline,italic guibg='NONE' guifg=#e5c07b gui=underline,italic
+highlight IncSearch ctermbg=bg ctermfg=fg cterm=underline,italic guibg='NONE' guifg=#ff6865 gui=underline,italic
 
 " Shortcuts
 nmap <leader>w :w<cr>
