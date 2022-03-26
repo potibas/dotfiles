@@ -6,3 +6,6 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 
 # keybase
 export PATH=$PATH:/Applications/Keybase.app/Contents/SharedSupport/bin
+
+# Docker
+export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
