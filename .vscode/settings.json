@@ -86,6 +86,9 @@
   "elixirLS.enableTestLenses": true,
   "elixirLS.signatureAfterComplete": true,
 
+  // LiveShare
+  "liveshare.presence": true,
+
   // Convenient last-liners
   "workbench.colorTheme": "Predawn Twilight",
   "extensions.ignoreRecommendations": true
