@@ -22,6 +22,9 @@
   "editor.mouseWheelZoom": true,
   "editor.snippetSuggestions": "inline",
 
+  // Source Control
+  "git.openDiffOnClick": false,
+
   // Terminal
   "terminal.integrated.fontSize": 10,
   "terminal.integrated.fontFamily": "Inconsolata-dz for Powerline",
