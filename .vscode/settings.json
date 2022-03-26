@@ -79,10 +79,12 @@
 
   // Elixir-specific
   "[elixir]": {
-    // Disable spec suggestions all over the place
-    "editor.codeLens": false,
     "editor.rulers": [98],
   },
+  "elixirLS.fetchDeps": false,
+  "elixirLS.suggestSpecs": false,
+  "elixirLS.enableTestLenses": true,
+  "elixirLS.signatureAfterComplete": true,
 
   // Convenient last-liners
   "window.zoomLevel": 1,
