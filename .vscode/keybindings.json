@@ -25,10 +25,12 @@
 
   // ExUnit testing
   { "key": "cmd+t", "command": "" },
-  { "key": "cmd+t cmd+c", "command": "exunit.runTest" },
+  { "key": "cmd+t cmd+'", "command": "exunit.runTest" },
   { "key": "cmd+t cmd+f", "command": "exunit.runTestFile" },
-  { "key": "cmd+t cmd+t", "command": "exunit.runPrevious" },
   { "key": "cmd+t cmd+a", "command": "exunit.runAll" },
+  { "key": "cmd+t cmd+t", "command": "exunit.runPrevious" },
+  { "key": "cmd+t cmd+/", "command": "exunit.runAllFailed" },
+  { "key": "cmd+t cmd+s", "command": "exunit.runAllStale" },
 
   // Select previous editor by default on Cmd+p
   { "key": "cmd+p", "command": "workbench.action.quickOpenPreviousEditor" },
