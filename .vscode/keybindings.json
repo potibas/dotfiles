@@ -32,6 +32,9 @@
   { "key": "cmd+t cmd+/", "command": "exunit.runAllFailed" },
   { "key": "cmd+t cmd+s", "command": "exunit.runAllStale" },
 
+  // Emmet
+  { "key": "alt+cmd+'", "command": "emmet.expandAbbreviation" },
+
   // Select previous editor by default on Cmd+p
   { "key": "cmd+p", "command": "workbench.action.quickOpenPreviousEditor" },
 
