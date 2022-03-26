@@ -87,6 +87,6 @@
   "elixirLS.signatureAfterComplete": true,
 
   // Convenient last-liners
-  "window.zoomLevel": 1,
-  "workbench.colorTheme": "Predawn Twilight"
+  "workbench.colorTheme": "Predawn Twilight",
+  "extensions.ignoreRecommendations": true
 }
