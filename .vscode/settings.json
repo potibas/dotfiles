@@ -66,6 +66,11 @@
     "editor.formatOnSave": false
   },
 
+  // Emmet
+  "emmet.includeLanguages": {
+    "phoenix-heex": "html"
+  },
+
   // Javascript
   "[javascript]": {
     "editor.tabSize": 2,
