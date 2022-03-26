@@ -19,7 +19,7 @@
   "explorer.confirmDragAndDrop": false,
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
-  "editor.mouseWheelZoom": false,
+  "editor.mouseWheelZoom": true,
   "editor.snippetSuggestions": "inline",
 
   // Terminal
