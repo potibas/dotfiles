@@ -26,6 +26,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+zstyle ':completion:*' menu yes select
+
 # User configuration
 # ==================
 source $HOME/bin/shell/paths.sh
