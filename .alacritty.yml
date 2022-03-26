@@ -731,7 +731,6 @@ key_bindings:
   # Map cmd+key to <c-f>+key, for assortd vim shortcuts
   - { key: A, mods: Command, chars: "\x07a" }
   - { key: B, mods: Command, chars: "\x06b" }
-  - { key: C, mods: Command, chars: "\x06c" }
   - { key: D, mods: Command, chars: "\x06d" }
   - { key: E, mods: Command, chars: "\x06e" }
   - { key: F, mods: Command, chars: "\x06f" }
@@ -750,7 +749,6 @@ key_bindings:
   - { key: S, mods: Command, chars: "\x06s" }
   - { key: T, mods: Command, chars: "\x06t" }
   - { key: U, mods: Command, chars: "\x06u" }
-  - { key: V, mods: Command, chars: "\x06v" }
   - { key: W, mods: Command, chars: "\x06w" }
   - { key: X, mods: Command, chars: "\x06x" }
   - { key: Y, mods: Command, chars: "\x06y" }
@@ -758,7 +756,6 @@ key_bindings:
 
   - { key: A, mods: Shift|Command, chars: "\x07A" }
   - { key: B, mods: Shift|Command, chars: "\x06B" }
-  - { key: C, mods: Shift|Command, chars: "\x06C" }
   - { key: D, mods: Shift|Command, chars: "\x06D" }
   - { key: E, mods: Shift|Command, chars: "\x06E" }
   - { key: F, mods: Shift|Command, chars: "\x06F" }
@@ -777,7 +774,6 @@ key_bindings:
   - { key: S, mods: Shift|Command, chars: "\x06S" }
   - { key: T, mods: Shift|Command, chars: "\x06T" }
   - { key: U, mods: Shift|Command, chars: "\x06U" }
-  - { key: V, mods: Shift|Command, chars: "\x06V" }
   - { key: W, mods: Shift|Command, chars: "\x06W" }
   - { key: X, mods: Shift|Command, chars: "\x06X" }
   - { key: Y, mods: Shift|Command, chars: "\x06Y" }
