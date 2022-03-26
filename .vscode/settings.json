@@ -54,9 +54,19 @@
     "**/*.picklecache": true
   },
 
-  // Don't autoformat this settings file.
+  // Format JSON with prettier
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // But, don't autoformat this settings file.
   "[jsonc]": {
     "editor.formatOnSave": false
+  },
+
+  // Javascript
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   // Elixir-specific
