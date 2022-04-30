@@ -6,12 +6,12 @@
   "workbench.colorTheme": "Predawn Twilight",
   "workbench.editor.showTabs": true,
   "workbench.editor.labelFormat": "long",
-  "editor.fontFamily": "Operator Mono",
-  "editor.fontSize": 13,
+  "editor.fontFamily": "Roboto Mono",
+  "editor.fontSize": 12,
   "editor.fontLigatures": true,
 
   // Sidebar & File Explorer
-  "workbench.sideBar.location": "right",
+  "workbench.sideBar.location": "left",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
   "explorer.openEditors.visible": 0,
@@ -21,10 +21,10 @@
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
   "editor.mouseWheelZoom": true,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
 
   // Terminal
-  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.fontSize": 12,
 
   // Editing
   "editor.tabSize": 2,
@@ -69,6 +69,7 @@
     "editor.rulers": [98],
   },
   "elixirLS.fetchDeps": false,
+  "elixir.credo.configurationFile": "config/.credo.exs",
 
   // Elixir color customizations
   "editor.tokenColorCustomizations": {
@@ -78,4 +79,11 @@
     ]
   },
   "editor.accessibilitySupport": "off",
+  "diffEditor.renderSideBySide": false,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
 }

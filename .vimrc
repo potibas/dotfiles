@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'lambdalisue/fern.vim'
 
 " Language Support
 Plug 'elixir-editors/vim-elixir'
@@ -50,6 +51,9 @@ nnoremap <leader><leader> <c-^>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <C-f> :Rg<CR>
+
+" Fern
+nnoremap <leader>b :Fern . -keep -drawer<CR>
 
 " Current file's directory with %%
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
