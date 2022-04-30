@@ -1,6 +1,7 @@
 [user]
     name = Potiguar Faga Catalan
     email = potiguar@potiguar.net
+    signingkey = 5B05483EFAF35E08
 
 [color]
     ui = auto
@@ -62,3 +63,5 @@
 
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
