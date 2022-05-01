@@ -84,3 +84,6 @@ fi
 
 # Faster faster!
 ulimit -n 3000
+
+# Fix GPG TTY
+export GPG_TTY=$(tty)
