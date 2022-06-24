@@ -42,7 +42,6 @@
     dc = diff --cached
     cp = cherry-pick
     cpn = cherry-pick --no-commit
-    aa = add .
     pr = pull --rebase
     ri = rebase --interactive --autosquash
     rc = rebase --continue
