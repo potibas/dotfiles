@@ -1,4 +1,6 @@
-alias v="vim"
+alias v="nvim"
+alias vim="nvim"
+alias vi="nvim"
 alias g="git"
 alias m="mix"
 alias im="iex -S mix"
