@@ -50,6 +50,18 @@ return packer.startup(function(use)
   -- Remove trailing spaces and empty lines
   use { "mcauley-penney/tidy.nvim", config = function() require("tidy").setup() end }
 
+  -- Tree sitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = 'all',
+        highlight = { enable = true }
+      }
+    end
+  }
+
   -- After cloning packer, automatically setup your configuration
   if PACKER_BOOTSTRAP then
     require("packer").sync()
