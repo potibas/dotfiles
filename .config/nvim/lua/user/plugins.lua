@@ -45,7 +45,14 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"             -- Useful lua functions used by lots of plugins
   use "tpope/vim-surround"                -- Surround things, change surroundings etc
   use "tpope/vim-commentary"              -- Comment stuff with `gc` + motion
-  use "tpope/vim-endwise"                 -- Automatically add "end" to blocks
+
+  -- Extend vim's % with motions and integrates with tree-sitter
+  use {
+    "andymass/vim-matchup",
+    config = function()
+      require("nvim-treesitter.configs").setup { matchup = { enable = true } }
+    end
+  }
 
   -- Remove trailing spaces and empty lines
   use { "mcauley-penney/tidy.nvim", config = function() require("tidy").setup() end }
