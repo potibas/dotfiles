@@ -46,6 +46,9 @@
     ri = rebase --interactive --autosquash
     rc = rebase --continue
     fa = fetch --all
+    sa = !git add . && git stash
+    sp = stash pop
+    sl = stash list
     amend = commit --amend
     squash = commit --amend --no-edit
     b = branch
