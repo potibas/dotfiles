@@ -69,6 +69,19 @@ return packer.startup(function(use)
     end
   }
 
+  -- Colorizer
+  use {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup {
+        "css";
+        "javascript";
+        "yaml";
+        html = { mode = "foreground"; }
+      }
+    end
+  }
+
   -- After cloning packer, automatically setup your configuration
   if PACKER_BOOTSTRAP then
     require("packer").sync()
