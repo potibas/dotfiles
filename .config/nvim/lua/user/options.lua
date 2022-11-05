@@ -6,6 +6,7 @@ g.mapleader = ','
 o.termguicolors = true
 o.number = true
 o.wrap = true
+o.cursorline = true
 
 -- tabs
 o.tabstop = 2
