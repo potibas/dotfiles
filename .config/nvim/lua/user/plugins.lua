@@ -46,6 +46,9 @@ return packer.startup(function(use)
   use "tpope/vim-surround"                -- Surround things, change surroundings etc
   use "tpope/vim-commentary"              -- Comment stuff with `gc` + motion
 
+  -- Utilities
+  use "nvim-treesitter/playground"        -- Helps viewing treesitter information
+
   -- Colors
   use "marko-cerovac/material.nvim"
   use "lunarvim/darkplus.nvim"
