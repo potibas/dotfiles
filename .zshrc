@@ -34,9 +34,6 @@ source $HOME/bin/shell/paths.sh
 source $HOME/bin/shell/aliases.sh
 [ -f "$HOME/bin/shell/local.sh" ] && . "$HOME/bin/shell/local.sh"
 
-# Vi editing mode
-bindkey -v
-
 # History search with ^P/^N
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
