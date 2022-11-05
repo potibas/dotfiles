@@ -76,13 +76,15 @@ return packer.startup(function(use)
 
   -- Colorizer
   use {
-    "norcalli/nvim-colorizer.lua",
+    "NvChad/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup {
-        "css";
-        "javascript";
-        "yaml";
-        html = { mode = "foreground"; }
+        filetypes = {
+          "css",
+          "javascript",
+          "yaml",
+          html = { mode = "foreground"; }
+        }
       }
     end
   }
