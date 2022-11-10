@@ -10,6 +10,9 @@ local function imap(k, v)
   map('i', k, v)
 end
 
+-- Leader key
+vim.g.mapleader = ','
+
 -- Fixes '*' (keep the cursor position, don't move to next match)
 nmap('*', '*N')
 

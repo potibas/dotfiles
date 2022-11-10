@@ -1,5 +1,3 @@
-vim.g.mapleader = ','
-
 local options = {
   termguicolors = true,     -- Use 24-bit colors on terminal
   number = true,            -- Show number column
