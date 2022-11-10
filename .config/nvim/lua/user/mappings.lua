@@ -10,6 +10,10 @@ local function imap(k, v)
   map("i", k, v)
 end
 
+local function vmap(k, v)
+  map("v", k, v)
+end
+
 -- Leader key
 vim.g.mapleader = ","
 
@@ -31,6 +35,9 @@ nmap("<leader><leader>", "<c-^>")
 -- Mimic Home/End
 nmap("<s-h>", "0")
 nmap("<s-l>", "$")
+
+-- Keep the paste buffer in visual mode
+vmap("p", '"_dP')
 
 -- Edit nvim config
 local vimdir = os.getenv("HOME") .. "/.config/nvim"
