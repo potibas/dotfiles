@@ -1,18 +1,21 @@
-local g = vim.g
-local o = vim.o
+vim.g.mapleader = ','
 
-g.mapleader = ','
+local options = {
+  termguicolors = true,     -- Use 24-bit colors on terminal
+  number = true,            -- Show number column
+  wrap = true,              -- Wrap text by default
+  cursorline = true,        -- Highlgiht the text line under the cursor
 
-o.termguicolors = true
-o.number = true
-o.wrap = true
-o.cursorline = true
+  -- Tabs
+  tabstop = 2,
+  softtabstop = 2,
+  shiftwidth = 2,
+  expandtab = true,
+}
 
--- tabs
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
-o.expandtab = true
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
 
 -- Avoid conflict with tree-sitter
 vim.cmd [[syntax off]]
