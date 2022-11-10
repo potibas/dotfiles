@@ -28,6 +28,10 @@ nmap('<leader>q', ':q<cr>')
 -- Switch to last edited file
 nmap('<leader><leader>', '<c-^>')
 
+-- Mimic Home/End
+nmap('<s-h>', '0')
+nmap('<s-l>', '$')
+
 -- Edit nvim config
 local vimdir = os.getenv('HOME') .. '/.config/nvim'
 nmap('<leader>vei', ':e ' .. vimdir .. '/init.lua<cr>')
