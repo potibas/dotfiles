@@ -12,7 +12,6 @@ end
 
 -- Fixes '*' (keep the cursor position, don't move to next match)
 nmap('*', '*N')
-nmap('<f3>', ':nohlsearch<cr>')
 
 -- Mimic emacs mode movements in insert mode
 imap('<c-E>', '<esc>A')
