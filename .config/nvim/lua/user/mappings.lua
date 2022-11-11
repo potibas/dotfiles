@@ -14,6 +14,10 @@ local function vmap(k, v)
   map("v", k, v)
 end
 
+local function cmap(k, v)
+  vim.keymap.set("c", k, v, { silent = false })
+end
+
 -- Leader key
 vim.g.mapleader = ","
 
@@ -38,6 +42,10 @@ nmap("<s-l>", "$")
 
 -- Keep the paste buffer in visual mode
 vmap("p", '"_dP')
+
+-- Search history with <c-p> and <c-n> on command mode
+cmap("<c-p>", "<up>")
+cmap("<c-n>", "<down>")
 
 -- Edit nvim config
 local vimdir = os.getenv("HOME") .. "/.config/nvim"
