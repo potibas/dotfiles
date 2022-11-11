@@ -36,6 +36,9 @@ nmap("<leader>q", ":q<cr>")
 -- Switch to last edited file
 nmap("<leader><leader>", "<c-^>")
 
+-- Explorer window on the left
+nmap("<leader>e", ":Lexplore 30<cr>")
+
 -- Mimic Home/End
 nmap("<s-h>", "0")
 nmap("<s-l>", "$")
