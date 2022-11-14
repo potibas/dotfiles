@@ -50,6 +50,9 @@ vmap("p", '"_dP')
 cmap("<c-p>", "<up>")
 cmap("<c-n>", "<down>")
 
+-- Expand current file's directory
+cmap("%%", "<C-R>=expand('%:h').'/'<cr>")
+
 -- Edit nvim config
 local vimdir = os.getenv("HOME") .. "/.config/nvim"
 nmap("<leader>vei", ":e " .. vimdir .. "/init.lua<cr>")
