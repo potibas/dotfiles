@@ -40,6 +40,7 @@ local kind_icons = {
 }
 
 local source_names = {
+  nvim_lsp = "[LSP]",
   luasnip = "[Snippet]",
   buffer = "[Buffer]",
   path = "[Path]",
@@ -82,6 +83,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },

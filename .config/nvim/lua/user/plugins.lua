@@ -96,11 +96,16 @@ return packer.startup(function(use)
   use "hrsh7th/nvim-cmp"                    -- completion engine
   use "hrsh7th/cmp-buffer"                  -- buffer completions
   use "hrsh7th/cmp-path"                    -- path completions
+  use "hrsh7th/cmp-nvim-lsp"                -- LSP completions
   use "saadparwaiz1/cmp_luasnip"            -- snippet completions
 
   -- Snippets
   use "L3MON4D3/LuaSnip"                    -- snippets engine
   use "rafamadriz/friendly-snippets"        -- bunch of useful snippets in several languages
+
+  -- LSP
+  use "neovim/nvim-lspconfig"               -- enable LSP
+  use "williamboman/nvim-lsp-installer"     -- language server installer
 
   -- After cloning packer, automatically setup your configuration
   if PACKER_BOOTSTRAP then
