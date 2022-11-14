@@ -3,6 +3,7 @@ local options = {
   number = true,            -- Show number column
   wrap = true,              -- Wrap text by default
   cursorline = true,        -- Highlgiht the text line under the cursor
+  signcolumn = "yes",       -- Always show the sign column
 
   -- Tabs
   tabstop = 2,
