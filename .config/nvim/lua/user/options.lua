@@ -4,6 +4,7 @@ local options = {
   wrap = true,              -- Wrap text by default
   cursorline = true,        -- Highlgiht the text line under the cursor
   signcolumn = "yes",       -- Always show the sign column
+  showmode = false,         -- Don't show the current mode (helps debugging)
 
   -- Tabs
   tabstop = 2,
