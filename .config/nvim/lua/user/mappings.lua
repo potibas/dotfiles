@@ -46,9 +46,16 @@ nmap("<s-l>", "$")
 -- Keep the paste buffer in visual mode
 vmap("p", '"_dP')
 
--- Search history with <c-p> and <c-n> on command mode
+-- Emacs keybindings in command mode
+cmap("<c-a>", "<home>")
+cmap("<c-b>", "<left>")
+cmap("<c-d>", "<del>")
+cmap("<c-e>", "<end>")
+cmap("<c-f>", "<right>")
 cmap("<c-p>", "<up>")
 cmap("<c-n>", "<down>")
+cmap("<esc><c-b>", "<s-left>")
+cmap("<esc><c-f>", "<s-right>")
 
 -- Expand current file's directory
 cmap("%%", "<C-R>=expand('%:h').'/'<cr>")
