@@ -97,6 +97,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer"                  -- buffer completions
   use "hrsh7th/cmp-path"                    -- path completions
   use "hrsh7th/cmp-nvim-lsp"                -- LSP completions
+  use "hrsh7th/cmp-nvim-lua"                -- Vim/Lua completions
   use "saadparwaiz1/cmp_luasnip"            -- snippet completions
 
   -- Snippets
