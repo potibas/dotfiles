@@ -33,6 +33,13 @@ lsp_installer.on_server_ready(function(server)
     on_attach = on_attach,
   }
 
+  -- dynamically load settings for current server
+  local opts
+  ok, opts = pcall(require, "user.lsp.settings." .. server.name)
+  if ok then
+    options = vim.tbl_deep_extend("force", opts, options)
+  end
+
   server:setup(options)
 end)
 
