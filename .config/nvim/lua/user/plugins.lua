@@ -112,6 +112,9 @@ return packer.startup(function(use)
   -- Telescope
   use { "nvim-telescope/telescope.nvim", tag = "0.1.0", requires =  {{ "nvim-lua/plenary.nvim" }} }
 
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+
   -- After cloning packer, automatically setup your configuration
   if PACKER_BOOTSTRAP then
     require("packer").sync()

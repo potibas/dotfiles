@@ -46,6 +46,15 @@ nmap("<s-l>", "$")
 -- Keep the paste buffer in visual mode
 vmap("p", '"_dP')
 
+-- Gitsigns
+nmap("]h", "<cmd>Gitsigns next_hunk<cr>")
+nmap("[h", "<cmd>Gitsigns prev_hunk<cr>")
+nmap(",r", "<cmd>Gitsigns reset_hunk<cr>")
+nmap(",s", "<cmd>Gitsigns stage_hunk<cr>")
+nmap(",S", "<cmd>Gitsigns undo_stage_hunk<cr>")
+nmap(",b", "<cmd>Gitsigns blame_line<cr>")
+nmap(",B", "<cmd>Gitsigns toggle_current_line_blame<cr>")
+
 -- Emacs keybindings in command mode
 cmap("<c-a>", "<home>")
 cmap("<c-b>", "<left>")
