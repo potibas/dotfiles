@@ -3,3 +3,6 @@
 
 # Un-ignore some things!
 !.gitconfig
+!/.config
+/.config/*
+!/.config/nvim
