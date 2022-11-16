@@ -68,3 +68,7 @@ nmap("<leader>vem", ":e " .. vimdir .. "/lua/user/mappings.lua<cr>")
 nmap("<leader>vep", ":e " .. vimdir .. "/lua/user/plugins.lua<cr>")
 nmap("<leader>vec", ":e " .. vimdir .. "/lua/user/colorscheme.lua<cr>")
 nmap("<leader>vs", ":w | :so " .. vimdir .. "/init.lua<cr>")
+
+-- Telescope
+nmap("<leader>f", "<cmd>Telescope find_files<cr>")
+nmap("<c-t>", "<cmd>Telescope live_grep<cr>")
