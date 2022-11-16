@@ -106,7 +106,7 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig"               -- enable LSP
-  use "williamboman/nvim-lsp-installer"     -- language server installer
+  use "williamboman/mason.nvim"             -- LSP package manager
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim", tag = "0.1.0", requires =  {{ "nvim-lua/plenary.nvim" }} }
