@@ -19,7 +19,7 @@ local function cmap(k, v)
 end
 
 -- Leader key
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 -- Fixes "*" (keep the cursor position, don"t move to next match)
 nmap("*", "*N")
