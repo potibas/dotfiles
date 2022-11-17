@@ -86,8 +86,11 @@ return packer.startup(function(use)
           "css",
           "javascript",
           "yaml",
-          html = { mode = "foreground"; }
-        }
+          "html",
+        },
+        user_default_options = {
+          mode = "foreground",
+        },
       }
     end
   }
