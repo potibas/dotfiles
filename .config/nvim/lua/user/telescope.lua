@@ -20,6 +20,8 @@ telescope.setup {
 
         ["<esc>"] = actions.close,
         ["<c-c>"] = actions.close,
+        ["<c-t>"] = actions.close,
+        ["<c-f>"] = actions.close,
 
         ["<down>"] = actions.move_selection_next,
         ["<up>"] = actions.move_selection_previous,
@@ -27,7 +29,6 @@ telescope.setup {
         ["<cr>"] = actions.select_default,
         ["<c-x>"] = actions.select_horizontal,
         ["<c-v>"] = actions.select_vertical,
-        ["<c-t>"] = actions.select_tab,
 
         ["<c-u>"] = actions.preview_scrolling_up,
         ["<c-d>"] = actions.preview_scrolling_down,

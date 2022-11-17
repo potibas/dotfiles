@@ -70,6 +70,6 @@ nmap("<leader>vec", ":e " .. vimdir .. "/lua/user/colorscheme.lua<cr>")
 nmap("<leader>vs", ":w | :so " .. vimdir .. "/init.lua<cr>")
 
 -- Telescope
-nmap("<leader>f", "<cmd>Telescope find_files<cr>")
-nmap("<leader>g", "<cmd>Telescope git_files<cr>")
-nmap("<c-t>", "<cmd>Telescope live_grep<cr>")
+nmap("<c-t>", "<cmd>Telescope find_files<cr>")
+nmap("<c-T>", "<cmd>Telescope git_files<cr>")
+nmap("<c-f>", "<cmd>Telescope live_grep<cr>")
