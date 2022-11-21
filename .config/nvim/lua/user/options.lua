@@ -17,5 +17,8 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- don't insert the current comment leader automatically
+vim.opt.formatoptions:remove({ "c", "r", "o" })
+
 -- Avoid conflict with tree-sitter
 vim.cmd [[syntax off]]
