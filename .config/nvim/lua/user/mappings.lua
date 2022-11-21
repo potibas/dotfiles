@@ -37,7 +37,7 @@ nmap("<leader>q", ":q<cr>")
 nmap("<leader><leader>", "<c-^>")
 
 -- Explorer window on the left
-nmap("<leader>e", ":Lexplore 30<cr>")
+nmap("<leader>e", ":NvimTreeToggle<cr>")
 
 -- Mimic Home/End
 nmap("<s-h>", "0")

@@ -118,6 +118,9 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  -- Nvim-tree
+  use "kyazdani42/nvim-tree.lua"
+
   -- After cloning packer, automatically setup your configuration
   if PACKER_BOOTSTRAP then
     require("packer").sync()
