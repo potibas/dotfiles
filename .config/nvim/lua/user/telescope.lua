@@ -20,8 +20,6 @@ telescope.setup {
 
         ["<esc>"] = actions.close,
         ["<c-c>"] = actions.close,
-        ["<c-t>"] = actions.close,
-        ["<c-f>"] = actions.close,
 
         ["<down>"] = actions.move_selection_next,
         ["<up>"] = actions.move_selection_previous,
