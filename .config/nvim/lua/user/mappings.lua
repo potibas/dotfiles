@@ -49,6 +49,7 @@ vmap("p", '"_dP')
 -- Gitsigns
 nmap("]h", "<cmd>Gitsigns next_hunk<cr>")
 nmap("[h", "<cmd>Gitsigns prev_hunk<cr>")
+nmap(",h", "<cmd>Gitsigns preview_hunk<cr>")
 nmap(",r", "<cmd>Gitsigns reset_hunk<cr>")
 nmap(",s", "<cmd>Gitsigns stage_hunk<cr>")
 nmap(",S", "<cmd>Gitsigns undo_stage_hunk<cr>")
@@ -79,6 +80,7 @@ nmap("<leader>vec", ":e " .. vimdir .. "/lua/user/colorscheme.lua<cr>")
 nmap("<leader>vs", ":w | :so " .. vimdir .. "/init.lua<cr>")
 
 -- Telescope
-nmap("<c-t>", "<cmd>Telescope find_files<cr>")
-nmap("<c-T>", "<cmd>Telescope git_files<cr>")
-nmap("<c-f>", "<cmd>Telescope live_grep<cr>")
+nmap("<leader>f", "<cmd>Telescope find_files<cr>")
+nmap("<leader>F", "<cmd>Telescope git_files<cr>")
+nmap("<leader>b", "<cmd>Telescope buffers<cr>")
+nmap("<leader>g", "<cmd>Telescope live_grep<cr>")
