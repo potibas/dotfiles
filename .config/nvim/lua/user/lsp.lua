@@ -16,7 +16,7 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 local mappings = {
   ["gd"] = "<cmd>lua vim.lsp.buf.definition()<cr>",
   ["K"] = "<cmd>lua vim.lsp.buf.hover()<cr>",
-  ["<c-k>"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>",
+  ["<leader>k"] = "<cmd>lua vim.lsp.buf.signature_help()<cr>",
 }
 
 local function on_attach(_, bufnr)
