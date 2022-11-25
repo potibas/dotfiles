@@ -1,24 +1,24 @@
 [user]
-    name = Potiguar Faga Catalan
-    email = potiguar@potiguar.net
-    signingkey = 5B05483EFAF35E08
+  name = Potiguar Faga Catalan
+  email = potiguar@potiguar.net
+  signingkey = 5B05483EFAF35E08
 
 [color]
-    ui = auto
+  ui = auto
 
 [core]
-    excludesfile = ~/.gitignore_global
-	pager = less -F -X
+  excludesfile = ~/.gitignore_global
+  pager = less -F -X
 
 [advice]
   addIgnoredFile = false
 
 [pull]
-    rebase = true
+  rebase = true
 
 [push]
-    # push current branch by default
-    default = current
+  # push current branch by default
+  default = current
 
 [url "git@github.com:potibas/"]
 	insteadOf = "potibas:"
@@ -31,42 +31,43 @@
 	insteadOf = "gitlab:"
 
 [alias]
-    # Short status output
-    s = status -s
+  # Short status output
+  s = status -s
 
-    # Not everything is bad
-    praise = blame
+  # Not everything is bad
+  praise = blame
 
-    # Common operations
-    co = checkout
-    st = status
-    ci = commit
-    di = diff
-    dc = diff --cached
-    cp = cherry-pick
-    cpn = cherry-pick --no-commit
-    pr = pull --rebase
-    ri = rebase --interactive --autosquash
-    rc = rebase --continue
-    fa = fetch --all
-    sa = !git add . && git stash
-    sp = stash pop
-    sl = stash list
-    amend = commit --amend
-    squash = commit --amend --no-edit
-    b = branch
+  # Common operations
+  co = checkout
+  st = status
+  ci = commit
+  di = diff
+  dc = diff --cached
+  cp = cherry-pick
+  cpn = cherry-pick --no-commit
+  pr = pull --rebase
+  ri = rebase --interactive --autosquash
+  rc = rebase --continue
+  fa = fetch --all
+  sa = !git add . && git stash
+  sp = stash pop
+  sl = stash list
+  amend = commit --amend
+  squash = commit --amend --no-edit
+  b = branch
 
-    # Colored logs
-    l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(italic cyan)%an%C(reset)'
-    la = !git l --all
-    r = !git l -20
-    ra = !git r --all
+  # Colored logs
+  l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(italic cyan)%an%C(reset)'
+  la = !git l --all
+  r = !git l -20
+  ra = !git r --all
 
-    # Searching
-    ls = "!git l -p -S "
-    lg = "!git l -p -G "
+  # Searching
+  ls = "!git l -p -S "
+  lg = "!git l -p -G "
 
 [init]
 	defaultBranch = main
+
 [commit]
 	gpgsign = true
