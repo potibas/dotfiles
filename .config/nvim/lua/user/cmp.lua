@@ -1,14 +1,5 @@
 local ok, cmp = pcall(require, "cmp")
-if not ok then
-  return
-end
-
-local ok, luasnip = pcall(require, "luasnip")
-if not ok then
-  return
-end
-
-require("luasnip.loaders.from_vscode").lazy_load()
+if not ok then return end
 
 -- https://www.nerdfonts.com/cheat-sheet
 local kind_icons = {
@@ -57,37 +48,26 @@ cmp.setup {
     completeopt = "menu,menunone,noinsert",
   },
   enabled = function()
-    return not luasnip.in_snippet() or not luasnip.jumpable(1)
+    -- don't use cmp in prompt windows (e.g.: telescope)
+    buftype = vim.api.nvim_buf_get_option(0, "buftype")
+    if buftype == "prompt" then return false end
+
+    return true
   end,
   mapping = {
     ["<c-p>"] = cmp.mapping.select_prev_item(),
     ["<c-n>"] = cmp.mapping.select_next_item(),
     ["<c-b>"] = cmp.mapping.scroll_docs(-1),
     ["<c-f>"] = cmp.mapping.scroll_docs(1),
-    ["<tab>"] = function(fallback)
-      if luasnip.in_snippet() and luasnip.jumpable(1) then
-        luasnip.jump(1)
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif cmp.visible() then
-        cmp.confirm()
-      else
-        fallback()
-      end
-    end,
-    ["<s-tab>"] = function(fallback)
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
+    ["<c-e>"] = cmp.mapping.close(),
+    ["<cr>"] = cmp.mapping.confirm({ select = true }),
+    ["<c-space>"] = cmp.mapping.complete(),
   },
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
-    { name = "buffer" },
+    { name = "buffer", keyword_length = 5 },
     { name = "path" },
   },
   formatting = {
@@ -97,6 +77,10 @@ cmp.setup {
       vim_item.menu = source_names[entry.source.name]
       return vim_item
     end,
+  },
+  experimental = {
+    native_menu = false,
+    ghost_text = true,
   },
   window = {
     documentation = cmp.config.window.bordered(),

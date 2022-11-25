@@ -44,6 +44,7 @@ telescope.setup {
 
       n = {
         ["<esc>"] = actions.close,
+
         ["<cr>"] = actions.select_default,
         ["<c-x>"] = actions.select_horizontal,
         ["<c-v>"] = actions.select_vertical,
