@@ -67,6 +67,10 @@ fi
 # Rust
 [ -s "$HOME/.asdf/installs/rust/1.54.0" ] && source "$HOME/.asdf/installs/rust/1.54.0/env"
 
+# asdf Erlang
+export KERL_BUILD_DOCS=yes
+export KERL_DOC_TARGETS="man html pdf chunks"
+
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*,**/_build/*,**/deps/*,**/.elixir_ls/*,**/tmp/*}'"
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
