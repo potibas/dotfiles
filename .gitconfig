@@ -1,0 +1,59 @@
+[user]
+  name = Potiguar Catalan
+  email = potiguar@potiguar.net
+
+[color]
+  ui = auto
+
+[core]
+  excludesfile = ~/.gitignore_global
+  pager = less -F -X
+  editor = vim
+
+[advice]
+  addIgnoredFile = false
+
+[pull]
+  rebase = true
+
+[push]
+  # push current branch by default
+  default = current
+
+[url "git@github.com:potibas/"]
+  insteadOf = "potibas:"
+
+[url "git@github.com:"]
+  insteadOf = "github:"
+
+[url "git@gitlab.com:"]
+  insteadOf = "gitlab:"
+
+[alias]
+  # Common operations
+  b = branch
+  co = checkout
+  ci = commit
+  cp = cherry-pick
+  cpn = cherry-pick --no-commit
+  di = diff
+  dc = diff --cached
+  fa = fetch --all
+  pr = pull --rebase
+  ri = rebase --interactive --autosquash
+  rc = rebase --continue
+  st = status
+  sa = !git add . && git stash
+  sp = stash pop
+  sl = stash list
+  amend = commit --amend
+  squash = commit --amend --no-edit
+
+  # Colored logs
+  l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(italic cyan)%an%C(reset)'
+  la = !git l --all
+  r = !git l -20
+  ra = !git r --all
+
+[init]
+  defaultBranch = main
