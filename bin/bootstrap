@@ -1,0 +1,12 @@
+#!/bin/zsh
+set -e
+
+# Install Homebrew
+if ! type brew > /dev/null 2>/dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install Homebrew formulae and casks
+brew bundle
+
+echo "=== finished bootstrap script, open new terminal session ==="
