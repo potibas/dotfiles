@@ -18,6 +18,8 @@ sudo xattr -dr com.apple.quarantine "/Applications/Spotify.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Google Chrome.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Gnucash.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Keybase.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Karabiner-Elements.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Karabiner-EventViewer.app"
 
 # Force en_GB locale for GnuCash
 defaults write -app Gnucash AppleLocale 'en_GB.UTF-8'
