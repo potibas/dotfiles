@@ -17,6 +17,7 @@ sudo xattr -dr com.apple.quarantine "/Applications/Whatsapp.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Spotify.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Google Chrome.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Gnucash.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Keybase.app"
 
 # Force en_GB locale for GnuCash
 defaults write -app Gnucash AppleLocale 'en_GB.UTF-8'
