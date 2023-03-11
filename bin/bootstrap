@@ -12,4 +12,7 @@ brew bundle
 # Sudo without password
 sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 
+# Un-quarantine  applications
+sudo xattr -dr com.apple.quarantine "/Applications/Whatsapp.app"
+
 echo "=== finished bootstrap script, open new terminal session ==="

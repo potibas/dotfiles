@@ -1,0 +1,2 @@
+# Applications
+cask "whatsapp"
