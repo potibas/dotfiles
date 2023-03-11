@@ -15,5 +15,6 @@ sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudo
 # Un-quarantine  applications
 sudo xattr -dr com.apple.quarantine "/Applications/Whatsapp.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Spotify.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Google Chrome.app"
 
 echo "=== finished bootstrap script, open new terminal session ==="
