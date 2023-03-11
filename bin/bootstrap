@@ -9,4 +9,7 @@ fi
 # Install Homebrew formulae and casks
 brew bundle
 
+# Sudo without password
+sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
+
 echo "=== finished bootstrap script, open new terminal session ==="
