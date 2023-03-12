@@ -7,6 +7,7 @@ cask "keybase"
 
 # Dev tools
 cask "karabiner-elements"
+cask "kitty"
 
 # Fonts
 tap "homebrew/cask-fonts"
