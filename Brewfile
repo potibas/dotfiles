@@ -9,6 +9,12 @@ cask "keybase"
 cask "karabiner-elements"
 cask "kitty"
 
+# Essentials
+brew "coreutils"
+brew "git"
+brew "curl"
+brew "wget"
+
 # Fonts
 tap "homebrew/cask-fonts"
 cask "font-iosevka-nerd-font"
