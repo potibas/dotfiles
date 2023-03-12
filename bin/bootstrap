@@ -9,6 +9,17 @@ fi
 # Install Homebrew formulae and casks
 brew bundle
 
+# install rtx
+if [ ! -f "$HOME/bin/rtx" ]; then
+  echo "Installing rtx..."
+  curl https://rtx.pub/rtx-latest-macos-x64 > ~/bin/rtx 2> /dev/null
+  chmod +x ~/bin/rtx
+fi
+
+# install global tools
+echo "Installing global tools"
+~/bin/rtx install
+
 # Sudo without password
 sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 
