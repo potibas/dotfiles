@@ -14,7 +14,9 @@ cask "visual-studio-code"
 # Essentials
 brew "nvim"
 brew "coreutils"
+brew "gnu-tar"
 brew "git"
+brew "gpg"
 brew "curl"
 brew "wget"
 
