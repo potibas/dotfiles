@@ -16,6 +16,9 @@ brew "git"
 brew "curl"
 brew "wget"
 
+# Dev CLI tools
+brew "starship"
+
 # Fonts
 tap "homebrew/cask-fonts"
 cask "font-iosevka-nerd-font"
