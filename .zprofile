@@ -9,3 +9,6 @@ fi
 
 # aliases
 alias g="git"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"

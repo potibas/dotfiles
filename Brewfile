@@ -11,6 +11,7 @@ cask "kitty"
 cask "rowanj-gitx"
 
 # Essentials
+brew "nvim"
 brew "coreutils"
 brew "git"
 brew "curl"
