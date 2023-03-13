@@ -30,6 +30,9 @@ export KERL_CONFIGURE_OPTIONS="\
 
 # aliases
 alias g="git"
+alias im="iex -S mix"
+alias is="iex -S mix phx.server"
+alias m="mix"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
