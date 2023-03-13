@@ -9,6 +9,7 @@ cask "keybase"
 cask "karabiner-elements"
 cask "kitty"
 cask "rowanj-gitx"
+cask "visual-studio-code"
 
 # Essentials
 brew "nvim"

@@ -20,6 +20,25 @@ fi
 echo "Installing global tools"
 ~/bin/rtx install
 
+# Link vscode config and install extensions
+mkdir -p ~/.config/vscode
+for file in settings.json keybindings.json snippets; do
+  rm -rf ~/Library/Application\ Support/Code/User/$file
+  ln -s ~/.config/vscode/$file ~/Library/Application\ Support/Code/User
+done
+
+code \
+  --install-extension asvetliakov.vscode-neovim \
+  --install-extension Equinusocio.vsc-community-material-theme \
+  --install-extension Equinusocio.vsc-material-theme \
+  --install-extension equinusocio.vsc-material-theme-icons \
+  --install-extension JakeBecker.elixir-ls \
+  --install-extension NikosKornarakis.predawn-twilight \
+  --install-extension phoenixframework.phoenix \
+  --install-extension vscode-exunit.exunit \
+  --force \
+  || true
+
 # Sudo without password
 sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 
@@ -33,6 +52,7 @@ sudo xattr -dr com.apple.quarantine "/Applications/Karabiner-Elements.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Karabiner-EventViewer.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Kitty.app"
 sudo xattr -dr com.apple.quarantine "/Applications/GitX.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Visual Studio Code.app"
 
 # Force en_GB locale for GnuCash
 defaults write -app Gnucash AppleLocale 'en_GB.UTF-8'

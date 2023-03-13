@@ -1,0 +1,116 @@
+{
+  // Appearance
+  "breadcrumbs.enabled": false,
+  "editor.fontFamily": "Iosevka Nerd Font Mono",
+  "editor.fontSize": 13,
+  "explorer.openEditors.visible": 0,
+  "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.drawBoldTextInBrightColors": true,
+  "terminal.integrated.gpuAcceleration": "on",
+  "workbench.colorTheme": "Material Theme",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 16,
+
+  // Behaviour
+  "editor.accessibilitySupport": "off",
+  "editor.autoIndent": "advanced",
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.autoClosingQuotes": "beforeWhitespace",
+  "editor.codeLens": false,
+  "editor.dragAndDrop": false,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.insertSpaces": true,
+  "editor.mouseWheelZoom": true,
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.useTabStops": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.settings.editor": "json",
+  "workbench.startupEditor": "none",
+
+  // Source control
+  "diffEditor.renderSideBySide": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.openDiffOnClick": false,
+  "git.openRepositoryInParentFolders": "never",
+  "scm.showActionButton": false,
+
+  // File ignores
+  "files.exclude": {
+    // Elixir
+    "**/dist/": true,
+    "**/_build/": true,
+    "**/deps/": true,
+    "**/.elixir_ls/": true,
+
+    // NodeJS
+    "**/node_modules/": true,
+
+    // Python
+    "**/__pycache__/": true,
+    "**/*.picklecache": true,
+
+    // SCM
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+
+    // etc
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+
+  "files.associations": {
+    "*.heex": "phoenix-heex"
+  },
+
+  // Elixir
+  "elixirLS.fetchDeps": false,
+  "elixirLS.suggestSpecs": false,
+  "elixirLS.enableTestLenses": false,
+  "elixirLS.signatureAfterComplete": false,
+
+  "[elixir]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.trimAutoWhitespace": false,
+    "editor.rulers": [120]
+  },
+  "[phoenix-heex]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+    "editor.rulers": [98]
+  },
+
+  // Elixir color customizations
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      { "scope": "keyword.other.special-method.elixir", "settings": { "fontStyle": "italic" } },
+      { "scope": "constant.other.symbol.elixir","settings": { "foreground": "#61afef" } }
+    ]
+  },
+
+  // Emmet
+  "emmet.includeLanguages": {
+    "elixir": "html",
+    "phoenix-heex": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  "[jsonc]": {
+    // Don't format this file
+    "editor.formatOnSave": false
+  }
+}

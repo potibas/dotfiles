@@ -1,0 +1,47 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+k cmd+c",
+        "command": "copyRelativeFilePath"
+    },
+    {
+        "key": "cmd+k cmd+e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "cmd+k cmd+x",
+        "command": "workbench.view.extensions"
+    },
+    {
+        "key": "cmd+t cmd+y",
+        "command": "exunit.runTest"
+    },
+    {
+        "key": "cmd+t cmd+f",
+        "command": "exunit.runTestFile"
+    },
+    {
+        "key": "cmd+t cmd+t",
+        "command": "exunit.runPrevious"
+    }
+]
