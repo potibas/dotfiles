@@ -18,6 +18,10 @@ brew "git"
 brew "curl"
 brew "wget"
 
+# Erlang dependencies
+brew "openssl@1.1"
+brew "wxwidgets"
+
 # Dev CLI tools
 brew "starship"
 
