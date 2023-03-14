@@ -53,6 +53,11 @@ sudo xattr -dr com.apple.quarantine "/Applications/Karabiner-EventViewer.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Kitty.app"
 sudo xattr -dr com.apple.quarantine "/Applications/GitX.app"
 sudo xattr -dr com.apple.quarantine "/Applications/Visual Studio Code.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Microsoft Excel.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Microsoft OneNote.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Microsoft Outlook.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Microsoft PowerPoint.app"
+sudo xattr -dr com.apple.quarantine "/Applications/Microsoft Word.app"
 
 # Force en_GB locale for GnuCash
 defaults write -app Gnucash AppleLocale 'en_GB.UTF-8'

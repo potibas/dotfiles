@@ -4,6 +4,7 @@ cask "spotify"
 cask "google-chrome"
 cask "gnucash"
 cask "keybase"
+cask "microsoft-office"
 
 # Dev tools
 cask "karabiner-elements"
