@@ -20,7 +20,7 @@ read_only = " "
 symbol = " "
 
 [elixir]
-symbol = " "
+disabled = true
 
 [elm]
 symbol = " "
@@ -131,3 +131,8 @@ symbol = " "
 
 [spack]
 symbol = "🅢 "
+
+[custom.elixir]
+command = "echo v$(elixir --short-version)"
+files = ["mix.exs"]
+symbol = " "
