@@ -1,10 +1,17 @@
 # Applications
-cask "whatsapp"
 cask "spotify"
 cask "google-chrome"
 cask "gnucash"
 cask "keybase"
 cask "microsoft-office"
+
+# Comms
+cask "discord"
+cask "microsoft-teams"
+cask "slack"
+cask "telegram"
+cask "whatsapp"
+cask "zoom"
 
 # Dev tools
 cask "karabiner-elements"
