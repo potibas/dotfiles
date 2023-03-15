@@ -43,27 +43,29 @@ code \
 sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 
 # Un-quarantine  applications
-sudo xattr -dr com.apple.quarantine "/Applications/Whatsapp.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Spotify.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Google Chrome.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Gnucash.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Keybase.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Karabiner-Elements.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Karabiner-EventViewer.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Kitty.app"
-sudo xattr -dr com.apple.quarantine "/Applications/GitX.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Visual Studio Code.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Telegram.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Slack.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Discord.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Microsoft Teams.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Zoom.us.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Microsoft Excel.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Microsoft OneNote.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Microsoft Outlook.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Microsoft PowerPoint.app"
-sudo xattr -dr com.apple.quarantine "/Applications/Microsoft Word.app"
-sudo xattr -dr com.apple.quarantine "/Applications/OmniFocus.app"
+applications=(
+  Discord
+  GitX
+  "Google Chrome"
+  Gnucash
+  Karabiner-Elements Karabiner-EventViewer
+  Keybase
+  Kitty
+  "Microsoft Excel" "Microsoft OneNote" "Microsoft Outlook" "Microsoft PowerPoint" "Microsoft Word"
+  "Microsoft Teams"
+  OmniFocus
+  Slack
+  Spotify
+  Telegram
+  "Visual Studio Code"
+  Whatsapp
+  Zoom.us
+)
+
+for app in $applications; do
+  echo "unquarantining $app"
+  sudo xattr -dr com.apple.quarantine "/Applications/$app.app"
+done
 
 # Force en_GB locale for GnuCash
 defaults write -app Gnucash AppleLocale 'en_GB.UTF-8'
