@@ -4,6 +4,7 @@ cask "google-chrome"
 cask "gnucash"
 cask "keybase"
 cask "microsoft-office"
+cask "omnifocus"
 
 # Comms
 cask "discord"
