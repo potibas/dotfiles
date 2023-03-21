@@ -32,6 +32,7 @@ brew "wget"
 # Modern unix tools
 brew "bat"
 brew "z"
+brew "exa"
 
 # Erlang dependencies
 brew "openssl@1.1"
