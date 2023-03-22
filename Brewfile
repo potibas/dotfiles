@@ -19,6 +19,7 @@ cask "karabiner-elements"
 cask "kitty"
 cask "rowanj-gitx"
 cask "visual-studio-code"
+cask "hammerspoon"
 
 # Essentials
 brew "nvim"
