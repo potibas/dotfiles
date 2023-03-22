@@ -13,7 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('commands')
-require('mappings')
 require('options')
+require('mappings')
 require('lazy').setup('plugins')
 
