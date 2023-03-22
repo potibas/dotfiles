@@ -4,6 +4,7 @@ vim.opt.termguicolors = true
 vim.opt.bg = 'dark'
 vim.opt.showcmd = true
 vim.opt.number = true
+vim.opt.cursorline = true
 vim.opt.cmdheight = 1
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
