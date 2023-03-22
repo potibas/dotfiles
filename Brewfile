@@ -28,6 +28,7 @@ brew "git"
 brew "gpg"
 brew "curl"
 brew "wget"
+brew "youtube-dl"
 
 # Modern unix tools
 brew "bat"
