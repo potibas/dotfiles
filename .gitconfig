@@ -31,6 +31,7 @@
 
 [alias]
   # Common operations
+  aa = !git add .
   b = branch
   co = checkout
   ci = commit
