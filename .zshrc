@@ -16,3 +16,6 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
+
+# Don't save commands prepended with a space to history
+setopt histignorespace
