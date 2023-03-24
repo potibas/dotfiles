@@ -28,6 +28,9 @@ export KERL_CONFIGURE_OPTIONS="\
   --without-javac \
 "
 
+# Enable history in Erlang/IEx
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # aliases
 alias g="git"
 alias im="iex -S mix"
