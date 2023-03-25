@@ -8,6 +8,9 @@ vim.keymap.set('n', '<leader><leader>', '<c-^>')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
+-- Clear search highlight with <cr>
+vim.keymap.set('n', '<cr>', ':nohlsearch<cr>')
+
 -- Search history with C-P/C-N
 local wildmenumap = function (mapping, alternate)
   return function ()
