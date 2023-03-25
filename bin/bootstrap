@@ -6,6 +6,9 @@ if ! type brew > /dev/null 2>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# install tmux 256-color terminalinfo with italics
+tic -x ~/.config/tmux/tmux.terminfo
+
 # Install Homebrew formulae and casks
 brew bundle
 

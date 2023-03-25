@@ -23,6 +23,7 @@ cask "hammerspoon"
 
 # Essentials
 brew "nvim"
+brew "tmux"
 brew "coreutils"
 brew "gnu-tar"
 brew "git"
