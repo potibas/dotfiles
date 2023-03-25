@@ -15,3 +15,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.showmatch = true
 vim.opt.matchtime = 1
+
+-- Don't insert comments on new lines
+vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]]
