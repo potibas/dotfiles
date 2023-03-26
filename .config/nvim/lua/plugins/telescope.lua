@@ -24,9 +24,8 @@ return {
     require('telescope').load_extension('file_browser')
   end,
   keys = {
-    { '<c-p>', function() require('telescope.builtin').git_files() end, desc = "Git Files" },
+    { '<c-p>', function() require('telescope.builtin').find_files() end, desc = "Find Files" },
     { '<c-f><c-b>', function() require('telescope.builtin').buffers() end, desc = "Find Buffers" },
-    { '<c-f><c-f>', function() require('telescope.builtin').find_files() end, desc = "Find Files" },
     { '<c-f><c-g>', function() require('telescope.builtin').live_grep() end, desc = "Livegrep" },
   }
 }
