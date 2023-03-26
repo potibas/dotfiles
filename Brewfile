@@ -36,6 +36,8 @@ brew "youtube-dl"
 brew "bat"
 brew "z"
 brew "exa"
+brew "ripgrep"
+brew "fd"
 
 # Erlang dependencies
 brew "openssl@1.1"
