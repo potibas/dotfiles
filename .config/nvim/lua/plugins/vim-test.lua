@@ -4,12 +4,22 @@ return {
     'preservim/vimux',
   },
   keys = {
-    { '<leader>y', ':w | :TestNearest<CR>', desc = 'Test Nearest' },
-    { '<leader>t', ':w | :TestLast<CR>', desc = 'Test Last' },
-    { '<leader>T', ':w | :TestFile<CR>', desc = 'Test File' },
+    { '<leader>t', ':w | :TestNearest<cr>', desc = 'Test nearest' },
+    {
+      '<c-t>',
+      function ()
+        local filename = vim.fn['expand']('%')
+        if vim.fn['test#test_file'](filename) then
+          vim.cmd(':w | :TestNearest')
+        else
+          vim.cmd(':w | :TestLast')
+        end
+      end,
+      desc = 'Test nearest or last'
+    },
   },
   config = function()
     vim.g['test#strategy'] = 'vimux'
-    vim.g['test#preserve_screen'] = 1
+    vim.g['test#preserve_screen'] = 0
   end
 }
