@@ -19,3 +19,14 @@ bindkey "^N" down-line-or-beginning-search
 
 # Don't save commands prepended with a space to history
 setopt histignorespace
+
+# Raise history size
+export HISTFILE=~/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+
+# Append to history file immediately and save timestamp
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+export HISTTIMEFORMAT="[%F %T] "
