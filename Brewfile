@@ -52,6 +52,7 @@ cask "font-inconsolata-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-roboto-mono-nerd-font"
 
-# Command-line applications
+# Video editing & player
 brew "ffmpeg"
 brew "youtube-dl"
+cask "vlc"
