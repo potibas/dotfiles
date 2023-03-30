@@ -30,7 +30,6 @@ brew "git"
 brew "gpg"
 brew "curl"
 brew "wget"
-brew "youtube-dl"
 
 # Modern unix tools
 brew "bat"
@@ -52,3 +51,7 @@ cask "font-iosevka-nerd-font"
 cask "font-inconsolata-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-roboto-mono-nerd-font"
+
+# Command-line applications
+brew "ffmpeg"
+brew "youtube-dl"
