@@ -2,7 +2,7 @@
 vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>")
 
 -- Expand nvim config dir
-vim.keymap.set('c', '%v', "~/.config/nvim/lua/")
+vim.keymap.set('c', '##', "~/.config/nvim/lua/")
 
 -- Switch to alternate file
 vim.keymap.set('n', '<leader><leader>', '<c-^>')
