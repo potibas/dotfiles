@@ -1,5 +1,9 @@
 return {
   'tpope/vim-projectionist',
+  lazy = false,
+  keys = {
+    { '<leader>a', ':A<cr>', desc = 'Alternate file', silent = true },
+  },
   config = function()
     vim.g.projectionist_heuristics = {
 
