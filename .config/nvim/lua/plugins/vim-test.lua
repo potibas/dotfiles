@@ -4,7 +4,7 @@ return {
     'preservim/vimux',
   },
   keys = {
-    { '<c-t>', ':w | :TestNearest<cr>', desc = 'Test nearest' },
+    { '<leader>t', ':w | :TestNearest<cr>', desc = 'Test nearest' },
   },
   config = function()
     vim.g['test#strategy'] = 'vimux'
