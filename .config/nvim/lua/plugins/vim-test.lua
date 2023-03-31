@@ -21,5 +21,6 @@ return {
   config = function()
     vim.g['test#strategy'] = 'vimux'
     vim.g['test#preserve_screen'] = 0
+    vim.g['test#no_alternate'] = 1
   end
 }
