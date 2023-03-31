@@ -4,19 +4,7 @@ return {
     'preservim/vimux',
   },
   keys = {
-    { '<leader>t', ':w | :TestNearest<cr>', desc = 'Test nearest' },
-    {
-      '<c-t>',
-      function ()
-        local filename = vim.fn['expand']('%')
-        if vim.fn['test#test_file'](filename) then
-          vim.cmd(':w | :TestNearest')
-        else
-          vim.cmd(':w | :TestLast')
-        end
-      end,
-      desc = 'Test nearest or last'
-    },
+    { '<c-t>', ':w | :TestNearest<cr>', desc = 'Test nearest' },
   },
   config = function()
     vim.g['test#strategy'] = 'vimux'
