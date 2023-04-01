@@ -1,3 +1,8 @@
+-- Basic operations
+vim.keymap.set('n', '<leader>w', ':w<cr>')
+vim.keymap.set('n', '<leader>q', ':q<cr>')
+vim.keymap.set('n', '<leader>d', ':bd<cr>')
+
 -- Expand current file's directory
 vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>")
 
