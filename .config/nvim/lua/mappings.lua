@@ -1,7 +1,7 @@
 -- Basic operations
-vim.keymap.set('n', '<leader>w', ':w<cr>')
-vim.keymap.set('n', '<leader>q', ':q<cr>')
-vim.keymap.set('n', '<leader>d', ':bd<cr>')
+vim.keymap.set('n', '<leader>w', ':w<cr>', { silent = true })
+vim.keymap.set('n', '<leader>q', ':q<cr>', { silent = true })
+vim.keymap.set('n', '<leader>d', ':bd<cr>', { silent = true })
 
 -- Expand current file's directory
 vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>")
@@ -17,7 +17,7 @@ vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
 -- Clear search highlight with <cr>
-vim.keymap.set('n', '<cr>', ':nohlsearch<cr>')
+vim.keymap.set('n', '<cr>', ':nohlsearch<cr>', { silent = true })
 
 -- Search history with C-P/C-N
 local wildmenumap = function (mapping, alternate)
