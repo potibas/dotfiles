@@ -1,2 +1,8 @@
 # Ignore all things!
 /*
+
+# Un-ignore some things!
+!.gitconfig
+!/.config
+/.config/*
+!/.config/nvim
