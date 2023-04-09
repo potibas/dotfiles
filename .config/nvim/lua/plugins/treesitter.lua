@@ -1,9 +1,15 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  dependencies = {
+    'RRethy/nvim-treesitter-endwise',
+  },
   config = function()
     require('nvim-treesitter.configs').setup({
       ensure_installed = 'all',
       indent = {
+        enable = true
+      },
+      endwise = {
         enable = true
       },
       highlight = {
@@ -19,4 +25,3 @@ return {
     })
   end
 }
-
