@@ -12,6 +12,15 @@ return {
         layout_config = {
           center = { width = 0.8 },
         },
+        mappings = {
+          i = {
+            -- Allow <c-j> and <c-k> for navigation
+                ['<c-j>'] = 'move_selection_next',
+                ['<c-k>'] = 'move_selection_previous',
+            -- Disable normal mode
+                ['<esc>'] = 'close',
+          },
+        },
       },
       extensions = {
         file_browser = {
@@ -25,6 +34,7 @@ return {
   end,
   keys = {
     { '<c-p>', function() require('telescope.builtin').find_files() end, desc = "Find Files" },
-    { '<c-f>', function() require('telescope.builtin').live_grep() end, desc = "Livegrep" }
+    { '<c-f>', function() require('telescope.builtin').live_grep() end,  desc = "Livegrep" },
+    { '<c-g>', function() require('telescope.builtin').git_files() end,  desc = "Livegrep" }
   }
 }
