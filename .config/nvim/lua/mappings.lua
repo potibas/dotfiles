@@ -21,8 +21,8 @@ vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<cr>', ':nohlsearch<cr>', { silent = true })
 
 -- Search history with C-P/C-N
-local wildmenumap = function (mapping, alternate)
-  return function ()
+local wildmenumap = function(mapping, alternate)
+  return function()
     if vim.fn['wildmenumode']() == 1 then
       return mapping
     else
