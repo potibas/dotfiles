@@ -24,8 +24,8 @@ return {
         end, { expr = true, buffer = bufnr })
 
         -- actions
-        vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':gitsigns stage_hunk<cr>', { buffer = bufnr })
-        vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':gitsigns reset_hunk<cr>', { buffer = bufnr })
+        vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<cr>', { buffer = bufnr })
+        vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<cr>', { buffer = bufnr })
         vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk, { buffer = bufnr })
         vim.keymap.set('n', '<leader>hh', gs.preview_hunk, { buffer = bufnr })
 
