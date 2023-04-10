@@ -33,8 +33,13 @@ return {
     require('telescope').load_extension('file_browser')
   end,
   keys = {
-    { '<c-p>', function() require('telescope.builtin').find_files() end, desc = "Find Files" },
-    { '<c-f>', function() require('telescope.builtin').live_grep() end,  desc = "Livegrep" },
-    { '<c-g>', function() require('telescope.builtin').git_files() end,  desc = "Livegrep" }
+    { '<c-p>',      function() require('telescope.builtin').find_files() end,   desc = "Find Files" },
+    { '<c-f>',      function() require('telescope.builtin').live_grep() end,    desc = "Livegrep" },
+    { '<leader>gb', function() require('telescope.builtin').git_branches() end, desc = "Git branches" },
+    { '<leader>gf', function() require('telescope.builtin').git_files() end,    desc = "Git files" },
+    { '<leader>gs', function() require('telescope.builtin').git_status() end,   desc = "Git status" },
+    { '<leader>gS', function() require('telescope.builtin').git_stash() end,    desc = "Git stash" },
+    { '<leader>gl', function() require('telescope.builtin').git_commits() end,  desc = "Git log" },
+    { '<leader>gL', function() require('telescope.builtin').git_bcommits() end, desc = "Git buffer log" },
   }
 }
