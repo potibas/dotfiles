@@ -4,11 +4,11 @@ return {
     'preservim/vimux',
   },
   keys = {
-    { '<leader>t', ':w | :TestLast<cr>', desc = 'Test last' },
-    { '<space>tt', ':w | :TestNearest<cr>', desc = 'Test nearest' },
-    { '<space>tf', ':w | :TestFile<cr>', desc = 'Test file' },
-    { '<space>ta', ':w | :TestSuite<cr>', desc = 'Test suite' },
-    { '<space>tv', ':w | :TestVisit<cr>', desc = 'Test visit' },
+    { '<leader>tt', ':w | :TestNearest<cr>', desc = 'Test nearest' },
+    { '<leader>tl', ':w | :TestLast<cr>',    desc = 'Test last' },
+    { '<leader>tf', ':w | :TestFile<cr>',    desc = 'Test file' },
+    { '<leader>ta', ':w | :TestSuite<cr>',   desc = 'Test suite' },
+    { '<leader>tv', ':w | :TestVisit<cr>',   desc = 'Test visit' },
   },
   config = function()
     vim.g['test#strategy'] = 'vimux'
