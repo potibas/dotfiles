@@ -22,7 +22,7 @@ vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
 -- Clear search highlight
-vim.keymap.set('n', '<leader>/', ':nohlsearch<cr>', { silent = true })
+vim.keymap.set('n', '<cr>', ':nohlsearch<cr>', { silent = true })
 
 -- Search history with C-P/C-N
 local wildmenumap = function(mapping, alternate)
