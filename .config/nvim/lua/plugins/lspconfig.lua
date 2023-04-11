@@ -47,6 +47,16 @@ return {
       vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format({ async = true }) end, {})
     end
 
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics,
+      {
+        virtual_text = false,
+        signs = true,
+        update_in_insert = false,
+        underline = false,
+      }
+    )
+
     local opts = {
       on_attach = on_attach
     }
