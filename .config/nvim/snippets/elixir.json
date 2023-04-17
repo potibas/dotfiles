@@ -1,0 +1,47 @@
+{
+  "describe_block": {
+    "prefix": "desc",
+    "body": ["describe \"$1\" do", "  $0", "end"]
+  },
+  "test_block": {
+    "prefix": "t",
+    "body": ["test \"$1\" do", "  $0", "end"]
+  },
+  "test_with_context": {
+    "prefix": "tc",
+    "body": ["test \"$1\", %{$2: $3} do", "  $0", "end"]
+  },
+  "test_with_conn": {
+    "prefix": "tconn",
+    "body": ["test \"$1\", %{conn: conn} do", "  $0", "end"]
+  },
+  "inspect": {
+    "prefix": "ins",
+    "body": "IO.inspect($0)",
+    "description": "IO.inspect"
+  },
+  "def_inline": {
+    "prefix": "defl",
+    "body": "def $1($2), do: $0"
+  },
+  "defp_inline": {
+    "prefix": "defpl",
+    "body": "defp $1($2), do: $0"
+  },
+  "doc_block": {
+    "prefix": "doc",
+    "body": ["@doc \"\"\"", "$0", "\"\"\""]
+  },
+  "moduledoc_block": {
+    "prefix": "mdoc",
+    "body": ["@moduledoc \"\"\"", "$0", "\"\"\""]
+  },
+  "ok_tuple_expansion": {
+    "prefix": "ok",
+    "body": "{:ok, $1}$0"
+  },
+  "error_tuple_expansion": {
+    "prefix": "err",
+    "body": "{:error, $1}$0"
+  }
+}
