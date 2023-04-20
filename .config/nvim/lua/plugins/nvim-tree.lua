@@ -11,6 +11,11 @@ return {
       diagnostics = {
         enable = true,
       },
+      filters = {
+        custom = {
+          "^\\.git",
+        }
+      },
       view = {
         width = 45,
         side = 'left'
