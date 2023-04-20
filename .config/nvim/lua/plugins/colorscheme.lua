@@ -62,8 +62,8 @@ return {
         custom_colors = nil,       -- If you want to everride the default colors, set this to a function
         custom_highlights =        -- Overwrite highlights with your own
         {
-          IncSearch = { fg = 'yellow', bold = true, italic = true, undercurl = true, reverse = false },
-          Search = { fg = 'yellow', bold = false, italic = true, undercurl = true, reverse = false },
+          IncSearch = { fg = 'yellow', bold = true, italic = true, underline = true, reverse = false },
+          Search = { fg = 'yellow', bold = false, italic = true, underline = true, reverse = false },
           -- This is a list of possible values
           -- YourHighlightGroup = {
           --   fg = "#SOME_COLOR",     -- foreground color
