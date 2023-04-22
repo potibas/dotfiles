@@ -10,6 +10,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.showmatch = true
 vim.opt.matchtime = 1
+vim.opt.timeoutlen = 50
 
 -- Indenting
 vim.opt.shiftwidth = 2
