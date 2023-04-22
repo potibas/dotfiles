@@ -54,11 +54,11 @@ return {
           vim_item.kind = lspkind_icons[vim_item.kind] .. ''
 
           vim_item.menu = ({
-                buffer = ' Buffer',
-                nvim_lsp = meta_type,
-                path = ' Path',
-                luasnip = ' LuaSnip',
-              })[entry.source.name]
+            buffer = ' Buffer',
+            nvim_lsp = meta_type,
+            path = ' Path',
+            luasnip = ' LuaSnip',
+          })[entry.source.name]
 
           return vim_item
         end,
@@ -69,13 +69,13 @@ return {
         end,
       },
       mapping = {
-            ['<c-c>'] = cmp.mapping.abort(),
-            ['<c-d>'] = cmp.mapping.scroll_docs(-4),
-            ['<c-u>'] = cmp.mapping.scroll_docs(4),
-            ['<c-l>'] = cmp.mapping.confirm({ select = true }),
-            ['<cr>'] = cmp.mapping.confirm({ select = false }),
-            ['<c-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i' }),
-            ['<c-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i' }),
+        ['<c-c>'] = cmp.mapping.abort(),
+        ['<c-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<c-u>'] = cmp.mapping.scroll_docs(4),
+        ['<c-l>'] = cmp.mapping.confirm({ select = true }),
+        ['<cr>'] = cmp.mapping.confirm({ select = false }),
+        ['<c-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i' }),
+        ['<c-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i' }),
       },
       sources = {
         { name = 'vsnip' },

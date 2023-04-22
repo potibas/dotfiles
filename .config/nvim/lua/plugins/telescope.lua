@@ -15,10 +15,10 @@ return {
         mappings = {
           i = {
             -- Allow <c-j> and <c-k> for navigation
-                ['<c-j>'] = 'move_selection_next',
-                ['<c-k>'] = 'move_selection_previous',
+            ['<c-j>'] = 'move_selection_next',
+            ['<c-k>'] = 'move_selection_previous',
             -- Disable normal mode
-                ['<esc>'] = 'close',
+            ['<esc>'] = 'close',
           },
         },
       },

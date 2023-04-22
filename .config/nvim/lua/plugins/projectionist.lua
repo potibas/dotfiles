@@ -6,7 +6,6 @@ return {
   },
   config = function()
     vim.g.projectionist_heuristics = {
-
       -- Elixir
       ['mix.exs'] = {
         ['lib/**/views/*_view.ex'] = {
@@ -92,7 +91,6 @@ return {
           },
         },
       },
-
     }
   end
 }

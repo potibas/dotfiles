@@ -63,7 +63,7 @@ return {
     }
 
     require('mason-lspconfig').setup_handlers {
-          ['elixirls'] = function()
+      ['elixirls'] = function()
         local root = vim.fs.dirname(vim.fs.find({ 'mix.exs', '.git' }, { upward = true })[1])
         local umb_root = vim.fs.dirname(vim.fs.find({ 'mix.exs' }, { upward = true, path = root })[1])
 
@@ -88,7 +88,7 @@ return {
         lspconfig.elixirls.setup(opts)
       end,
 
-          ['lua_ls'] = function()
+      ['lua_ls'] = function()
         opts.settings = {
           Lua = {
             diagnostics = {
@@ -96,8 +96,8 @@ return {
             },
             workspace = {
               library = {
-                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
               },
             },
           },
