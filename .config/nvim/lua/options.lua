@@ -10,7 +10,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.showmatch = true
 vim.opt.matchtime = 1
-vim.opt.timeoutlen = 50
+vim.opt.timeoutlen = 200
 
 -- Save undo history
 local undodir = os.getenv('HOME') .. '/.config/nvim/undo'
