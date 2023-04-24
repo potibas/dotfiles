@@ -12,6 +12,14 @@ vim.opt.showmatch = true
 vim.opt.matchtime = 1
 vim.opt.timeoutlen = 50
 
+-- Save undo history
+local undodir = os.getenv('HOME') .. '/.config/nvim/undo'
+if not vim.fn['isdirectory'](undodir) then
+  os.mkdir(undodir)
+end
+vim.opt.undofile = true
+vim.opt.undodir = undodir
+
 -- Indenting
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2

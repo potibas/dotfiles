@@ -6,3 +6,4 @@
 !/.config
 /.config/*
 !/.config/nvim
+/.config/nvim/undo
