@@ -2,8 +2,34 @@
 /*
 
 # Un-ignore some things!
+!README.md
+!Brewfile
 !.gitconfig
+!.gitignore
+!.gitignore_global
+!.tool-versions
+!.zshrc
+!.zprofile
+!/.hammerspoon
+
+!/bin
+/bin/*
+!/bin/osx
+!/bin/bootstrap
+
 !/.config
 /.config/*
+!/.config/starship.toml
+
+!/.config/karabiner
+/.config/karabiner/*
+!/.config/karabiner/karabiner.json
+
+!/.config/kitty
+
 !/.config/nvim
 /.config/nvim/undo
+
+!/.config/tmux
+
+!/.config/vscode
