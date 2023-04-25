@@ -9,6 +9,12 @@ vim.keymap.set('n', '<leader>D', ':bd!<cr>', { silent = true, desc = 'Force dele
 vim.keymap.set('n', '<leader>l', ':bnext<cr>', { silent = true, desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>h', ':bprevious<cr>', { silent = true, desc = 'Previous buffer' })
 
+-- Move between panes
+vim.keymap.set('n', '<c-h>', '<c-w>h', { silent = true, desc = 'Focus pane on the left' })
+vim.keymap.set('n', '<c-j>', '<c-w>j', { silent = true, desc = 'Focus pane below' })
+vim.keymap.set('n', '<c-k>', '<c-w>k', { silent = true, desc = 'Focus pane above' })
+vim.keymap.set('n', '<c-l>', '<c-w>l', { silent = true, desc = 'Focus pane on the right' })
+
 -- Expand current file's directory
 vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
 
