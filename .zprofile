@@ -1,5 +1,9 @@
 # homebrew
-eval "$(/usr/local/bin/brew shellenv)"
+if [ "$(uname)" = "Linux" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 # rtx
 export RTX_LOG_LEVEL=error
