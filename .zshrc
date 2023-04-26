@@ -8,6 +8,7 @@ fi
 
 # z
 test -f /usr/local/etc/profile.d/z.sh && source /usr/local/etc/profile.d/z.sh
+test -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh && source /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 
 # History search with ^P/^N
 autoload -U up-line-or-beginning-search
