@@ -44,6 +44,8 @@ brew "wxwidgets"
 
 # Dev CLI tools
 brew "starship"
+brew "kubectl"
+brew "k9s"
 
 # Fonts
 tap "homebrew/cask-fonts"
