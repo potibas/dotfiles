@@ -10,14 +10,6 @@ fi
 test -f /usr/local/etc/profile.d/z.sh && source /usr/local/etc/profile.d/z.sh
 test -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh && source /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 
-# History search with ^P/^N
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^P" up-line-or-beginning-search
-bindkey "^N" down-line-or-beginning-search
-
 # Don't save commands prepended with a space to history
 setopt histignorespace
 
@@ -32,5 +24,14 @@ setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 export HISTTIMEFORMAT="[%F %T] "
 
-# Vi mode
+# Vi mode with some readline shortcuts
 set -o vi
+bindkey "^P" history-search-backward
+bindkey "^N" history-search-forward
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^D" delete-char
+bindkey "^H" backward-delete-char
+
+# Faster transitions between vi modes (1/100 second)
+export KEYTIMEOUT=1
