@@ -31,3 +31,6 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 export HISTTIMEFORMAT="[%F %T] "
+
+# Vi mode
+set -o vi
