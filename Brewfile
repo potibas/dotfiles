@@ -43,6 +43,7 @@ brew "openssl@1.1"
 brew "wxwidgets"
 
 # Dev CLI tools
+brew "awscli"
 brew "starship"
 brew "kubectl"
 brew "k9s"
