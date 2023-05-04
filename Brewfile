@@ -15,6 +15,7 @@ cask "whatsapp"
 cask "zoom"
 
 # Dev tools
+cask "docker"
 cask "karabiner-elements"
 cask "kitty"
 cask "rowanj-gitx"
