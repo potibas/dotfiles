@@ -47,4 +47,5 @@ alias vi="nvim"
 alias vim="nvim"
 alias cat="bat"
 alias d="docker"
+alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias comp="docker-compose"
