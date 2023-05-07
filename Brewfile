@@ -46,6 +46,7 @@ brew "wxwidgets"
 # Dev CLI tools
 brew "awscli"
 brew "docker-compose"
+brew "localstack"
 brew "starship"
 brew "kubectl"
 brew "k9s"
