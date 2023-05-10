@@ -48,6 +48,7 @@ sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudo
 # Un-quarantine  applications
 applications=(
   Discord
+  Docker
   GitX
   "Google Chrome"
   Gnucash
@@ -59,6 +60,7 @@ applications=(
   "Microsoft Teams"
   OmniFocus
   Postman
+  Raycast
   Slack
   Spotify
   Telegram
