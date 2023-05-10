@@ -58,6 +58,7 @@ applications=(
   "Microsoft Excel" "Microsoft OneNote" "Microsoft Outlook" "Microsoft PowerPoint" "Microsoft Word"
   "Microsoft Teams"
   OmniFocus
+  Postman
   Slack
   Spotify
   Telegram

@@ -18,6 +18,7 @@ cask "zoom"
 cask "docker"
 cask "karabiner-elements"
 cask "kitty"
+cask "postman"
 cask "rowanj-gitx"
 cask "visual-studio-code"
 
