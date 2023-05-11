@@ -38,6 +38,7 @@ brew "wget"
 
 # Modern unix tools
 brew "bat"
+brew "httpie"
 brew "z"
 brew "exa"
 brew "ripgrep"
