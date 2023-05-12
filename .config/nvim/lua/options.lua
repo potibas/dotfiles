@@ -11,6 +11,7 @@ vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.showmatch = true
 vim.opt.matchtime = 1
 vim.opt.timeoutlen = 200
+vim.opt.clipboard = 'unnamedplus'
 
 -- Save undo history
 local undodir = os.getenv('HOME') .. '/.config/nvim/undo'
