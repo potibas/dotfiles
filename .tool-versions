@@ -3,4 +3,5 @@ elixir   1.14
 node     19
 erlang   25
 postgres 15
+ruby     3.2.1
 yarn     1.22
