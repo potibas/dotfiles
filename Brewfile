@@ -48,6 +48,9 @@ brew "fd"
 brew "openssl@1.1"
 brew "wxwidgets"
 
+# Rails needs libpq >= 11.1
+brew "libpq"
+
 # Dev CLI tools
 brew "awscli"
 brew "docker-compose"
