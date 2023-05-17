@@ -1,7 +1,7 @@
-rust     1.68.0
-elixir   1.14
-node     19
-erlang   25
-postgres 15
+elixir   1.14.4-otp-26
+erlang   26.0
+node     20.2.0
+postgres 15.3
 ruby     3.2.1
-yarn     1.22
+rust     1.69.0
+yarn     1.22.19
