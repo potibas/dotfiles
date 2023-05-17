@@ -13,11 +13,6 @@ vim.keymap.set('n', '<leader>h', ':bprevious<cr>', { silent = true, desc = 'Prev
 vim.keymap.set('n', 'H', '_', { silent = true, desc = 'Move to the beginning of the line (first non-blank character)' })
 vim.keymap.set('n', 'L', '$', { silent = true, desc = 'Move to the end of the line' })
 
--- Move between panes
-vim.keymap.set('n', '<c-h>', '<c-w>h', { silent = true, desc = 'Focus pane on the left' })
-vim.keymap.set('n', '<c-j>', '<c-w>j', { silent = true, desc = 'Focus pane below' })
-vim.keymap.set('n', '<c-k>', '<c-w>k', { silent = true, desc = 'Focus pane above' })
-vim.keymap.set('n', '<c-l>', '<c-w>l', { silent = true, desc = 'Focus pane on the right' })
 
 -- Expand current file's directory
 vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
