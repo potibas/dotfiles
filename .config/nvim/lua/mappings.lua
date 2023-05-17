@@ -18,6 +18,12 @@ vim.keymap.set('i', '<c-d>', '<c-o>"_x', { silent = true, desc = 'Delete charact
 vim.keymap.set('n', '<c-d>', '"_x', { silent = true, desc = 'Delete (n) characters under and after the cursor' })
 vim.keymap.set('n', '<c-h>', '"_X', { silent = true, desc = 'Delete (n) characters before the cursor' })
 
+-- don't overwrite the clipboard when deleting (you can still use x and X)
+vim.keymap.set('n', 'd', '"_d', { silent = true })
+vim.keymap.set('v', 'd', '"_d', { silent = true })
+vim.keymap.set('n', 'D', '"_d$', { silent = true })
+vim.keymap.set('v', 'D', '"_d$', { silent = true })
+
 -- Expand current file's directory
 vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
 
