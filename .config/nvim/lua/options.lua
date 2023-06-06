@@ -12,6 +12,8 @@ vim.opt.showmatch = true
 vim.opt.matchtime = 1
 vim.opt.timeoutlen = 200
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.backup = false
+vim.opt.writebackup = false
 
 -- Save undo history
 local undodir = os.getenv('HOME') .. '/.config/nvim/undo'
