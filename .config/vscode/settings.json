@@ -9,6 +9,8 @@
   "terminal.integrated.fontWeightBold": "normal",
   "terminal.integrated.drawBoldTextInBrightColors": true,
   "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.showLinkHover": true,
+  "terminal.integrated.enableFileLinks": "notRemote",
   "workbench.colorTheme": "Material Theme",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
