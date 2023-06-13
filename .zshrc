@@ -26,8 +26,8 @@ export HISTTIMEFORMAT="[%F %T] "
 
 # Vi mode with some readline shortcuts
 set -o vi
-bindkey "^P" history-search-backward
-bindkey "^N" history-search-forward
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^D" delete-char
