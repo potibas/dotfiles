@@ -57,6 +57,7 @@ brew "docker-compose"
 brew "gh"
 brew "localstack"
 brew "starship"
+brew "teleport"
 brew "kubectl"
 brew "k9s"
 
