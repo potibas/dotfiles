@@ -46,6 +46,7 @@
   st = status
   sa = !git add . && git stash
   sp = stash pop
+  spr = !git stash pop && git reset
   sl = stash list
   amend = commit --amend
   squash = commit --amend --no-edit
