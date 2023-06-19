@@ -13,10 +13,6 @@ vim.keymap.set('n', '<leader>h', ':bprevious<cr>', { silent = true, desc = 'Prev
 vim.keymap.set('n', 'H', '_', { silent = true, desc = 'Move to the beginning of the line (first non-blank character)' })
 vim.keymap.set('n', 'L', '$', { silent = true, desc = 'Move to the end of the line' })
 
--- Some readline-inspired mappings
-vim.keymap.set('i', '<c-d>', '<c-o>"_x', { silent = true, desc = 'Delete character under the cursor' })
-vim.keymap.set('n', '<c-d>', '"_x', { silent = true, desc = 'Delete (n) characters under and after the cursor' })
-
 -- Expand current file's directory
 vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
 
