@@ -11,6 +11,12 @@ if [ -f "$HOME/bin/rtx" ]; then
   eval "$($HOME/bin/rtx activate zsh)"
 fi
 
+# authosuggestions
+if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+fi
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # erlang
 export KERL_CONFIGURE_OPTIONS="\
   --disable-silent-rules \
