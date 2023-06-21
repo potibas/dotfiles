@@ -17,6 +17,8 @@ if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
 fi
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+autoload -U compinit; compinit
+
 # erlang
 export KERL_CONFIGURE_OPTIONS="\
   --disable-silent-rules \
