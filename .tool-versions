@@ -1,5 +1,5 @@
 elixir   1.14.5-otp-26
-erlang   26.0
+erlang   26.0.1
 node     20.2.0
 postgres 15.3
 ruby     3.2.1
