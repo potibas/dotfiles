@@ -54,6 +54,7 @@ brew "libpq"
 # Dev CLI tools
 brew "awscli"
 brew "docker-compose"
+brew "flyctl"
 brew "gh"
 brew "localstack"
 brew "starship"
