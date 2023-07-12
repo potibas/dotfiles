@@ -11,7 +11,7 @@
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.showLinkHover": true,
   "terminal.integrated.enableFileLinks": "notRemote",
-  "workbench.colorTheme": "Material Theme",
+  "workbench.colorTheme": "dark+(elixir)",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
 
