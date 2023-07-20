@@ -45,6 +45,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # aliases
 alias g="git"
+alias k="kubectl"
 alias im="iex -S mix"
 alias is="iex -S mix phx.server"
 alias ls="exa"
