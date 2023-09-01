@@ -2,8 +2,7 @@
 vim.keymap.set('n', '<leader>w', ':w<cr>', { silent = true, desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>q', ':q<cr>', { silent = true, desc = 'Quit the current window' })
 vim.keymap.set('n', '<leader>Q', ':qa<cr>', { silent = true, desc = 'Quit all windows' })
-vim.keymap.set('n', '<leader>d', ':bd<cr>', { silent = true, desc = 'Delete buffer' })
-vim.keymap.set('n', '<leader>D', ':bd!<cr>', { silent = true, desc = 'Force delete buffer' })
+vim.keymap.set('n', '<leader>x', '<esc>:bprevious<bar>bdelete #<return>', { silent = true, desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>X', ':%bd!|e#<cr>', { silent = true, desc = 'Delete other buffers' })
 
 -- Move between buffers
