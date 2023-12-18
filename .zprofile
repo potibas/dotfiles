@@ -11,6 +11,10 @@ if [ -f "$HOME/bin/rtx" ]; then
   eval "$($HOME/bin/rtx activate zsh)"
 fi
 
+# postgresql rtx install
+export ICU_CFLAGS="-I$(brew --prefix icu4c)/include"
+export ICU_LIBS="-L$(brew --prefix icu4c)/lib -licui18n -licuuc -licudata"
+
 # authosuggestions
 if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
