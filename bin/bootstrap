@@ -32,7 +32,6 @@ done
 
 code \
   --install-extension asvetliakov.vscode-neovim \
-  --install-extension Equinusocio.vsc-community-material-theme \
   --install-extension Equinusocio.vsc-material-theme \
   --install-extension equinusocio.vsc-material-theme-icons \
   --install-extension JakeBecker.elixir-ls \
