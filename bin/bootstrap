@@ -18,16 +18,15 @@ ln -s /usr/local/bin/g++-13 /usr/local/bin/g++
 ln -s "/usr/local/bin/c++-13" "/usr/local/bin/c++"
 ln -s /usr/local/bin/cpp-13 /usr/local/bin/cpp
 
-# install rtx
-if [ ! -f "$HOME/bin/rtx" ]; then
-  echo "Installing rtx..."
-  curl https://rtx.pub/rtx-latest-macos-x64 > ~/bin/rtx 2> /dev/null
-  chmod +x ~/bin/rtx
+# install mise (previously rtx)
+if [ ! -f "$HOME/.local/mise" ]; then
+  echo "Installing mise..."
+  curl https://mise.run | sh
 fi
 
 # install global tools
 echo "Installing global tools"
-~/bin/rtx install
+~/.local/bin/mise install -y
 
 # Link vscode config and install extensions
 mkdir -p ~/.config/vscode
