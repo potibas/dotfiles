@@ -5,6 +5,9 @@ else
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# Fix some builds that insist on using clang
+export CC=gcc
+
 # rtx
 export RTX_LOG_LEVEL=error
 if [ -f "$HOME/bin/rtx" ]; then
