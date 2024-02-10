@@ -75,5 +75,5 @@ cask "font-roboto-mono-nerd-font"
 
 # Video editing & player
 brew "ffmpeg"
-brew "youtube-dl"
+brew "yt-dlp"
 cask "vlc"
