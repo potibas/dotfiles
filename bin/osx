@@ -36,8 +36,8 @@ defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g PMPrintingExpandedStateForPrint -bool true
 
 # Disable mission control shortcuts "switch to desktop 1" (^1) and "switch to desktop 2" (^2)
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:118:enabled boolean false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:119:enabled boolean false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:118:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:119:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 # Set mission control shortcut "move left a space" (^<-) to Cmd+Ctrl+H
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:79:value:parameters:0 104" ~/Library/Preferences/com.apple.symbolichotkeys.plist
