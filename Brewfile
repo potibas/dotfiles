@@ -38,6 +38,9 @@ brew "gpg"
 brew "curl"
 brew "wget"
 
+# Basic unix tools
+brew "tree"
+
 # Modern unix tools
 brew "bat"
 brew "httpie"
