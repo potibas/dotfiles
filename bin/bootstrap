@@ -13,10 +13,12 @@ tic -x ~/.config/tmux/tmux.terminfo
 brew bundle
 
 # Symlink specific gcc version
-ln -s /usr/local/bin/gcc-13 /usr/local/bin/gcc
-ln -s /usr/local/bin/g++-13 /usr/local/bin/g++
-ln -s "/usr/local/bin/c++-13" "/usr/local/bin/c++"
-ln -s /usr/local/bin/cpp-13 /usr/local/bin/cpp
+if [ ! -f "/usr/local/bin/gcc" ]; then
+  ln -s /usr/local/bin/gcc-13 /usr/local/bin/gcc
+  ln -s /usr/local/bin/g++-13 /usr/local/bin/g++
+  ln -s "/usr/local/bin/c++-13" "/usr/local/bin/c++"
+  ln -s /usr/local/bin/cpp-13 /usr/local/bin/cpp
+fi
 
 # install mise (previously rtx)
 if [ ! -f "$HOME/.local/mise" ]; then
