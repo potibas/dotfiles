@@ -42,7 +42,7 @@ brew "wget"
 brew "bat"
 brew "httpie"
 brew "z"
-brew "exa"
+brew "eza"
 brew "ripgrep"
 brew "fd"
 
