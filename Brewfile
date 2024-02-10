@@ -40,6 +40,7 @@ brew "wget"
 
 # Basic unix tools
 brew "tree"
+brew "gcc@13"
 
 # Modern unix tools
 brew "bat"
