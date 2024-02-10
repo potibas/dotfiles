@@ -53,6 +53,9 @@ brew "wxwidgets"
 # Rails needs libpq >= 11.1
 brew "libpq"
 
+# PostgreSQL needs uconv
+brew "icu4c"
+
 # Dev CLI tools
 brew "awscli"
 brew "docker-compose"

@@ -35,3 +35,9 @@ bindkey "^H" backward-delete-char
 
 # Faster transitions between vi modes (1/100 second)
 export KEYTIMEOUT=1
+
+# Use Homebrew's icu4c (PosgreSQL needs uconv)
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export LDFLAGS="+L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="+I/usr/local/opt/icu4c/include"
