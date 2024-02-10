@@ -35,5 +35,25 @@ defaults write -g AppleShowAllFiles -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g PMPrintingExpandedStateForPrint -bool true
 
+# Disable mission control shortcuts "switch to desktop 1" (^1) and "switch to desktop 2" (^2)
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:118:enabled boolean false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:119:enabled boolean false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
+# Set mission control shortcut "move left a space" (^<-) to Cmd+Ctrl+H
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:79:value:parameters:0 104" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:79:value:parameters:1 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:79:value:parameters:2 1310720" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:80:value:parameters:0 104" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:80:value:parameters:1 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:80:value:parameters:2 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
+# Set mission control shortcut "move right a space" (^->) to Cmd+Ctrl+L
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:81:value:parameters:0 108" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:81:value:parameters:1 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:81:value:parameters:2 1310720" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:0 108" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:1 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:2 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
 osascript -e 'tell application "System Events" to log out'
