@@ -55,5 +55,37 @@ defaults write -g PMPrintingExpandedStateForPrint -bool true
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:1 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:2 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
+# Disable all mission control specific shortcuts
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:32" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:32:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:33" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:33:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:34" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:34:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:36" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:36:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:37" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:37:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:48" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:48:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:49" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:49:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
+# Add "show mission control" mouse shortcut (button 3)
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:38" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters: integer 0" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:type string 'button'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:40" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters: integer 131072" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:type string 'button'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
 osascript -e 'tell application "System Events" to log out'
