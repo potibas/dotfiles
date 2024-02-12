@@ -35,6 +35,9 @@ defaults write -g AppleShowAllFiles -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g PMPrintingExpandedStateForPrint -bool true
 
+# Do not automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock "mru-spaces" -bool "false"
+
 # Disable mission control shortcuts "switch to desktop 1" (^1) and "switch to desktop 2" (^2)
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:118:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:119:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
@@ -87,5 +90,6 @@ defaults write -g PMPrintingExpandedStateForPrint -bool true
 /usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters: integer 131072" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 /usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:type string 'button'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
+killall Dock
 printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
 osascript -e 'tell application "System Events" to log out'
