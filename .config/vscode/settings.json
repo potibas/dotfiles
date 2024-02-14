@@ -83,7 +83,7 @@
   "elixirLS.signatureAfterComplete": false,
 
   "[elixir]": {
-    "editor.wordBasedSuggestions": false,
+    "editor.wordBasedSuggestions": "off",
     "editor.defaultFormatter": "JakeBecker.elixir-ls",
     "editor.formatOnType": true,
     "editor.formatOnSave": true,
