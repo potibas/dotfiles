@@ -49,7 +49,7 @@ code \
   || true
 
 # Sudo without password
-sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
+# sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 
 # Un-quarantine  applications
 applications=(
