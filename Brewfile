@@ -73,7 +73,6 @@ brew "jq"
 brew "localstack"
 brew "rclone"
 brew "starship"
-brew "teleport"
 brew "kubectl"
 brew "k9s"
 
