@@ -82,6 +82,12 @@ cask "font-inconsolata-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-roboto-mono-nerd-font"
 
+# Image and PDF manipulation
+cask "basictex"
+brew "ghostscript"
+brew "imagemagick"
+brew "mupdf"
+
 # Video editing & player
 brew "ffmpeg"
 brew "yt-dlp"
