@@ -17,64 +17,64 @@ cask "zoom"
 
 # Dev tools
 cask "docker"
-cask "karabiner-elements"
+brew "docker-compose"
 cask "kitty"
 cask "postman"
 cask "visual-studio-code"
 
 # Productivity
 cask "hammerspoon"
+cask "karabiner-elements"
 cask "raycast"
+brew "starship"
 
 # Essentials
 brew "nvim"
 brew "tmux"
-brew "coreutils"
-brew "gnu-tar"
 brew "git"
 brew "git-lfs"
-brew "gpg"
-brew "curl"
-brew "wget"
 
 # Basic unix tools
+brew "coreutils"
+brew "curl"
 brew "direnv"
 brew "gawk"
-brew "tree"
 brew "gcc@13"
+brew "gnu-tar"
+brew "gpg"
+brew "tree"
+brew "wget"
 
 # Modern unix tools
 brew "bat"
-brew "httpie"
-brew "z"
 brew "eza"
-brew "ripgrep"
 brew "fd"
+brew "httpie"
+brew "jq"
+brew "ripgrep"
+brew "z"
 
-# Erlang dependencies
-brew "openssl@1.1"
-brew "wxwidgets"
-brew "libxslt"
-brew "fop"
-
-# Rails needs libpq >= 11.1
-brew "libpq"
-
-# PostgreSQL needs uconv
-brew "icu4c"
-
-# Dev CLI tools
+# Cloud
 brew "awscli"
 brew "aws-vault"
-brew "docker-compose"
 brew "flyctl"
 brew "gh"
-brew "jq"
+brew "k9s"
+brew "kubectl"
 brew "localstack"
 brew "rclone"
-brew "starship"
-brew "kubectl"
-brew "k9s"
+
+# Erlang dependencies
+brew "fop"
+brew "libxslt"
+brew "openssl@1.1"
+brew "wxwidgets"
+
+# Rails dependencies
+brew "libpq"
+
+# PostgreSQL dependencies
+brew "icu4c"  # uconv
 
 # Fonts
 tap "homebrew/cask-fonts"
