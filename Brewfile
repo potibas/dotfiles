@@ -54,6 +54,8 @@ brew "fd"
 # Erlang dependencies
 brew "openssl@1.1"
 brew "wxwidgets"
+brew "libxslt"
+brew "fop"
 
 # Rails needs libpq >= 11.1
 brew "libpq"
