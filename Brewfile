@@ -40,6 +40,7 @@ brew "wget"
 
 # Basic unix tools
 brew "direnv"
+brew "gawk"
 brew "tree"
 brew "gcc@13"
 
