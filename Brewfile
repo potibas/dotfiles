@@ -64,6 +64,7 @@ brew "icu4c"
 
 # Dev CLI tools
 brew "awscli"
+brew "aws-vault"
 brew "docker-compose"
 brew "flyctl"
 brew "gh"
