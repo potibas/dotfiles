@@ -39,6 +39,7 @@ brew "curl"
 brew "wget"
 
 # Basic unix tools
+brew "direnv"
 brew "tree"
 brew "gcc@13"
 
