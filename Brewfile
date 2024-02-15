@@ -89,6 +89,7 @@ cask "basictex"
 brew "ghostscript"
 brew "imagemagick"
 brew "mupdf"
+brew "poppler"
 
 # Video editing & player
 brew "ffmpeg"
