@@ -36,7 +36,10 @@ defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g PMPrintingExpandedStateForPrint -bool true
 
 # Do not automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock "mru-spaces" -bool "false"
+defaults write com.apple.dock "mru-spaces" -bool false
+
+# Do not show desktop when clicking on wallpaper
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
 # Disable mission control shortcuts "switch to desktop 1" (^1) and "switch to desktop 2" (^2)
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:118:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
