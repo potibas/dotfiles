@@ -17,6 +17,9 @@ return {
             -- Allow <c-j> and <c-k> for navigation
             ['<c-j>'] = 'move_selection_next',
             ['<c-k>'] = 'move_selection_previous',
+            -- Change shortcuts for scrolling horizontally
+            ['<c-h>'] = 'preview_scrolling_left',
+            ['<c-l>'] = 'preview_scrolling_right',
             -- Disable normal mode
             ['<esc>'] = 'close',
           },
