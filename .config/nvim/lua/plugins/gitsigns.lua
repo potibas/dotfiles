@@ -11,14 +11,14 @@ return {
         local gs = package.loaded.gitsigns
 
         -- navigation
-        vim.keymap.set('n', ']h', function()
-          if vim.wo.diff then return ']h' end
+        vim.keymap.set('n', ']g', function()
+          if vim.wo.diff then return ']g' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
         end, { expr = true, buffer = bufnr })
 
-        vim.keymap.set('n', '[h', function()
-          if vim.wo.diff then return '[h' end
+        vim.keymap.set('n', '[g', function()
+          if vim.wo.diff then return '[g' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
         end, { expr = true, buffer = bufnr })
