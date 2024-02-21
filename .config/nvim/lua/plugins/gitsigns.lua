@@ -24,15 +24,15 @@ return {
         end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk in buffer' })
 
         -- actions
-        vim.keymap.set({ 'n', 'v' }, '<leader>gS', gs.stage_hunk,
+        vim.keymap.set({ 'n', 'v' }, '<leader>gs', gs.stage_hunk,
           { buffer = bufnr, desc = 'Stage hunk under cursor' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>gR', gs.reset_hunk,
+        vim.keymap.set({ 'n', 'v' }, '<leader>gr', gs.reset_hunk,
           { buffer = bufnr, desc = 'Reset lines of hunk under cursor' })
-        vim.keymap.set('n', '<leader>gU', gs.undo_stage_hunk,
+        vim.keymap.set('n', '<leader>gu', gs.undo_stage_hunk,
           { buffer = bufnr, desc = 'Undo last stage hunk' })
         vim.keymap.set('n', '<leader>gh', gs.preview_hunk,
           { buffer = bufnr, desc = 'Preview hunk under cursor' })
-        vim.keymap.set('n', '<leader>gs', gs.stage_buffer,
+        vim.keymap.set('n', '<leader>gS', gs.stage_buffer,
           { buffer = bufnr, desc = 'Stage current buffer' })
 
         -- text object
