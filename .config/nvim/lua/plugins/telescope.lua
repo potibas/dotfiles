@@ -38,7 +38,6 @@ return {
     { '<c-s>',      function() require('telescope.builtin').git_status() end,   desc = "Git status picker" },
     { '<leader>gb', function() require('telescope.builtin').git_branches() end, desc = "Git branch picker" },
     { '<leader>gf', function() require('telescope.builtin').git_files() end,    desc = "Git file picker" },
-    { '<leader>gS', function() require('telescope.builtin').git_stash() end,    desc = "Git stash picker" },
     { '<leader>gl', function() require('telescope.builtin').git_commits() end,  desc = "Git log" },
     { '<leader>gL', function() require('telescope.builtin').git_bcommits() end, desc = "Git buffer log" },
   }

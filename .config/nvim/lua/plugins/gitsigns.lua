@@ -15,22 +15,29 @@ return {
           if vim.wo.diff then return ']g' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk in buffer' })
 
         vim.keymap.set('n', '[g', function()
           if vim.wo.diff then return '[g' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk in buffer' })
 
         -- actions
-        vim.keymap.set({ 'n', 'v' }, '<leader>hs', ':Gitsigns stage_hunk<cr>', { buffer = bufnr })
-        vim.keymap.set({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<cr>', { buffer = bufnr })
-        vim.keymap.set('n', '<leader>hu', gs.undo_stage_hunk, { buffer = bufnr })
-        vim.keymap.set('n', '<leader>hh', gs.preview_hunk, { buffer = bufnr })
+        vim.keymap.set({ 'n', 'v' }, '<leader>gS', gs.stage_hunk,
+          { buffer = bufnr, desc = 'Stage hunk under cursor' })
+        vim.keymap.set({ 'n', 'v' }, '<leader>gR', gs.reset_hunk,
+          { buffer = bufnr, desc = 'Reset lines of hunk under cursor' })
+        vim.keymap.set('n', '<leader>gU', gs.undo_stage_hunk,
+          { buffer = bufnr, desc = 'Undo last stage hunk' })
+        vim.keymap.set('n', '<leader>gh', gs.preview_hunk,
+          { buffer = bufnr, desc = 'Preview hunk under cursor' })
+        vim.keymap.set('n', '<leader>gs', gs.stage_buffer,
+          { buffer = bufnr, desc = 'Stage current buffer' })
 
         -- text object
-        vim.keymap.set({ 'o', 'x' }, 'ih', ':<c-u>Gitsigns select_hunk<cr>', { buffer = bufnr })
+        vim.keymap.set({ 'o', 'x' }, 'ih', ':<c-u>Gitsigns select_hunk<cr>',
+          { buffer = bufnr, desc = 'Select hunk under cursor' })
       end
     }
   end
