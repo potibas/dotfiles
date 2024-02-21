@@ -83,6 +83,9 @@ return {
       })
       vim.g.material_style = 'palenight'
       vim.cmd([[colorscheme material]])
+
+      -- Fixes git commit messages
+      vim.api.nvim_set_hl(0, '@none', { link = 'Normal' })
     end,
   },
 
