@@ -36,10 +36,19 @@ return {
     require('telescope').load_extension('file_browser')
   end,
   keys = {
-    { '<c-p>',      function() require('telescope.builtin').find_files() end,   desc = "Find Files" },
-    { '<c-f>',      function() require('telescope.builtin').live_grep() end,    desc = "Livegrep" },
-    { '<c-s>',      function() require('telescope.builtin').git_status() end,   desc = "Git status picker" },
-    { '<leader>gb', function() require('telescope.builtin').git_branches() end, desc = "Git branch picker" },
+    { '<c-p>', function() require('telescope.builtin').find_files() end, desc = "Find Files" },
+    { '<c-f>', function() require('telescope.builtin').live_grep() end,  desc = "Livegrep" },
+    { '<c-s>', function() require('telescope.builtin').git_status() end, desc = "Git status picker" },
+    {
+      '<leader>gb',
+      function() require('telescope.builtin').git_branches({ show_remote_tracking_branches = false }) end,
+      desc = "Git branch picker"
+    },
+    {
+      '<leader>gB',
+      function() require('telescope.builtin').git_branches({ show_remote_tracking_branches = true }) end,
+      desc = "Git branch picker"
+    },
     { '<leader>gf', function() require('telescope.builtin').git_files() end,    desc = "Git file picker" },
     { '<leader>gl', function() require('telescope.builtin').git_commits() end,  desc = "Git log" },
     { '<leader>gL', function() require('telescope.builtin').git_bcommits() end, desc = "Git buffer log" },
