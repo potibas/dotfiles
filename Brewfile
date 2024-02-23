@@ -46,6 +46,7 @@ brew "wget"
 
 # Modern unix tools
 brew "bat"
+brew "dust"
 brew "eza"
 brew "fd"
 brew "httpie"
