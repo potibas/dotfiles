@@ -26,7 +26,6 @@ cask "visual-studio-code"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask "raycast"
-brew "starship"
 
 # Essentials
 brew "nvim"
