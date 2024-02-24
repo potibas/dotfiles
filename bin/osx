@@ -41,6 +41,12 @@ defaults write com.apple.dock "mru-spaces" -bool false
 # Do not show desktop when clicking on wallpaper
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
+# Scrolling zoom with Alt key
+defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 524288
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.AppleMultitouchTrackpad HIDScrollZoomModifierMask -int 524288
+defaults write com.apple.driver.AppleBluetoothMultitouck.trackpad HIDScrollZoomModifierMask -int 524288
+
 # Disable mission control shortcuts "switch to desktop 1" (^1) and "switch to desktop 2" (^2)
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:118:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 /usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:119:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
