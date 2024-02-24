@@ -86,6 +86,7 @@ cask "font-roboto-mono-nerd-font"
 
 # Image and PDF manipulation
 cask "basictex"
+brew "exiftool"
 brew "ghostscript"
 brew "imagemagick"
 brew "mupdf"
