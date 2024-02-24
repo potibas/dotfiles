@@ -93,3 +93,9 @@ command -v kubectl > /dev/null && source <(kubectl completion zsh)
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/pfc/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pfc/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/pfc/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pfc/google-cloud-sdk/completion.zsh.inc'; fi

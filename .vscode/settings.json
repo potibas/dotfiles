@@ -24,7 +24,8 @@
   },
 
   // Appearance
-  "editor.fontFamily": "Roboto Mono",
+  // "editor.fontFamily": "Consolas",
+  "editor.fontFamily": "Operator Mono",
   "editor.fontLigatures": true,
   "editor.fontWeight": "400",
   "editor.fontSize": 14,
@@ -40,6 +41,7 @@
   "editor.glyphMargin": true,
   "editor.rulers": [100],
   "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
   "editor.minimap.enabled": false,
 
   // Behaviour
@@ -70,15 +72,15 @@
   "editor.trimAutoWhitespace": true,
   "editor.tabCompletion": "onlySnippets",
   "editor.snippetSuggestions": "inline",
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": false,
+  "files.insertFinalNewline": false,
 
   // Integrated Terminal
-  "terminal.integrated.fontFamily": "Consolas",
-  "terminal.integrated.fontWeightBold": "400",
-  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.fontFamily": "Inconsolata",
+  "terminal.integrated.fontWeightBold": "100",
+  "terminal.integrated.fontWeight": "100",
   "terminal.integrated.drawBoldTextInBrightColors": true,
-  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.rightClickBehavior": "copyPaste",
 
@@ -199,39 +201,10 @@
     ]
   },
 
-  // Vim
-  "vim.incsearch": true,
-  "vim.hlsearch": true,
-  "vim.leader": ",",
-  "vim.useSystemClipboard": false,
-  "vim.useCtrlKeys": true,
-  "vim.showcmd": true,
-  "vim.cursorStylePerMode.normal": "block",
-
-  "vim.normalModeKeyBindings": [
-    { "before": ["<space>"], "commands": [":nohl"] },
-    { "before": ["H"], "commands": ["cursorHome"] },
-    { "before": ["L"], "commands": ["cursorEnd"] },
-    { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
-    { "before": ["leader", "q"], "commands": ["workbench.action.closeActiveEditor"] },
-    { "before": ["leader", "F", "n"], "commands": ["fileutils.newFile"] },
-    { "before": ["leader", "F", "r"], "commands": ["fileutils.renameFile"] },
-    { "before": ["leader", "F", "d"], "commands": ["fileutils.removeFile"] },
-    { "before": ["leader", "leader"], "commands": ["workbench.action.openPreviousRecentlyUsedEditor"] },
-
-    // Close parameter hints with escape
-    { "before": ["escape"], "commands": ["closeParameterHints"], "when": "paremeterHintsVisible" },
-
-    // Git
-    { "before": ["leader", "g"], "commands": ["git.openChange"] },
-  ],
-
-  "vim.visualModeKeyBindingsNonRecursive": [
-    // leader+s stage the selection and exit insert mode
-    { "before": ["leader", "s"], "commands": [{ "command": "git.stageSelectedRanges" }, { "command": "extension.vim_escape" }] }
-  ],
-
   // ColorScheme
-  "workbench.colorTheme": "One Dark+ (Sublime)",
+  "workbench.colorTheme": "One Dark Pro",
   "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": false,
+  "git.ignoreLegacyWarning": true
 }
