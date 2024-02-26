@@ -7,6 +7,7 @@ return {
         delay = 300,
         ignore_whitespace = true,
       },
+      current_line_blame_formatter = " <abbrev_sha> <author>, <author_time> - <summary> ",
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
