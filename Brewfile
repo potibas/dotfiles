@@ -32,6 +32,7 @@ brew "nvim"
 brew "tmux"
 brew "git"
 brew "git-lfs"
+brew "zsh"
 
 # Basic unix tools
 brew "coreutils"
