@@ -22,11 +22,6 @@ cask "kitty"
 cask "postman"
 cask "visual-studio-code"
 
-# Productivity
-cask "hammerspoon"
-cask "karabiner-elements"
-cask "raycast"
-
 # Essentials
 brew "nvim"
 brew "tmux"
@@ -54,6 +49,12 @@ brew "httpie"
 brew "jq"
 brew "ripgrep"
 brew "z"
+
+# Productivity
+cask "hammerspoon"
+cask "karabiner-elements"
+cask "raycast"
+brew "pure"
 
 # Cloud
 brew "awscli"

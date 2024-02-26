@@ -33,3 +33,9 @@ bindkey "^H" backward-delete-char
 
 # Faster transitions between vi modes (1/100 second)
 export KEYTIMEOUT=1
+
+# pure prompt
+autoload -U promptinit; promptinit
+PURE_CMD_MAX_EXEC_TIME=2
+zstyle :prompt:pure:prompt:success color green
+prompt pure
