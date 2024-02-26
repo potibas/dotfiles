@@ -20,6 +20,7 @@
 
 !/.config
 /.config/*
+!/.config/starship.toml
 
 !/.config/karabiner
 /.config/karabiner/*

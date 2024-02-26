@@ -54,7 +54,7 @@ brew "z"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask "raycast"
-brew "pure"
+brew "starship"
 
 # Cloud
 brew "awscli"

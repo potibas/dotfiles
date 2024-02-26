@@ -1,6 +1,11 @@
 # Home folder executables
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
+# starship
+if type starship > /dev/null 2>/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
 # z
 test -f /usr/local/etc/profile.d/z.sh && source /usr/local/etc/profile.d/z.sh
 test -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh && source /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
@@ -33,9 +38,3 @@ bindkey "^H" backward-delete-char
 
 # Faster transitions between vi modes (1/100 second)
 export KEYTIMEOUT=1
-
-# pure prompt
-autoload -U promptinit; promptinit
-PURE_CMD_MAX_EXEC_TIME=2
-zstyle :prompt:pure:prompt:success color green
-prompt pure
