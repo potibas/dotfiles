@@ -2,43 +2,58 @@ return {
   'lewis6991/gitsigns.nvim',
   config = function()
     require('gitsigns').setup {
-      current_line_blame = true,
+      current_line_blame = false,
       current_line_blame_opts = {
-        delay = 300,
-        ignore_whitespace = true,
+        ignore_whitespace = false,
+        delay = 100,
+        virt_text = true,
+        virt_text_pos = 'eol',
+        virt_text_priority = 100,
       },
-      current_line_blame_formatter = " <abbrev_sha> <author>, <author_time> - <summary> ",
+      current_line_blame_formatter = '    <abbrev_sha> <author>, <author_time> - <summary> ',
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        local function nmap(l, r, opts)
+          map('n', l, r, opts)
+        end
+
+        local function nvmap(l, r, opts)
+          map({ 'n', 'v' }, l, r, opts)
+        end
+
         -- navigation
-        vim.keymap.set('n', ']g', function()
+        nmap(']g', function()
           if vim.wo.diff then return ']g' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk in buffer' })
+        end, { expr = true, desc = 'Jump to next hunk in buffer' })
 
-        vim.keymap.set('n', '[g', function()
+        nmap('[g', function()
           if vim.wo.diff then return '[g' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk in buffer' })
+        end, { expr = true, desc = 'Jump to previous hunk in buffer' })
 
         -- actions
-        vim.keymap.set({ 'n', 'v' }, '<leader>gs', gs.stage_hunk,
-          { buffer = bufnr, desc = 'Stage hunk under cursor' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>gr', gs.reset_hunk,
-          { buffer = bufnr, desc = 'Reset lines of hunk under cursor' })
-        vim.keymap.set('n', '<leader>gu', gs.undo_stage_hunk,
-          { buffer = bufnr, desc = 'Undo last stage hunk' })
-        vim.keymap.set('n', '<leader>gh', gs.preview_hunk,
-          { buffer = bufnr, desc = 'Preview hunk under cursor' })
-        vim.keymap.set('n', '<leader>gS', gs.stage_buffer,
-          { buffer = bufnr, desc = 'Stage current buffer' })
+        nvmap('<leader>gs', gs.stage_hunk, { desc = 'Stage hunk under cursor' })
+        nvmap('<leader>gr', gs.reset_hunk, { desc = 'Reset linkes of hunk under cursor' })
+        nmap('<leader>gu', gs.undo_stage_hunk, { desc = 'Undo last stage hunk' })
+        nmap('<leader>gh', gs.preview_hunk, { desc = 'Preview hunk under cursor' })
+        nmap('<leader>gH', gs.toggle_deleted, { desc = 'Show/hide deleted lines' })
+        nmap('<leader>gS', gs.stage_buffer, { desc = 'Stage current buffer' })
+        nmap('<leader>gR', gs.reset_buffer, { desc = 'Reset current buffer' })
+        nmap('<leader>gI', gs.reset_buffer_index, { desc = 'Reset current buffer in the index' })
+        nmap('<leader>gt', gs.toggle_current_line_blame, { desc = 'Toggle current line blame' })
 
         -- text object
-        vim.keymap.set({ 'o', 'x' }, 'ih', ':<c-u>Gitsigns select_hunk<cr>',
-          { buffer = bufnr, desc = 'Select hunk under cursor' })
+        map({ 'o', 'x' }, 'ig', ':<c-u>Gitsigns select_hunk<cr>', { desc = 'Select inside git hunk' })
       end
     }
   end

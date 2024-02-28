@@ -47,7 +47,7 @@ return {
     {
       '<leader>gB',
       function() require('telescope.builtin').git_branches({ show_remote_tracking_branches = true }) end,
-      desc = "Git branch picker"
+      desc = "Git branch picker (w/ remotes)"
     },
     { '<leader>gf', function() require('telescope.builtin').git_files() end,    desc = "Git file picker" },
     { '<leader>gl', function() require('telescope.builtin').git_commits() end,  desc = "Git log" },

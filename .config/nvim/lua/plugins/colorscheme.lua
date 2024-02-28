@@ -87,7 +87,7 @@ return {
       -- Fixes git commit messages
       vim.api.nvim_set_hl(0, '@none', { link = 'Normal' })
       -- Improve visibility of current line blame
-      vim.api.nvim_set_hl(0, "NonText", { fg = '#858baa' })
+      vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = 'cyan' })
     end,
   },
 
