@@ -5,6 +5,9 @@ else
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # Fix some builds that insist on using clang
 export CC=gcc
 
