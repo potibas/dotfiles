@@ -54,7 +54,6 @@ code \
 applications=(
   Discord
   Docker
-  GitX
   "Google Chrome"
   Gnucash
   Hammerspoon
