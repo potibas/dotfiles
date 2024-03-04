@@ -22,6 +22,9 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # Allow keyboard navigation
 defaults write -g AppleKeyboardUIMode -int 2
 
+# Disable text completion
+defaults write -g NSAutomaticTextCompletionEnabled -bool false
+
 # Use F1, F2, etc. keys as standard function keys
 defaults write -g com.apple.keyboard.fnState -bool true
 
