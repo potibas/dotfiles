@@ -26,6 +26,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 autoload -U compinit; compinit
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # erlang
 export KERL_CONFIGURE_OPTIONS="\
   --disable-silent-rules \
