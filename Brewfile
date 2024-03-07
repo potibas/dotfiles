@@ -17,7 +17,6 @@ cask "zoom"
 
 # Dev tools
 cask "docker"
-brew "docker-compose"
 cask "kitty"
 cask "postman"
 cask "visual-studio-code"
