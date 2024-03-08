@@ -97,7 +97,7 @@ plb -c "add AppleSymbolicHotKeys:82:value:parameters: integer 108" ~/Library/Pre
 plb -c "add AppleSymbolicHotKeys:82:value:parameters: integer 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 plb -c "add AppleSymbolicHotKeys:82:value:parameters: integer 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
-Disable all mission control specific shortcuts
+# Disable all mission control specific shortcuts
 plb -c "delete AppleSymbolicHotKeys:32" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
 plb -c "add AppleSymbolicHotKeys:32:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 plb -c "delete AppleSymbolicHotKeys:33" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
