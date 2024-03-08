@@ -2,16 +2,11 @@
 cask "spotify"
 cask "google-chrome"
 cask "gnucash"
-cask "keybase"
 cask "microsoft-office"
-cask "omnifocus"
 
 # Comms
-cask "discord"
 cask "microsoft-teams"
 cask "slack"
-cask "skype"
-cask "telegram"
 cask "whatsapp"
 cask "zoom"
 

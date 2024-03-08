@@ -34,19 +34,15 @@ code \
   || true
 
 applications=(
-  Discord
   Docker
   "Google Chrome"
   Gnucash
   Hammerspoon
   Karabiner-Elements Karabiner-EventViewer
-  Keybase
   Kitty
-  OmniFocus
   Postman
   Raycast
   Slack
-  Skype
   Spotify
   Telegram
   "Visual Studio Code"
