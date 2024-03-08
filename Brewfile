@@ -56,7 +56,6 @@ brew "aws-vault"
 brew "flyctl"
 brew "gh"
 brew "k9s"
-brew "kubectl"
 brew "localstack"
 brew "rclone"
 
