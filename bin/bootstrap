@@ -1,6 +1,10 @@
 #!/bin/zsh
 set -e
 
+echo "Make sure that the terminal has full-disk access before proceeding..."
+printf "%s " "Press return to contine"
+read ans
+
 # Install Homebrew
 if ! type brew > /dev/null 2>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
