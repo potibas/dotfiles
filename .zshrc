@@ -11,10 +11,14 @@ test -f /usr/local/etc/profile.d/z.sh && source /usr/local/etc/profile.d/z.sh
 test -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh && source /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 
 # mise
-eval "$(mise activate zsh)"
+if [ -f "$HOME/.local/bin/mise" ]; then
+  eval "$(mise activate zsh)"
+fi
 
 # direnv
-eval "$(direnv hook zsh)"
+if [ -f "/usr/local/bin/direnv" ]; then
+  eval "$(direnv hook zsh)"
+fi
 
 # Don't save commands prepended with a space to history
 setopt histignorespace
