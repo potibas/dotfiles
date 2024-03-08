@@ -13,6 +13,9 @@ test -f /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh && source /home/linuxbrew/
 # mise
 eval "$(mise activate zsh)"
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # Don't save commands prepended with a space to history
 setopt histignorespace
 
@@ -25,7 +28,6 @@ export SAVEHIST=10000
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
-export HISTTIMEFORMAT="[%F %T] "
 
 # Vi mode with some readline shortcuts
 set -o vi

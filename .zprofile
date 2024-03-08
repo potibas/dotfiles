@@ -5,32 +5,15 @@ else
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# direnv
-eval "$(direnv hook zsh)"
-
-# Fix some builds that insist on using clang
-export CC=gcc
-
-# rtx
-export RTX_LOG_LEVEL=error
-if [ -f "$HOME/bin/rtx" ]; then
-  eval "$($HOME/bin/rtx activate zsh)"
-fi
-
-# postgresql rtx install
-export ICU_CFLAGS="-I$(brew --prefix icu4c)/include"
-export ICU_LIBS="-L$(brew --prefix icu4c)/lib -licui18n -licuuc -licudata"
-
 # authosuggestions
 if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 fi
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-autoload -U compinit; compinit
-
-# direnv
-eval "$(direnv hook zsh)"
+# postgres
+export ICU_CFLAGS="-I$(brew --prefix icu4c)/include"
+export ICU_LIBS="-L$(brew --prefix icu4c)/lib -licui18n -licuuc -licudata"
 
 # erlang
 export KERL_CONFIGURE_OPTIONS="\

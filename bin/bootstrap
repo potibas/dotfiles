@@ -4,39 +4,25 @@ set -e
 # Install Homebrew
 if ! type brew > /dev/null 2>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+elif; then
+  echo "Homebrew already installed..."
 fi
 
 # install tmux 256-color terminalinfo with italics
+echo "Installing tmux 256-color terminfo with italics"
 tic -x ~/.config/tmux/tmux.terminfo
 
+echo "Installing homebrew formulas"
 # Install Homebrew formulae and casks
 brew bundle
 
-# Symlink specific gcc version
-if [ ! -f "/usr/local/bin/gcc" ]; then
-  ln -s /usr/local/bin/gcc-13 /usr/local/bin/gcc
-  ln -s /usr/local/bin/g++-13 /usr/local/bin/g++
-  ln -s "/usr/local/bin/c++-13" "/usr/local/bin/c++"
-  ln -s /usr/local/bin/cpp-13 /usr/local/bin/cpp
-fi
+echo "Linking Visual Studio Code configuraion"
+# Link vscode config
+mkdir -p "$HOME/Library/Application Support/Code"
+rm -rf "$HOME/Library/Application Support/Code/User"
+ln -s $HOME/.config/vscode "$HOME/Library/Application Support/Code/User"
 
-# install mise (previously rtx)
-if [ ! -f "$HOME/.local/mise" ]; then
-  echo "Installing mise..."
-  curl https://mise.run | sh
-fi
-
-# install global tools
-echo "Installing global tools"
-~/.local/bin/mise install -y
-
-# Link vscode config and install extensions
-mkdir -p ~/.config/vscode
-for file in settings.json keybindings.json snippets; do
-  rm -rf ~/Library/Application\ Support/Code/User/$file
-  ln -s ~/.config/vscode/$file ~/Library/Application\ Support/Code/User
-done
-
+echo "Installing Visual Studio Code extensions"
 code \
   --install-extension Equinusocio.vsc-material-theme \
   --install-extension equinusocio.vsc-material-theme-icons \
@@ -47,10 +33,6 @@ code \
   --force \
   || true
 
-# Sudo without password
-# sudo sed -i '' 's/^%admin.*/%admin          ALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
-
-# Un-quarantine  applications
 applications=(
   Discord
   Docker
@@ -81,4 +63,16 @@ done
 # Force en_GB locale for GnuCash
 defaults write -app Gnucash AppleLocale 'en_GB.UTF-8'
 
+# install mise (previously rtx)
+if [ ! -f "$HOME/.local/bin/mise" ]; then
+  echo "Installing mise..."
+  curl https://mise.run | sh
+fi
+
+eval "$(mise activate zsh)"
+
+# install global tools
+echo "Installing global tools"
+source .zprofile
+~/.local/bin/mise install -y
 echo "=== finished bootstrap script, open new terminal session ==="
