@@ -53,61 +53,82 @@ defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.AppleMultitouchTrackpad HIDScrollZoomModifierMask -int 524288
 defaults write com.apple.driver.AppleBluetoothMultitouck.trackpad HIDScrollZoomModifierMask -int 524288
 
+alias plb=/usr/libexec/PListBuddy
+
 # Configure Touchbar settings
-/usr/libexec/PlistBuddy -c "add PresentationModeFnModes:appWithControlStrip string 'fullControlStrip'" ~/Library/Preferences/com.apple.touchbar.agent.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add PresentationModeGlobal string 'functionKeys'" ~/Library/Preferences/com.apple.touchbar.agent.plist 2>/dev/null
+plb -c "add PresentationModeFnModes:appWithControlStrip string 'fullControlStrip'" ~/Library/Preferences/com.apple.touchbar.agent.plist 2>/dev/null
+plb -c "add PresentationModeGlobal string 'functionKeys'" ~/Library/Preferences/com.apple.touchbar.agent.plist 2>/dev/null
 
 # Disable mission control shortcuts "switch to desktop 1" (^1) and "switch to desktop 2" (^2)
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:118:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:119:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:118" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:118:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:119" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:119:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 # Set mission control shortcut "move left a space" (^<-) to Cmd+Ctrl+H
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:79:value:parameters:0 104" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:79:value:parameters:1 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:79:value:parameters:2 1310720" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:80:value:parameters:0 104" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:80:value:parameters:1 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:80:value:parameters:2 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:79" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:79:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:79:value:type string 'standard'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:79:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:79:value:parameters: integer 104" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:79:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:79:value:parameters: integer 1310720" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:80" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:80:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:80:value:type string 'standard'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:80:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:80:value:parameters: integer 104" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:80:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:80:value:parameters: integer 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 # Set mission control shortcut "move right a space" (^->) to Cmd+Ctrl+L
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:81:value:parameters:0 108" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:81:value:parameters:1 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:81:value:parameters:2 1310720" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:0 108" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:1 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "set AppleSymbolicHotKeys:82:value:parameters:2 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:81" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:81:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:81:value:type string 'standard'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:81:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:81:value:parameters: integer 108" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:81:value:parameters: integer 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:81:value:parameters: integer 1310720" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:81" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "delete AppleSymbolicHotKeys:82" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:82:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:82:value:type string 'standard'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:82:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:82:value:parameters: integer 108" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:82:value:parameters: integer 37" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:82:value:parameters: integer 1441792" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 # Disable all mission control specific shortcuts
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:32" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:32:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:33" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:33:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:34" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:34:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:36" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:36:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:37" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:37:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:48" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:48:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:49" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:49:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:32" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:32:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:33" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:33:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:34" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:34:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:36" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:36:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:37" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:37:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:48" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:48:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:49" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:49:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 # Add "show mission control" mouse shortcut (button 3)
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:38" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:parameters: integer 0" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:38:value:type string 'button'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "delete AppleSymbolicHotKeys:40" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:parameters: integer 131072" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "add AppleSymbolicHotKeys:40:value:type string 'button'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:38" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:38:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:38:value:type string 'button'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:38:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:38:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:38:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:38:value:parameters: integer 0" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "delete AppleSymbolicHotKeys:40" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null
+plb -c "add AppleSymbolicHotKeys:40:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:40:value:type string 'button'" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:40:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:40:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:40:value:parameters: integer 4" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plb -c "add AppleSymbolicHotKeys:40:value:parameters: integer 131072" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 killall Dock
 printf "\n\ndone!\nYou must logout for your new MacOS settings to take effect\n"
