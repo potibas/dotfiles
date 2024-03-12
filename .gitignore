@@ -34,3 +34,8 @@
 !/.config/tmux
 
 !/.config/vscode
+/.config/vscode/*
+!/.config/vscode/settings.json
+!/.config/vscode/keybindings.json
+!/.config/vscode/snippets
+
