@@ -39,6 +39,9 @@ export KERL_CONFIGURE_OPTIONS="\
 # Enable history in Erlang/IEx
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# Edit with neovim
+export EDITOR="nvim"
+
 # aliases
 alias g="git"
 alias k="kubectl"
