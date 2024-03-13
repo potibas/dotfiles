@@ -26,17 +26,6 @@ mkdir -p "$HOME/Library/Application Support/Code"
 rm -rf "$HOME/Library/Application Support/Code/User"
 ln -s $HOME/.config/vscode "$HOME/Library/Application Support/Code/User"
 
-echo "Installing Visual Studio Code extensions"
-code \
-  --install-extension Equinusocio.vsc-material-theme \
-  --install-extension equinusocio.vsc-material-theme-icons \
-  --install-extension JakeBecker.elixir-ls \
-  --install-extension NikosKornarakis.predawn-twilight \
-  --install-extension phoenixframework.phoenix \
-  --install-extension vscode-exunit.exunit \
-  --force \
-  || true
-
 applications=(
   Docker
   "Google Chrome"

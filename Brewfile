@@ -91,3 +91,13 @@ cask "basictex"
 brew "ffmpeg"
 brew "yt-dlp"
 cask "vlc"
+
+# VSCode extensions
+vscode "equinusocio.vsc-material-theme"
+vscode "equinusocio.vsc-material-theme-icons"
+vscode "jakebecker.elixir-ls"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "nikoskornarakis.predawn-twilight"
+vscode "phoenixframework.phoenix"
+vscode "vscode-exunit.exunit"
+vscode "vscodevim.vim"
