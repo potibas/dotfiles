@@ -1,8 +1,8 @@
 # Applications
-cask "spotify"
-cask "google-chrome"
 cask "gnucash"
+cask "google-chrome"
 cask "microsoft-office"
+cask "spotify"
 
 # Comms
 cask "microsoft-teams"
@@ -17,10 +17,10 @@ cask "postman"
 cask "visual-studio-code"
 
 # Essentials
-brew "nvim"
-brew "tmux"
 brew "git"
 brew "git-lfs"
+brew "nvim"
+brew "tmux"
 brew "zsh"
 
 # Basic unix tools
@@ -80,12 +80,12 @@ cask "font-meslo-lg-nerd-font"
 cask "font-roboto-mono-nerd-font"
 
 # Image and PDF manipulation
-cask "basictex"
 brew "exiftool"
 brew "ghostscript"
 brew "imagemagick"
 brew "mupdf"
 brew "poppler"
+cask "basictex"
 
 # Video editing & player
 brew "ffmpeg"
