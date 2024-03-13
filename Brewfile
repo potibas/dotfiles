@@ -28,7 +28,7 @@ brew "coreutils"
 brew "curl"
 brew "direnv"
 brew "gawk"
-brew "gcc@13"
+brew "gcc"
 brew "gnu-tar"
 brew "gpg"
 brew "tree"
@@ -60,16 +60,23 @@ brew "localstack"
 brew "rclone"
 
 # Erlang dependencies
+brew "autoconf"
 brew "fop"
 brew "libxslt"
-brew "openssl@1.1"
+brew "openssl"
 brew "wxwidgets"
 
 # Rails dependencies
 brew "libpq"
 
 # PostgreSQL dependencies
+brew "curl"
+brew "gcc"
 brew "icu4c"  # uconv
+brew "libxml2"
+brew "ossp-uuid"
+brew "readline"
+brew "zlib"
 
 # Fonts
 tap "homebrew/cask-fonts"

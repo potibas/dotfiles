@@ -20,6 +20,10 @@ if [ -f "/usr/local/bin/direnv" ]; then
   eval "$(direnv hook zsh)"
 fi
 
+# icu4c tools (PostgreSQL dependency)
+export PATH=":$(brew --prefix icu4c)/bin:$PATH"
+export PATH=":$(brew --prefix icu4c)/sbin:$PATH"
+
 # Don't save commands prepended with a space to history
 setopt histignorespace
 
