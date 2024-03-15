@@ -14,6 +14,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # postgres
 export ICU_CFLAGS="-I$(brew --prefix icu4c)/include"
 export ICU_LIBS="-L$(brew --prefix icu4c)/lib -licui18n -licuuc -licudata"
+export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-libxml"
 
 # erlang
 export KERL_CONFIGURE_OPTIONS="\
