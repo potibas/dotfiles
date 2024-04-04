@@ -5,12 +5,6 @@ else
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# authosuggestions
-if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-fi
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # postgres
 export ICU_CFLAGS="-I$(brew --prefix icu4c)/include"
 export ICU_LIBS="-L$(brew --prefix icu4c)/lib -licui18n -licuuc -licudata"
