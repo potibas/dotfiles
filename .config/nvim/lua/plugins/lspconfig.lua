@@ -10,6 +10,7 @@ return {
       ensure_installed = {
         'elixirls',
         'lua_ls',
+        'phpactor',
       },
       automatic_installlation = true,
     })
@@ -104,6 +105,10 @@ return {
         }
 
         lspconfig.lua_ls.setup(opts)
+      end,
+
+      ['phpactor'] = function()
+        lspconfig.phpactor.setup(opts)
       end,
     }
   end
