@@ -24,6 +24,9 @@ fi
 export PATH=":$(brew --prefix icu4c)/bin:$PATH"
 export PATH=":$(brew --prefix icu4c)/sbin:$PATH"
 
+# PHP composer
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
 # Don't save commands prepended with a space to history
 setopt histignorespace
 
