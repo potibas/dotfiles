@@ -37,6 +37,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export EDITOR="nvim"
 
 # aliases
+alias a="php artisan"
 alias g="git"
 alias k="kubectl"
 alias im="iex -S mix"
