@@ -59,6 +59,10 @@ brew "k9s"
 brew "localstack"
 brew "rclone"
 
+# Non-asdf languages
+brew "php"
+brew "composer"
+
 # Erlang dependencies
 brew "autoconf"
 brew "fop"
