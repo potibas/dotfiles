@@ -54,3 +54,7 @@ export KEYTIMEOUT=1
 
 # gpg
 export GPG_TTY=$(tty)
+
+# Completion
+autoload -U compinit
+compinit
