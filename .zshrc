@@ -51,3 +51,6 @@ bindkey "^H" backward-delete-char
 
 # Faster transitions between vi modes (1/100 second)
 export KEYTIMEOUT=1
+
+# gpg
+export GPG_TTY=$(tty)
