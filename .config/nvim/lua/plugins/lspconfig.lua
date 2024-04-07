@@ -108,6 +108,9 @@ return {
       end,
 
       ['phpactor'] = function()
+        opts.handlers = {
+          ["textDocument/publishDiagnostics"] = function() end,
+        }
         lspconfig.phpactor.setup(opts)
       end,
     }
