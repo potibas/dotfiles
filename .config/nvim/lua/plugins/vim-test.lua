@@ -16,5 +16,17 @@ return {
     vim.g['test#strategy'] = 'vimux'
     vim.g['test#preserve_screen'] = 0
     vim.g['test#no_alternate'] = 1
-  end
+
+    -- PHP laravel
+    vim.g['test#php#phpunit#executable'] = 'clear && php artisan test'
+
+    vim.cmd([[
+      function! RemoveExtraColorArg(cmd) abort
+        return substitute(a:cmd, " --colors", "", "")
+      endfunction
+
+      let g:test#custom_transformations = {'php#phpunit': function('RemoveExtraColorArg')}
+      let g:test#transformation = 'php#phpunit'
+    ]])
+  end,
 }
