@@ -27,6 +27,7 @@ rm -rf "$HOME/Library/Application Support/Code/User"
 ln -s $HOME/.config/vscode "$HOME/Library/Application Support/Code/User"
 
 applications=(
+  Discord
   Docker
   "Google Chrome"
   Gnucash

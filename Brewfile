@@ -5,6 +5,7 @@ cask "microsoft-office"
 cask "spotify"
 
 # Comms
+cask "discord"
 cask "microsoft-teams"
 cask "slack"
 cask "whatsapp"
