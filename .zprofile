@@ -36,23 +36,30 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # Edit with neovim
 export EDITOR="nvim"
 
-# aliases
+# basic aliases
 alias b="brew"
-alias pa="php artisan"
+alias d="docker"
 alias g="git"
-alias k="kubectl"
-alias im="iex -S mix"
-alias is="iex -S mix phx.server"
-alias ls="eza -lb"
-alias la="eza -lba"
-alias m="mix"
-alias r="bin/rails"
-alias rs="bin/rspec"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+
+# modern unix tools
 alias cat="bat"
-alias d="docker"
-alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias ls="eza -lb"
+alias la="eza -lba"
+
+# docker shortcuts
 alias comp="docker compose"
+alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+
+# dev aliases
+alias im="iex -S mix"
+alias is="iex -S mix phx.server"
+alias m="mix"
+alias pa="php artisan"
+alias r="bin/rails"
+alias rs="bin/rspec"
+
+# misc
 alias plb=/usr/libexec/PListBuddy
