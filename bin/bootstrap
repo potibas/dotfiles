@@ -26,6 +26,9 @@ mkdir -p "$HOME/Library/Application Support/Code"
 rm -rf "$HOME/Library/Application Support/Code/User"
 ln -s $HOME/.config/vscode "$HOME/Library/Application Support/Code/User"
 
+echo "Installing global composer dependencies"
+composer global install
+
 applications=(
   Discord
   Docker

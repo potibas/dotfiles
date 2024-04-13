@@ -39,3 +39,8 @@
 !/.config/vscode/keybindings.json
 !/.config/vscode/snippets
 
+!/.composer
+/.composer/*
+!/.composer/composer.json
+!/.composer/composer.lock
+
