@@ -51,7 +51,7 @@ alias la="eza -lba"
 
 # docker shortcuts
 alias comp="docker compose"
-alias docker-compose="docker-compose"
+alias docker-compose="docker compose"
 alias dps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 
 # dev aliases
