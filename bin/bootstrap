@@ -29,6 +29,10 @@ ln -s $HOME/.config/vscode "$HOME/Library/Application Support/Code/User"
 echo "Installing global composer dependencies"
 composer global install
 
+echo "Installing Laravel Valet"
+valet install
+valet trust
+
 applications=(
   Discord
   Docker
