@@ -22,6 +22,7 @@ brew "git"
 brew "git-lfs"
 brew "nvim"
 brew "tmux"
+brew "tmuxp"
 brew "zsh"
 
 # Basic unix tools
