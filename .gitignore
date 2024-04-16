@@ -33,6 +33,8 @@
 
 !/.config/tmux
 
+!/.config/lazydocker
+
 !/.config/vscode
 /.config/vscode/*
 !/.config/vscode/settings.json

@@ -13,6 +13,7 @@ cask "zoom"
 
 # Dev tools
 cask "docker"
+cask "lazydocker"
 cask "kitty"
 cask "postman"
 cask "visual-studio-code"

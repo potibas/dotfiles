@@ -1,0 +1,18 @@
+customCommands:
+  containers:
+    - name: bash
+      attach: true
+      command: 'docker exec -it {{ .Container.ID }} bash'
+      serviceNames: []
+    - name: sh
+      attach: true
+      command: 'docker exec -it {{ .Container.ID }} sh'
+      serviceNames: []
+    - name: zsh
+      attach: true
+      command: 'docker exec -it {{ .Container.ID }} zsh'
+      serviceNames: []
+    - name: mysql
+      attach: true
+      command: 'docker exec -it {{ .Container.ID }} mysql -h 127.0.0.1 -u root -p '
+      serviceNames: []
