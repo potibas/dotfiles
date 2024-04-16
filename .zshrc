@@ -48,6 +48,7 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^D" delete-char
 bindkey "^H" backward-delete-char
+bindkey "^R" history-incremental-search-backward
 
 # Faster transitions between vi modes (1/100 second)
 export KEYTIMEOUT=1
