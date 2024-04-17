@@ -53,6 +53,12 @@ defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.AppleMultitouchTrackpad HIDScrollZoomModifierMask -int 524288
 defaults write com.apple.driver.AppleBluetoothMultitouck.trackpad HIDScrollZoomModifierMask -int 524288
 
+# Remove the Dock from view (Use Cmd+Opt+D)
+defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 1
+defaults write com.apple.dock no-bouncing -bool true
+
 alias plb=/usr/libexec/PListBuddy
 
 # Configure Touchbar settings
