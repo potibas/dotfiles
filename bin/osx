@@ -47,6 +47,9 @@ defaults write com.apple.dock "mru-spaces" -bool false
 # Do not show desktop when clicking on wallpaper
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
+# Allow borderless windows (e.g.: Kitty) to be dragged around by holding Ctrl+Cmd
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
 # Scrolling zoom with Alt key
 defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 524288
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
