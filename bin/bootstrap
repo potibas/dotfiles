@@ -31,13 +31,6 @@ mkdir -p  "$HOME/Library/Application Support/jesseduffield"
 rm -rf  "$HOME/Library/Application Support/jesseduffield/lazydocker"
 ln -s $HOME/.config/lazydocker "$HOME/Library/Application Support/jesseduffield/lazydocker"
 
-echo "Installing global composer dependencies"
-composer global install
-
-echo "Installing Laravel Valet"
-valet install
-valet trust
-
 applications=(
   Discord
   Docker

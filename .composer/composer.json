@@ -1,6 +1,0 @@
-{
-    "require": {
-        "laravel/valet": "^4.6",
-        "laravel/installer": "^5.7"
-    }
-}
