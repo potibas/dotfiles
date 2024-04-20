@@ -104,6 +104,17 @@ return {
           },
         }
 
+        opts.root_dir = lspconfig.util.root_pattern(
+          "~/.local/share/nvim/lazy/nvim-lspconfig/.luarc.json",
+          "~/.local/share/nvim/lazy/nvim-lspconfig/.luarc.jsonc",
+          "~/.local/share/nvim/lazy/nvim-lspconfig/.luacheckrc",
+          "~/.local/share/nvim/lazy/nvim-lspconfig/.stylua.toml",
+          "~/.local/share/nvim/lazy/nvim-lspconfig/stylua.toml",
+          "~/.local/share/nvim/lazy/nvim-lspconfig/selene.toml",
+          "~/.local/share/nvim/lazy/nvim-lspconfig/selene.yml",
+          "~/.local/share/nvim/lazy/nvim-lspconfig/.git"
+        )
+
         lspconfig.lua_ls.setup(opts)
       end,
 
