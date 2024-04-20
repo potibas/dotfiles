@@ -61,6 +61,7 @@ alias m="mix"
 alias pa="php artisan"
 alias r="bin/rails"
 alias rs="bin/rspec"
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # misc
 alias plb=/usr/libexec/PListBuddy
