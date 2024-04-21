@@ -14,7 +14,8 @@ vim.keymap.set('n', 'H', '_', { silent = true, desc = 'Move to the beginning of 
 vim.keymap.set('n', 'L', '$', { silent = true, desc = 'Move to the end of the line' })
 
 -- Expand current file's directory
-vim.keymap.set('c', '%%', "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
+-- '%%' conflicts with % and show-key behaviour shomehow
+vim.keymap.set('c', '#%', "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
 
 -- Expand nvim config dir
 vim.keymap.set('c', '##', "~/.config/nvim/lua/", { desc = "Neovim's config dir" })
