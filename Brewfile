@@ -54,6 +54,7 @@ cask "raycast"
 brew "starship"
 
 # Cloud
+brew "act"
 brew "awscli"
 brew "aws-vault"
 brew "flyctl"
