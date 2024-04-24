@@ -104,6 +104,7 @@ cask "basictex"
 
 # Video editing & player
 brew "ffmpeg"
+brew "obs"
 brew "yt-dlp"
 cask "vlc"
 
