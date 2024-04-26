@@ -11,7 +11,10 @@
 !.tool-versions
 !.zshrc
 !.zprofile
+
 !/.hammerspoon
+/.hammerspoon/*
+!/.hammerspoon/init.lua
 
 !/bin
 /bin/*
