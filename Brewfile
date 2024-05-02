@@ -1,3 +1,6 @@
+# Enable homebrew services
+tap "homebrew/services"
+
 # Applications
 cask "gnucash"
 cask "google-chrome"
@@ -77,14 +80,9 @@ brew "wxwidgets"
 # Rails dependencies
 brew "libpq"
 
-# PostgreSQL dependencies
-brew "curl"
-brew "gcc"
-brew "icu4c"  # uconv
-brew "libxml2"
-brew "ossp-uuid"
-brew "readline"
-brew "zlib"
+# Database and extensions
+brew "gmp"
+brew "postgresql@16"
 
 # Fonts
 tap "homebrew/cask-fonts"

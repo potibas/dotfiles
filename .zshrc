@@ -24,6 +24,13 @@ fi
 export PATH=":$(brew --prefix icu4c)/bin:$PATH"
 export PATH=":$(brew --prefix icu4c)/sbin:$PATH"
 
+# HomeBrew PostgreSQL PATH
+export PATH=":/usr/local/opt/postgresql@16/bin:$PATH"
+
+# Flags for compiling pgmp extension
+export PG_CPPFLAGS="-I/usr/local/opt/gmp/include"
+export PG_LDFLAGS="-L/usr/local/opt/gmp/lib"
+
 # PHP composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
