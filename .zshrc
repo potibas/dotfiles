@@ -40,15 +40,16 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 
-# Vi mode with some readline shortcuts
-set -o vi
+# Better history search on emacs mode
+set -o emacs
+
+# Disable XON/XOFF resume/pause control characters
+# (thus allowing ctrl+S to reverse the Ctrl+R)
+stty -ixon -ixoff
+
+# More useful history search with ^P/^N
 bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^D" delete-char
-bindkey "^H" backward-delete-char
-bindkey "^R" history-incremental-search-backward
 
 # Faster transitions between vi modes (1/100 second)
 export KEYTIMEOUT=1
