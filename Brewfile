@@ -12,8 +12,8 @@ cask "whatsapp"
 cask "zoom"
 
 # Dev tools
-cask "docker"
 brew "lazydocker"
+cask "docker"
 cask "kitty"
 cask "postman"
 cask "visual-studio-code"
@@ -48,15 +48,15 @@ brew "ripgrep"
 brew "z"
 
 # Productivity
+brew "starship"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask "raycast"
-brew "starship"
 
 # Cloud
 brew "act"
-brew "awscli"
 brew "aws-vault"
+brew "awscli"
 brew "flyctl"
 brew "gh"
 brew "k9s"
@@ -64,8 +64,8 @@ brew "localstack"
 brew "rclone"
 
 # Non-asdf languages
-brew "php"
 brew "composer"
+brew "php"
 
 # Erlang dependencies
 brew "autoconf"
@@ -88,9 +88,10 @@ brew "zlib"
 
 # Fonts
 tap "homebrew/cask-fonts"
+
+cask "font-inconsolata-nerd-font"
 cask "font-iosevka-nerd-font"
 cask "font-iosevka-term-nerd-font"
-cask "font-inconsolata-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-roboto-mono-nerd-font"
 
