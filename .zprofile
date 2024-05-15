@@ -23,7 +23,8 @@ export KERL_CONFIGURE_OPTIONS="\
   --enable-smp-support \
   --enable-threads \
   --enable-hipe \
-  --disable-wx \
+  --enable-wx \
+  --with-wx-config=/usr/local/bin/wx-config \
   --with-ssl=$(brew --prefix openssl) \
   --without-dynamic-trace \
   --without-jinterface \
