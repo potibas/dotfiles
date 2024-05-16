@@ -4,7 +4,18 @@ return {
     'kyazdani42/nvim-web-devicons',
   },
   keys = {
-    { '<c-b>', ':NvimTreeFindFileToggle<CR>', desc = "Open File Tree" },
+    {
+      '<c-b>',
+      function()
+        local api = require("nvim-tree.api")
+        if api.tree.is_visible() and api.tree.winid() == vim.api.nvim_get_current_win() then
+          vim.cmd('wincmd W')
+        else
+          api.tree.focus()
+        end
+      end,
+      desc = "Open File Tree"
+    }
   },
   config = function()
     require('nvim-tree').setup {
