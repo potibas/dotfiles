@@ -18,7 +18,7 @@ return {
     vim.g['test#no_alternate'] = 1
 
     -- PHP laravel
-    vim.g['test#php#phpunit#executable'] = 'clear && php artisan test'
+    vim.g['test#php#phpunit#executable'] = 'clear && php artisan test --order-by=random'
 
     vim.cmd([[
       function! RemoveExtraColorArg(cmd) abort
