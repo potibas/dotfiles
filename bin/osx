@@ -744,7 +744,7 @@ defaults write -g NSToolbarFullScreenAnimationDuration -float 0
 defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0
 
 # showing and hiding Mission Control, command+numbers
-defaults write com.apple.dock expose-animation-duration -float 0
+defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # showing and hiding Launchpad
 defaults write com.apple.dock springboard-show-duration -float 0
