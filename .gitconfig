@@ -54,6 +54,7 @@
   amend = commit --amend
   squash = commit --amend --no-edit
   nuke = !git reset --hard && git clean -xfd
+  undo = reset --soft HEAD^
 
   # Colored logs
   l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(italic cyan)%an%C(reset)'
