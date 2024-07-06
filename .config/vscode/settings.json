@@ -13,6 +13,7 @@
   "terminal.integrated.showLinkHover": true,
   "terminal.integrated.enableFileLinks": "notRemote",
   "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.tabs.enabled": false,
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Material Theme Darker High Contrast",
   "workbench.iconTheme": "a-file-icon-vscode",
