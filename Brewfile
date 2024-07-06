@@ -107,12 +107,40 @@ brew "yt-dlp"
 cask "obs"
 cask "vlc"
 
-# VSCode extensions
+# VSCode appearance
+vscode "atommaterial.a-file-icon-vscode"
 vscode "equinusocio.vsc-material-theme"
 vscode "equinusocio.vsc-material-theme-icons"
-vscode "jakebecker.elixir-ls"
-vscode "ms-vsliveshare.vsliveshare"
 vscode "nikoskornarakis.predawn-twilight"
+
+# VSCode Behaviour
+vscode "formulahendry.auto-rename-tag"
+vscode "vincaslt.highlight-matching-tag"
+
+# VSCode Tools
+vscode "editorconfig.editorconfig"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "vscodevim.vim"
+
+# VSCode HTML & CSS
+vscode "bradlc.vscode-tailwindcss"
+vscode "esbenp.prettier-vscode"
+vscode "zignd.html-css-class-completion"
+
+# VSCode Elixir
+vscode "jakebecker.elixir-ls"
 vscode "phoenixframework.phoenix"
 vscode "vscode-exunit.exunit"
-vscode "vscodevim.vim"
+
+# VSCode PHP & Laravel
+vscode "amiralizadeh9480.laravel-extra-intellisense"
+vscode "codingyu.laravel-goto-view"
+vscode "devsense.composer-php-vscode"
+vscode "devsense.intelli-php-vscode"
+vscode "devsense.phptools-vscode"
+vscode "devsense.profiler-php-vscode"
+vscode "ihunte.laravel-blade-wrapper"
+vscode "naoray.laravel-goto-components"
+vscode "onecentlin.laravel-blade"
+vscode "onecentlin.laravel5-snippets"
+vscode "shufo.vscode-blade-formatter"
