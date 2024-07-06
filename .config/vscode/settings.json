@@ -27,6 +27,7 @@
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.insertSpaces": true,
+  "editor.linkedEditing": true,
   "editor.mouseWheelZoom": true,
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": true,
