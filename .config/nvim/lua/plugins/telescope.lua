@@ -1,3 +1,7 @@
+local builtin = function()
+  return require('telescope.builtin')
+end
+
 return {
   'nvim-telescope/telescope.nvim',
   dependencies = {
@@ -7,7 +11,9 @@ return {
     'nvim-telescope/telescope-file-browser.nvim',
   },
   config = function()
-    require('telescope').setup {
+    local telescope = require('telescope')
+
+    telescope.setup {
       defaults = {
         layout_config = {
           center = { width = 0.8 },
@@ -32,25 +38,19 @@ return {
       }
     }
 
-    require('telescope').load_extension('fzf')
-    require('telescope').load_extension('file_browser')
+    telescope.load_extension('fzf')
+    telescope.load_extension('file_browser')
   end,
   keys = {
-    { '<c-p>', function() require('telescope.builtin').find_files() end, desc = "Find Files" },
-    { '<c-f>', function() require('telescope.builtin').live_grep() end,  desc = "Livegrep" },
-    { '<c-s>', function() require('telescope.builtin').git_status() end, desc = "Git status picker" },
-    {
-      '<leader>gb',
-      function() require('telescope.builtin').git_branches({ show_remote_tracking_branches = false }) end,
-      desc = "Git branch picker"
-    },
-    {
-      '<leader>gB',
-      function() require('telescope.builtin').git_branches({ show_remote_tracking_branches = true }) end,
-      desc = "Git branch picker (w/ remotes)"
-    },
-    { '<leader>gf', function() require('telescope.builtin').git_files() end,    desc = "Git file picker" },
-    { '<leader>gl', function() require('telescope.builtin').git_commits() end,  desc = "Git log" },
-    { '<leader>gL', function() require('telescope.builtin').git_bcommits() end, desc = "Git buffer log" },
+    { '<c-p>',      function() builtin().find_files() end,                                            desc = "Find Files" },
+    { '<c-f>',      function() builtin().live_grep() end,                                             desc = "Livegrep" },
+    { '<leader>pp', function() builtin().find_files({ no_ignore = true }) end,                        desc = "Find Files (all files)" },
+    { '<leader>pf', function() builtin().live_grep({ additional_args = { '--no-ignore' } }) end,      desc = "Livegrep (all files)" },
+    { '<c-s>',      function() builtin().git_status() end,                                            desc = "Git status picker" },
+    { '<leader>gb', function() builtin().git_branches({ show_remote_tracking_branches = false }) end, desc = "Git branch picker" },
+    { '<leader>gB', function() builtin().git_branches({ show_remote_tracking_branches = true }) end,  desc = "Git branch picker (w/ remotes)" },
+    { '<leader>gf', function() builtin().git_files() end,                                             desc = "Git file picker" },
+    { '<leader>gl', function() builtin().git_commits() end,                                           desc = "Git log" },
+    { '<leader>gL', function() builtin().git_bcommits() end,                                          desc = "Git buffer log" },
   }
 }
