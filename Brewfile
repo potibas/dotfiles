@@ -134,10 +134,10 @@ vscode "vscode-exunit.exunit"
 
 # VSCode PHP & Laravel
 vscode "amiralizadeh9480.laravel-extra-intellisense"
+vscode "bmewburn.vscode-intelephense-client"
+vscode "calebporzio.better-phpunit"
 vscode "codingyu.laravel-goto-view"
 vscode "devsense.composer-php-vscode"
-vscode "devsense.intelli-php-vscode"
-vscode "devsense.phptools-vscode"
 vscode "devsense.profiler-php-vscode"
 vscode "ihunte.laravel-blade-wrapper"
 vscode "naoray.laravel-goto-components"

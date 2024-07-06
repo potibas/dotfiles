@@ -110,6 +110,12 @@
     ]
   },
 
+  // PHP
+  "better-phpunit.phpunitBinary": "/usr/local/bin/php artisan test",
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+
   // Emmet
   "emmet.includeLanguages": {
     "elixir": "html",

@@ -33,15 +33,42 @@
         "command": "workbench.view.extensions"
     },
     {
+        "key": "cmd+k cmd+s",
+        "command": "workbench.action.openGlobalKeybindingsFile"
+    },
+    {
         "key": "cmd+t cmd+y",
-        "command": "exunit.runTest"
+        "command": "exunit.runTest",
+        "when": "editorLangId == 'elixir'"
     },
     {
         "key": "cmd+t cmd+f",
-        "command": "exunit.runTestFile"
+        "command": "exunit.runTestFile",
+        "when": "editorLangId == 'elixir'"
     },
     {
         "key": "cmd+t cmd+t",
-        "command": "exunit.runPrevious"
+        "command": "exunit.runPrevious",
+        "when": "editorLangId == 'elixir'"
+    },
+    {
+        "key": "cmd+t cmd+y",
+        "command": "better-phpunit.run",
+        "when": "editorLangId == 'php'"
+    },
+    {
+        "key": "cmd+t cmd+f",
+        "command": "better-phpunit.run-file",
+        "when": "editorLangId == 'php'"
+    },
+    {
+        "key": "cmd+t cmd+t",
+        "command": "better-phpunit.run-previous",
+        "when": "editorLangId == 'php'"
+    },
+    {
+        "key": "cmd+t cmd+a",
+        "command": "better-phpunit.run-suite",
+        "when": "editorLangId == 'php'"
     }
 ]
