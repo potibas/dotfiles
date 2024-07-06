@@ -14,3 +14,7 @@ end)
 hs.hotkey.bind({ 'command' }, "'", function()
   hs.application.launchOrFocus('/Applications/WhatsApp.app')
 end)
+
+hs.hotkey.bind({ 'command' }, "\\", function()
+  hs.application.launchOrFocus('/Applications/Visual Studio Code.app')
+end)
