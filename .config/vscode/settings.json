@@ -12,7 +12,8 @@
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.showLinkHover": true,
   "terminal.integrated.enableFileLinks": "notRemote",
-  "workbench.colorTheme": "Predawn Twilight",
+  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  "workbench.iconTheme": "a-file-icon-vscode",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
 
