@@ -67,7 +67,11 @@ brew "k9s"
 brew "localstack"
 brew "rclone"
 
-# Non-asdf languages
+# Laravel valet dependencies
+brew "nginx"
+brew "dnsmasq"
+
+# PHP
 brew "composer"
 brew "php"
 
