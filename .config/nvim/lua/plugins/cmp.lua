@@ -47,6 +47,7 @@ return {
             Operator = '',
             TypeParameter = ' ',
             Copilot = "",
+            Supermaven = "",
           }
 
           local meta_type = vim_item.kind
@@ -78,6 +79,7 @@ return {
         ['<c-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i' }),
       },
       sources = {
+        { name = 'supermaven' },
         { name = 'vsnip' },
         { name = 'nvim_lsp' },
         { name = 'path' },
