@@ -9,6 +9,12 @@ vim.keymap.set('n', '<leader>X', ':%bd!|e#<cr>', { silent = true, desc = 'Delete
 vim.keymap.set('n', '<leader>l', ':bnext<cr>', { silent = true, desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>h', ':bprevious<cr>', { silent = true, desc = 'Previous buffer' })
 
+-- Navigate panes
+vim.keymap.set('n', '<c-h>', '<c-w>h');
+vim.keymap.set('n', '<c-j>', '<c-w>j');
+vim.keymap.set('n', '<c-k>', '<c-w>k');
+vim.keymap.set('n', '<c-l>', '<c-w>l');
+
 -- Home/End with HL
 vim.keymap.set('n', 'H', '_', { silent = true, desc = 'Move to the beginning of the line (first non-blank character)' })
 vim.keymap.set('n', 'L', '$', { silent = true, desc = 'Move to the end of the line' })
