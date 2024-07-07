@@ -86,8 +86,6 @@ brew "gmp"
 brew "postgresql@16"
 
 # Fonts
-tap "homebrew/cask-fonts"
-
 cask "font-inconsolata-nerd-font"
 cask "font-iosevka-nerd-font"
 cask "font-iosevka-term-nerd-font"
