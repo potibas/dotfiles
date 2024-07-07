@@ -16,6 +16,7 @@ cask "zoom"
 
 # Dev tools
 brew "lazydocker"
+brew "redis"
 cask "docker"
 cask "kitty"
 cask "postman"
