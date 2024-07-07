@@ -2,7 +2,6 @@
 tap "homebrew/services"
 
 # Applications
-cask "gnucash"
 cask "google-chrome"
 cask "microsoft-office"
 cask "spotify"
