@@ -52,7 +52,7 @@
   spr = !git stash pop && git reset
   sl = stash list
   amend = commit --amend
-  squash = commit --amend --no-edit
+  squash = !git add --all && git commit --amend --no-edit
   nuke = !git reset --hard && git clean -xfd
   undo = reset --soft HEAD^
 
