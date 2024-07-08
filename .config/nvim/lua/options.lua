@@ -19,7 +19,7 @@ vim.opt.swapfile = false
 -- Save undo history
 local undodir = os.getenv('HOME') .. '/.config/nvim/undo'
 if not vim.fn['isdirectory'](undodir) then
-  os.mkdir(undodir)
+  vim.mk_dir(undodir)
 end
 vim.opt.undofile = true
 vim.opt.undodir = undodir
