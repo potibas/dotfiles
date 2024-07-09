@@ -39,6 +39,7 @@ export EDITOR="nvim"
 
 # basic aliases
 alias b="brew"
+alias c="composer"
 alias d="docker"
 alias g="git"
 alias v="nvim"
