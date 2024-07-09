@@ -47,7 +47,6 @@ alias vi="nvim"
 alias vim="nvim"
 
 # modern unix tools
-alias cat="bat"
 alias ls="eza -lb"
 alias la="eza -lba"
 
