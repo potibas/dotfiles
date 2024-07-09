@@ -45,10 +45,12 @@ alias g="git"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias lvim="/usr/bin/vim"
 
 # modern unix tools
 alias ls="eza -lb"
 alias la="eza -lba"
+alias lls="/bin/ls"
 
 # docker shortcuts
 alias comp="docker compose"
