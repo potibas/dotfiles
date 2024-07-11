@@ -42,7 +42,7 @@ return {
     telescope.load_extension('file_browser')
   end,
   keys = {
-    { '<c-p>',      function() builtin().find_files() end,                                            desc = "Find Files" },
+    { '<c-p>',      function() builtin().find_files({ hidden = true }) end,                           desc = "Find Files" },
     { '<c-f>',      function() builtin().live_grep() end,                                             desc = "Livegrep" },
     { '<leader>pp', function() builtin().find_files({ no_ignore = true }) end,                        desc = "Find Files (all files)" },
     { '<leader>pf', function() builtin().live_grep({ additional_args = { '--no-ignore' } }) end,      desc = "Livegrep (all files)" },
