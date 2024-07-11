@@ -18,7 +18,7 @@ return {
     local lspconfig = require('lspconfig')
     local format_on_save_group = vim.api.nvim_create_augroup('formatOnSave', {})
 
-    local on_attach = function(client, bufnr)
+    local set_keymaps = function(bufnr)
       local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
       local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -35,7 +35,9 @@ return {
       buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
 
       buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({ async = true })<cr>', opts)
+    end
 
+    local enable_formatter = function (client, bufnr)
       if client.supports_method('textDocument/formatting') then
         vim.api.nvim_clear_autocmds({ group = format_on_save_group, buffer = bufnr })
         vim.api.nvim_create_autocmd('BufWritePre', {
@@ -59,10 +61,6 @@ return {
       }
     )
 
-    local opts = {
-      on_attach = on_attach
-    }
-
     require('mason-lspconfig').setup_handlers {
       ['elixirls'] = function()
         local root = vim.fs.dirname(vim.fs.find({ 'mix.exs', '.git' }, { upward = true })[1])
@@ -75,53 +73,62 @@ return {
           end
         end
 
-        opts.settings = {
-          elixirLS = {
-            fetchDeps = false,
-            dialyzerEnabled = true,
-            dialyzerFormat = 'dialyxir_short',
-            suggestSpecs = true,
-            root_dir = umb_root
-          }
-        }
-        lspconfig.elixirls.setup(opts)
+        lspconfig.elixirls.setup({
+          settings = {
+            elixirLS = {
+              fetchDeps = false,
+              dialyzerEnabled = true,
+              dialyzerFormat = 'dialyxir_short',
+              suggestSpecs = true,
+              root_dir = umb_root
+            }
+          },
+          on_attach = function(client, bufnr)
+            set_keymaps(bufnr)
+            enable_formatter(client, bufnr)
+          end,
+        })
       end,
 
       ['lua_ls'] = function()
-        opts.settings = {
-          Lua = {
-            diagnostics = {
-              globals = { 'vim', 'hs' }
-            },
-            workspace = {
-              library = {
-                [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        lspconfig.lua_ls.setup({
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { 'vim', 'hs' }
+              },
+              workspace = {
+                library = {
+                  [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                  [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                },
               },
             },
           },
-        }
+          root_dir = lspconfig.util.root_pattern(
+            "~/.local/share/nvim/lazy/nvim-lspconfig/.luarc.json",
+            "~/.local/share/nvim/lazy/nvim-lspconfig/.luarc.jsonc",
+            "~/.local/share/nvim/lazy/nvim-lspconfig/.luacheckrc",
+            "~/.local/share/nvim/lazy/nvim-lspconfig/.stylua.toml",
+            "~/.local/share/nvim/lazy/nvim-lspconfig/stylua.toml",
+            "~/.local/share/nvim/lazy/nvim-lspconfig/selene.toml",
+            "~/.local/share/nvim/lazy/nvim-lspconfig/selene.yml",
+            "~/.local/share/nvim/lazy/nvim-lspconfig/.git"
+          ),
+          on_attach = function(client, bufnr)
+            set_keymaps(bufnr)
+            enable_formatter(client, bufnr)
+          end,
+        })
 
-        opts.root_dir = lspconfig.util.root_pattern(
-          "~/.local/share/nvim/lazy/nvim-lspconfig/.luarc.json",
-          "~/.local/share/nvim/lazy/nvim-lspconfig/.luarc.jsonc",
-          "~/.local/share/nvim/lazy/nvim-lspconfig/.luacheckrc",
-          "~/.local/share/nvim/lazy/nvim-lspconfig/.stylua.toml",
-          "~/.local/share/nvim/lazy/nvim-lspconfig/stylua.toml",
-          "~/.local/share/nvim/lazy/nvim-lspconfig/selene.toml",
-          "~/.local/share/nvim/lazy/nvim-lspconfig/selene.yml",
-          "~/.local/share/nvim/lazy/nvim-lspconfig/.git"
-        )
-
-        lspconfig.lua_ls.setup(opts)
       end,
 
       ['intelephense'] = function()
-        local opts = {
-          on_attach = on_attach
-        }
-
-        lspconfig.intelephense.setup(opts)
+        lspconfig.intelephense.setup({
+          on_attach = function(_, bufnr)
+            set_keymaps(bufnr)
+          end,
+        })
       end,
     }
   end
