@@ -2,15 +2,15 @@ return {
   'lewis6991/gitsigns.nvim',
   config = function()
     require('gitsigns').setup {
-      current_line_blame = false,
+      current_line_blame = true,
       current_line_blame_opts = {
         ignore_whitespace = false,
-        delay = 100,
+        delay = 500,
         virt_text = true,
-        virt_text_pos = 'eol',
+        virt_text_pos = 'right_align',
         virt_text_priority = 100,
       },
-      current_line_blame_formatter = '    <abbrev_sha> <author>, <author_time> - <summary> ',
+      current_line_blame_formatter = '    <abbrev_sha> <author>, <author_time:%R> - <summary> ',
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
