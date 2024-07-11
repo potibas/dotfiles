@@ -71,11 +71,9 @@ return {
         if umb_root then
           local Path = require('plenary.path')
           if not vim.startswith(root, Path:joinpath(umb_root, 'apps'):absolute()) then
-            umb_root = nil
+            umb_root = root or vim.loop.os_homedir()
           end
         end
-
-        local root_dir = umb_root or root or vim.loop.os_homedir()
 
         opts.settings = {
           elixirLS = {
@@ -83,7 +81,7 @@ return {
             dialyzerEnabled = true,
             dialyzerFormat = 'dialyxir_short',
             suggestSpecs = true,
-            root_dir = root_dir
+            root_dir = umb_root
           }
         }
         lspconfig.elixirls.setup(opts)
