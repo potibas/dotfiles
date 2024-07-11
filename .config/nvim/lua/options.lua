@@ -4,6 +4,7 @@ vim.opt.termguicolors = true
 vim.opt.bg = 'dark'
 vim.opt.showcmd = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.cmdheight = 1
 vim.opt.signcolumn = 'yes'
