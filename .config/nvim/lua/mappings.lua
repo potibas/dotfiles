@@ -33,6 +33,9 @@ vim.keymap.set('n', '<leader><leader>', '<c-^>', { desc = 'Edit the alternate fi
 vim.keymap.set('n', 'j', 'gj', { desc = 'Down motion' })
 vim.keymap.set('n', 'k', 'gk', { desc = 'Up motion' })
 
+-- Toggle line wrapping
+vim.keymap.set('n', '<F2>', ':set nowrap!<cr>', { silent = true, desc = 'Toggle line wrapping' })
+
 -- Clear search highlight
 vim.keymap.set('n', '<cr>', ':nohlsearch<cr>', { silent = true, desc = 'Clear the search highlight' })
 

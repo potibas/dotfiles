@@ -16,6 +16,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
+vim.wo.wrap = false
 
 -- Save undo history
 local undodir = os.getenv('HOME') .. '/.config/nvim/undo'
