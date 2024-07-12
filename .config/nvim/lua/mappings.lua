@@ -37,7 +37,7 @@ vim.keymap.set('n', 'k', 'gk', { desc = 'Up motion' })
 vim.keymap.set('n', '<F2>', ':set nowrap!<cr>', { silent = true, desc = 'Toggle line wrapping' })
 
 -- Clear search highlight
-vim.keymap.set('n', '<cr>', ':nohlsearch<cr>', { silent = true, desc = 'Clear the search highlight' })
+vim.keymap.set('n', '<c-c>', ':nohlsearch<cr>', { silent = true, desc = 'Clear the search highlight' })
 
 -- Search history with C-P/C-N
 local wildmenumap = function(mapping, alternate)
