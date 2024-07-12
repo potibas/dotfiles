@@ -51,3 +51,6 @@ local wildmenumap = function(mapping, alternate)
 end
 vim.keymap.set('c', '<c-p>', wildmenumap('<c-p>', '<up>'), { expr = true })
 vim.keymap.set('c', '<c-n>', wildmenumap('<c-n>', '<down>'), { expr = true })
+
+-- Avoid annoying ex mode window appearing
+vim.keymap.set('c', 'q:', '<Nop>', { silent = true })
