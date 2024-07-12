@@ -33,6 +33,7 @@
 
 !/.config/nvim
 /.config/nvim/undo
+!/.config/nvim/after/**
 
 !/.config/tmux
 
