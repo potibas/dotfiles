@@ -1,0 +1,5 @@
+# Ignore all things!
+/*
+
+# Un-ignore some things!
+!.gitignore
