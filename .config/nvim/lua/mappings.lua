@@ -54,3 +54,6 @@ vim.keymap.set('c', '<c-n>', wildmenumap('<c-n>', '<down>'), { expr = true })
 
 -- Avoid annoying ex mode window appearing
 vim.keymap.set('c', 'q:', '<Nop>', { silent = true })
+
+-- g? for contextual help
+vim.keymap.set('n', 'g?', ':H <c-r><c-w><cr>', { silent = true, desc = 'Show help for the word under the cursor' })
