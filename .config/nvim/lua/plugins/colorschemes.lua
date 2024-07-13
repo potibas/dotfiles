@@ -7,6 +7,9 @@ return {
 
     api.setup({
       highlights = {
+        -- Bring attention to errors in the git commit message
+        ['@gitcommit_error.gitcommit'] = { reverse = true },
+
         -- Search
         Search = { fg = 'yellow', bold = false, italic = true, underline = true },
         CurSearch = { fg = 'white', bold = true, italic = true, underline = true },
