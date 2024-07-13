@@ -36,3 +36,7 @@ local wildmenumap = function(mapping, alternate)
 end
 map('c', '<c-p>', wildmenumap('<c-p>', '<up>'), { expr = true })
 map('c', '<c-n>', wildmenumap('<c-n>', '<down>'), { expr = true })
+
+-- Contextual help
+vim.keymap.set('n', '<c-_>', ':Hspace<c-r><c-w><cr>', { silent = true, desc = 'Show help for the word under the cursor' })
+vim.keymap.set('n', '<c-/>', ':Hspace<c-r><c-w><cr>', { silent = true, desc = 'Show help for the word under the cursor' })
