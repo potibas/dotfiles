@@ -4,3 +4,12 @@
 # Un-ignore some things!
 !.gitignore
 !README.md
+!/.config
+/.config/*
+
+# NeoVim
+!/.config/nvim
+/.config/nvim/*
+!/.config/nvim/init.lua
+!/.config/nvim/lazy-lock.json
+!/.config/nvim/lua
