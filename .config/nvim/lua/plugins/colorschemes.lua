@@ -1,23 +1,44 @@
+local custom_highlights = {
+  -- Bring attention to errors in the git commit message
+  ['@gitcommit_error.gitcommit'] = { reverse = true },
+
+  -- Search
+  Search = { fg = 'yellow', bold = false, italic = true, underline = true },
+  CurSearch = { fg = 'white', bold = true, italic = true, underline = true },
+  IncSearch = { link = 'Search' },
+}
+
 return {
-  'olimorris/onedarkpro.nvim',
-  lazy = false,
-  config = function()
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false,
+    priority = 1000,
 
-    local api = require('onedarkpro')
+    config = function()
+      require('catppuccin').setup({
+        flavour = 'mocha',
+        dim_inactive = {
+          enabled = true,
+          shade = 'dark',
+          percentage = 0.25,
+        },
+        custom_highlights = custom_highlights,
+        highlights = custom_highlights,
+      })
 
-    api.setup({
-      highlights = {
-        -- Bring attention to errors in the git commit message
-        ['@gitcommit_error.gitcommit'] = { reverse = true },
+      vim.cmd.colorscheme('catppuccin')
+    end,
+  },
+  {
+    'olimorris/onedarkpro.nvim',
+    lazy = true,
+    config = function()
+      local api = require('onedarkpro')
 
-        -- Search
-        Search = { fg = 'yellow', bold = false, italic = true, underline = true },
-        CurSearch = { fg = 'white', bold = true, italic = true, underline = true },
-        IncSearch = { link = 'Search' },
-      },
-    })
-
-    vim.cmd([[colorscheme onedark_vivid]])
-
-  end
+      api.setup({
+        highlights = custom_highlights,
+      })
+    end
+  },
 }

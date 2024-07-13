@@ -7,5 +7,17 @@ return {
   },
 
   config = true,
-}
 
+  -- keys = {
+  --   {
+  --     '<c-g>c',
+  --     function() require('neogit').open({ 'commit', kind = 'vsplit' }) end,
+  --     esc = 'Git commit',
+  --   },
+  --   {
+  --     '<c-g>s',
+  --     function() require('neogit').open({ kind = 'vsplit' }) end,
+  --     desc = 'Git status',
+  --   }
+  -- },
+}
