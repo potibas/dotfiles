@@ -5,6 +5,12 @@ map('n', '<leader>w', ':w<cr>', { silent = true, desc = 'Write buffer' })
 map('n', '<leader>q', ':q<cr>', { silent = true, desc = 'Quit the current window' })
 map('n', '<leader>e', ':e!<cr>', { silent = true, desc = 'Discard unsaved changes in current buffer' })
 
+-- Navigate panes
+map('n', '<c-h>', '<c-w>h');
+map('n', '<c-j>', '<c-w>j');
+map('n', '<c-k>', '<c-w>k');
+map('n', '<c-l>', '<c-w>l');
+
 -- Home/End with H/L
 map('n', 'H', '_', { silent = true, desc = 'Move to the start of the line' })
 map('n', 'L', '$', { silent = true, desc = 'Move to the end of the line' })
