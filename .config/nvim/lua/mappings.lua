@@ -8,3 +8,6 @@ map('n', '<leader>e', ':e!<cr>', { silent = true, desc = 'Discard unsaved change
 -- Home/End with H/L
 map('n', 'H', '_', { silent = true, desc = 'Move to the start of the line' })
 map('n', 'L', '$', { silent = true, desc = 'Move to the end of the line' })
+
+-- Expand the current file's directory
+map('c', '%%', "<c-r>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
