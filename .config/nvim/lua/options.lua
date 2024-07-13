@@ -17,3 +17,7 @@ vim.opt.undofile = true
 
 -- Don't insert comments on new lines
 vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]]
+
+-- Appearance
+vim.opt.number = true
+vim.opt.relativenumber = true
