@@ -3,3 +3,4 @@
 
 # Un-ignore some things!
 !.gitignore
+!README.md
