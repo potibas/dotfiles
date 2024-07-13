@@ -18,6 +18,10 @@ vim.opt.undofile = true
 -- Don't insert comments on new lines
 vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]]
 
+-- Jump to matching brackets but very briefly
+vim.opt.showmatch = true
+vim.opt.matchtime = 1
+
 -- Appearance
 vim.opt.number = true
 vim.opt.relativenumber = true
