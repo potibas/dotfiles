@@ -7,21 +7,20 @@ return {
       -- styles used for the preview window
       preview_config = {
         border = 'rounded',
+        col = 5,
+        row = 2,
       },
 
       -- show blame on current line
       current_line_blame = false,
       current_line_blame_opts = {
         ignore_whitespace = false,
-        delay = 200,
+        delay = 10,
         virt_text = true,
         virt_text_pos = 'right_align',
         virt_text_priority = 100,
       },
       current_line_blame_formatter = '    <abbrev_sha> <author_time:%R> - <summary> ',
-
-      -- Do not show signs for staged hunks
-      signs_staged_enable = false,
 
       on_attach = function(b)
         local gs = package.loaded.gitsigns
@@ -50,11 +49,12 @@ return {
 
         map('n', '<leader>gs', 'Stage hunk under cursor', gs.stage_hunk)
         map('n', '<leader>gr', 'Reset hunk under cursor', gs.reset_hunk)
+        map('n', '<leader>gh', 'Preview hunk under cursor', gs.preview_hunk)
         map('n', '<leader>gu', 'Undo last stage hunk', gs.undo_stage_hunk)
         map('n', '<leader>gS', 'Stage current buffer', gs.stage_buffer)
         map('n', '<leader>gR', 'Reset current buffer', gs.reset_buffer)
         map('n', '<leader>gI', 'Reset current buffer on index', gs.reset_buffer_index)
-        map('n', '<leader>gt', 'Toggle current line blame', gs.toggle_current_line_blame)
+        map('n', '<f8>', 'Toggle current line blame', gs.toggle_current_line_blame)
       end,
 
     })
