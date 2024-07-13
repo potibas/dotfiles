@@ -14,3 +14,6 @@ map('c', '%%', "<c-r>=expand('%:h').'/'<cr>", { desc = "Current file's directory
 
 -- Switch to alternate file
 map('n', '<leader><leader>', '<c-^>', { desc = 'Edit the alternate file' })
+
+-- Clear search highlight
+map('n', '<c-n>', ':nohlsearch<cr>', { silent = true, desc = 'Clear the search highlight' })
