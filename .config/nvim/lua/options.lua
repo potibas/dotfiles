@@ -22,6 +22,9 @@ vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatop
 vim.opt.showmatch = true
 vim.opt.matchtime = 1
 
+-- Open vertical splits to the right
+vim.opt.splitright = true
+
 -- Appearance
 vim.opt.number = true
 vim.opt.relativenumber = true

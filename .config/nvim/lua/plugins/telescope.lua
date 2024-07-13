@@ -52,10 +52,25 @@ return {
       desc = 'Find Files',
     },
     {
-      '<c-f>',
+      '<c-f><c-p>',
+      function() require('telescope.builtin').live_grep() end,
+      desc = 'Find Files (all files)',
+    },
+    {
+      '<c-f><c-f>',
       function() require('telescope.builtin').live_grep() end,
       desc = 'Live Grep',
-    }
+    },
+    {
+      '<c-f><c-a>',
+      function() require('telescope.builtin').live_grep({ additional_args = { '--no-ignore' } }) end,
+      desc = 'Live Grep (all files)',
+    },
+    {
+      '<c-g><c-s>',
+      function() require('telescope.builtin').git_status() end,
+      desc = 'Git Status',
+    },
   },
 
 }
