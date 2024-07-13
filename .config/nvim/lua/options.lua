@@ -21,3 +21,4 @@ vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatop
 -- Appearance
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = 'yes'
