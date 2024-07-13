@@ -11,3 +11,6 @@ map('n', 'L', '$', { silent = true, desc = 'Move to the end of the line' })
 
 -- Expand the current file's directory
 map('c', '%%', "<c-r>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
+
+-- Switch to alternate file
+map('n', '<leader><leader>', '<c-^>', { desc = 'Edit the alternate file' })
