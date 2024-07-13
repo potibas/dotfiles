@@ -17,3 +17,16 @@ map('n', '<leader><leader>', '<c-^>', { desc = 'Edit the alternate file' })
 
 -- Clear search highlight
 map('n', '<c-n>', ':nohlsearch<cr>', { silent = true, desc = 'Clear the search highlight' })
+
+-- Search command history with ctrl+p & ctrl+n (use same behaviour as arrow keys)
+local wildmenumap = function(mapping, alternate)
+  return function()
+    if vim.fn.wildmenumode() == 1 then
+      return mapping
+    else
+      return alternate
+    end
+  end
+end
+map('c', '<c-p>', wildmenumap('<c-p>', '<up>'), { expr = true })
+map('c', '<c-n>', wildmenumap('<c-n>', '<down>'), { expr = true })
