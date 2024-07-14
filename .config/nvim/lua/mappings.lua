@@ -1,6 +1,5 @@
 -- Basic operations
 vim.keymap.set('n', '<leader>w', ':w<cr>', { silent = true, desc = 'Write buffer' })
-vim.keymap.set('n', '<leader>q', ':q<cr>', { silent = true, desc = 'Quit the current window' })
 vim.keymap.set('n', '<leader>Q', ':qa<cr>', { silent = true, desc = 'Quit all windows' })
 vim.keymap.set('n', '<leader>x', '<esc>:bprevious<bar>bdelete #<return>', { silent = true, desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>X', ':%bd!|e#<cr>', { silent = true, desc = 'Delete other buffers' })
@@ -33,11 +32,11 @@ vim.keymap.set('n', '<leader><leader>', '<c-^>', { desc = 'Edit the alternate fi
 vim.keymap.set('n', 'j', 'gj', { desc = 'Down motion' })
 vim.keymap.set('n', 'k', 'gk', { desc = 'Up motion' })
 
--- Toggle line wrapping
+-- Toggle line wrapping<D-s>
 vim.keymap.set('n', '<F2>', ':set nowrap!<cr>', { silent = true, desc = 'Toggle line wrapping' })
 
 -- Clear search highlight
-vim.keymap.set('n', '<c-c>', ':nohlsearch<cr>', { silent = true, desc = 'Clear the search highlight' })
+vim.keymap.set('n', '<c-n>', ':nohlsearch<cr>', { silent = true, desc = 'Clear the search highlight' })
 
 -- Search history with C-P/C-N
 local wildmenumap = function(mapping, alternate)
@@ -52,8 +51,9 @@ end
 vim.keymap.set('c', '<c-p>', wildmenumap('<c-p>', '<up>'), { expr = true })
 vim.keymap.set('c', '<c-n>', wildmenumap('<c-n>', '<down>'), { expr = true })
 
--- Avoid annoying ex mode window appearing
-vim.keymap.set('c', 'q:', '<Nop>', { silent = true })
+-- Things that annoy me...
+vim.keymap.set('c', 'q:', '<Nop>', { silent = true })                                   -- ex-mode window when I accidentally press q:
+vim.keymap.set('n', 'q', ':close<cr>', { silent = true, desc = 'Quit current window' }) -- I don't use macros.. soo hmmm let's try this
 
 -- g? for contextual help
 vim.keymap.set('n', 'g?', ':H <c-r><c-w><cr>', { silent = true, desc = 'Show help for the word under the cursor' })

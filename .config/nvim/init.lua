@@ -15,4 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 require('commands')
 require('options')
 require('mappings')
-require('lazy').setup('plugins')
+
+require('lazy').setup({
+  { import = 'plugins',        cond = true },
+  { import = 'vscode_plugins', cond = (function() return vim.g.vscode end) },
+
+  change_detection = {
+    notify = false,
+  },
+})

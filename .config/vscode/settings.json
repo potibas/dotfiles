@@ -3,7 +3,6 @@
   "breadcrumbs.enabled": false,
   "editor.fontFamily": "Iosevka Nerd Font Mono",
   "editor.fontSize": 16,
-  "editor.lineHeight": 32,
   "editor.renderWhitespace": "none",
   "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
@@ -15,17 +14,18 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.tabs.enabled": false,
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Material Theme Darker High Contrast",
-  "workbench.iconTheme": "a-file-icon-vscode",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
+  "workbench.editor.showTabs": "single",
 
   // Behaviour
   "editor.accessibilitySupport": "off",
   "editor.autoIndent": "advanced",
   "editor.autoClosingBrackets": "beforeWhitespace",
   "editor.autoClosingQuotes": "beforeWhitespace",
-  "editor.codeLens": false,
+  "editor.codeLens": true,
   "editor.dragAndDrop": false,
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
@@ -41,9 +41,9 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": true,
   "workbench.settings.editor": "json",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "terminal",
 
   // Source control
   "diffEditor.renderSideBySide": false,
@@ -125,6 +125,18 @@
 
   "[jsonc]": {
     // Don't format this file
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // NeoVim
+  // "vscode-neovim.neovimClean": true,
+
+  // General stuff
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
