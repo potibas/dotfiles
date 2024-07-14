@@ -34,6 +34,7 @@
 !/.config/nvim
 /.config/nvim/undo
 !/.config/nvim/after/**
+!/.config/nvim/lua/**
 
 !/.config/tmux
 
