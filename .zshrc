@@ -21,8 +21,8 @@ if [ -f "/usr/local/bin/direnv" ]; then
 fi
 
 # icu4c tools (PostgreSQL dependency)
-export PATH=":$(brew --prefix icu4c)/bin:$PATH"
-export PATH=":$(brew --prefix icu4c)/sbin:$PATH"
+#export PATH=":$(brew --prefix icu4c)/bin:$PATH"
+# export PATH=":$(brew --prefix icu4c)/sbin:$PATH"
 
 # HomeBrew PostgreSQL PATH
 export PATH=":/usr/local/opt/postgresql@16/bin:$PATH"
