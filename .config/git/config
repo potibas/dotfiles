@@ -16,3 +16,23 @@
 
 [url "git@github.com:"]
   insteadOf = "github:"
+
+[alias]
+  aa = add --all
+  amend = commit --amend
+  b = branch
+  ci = commit
+  co = checkout
+  cp = cherry-pick
+  cpn = cherry-pick --no-commit
+  dc = diff --cached
+  di = diff
+  fa = fetch --all
+  pr = pull --rebase
+  rc = rebase --continue
+  ri = rebase --interactive --autosquash --committer-date-is-author-date
+  sa = !git add . && git stash
+  sp = stash pop
+  squash = commit --amend --no-edit
+  st = status
+  undo = reset HEAD^
