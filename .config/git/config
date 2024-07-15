@@ -36,3 +36,9 @@
   squash = commit --amend --no-edit
   st = status
   undo = reset HEAD^
+
+# Colored logs
+  l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(ul italic cyan)%an%C(reset)'
+  la = !git l --all
+  r = !git l -10
+  ra = !git r --all
