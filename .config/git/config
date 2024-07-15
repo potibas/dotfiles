@@ -1,0 +1,18 @@
+[user]
+  name = Potiguar Faga Catalan
+  email = potiguar@potiguar.net
+
+[color]
+  ui = auto
+
+[core]
+  excludesFile = ~/.config/git/ignore
+
+[init]
+  defaultBranch = main
+
+[url "git@github.com:potibas/"]
+  insteadOf = "potibas:"
+
+[url "git@github.com:"]
+  insteadOf = "github:"

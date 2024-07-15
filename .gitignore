@@ -1,0 +1,13 @@
+# Ignore all things!
+/*
+
+# Un-ignore some things!
+!.gitignore
+!README.md
+!/.config
+/.config/*
+
+!/.config/git
+/.config/git/*
+!/.config/git/config
+!/.config/git/ignore
