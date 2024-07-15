@@ -1,9 +1,8 @@
 {
-  // Appearance
-  "breadcrumbs.enabled": false,
   "editor.fontFamily": "Iosevka Nerd Font Mono",
   "editor.fontSize": 16,
   "editor.renderWhitespace": "none",
+  "editor.cursorStyle": "line",
   "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontWeightBold": "normal",
@@ -13,12 +12,16 @@
   "terminal.integrated.enableFileLinks": "notRemote",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "both",
+  "terminal.external.osxExec": "Kitty.app",
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
   "workbench.editor.showTabs": "single",
+
 
   // Behaviour
   "editor.accessibilitySupport": "off",
@@ -115,6 +118,7 @@
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
+  "intelephense.format.enable": true,
 
   // Emmet
   "emmet.includeLanguages": {
@@ -129,8 +133,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // NeoVim
-  // "vscode-neovim.neovimClean": true,
+  // Tailwind CSS
+  "tailwindCSS.includeLanguages": {
+    "javascriptreact": "html"
+  },
 
   // General stuff
   "extensions.experimental.affinity": {
@@ -138,5 +144,9 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "scm.showChangesSummary": false,
+  "supermaven.enable": {
+    "*": false
   }
 }

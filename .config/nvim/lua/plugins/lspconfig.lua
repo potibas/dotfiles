@@ -37,8 +37,8 @@ return {
       buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({ async = true })<cr>', opts)
     end
 
-    local enable_formatter = function (client, bufnr)
-      if client.supports_method('textDocument/formatting') then
+    local enable_formatter = function(client, bufnr)
+      if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_clear_autocmds({ group = format_on_save_group, buffer = bufnr })
         vim.api.nvim_create_autocmd('BufWritePre', {
           group = format_on_save_group,
@@ -47,6 +47,9 @@ return {
             vim.lsp.buf.format({ bufnr = bufnr })
           end,
         })
+        vim.print('Auto formatter enabled for ' .. client.name)
+      else
+        vim.print('Client ' .. client.name .. ' does not support formatting')
       end
       vim.api.nvim_create_user_command('Format', function() vim.lsp.buf.format({ async = true }) end, {})
     end
@@ -120,13 +123,15 @@ return {
             enable_formatter(client, bufnr)
           end,
         })
-
       end,
 
       ['intelephense'] = function()
         lspconfig.intelephense.setup({
-          on_attach = function(_, bufnr)
+          on_attach = function(client, bufnr)
+            vim.print(client.server_capabilities)
+
             set_keymaps(bufnr)
+            enable_formatter(client, bufnr)
           end,
         })
       end,

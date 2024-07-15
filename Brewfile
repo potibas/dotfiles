@@ -20,6 +20,7 @@ brew "redis"
 cask "docker"
 cask "kitty"
 cask "postman"
+cask "raycast"
 cask "visual-studio-code"
 
 # Essentials

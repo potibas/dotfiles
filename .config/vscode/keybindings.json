@@ -1,9 +1,18 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "ctrl+j",
+    "key": "cmd+j",
     "command": "workbench.action.terminal.focus",
     "when": "!terminalFocus"
+  },
+   {
+    "key": "cmd+j",
+    "command": "workbench.action.focusLastEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
   },
   {
     "key": "ctrl+k",
@@ -40,6 +49,14 @@
   {
     "key": "cmd+k cmd+s",
     "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
+    "key": "cmd+k cmd+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "cmd+k s",
+    "command": "workbench.action.openGlobalKeybindings"
   },
   {
     "key": "cmd+t cmd+y",
@@ -80,5 +97,9 @@
     "key": "cmd+w",
     "command": "-workbench.action.closeWindow",
     "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "cmd+k cmd+y",
+    "command": "gitlens.openOnlyChangedFiles"
   }
 ]

@@ -16,11 +16,9 @@ require('commands')
 require('options')
 require('mappings')
 
-require('lazy').setup({
-  { import = 'plugins',        cond = true },
-  { import = 'vscode_plugins', cond = (function() return vim.g.vscode end) },
-
+require('lazy').setup('plugins', {
   change_detection = {
+    enabled = true,
     notify = false,
   },
 })
