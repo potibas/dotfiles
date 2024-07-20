@@ -19,3 +19,7 @@ vim.keymap.set("c", "<c-n>", wildmenumap("<c-n>", "<down>"), { desc = "Move down
 -- Make j/k movement more natural when text is wrapped
 vim.keymap.set("n", "j", "gj", { desc = "Down motion" })
 vim.keymap.set("n", "k", "gk", { desc = "Up motion" })
+
+-- Home/End with HL
+vim.keymap.set("n", "H", "_", { silent = true, desc = "Move to the start of the line" })
+vim.keymap.set("n", "L", "$", { silent = true, desc = "Move to the end of the line" })
