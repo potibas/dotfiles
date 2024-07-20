@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader><leader>", "<c-^>", { desc = "Edit the alternate fi
 
 -- Expand current file's directory
 vim.keymap.set("c", "%%", "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
+
+-- Expand to Neovim's config directory
+vim.keymap.set("c", "##", "~/.config/nvim/lua/", { desc = "Neovim's config dir" })
