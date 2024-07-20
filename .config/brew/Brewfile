@@ -30,5 +30,6 @@ brew "pgcli"
 brew "postgresql@16"
 
 # Applications
+cask "google-chrome"
 cask "visual-studio-code"
 cask "wezterm"
