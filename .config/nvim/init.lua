@@ -1,24 +1,31 @@
-vim.g.mapleader = ','
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+
+vim.opt.rtp:prepend(lazypath)
 
 -- Appearance
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 
--- Indenting
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.tabstop = 2
-vim.opt.expandtab = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
+vim.g.mapleader = ","
 
--- Searching
-vim.opt.incsearch = true
-vim.opt.hlsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+require("commands")
+require("options")
+require("mappings")
 
--- Don't insert comments on new lines
-vim.cmd [[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]]
-
+require("lazy").setup("plugins", {
+	change_detection = {
+		enabled = true,
+		notify = false,
+	},
+})
