@@ -22,3 +22,6 @@ vim.opt.smartcase = true
 
 -- Don't insert comments on new lines
 vim.cmd([[autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o]])
+
+-- Save undo history
+vim.opt.undofile = true
