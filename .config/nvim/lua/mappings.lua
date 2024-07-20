@@ -26,3 +26,6 @@ vim.keymap.set("n", "L", "$", { silent = true, desc = "Move to the end of the li
 
 -- Switch to alternate file
 vim.keymap.set("n", "<leader><leader>", "<c-^>", { desc = "Edit the alternate file" })
+
+-- Expand current file's directory
+vim.keymap.set("c", "%%", "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file's directory" })
