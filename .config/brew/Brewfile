@@ -28,3 +28,6 @@ brew "nginx"
 # Databases
 brew "pgcli"
 brew "postgresql@16"
+
+# Applications
+cask "wezterm"
