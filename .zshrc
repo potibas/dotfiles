@@ -28,6 +28,7 @@ compinit
 alias c="composer"
 alias g="git"
 alias la="ls -lhpAG"
+alias lg="lazygit"
 alias ls="ls -G"
 alias pa="php artisan"
 alias v="vim"
