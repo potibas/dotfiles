@@ -30,14 +30,21 @@ return {
 			function()
 				require("telescope.builtin").find_files({ hidden = true })
 			end,
-			desc = "Find Files",
+			desc = "Find Files (telescope)",
 		},
 		{
 			"<c-f>",
 			function()
 				require("telescope.builtin").live_grep()
 			end,
-			desc = "Livegrep",
+			desc = "Livegrep (telescope)",
+		},
+		{
+			"<c-s>",
+			function()
+				require("telescope.builtin").git_status()
+			end,
+			desc = "Git status (telescope)",
 		},
 	},
 }
