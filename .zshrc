@@ -5,6 +5,10 @@ if [[ ! -z "$BREW" ]]; then
   export HOMEBREW_BUNDLE_FILE="$HOME/.config/brew/Brewfile"
   eval "$(brew shellenv)"
 
+  # z
+  Z=$HOMEBREW_PREFIX/etc/profile.d/z.sh
+  test -f $Z && . $Z
+
 fi
 
 # Aliases
