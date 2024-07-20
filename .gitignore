@@ -25,3 +25,7 @@
 !/.config/pgcli
 /.config/pgcli/*
 !/.config/pgcli/config
+
+!/.config/wezterm
+/.config/wezterm/*
+!/.config/wezterm/wezterm.lua
