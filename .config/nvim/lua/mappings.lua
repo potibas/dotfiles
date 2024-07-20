@@ -33,5 +33,8 @@ vim.keymap.set("c", "%%", "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file'
 -- Expand to Neovim's config directory
 vim.keymap.set("c", "##", "~/.config/nvim/lua/", { desc = "Neovim's config dir" })
 
+-- Toggle line wrapping
+vim.keymap.set("n", "<f2>", ":set nowrap!<cr>", { silent = true, desc = "Toggle line wrapping" })
+
 -- Toggle search highlight
 vim.keymap.set("n", "<f3>", ":set hlsearch!<cr>", { silent = true, desc = "Toggle search highlighting" })
