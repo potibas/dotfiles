@@ -23,4 +23,5 @@ brew "dnsmasq"
 brew "nginx"
 
 # Databases
+brew "pgcli"
 brew "postgresql@16"

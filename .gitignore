@@ -16,3 +16,7 @@
 /.config/git/*
 !/.config/git/config
 !/.config/git/ignore
+
+!/.config/pgcli
+/.config/pgcli/*
+!/.config/pgcli/config
