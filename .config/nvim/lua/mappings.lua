@@ -38,3 +38,9 @@ vim.keymap.set("n", "<f2>", ":set nowrap!<cr>", { silent = true, desc = "Toggle 
 
 -- Toggle search highlight
 vim.keymap.set("n", "<f3>", ":set hlsearch!<cr>", { silent = true, desc = "Toggle search highlighting" })
+
+-- Stop being annoyed by the `q` key
+vim.keymap.set("c", "q:", "<Nop>", { silent = true })
+vim.keymap.set("n", "q", ":close<cr>", { silent = true, desc = "Close current window" })
+vim.keymap.set("n", "<leader>q", ":q<cr>", { silent = true, desc = "Quit current window" })
+vim.keymap.set("n", "<leader>Q", ":qa<cr>", { silent = true, desc = "Quit all windows" })
