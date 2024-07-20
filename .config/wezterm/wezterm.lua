@@ -12,6 +12,7 @@ config.initial_cols = 120
 config.initial_rows = 30
 
 -- Behaviour
+config.native_macos_fullscreen_mode = true
 config.window_close_confirmation = "NeverPrompt"
 
 -- Key Bindings
