@@ -8,6 +8,9 @@ if [[ ! -z "$BREW" ]]; then
   # PHP Composer
   export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+  # PostgreSQL
+  export PATH="$PATH:$HOMEBREW_PREFIX/opt/postgresql@16/bin"
+
   # z
   Z=$HOMEBREW_PREFIX/etc/profile.d/z.sh
   test -f $Z && . $Z

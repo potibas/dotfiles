@@ -21,3 +21,6 @@ brew "php"
 # Laravel valet dependencies
 brew "dnsmasq"
 brew "nginx"
+
+# Databases
+brew "postgresql@16"
