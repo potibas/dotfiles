@@ -24,6 +24,25 @@ fi
 autoload -U compinit
 compinit
 
+# Don't save commands prepended with a space
+setopt histignorespace
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+
+# Better history search on emacs mode
+set -o emacs
+
+# Disable XON/XOFF resume/pause control characters
+# (thus allowing ctrl+S to reverse the Ctrl+R)
+stty -ixon -ixoff
+
+# More useful history search with ^P/^N
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
 # Aliases
 alias c="composer"
 alias g="git"
