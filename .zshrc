@@ -5,6 +5,10 @@ if [[ ! -z "$BREW" ]]; then
   export HOMEBREW_BUNDLE_FILE="$HOME/.config/brew/Brewfile"
   eval "$(brew shellenv)"
 
+  # direnv
+  DIRENV=$HOMEBREW_PREFIX/bin/direnv
+  test -f $DIRENV && eval "$($DIRENV hook zsh)"
+
   # mise-en-place
   export PATH="$PATH:$HOME/.local/share/mise/shims"
 
