@@ -3,6 +3,7 @@
 
 # Un-ignore some things!
 !.gitignore
+!.tool-versions
 !.zshrc
 !README.md
 !/.config
