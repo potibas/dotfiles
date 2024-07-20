@@ -31,5 +31,6 @@ brew "postgresql@16"
 
 # Applications
 cask "google-chrome"
+cask "karabiner-elements"
 cask "visual-studio-code"
 cask "wezterm"
