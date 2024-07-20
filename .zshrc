@@ -20,6 +20,10 @@ if [[ ! -z "$BREW" ]]; then
 
 fi
 
+# Completion
+autoload -U compinit
+compinit
+
 # Aliases
 alias c="composer"
 alias g="git"
