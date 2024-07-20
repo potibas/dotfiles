@@ -5,6 +5,9 @@ if [[ ! -z "$BREW" ]]; then
   export HOMEBREW_BUNDLE_FILE="$HOME/.config/brew/Brewfile"
   eval "$(brew shellenv)"
 
+  # PHP Composer
+  export PATH="$PATH:$HOME/.composer/vendor/bin"
+
   # z
   Z=$HOMEBREW_PREFIX/etc/profile.d/z.sh
   test -f $Z && . $Z
@@ -12,6 +15,8 @@ if [[ ! -z "$BREW" ]]; then
 fi
 
 # Aliases
+alias c="composer"
 alias g="git"
 alias la="ls -lhpAG"
 alias ls="ls -G"
+alias pa="php artisan"
