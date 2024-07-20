@@ -23,3 +23,6 @@ vim.keymap.set("n", "k", "gk", { desc = "Up motion" })
 -- Home/End with HL
 vim.keymap.set("n", "H", "_", { silent = true, desc = "Move to the start of the line" })
 vim.keymap.set("n", "L", "$", { silent = true, desc = "Move to the end of the line" })
+
+-- Switch to alternate file
+vim.keymap.set("n", "<leader><leader>", "<c-^>", { desc = "Edit the alternate file" })
