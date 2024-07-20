@@ -1,0 +1,12 @@
+# Enable homebrew services
+tap "homebrew/services"
+
+# Essentials
+brew "git"
+brew "zsh"
+
+# Basic unix tools
+brew "curl"
+brew "gawk"
+brew "gnu-tar"
+brew "wget"
