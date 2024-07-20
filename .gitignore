@@ -8,6 +8,7 @@
 !README.md
 !/.config
 /.config/*
+!/bin/
 
 !/.config/brew
 /.config/brew/*
