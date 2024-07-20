@@ -15,3 +15,7 @@ local wildmenumap = function(mapping, alternate)
 end
 vim.keymap.set("c", "<c-p>", wildmenumap("<c-p>", "<up>"), { desc = "Move up the history list", expr = true })
 vim.keymap.set("c", "<c-n>", wildmenumap("<c-n>", "<down>"), { desc = "Move down the history list", expr = true })
+
+-- Make j/k movement more natural when text is wrapped
+vim.keymap.set("n", "j", "gj", { desc = "Down motion" })
+vim.keymap.set("n", "k", "gk", { desc = "Up motion" })
