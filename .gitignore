@@ -26,6 +26,11 @@
 /.config/pgcli/*
 !/.config/pgcli/config
 
+!/.config/tmux
+/.config/tmux/*
+!/.config/tmux/tmux.conf
+!/.config/tmux/tmux.terminfo
+
 !/.config/wezterm
 /.config/wezterm/*
 !/.config/wezterm/wezterm.lua
