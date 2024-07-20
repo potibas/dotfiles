@@ -30,4 +30,5 @@ brew "pgcli"
 brew "postgresql@16"
 
 # Applications
+cask "visual-studio-code"
 cask "wezterm"
