@@ -18,6 +18,10 @@
 !/.config/git/config
 !/.config/git/ignore
 
+!/.config/karabiner
+/.config/karabiner/*
+!/.config/karabiner/karabiner.json
+
 !/.config/pgcli
 /.config/pgcli/*
 !/.config/pgcli/config
