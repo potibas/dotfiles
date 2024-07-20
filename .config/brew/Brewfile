@@ -14,6 +14,9 @@ brew "wget"
 # Modern unix tools
 brew "z"
 
+# Package Managers
+brew "mise"
+
 # PHP
 brew "composer"
 brew "php"

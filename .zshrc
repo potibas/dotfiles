@@ -5,6 +5,9 @@ if [[ ! -z "$BREW" ]]; then
   export HOMEBREW_BUNDLE_FILE="$HOME/.config/brew/Brewfile"
   eval "$(brew shellenv)"
 
+  # mise-en-place
+  export PATH="$PATH:$HOME/.local/share/mise/shims"
+
   # PHP Composer
   export PATH="$PATH:$HOME/.composer/vendor/bin"
 
