@@ -24,6 +24,9 @@ if [[ ! -z "$BREW" ]]; then
 
 fi
 
+# Environment settings
+export EDITOR=nvim
+
 # Completion
 autoload -U compinit
 compinit
@@ -53,6 +56,8 @@ alias g="git"
 alias la="ls -lhpAG"
 alias lg="lazygit"
 alias ls="ls -G"
+alias lvim="/usr/bin/vim"
 alias pa="php artisan"
-alias v="vim"
-alias vi="vim"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
