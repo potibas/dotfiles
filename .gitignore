@@ -22,6 +22,10 @@
 /.config/karabiner/*
 !/.config/karabiner/karabiner.json
 
+!/.config/nvim
+/.config/nvim/*
+!/.config/nvim/init.lua
+
 !/.config/pgcli
 /.config/pgcli/*
 !/.config/pgcli/config
