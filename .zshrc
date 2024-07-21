@@ -26,6 +26,7 @@ fi
 
 # Environment settings
 export EDITOR=nvim
+export TERM=wezterm    # needs tic -x -o ~/.terminfo .config/wezterm/wezterm.info
 
 # Completion
 autoload -U compinit

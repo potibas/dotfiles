@@ -49,3 +49,4 @@
 !/.config/wezterm
 /.config/wezterm/*
 !/.config/wezterm/wezterm.lua
+!/.config/wezterm/wezterm.terminfo
