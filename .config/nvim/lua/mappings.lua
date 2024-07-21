@@ -44,3 +44,7 @@ vim.keymap.set("c", "q:", "<Nop>", { silent = true })
 vim.keymap.set("n", "q", ":close<cr>", { silent = true, desc = "Close current window" })
 vim.keymap.set("n", "<leader>q", ":q<cr>", { silent = true, desc = "Quit current window" })
 vim.keymap.set("n", "<leader>Q", ":qa<cr>", { silent = true, desc = "Quit all windows" })
+
+-- ctrl+/ for contextual help
+vim.keymap.set("n", "<c-/>", ":H <c-r><c-w><cr>", { silent = true, desc = "Show help for the word under the cursor" })
+vim.keymap.set("n", "<c-_>", ":H <c-r><c-w><cr>", { silent = true, desc = "Show help for the word under the cursor" })
