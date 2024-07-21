@@ -18,6 +18,12 @@ return {
 					i = {
 						-- Disable normal mode
 						["<esc>"] = "close",
+
+						-- Use ctrl+hjkl to navigate and scroll horizontally
+						["<c-j>"] = "move_selection_next",
+						["<c-k>"] = "move_selection_previous",
+						["<c-h>"] = "preview_scrolling_left",
+						["<c-l>"] = "preview_scrolling_right",
 					},
 				},
 			},
