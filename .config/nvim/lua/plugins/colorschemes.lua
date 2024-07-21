@@ -14,6 +14,9 @@ return {
 						Search = { italic = true, underline = true, fg = colors.yellow, bg = "NONE" },
 						CurSearch = { italic = true, underline = true, fg = colors.blue, bold = true, bg = "NONE" },
 						IncSearch = { link = "Search" },
+
+						-- Git signs
+						GitSignsCurrentLineBlame = { fg = colors.overlay2, italic = true },
 					}
 				end,
 			})

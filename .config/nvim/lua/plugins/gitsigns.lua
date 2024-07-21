@@ -17,7 +17,7 @@ return {
 				ignore_whitespace = false,
 				delay = 10,
 				virt_text = true,
-				virt_text_pos = "eol",
+				virt_text_pos = "right_align",
 				virt_text_priority = 100,
 			},
 			current_line_blame_formatter = "      <abbrev_sha> <author_time:%R> - <summary> ",
