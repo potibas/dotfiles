@@ -7,15 +7,12 @@ return {
 		{ "echasnovski/mini.icons", version = false },
 	},
 
+	---@class wk.Opts
 	opts = {
-		---@type false | 'classic' | 'modern' | 'helix'
+		---@type false | "classic" | "modern" | "helix"
 		preset = "helix",
 
-		keys = {
-			-- bindings to scroll up and down inside the popup
-			scroll_down = "<c-n>",
-			scroll_up = "<c-p>",
-		},
+		sort = { "alphanum" },
 	},
 
 	keys = {
