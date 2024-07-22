@@ -12,6 +12,7 @@ return {
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
+				"intelephense",
 				"lua_ls",
 			},
 			automatic_installlation = true,
@@ -26,6 +27,16 @@ return {
 							Lua = {
 								-- Recognize vim and hammerspoon as globals
 								diagnostics = { globals = { "vim", "hs" } },
+							},
+						},
+					})
+				end,
+
+				intelephense = function()
+					lspconfig.intelephense.setup({
+						settings = {
+							intelephense = {
+								files = { maxSize = 10000000 },
 							},
 						},
 					})
