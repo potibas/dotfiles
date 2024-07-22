@@ -3,6 +3,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
+vim.opt.laststatus = 3
 
 -- Behaviour
 vim.opt.wrap = false
