@@ -39,6 +39,9 @@ vim.keymap.set("n", "<f5>", ":set nowrap!<cr>", { silent = true, desc = "Toggle 
 -- Toggle search highlight
 vim.keymap.set("n", "<f3>", ":set hlsearch!<cr>", { silent = true, desc = "Toggle search highlighting" })
 
+-- Toggle non printable characters
+vim.keymap.set("n", "<f6>", ":set list!<cr>", { silent = true, desc = "Toggle non printable characters" })
+
 -- Stop being annoyed by the `q` key
 vim.keymap.set("c", "q:", "<Nop>", { silent = true })
 vim.keymap.set("n", "q", ":close<cr>", { silent = true, desc = "Close current window" })
