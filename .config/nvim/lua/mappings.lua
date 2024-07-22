@@ -76,3 +76,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		bufmap("n", "<f4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Select code action")
 	end,
 })
+
+-- Multipurpose tab key
+-- adapted from: https://github.com/garybernhardt/dotfiles
+vim.cmd([[
+  function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col
+        return "\<tab>"
+    endif
+
+    let char = getline('.')[col - 1]
+    if char =~ '\k'
+        " There's an identifier before the cursor, so complete the identifier.
+        return "\<c-p>"
+    else
+        return "\<tab>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+]])
