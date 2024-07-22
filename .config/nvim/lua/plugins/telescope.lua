@@ -55,7 +55,9 @@ return {
 		{
 			"<leader>gl",
 			function()
-				require("telescope.builtin").git_commits()
+				require("telescope.builtin").git_commits({
+					git_command = { "git", "log", "--pretty=oneline", "--abbrev-commit", "--decorate" },
+				})
 			end,
 			desc = "Git log (telescope)",
 		},
