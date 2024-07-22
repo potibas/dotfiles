@@ -34,7 +34,7 @@ vim.keymap.set("c", "%%", "<C-R>=expand('%:h').'/'<cr>", { desc = "Current file'
 vim.keymap.set("c", "##", "~/.config/nvim/lua/", { desc = "Neovim's config dir" })
 
 -- Toggle line wrapping
-vim.keymap.set("n", "<f2>", ":set nowrap!<cr>", { silent = true, desc = "Toggle line wrapping" })
+vim.keymap.set("n", "<f5>", ":set nowrap!<cr>", { silent = true, desc = "Toggle line wrapping" })
 
 -- Toggle search highlight
 vim.keymap.set("n", "<f3>", ":set hlsearch!<cr>", { silent = true, desc = "Toggle search highlighting" })
@@ -48,3 +48,31 @@ vim.keymap.set("n", "<leader>Q", ":qa<cr>", { silent = true, desc = "Quit all wi
 -- ctrl+/ for contextual help
 vim.keymap.set("n", "<c-/>", ":H <c-r><c-w><cr>", { silent = true, desc = "Show help for the word under the cursor" })
 vim.keymap.set("n", "<c-_>", ":H <c-r><c-w><cr>", { silent = true, desc = "Show help for the word under the cursor" })
+
+-- Show diagnostics in a floating window
+vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
+
+-- Jump between diagnostics
+vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
+vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+
+-- LSP mappings
+vim.api.nvim_create_autocmd("LspAttach", {
+	desc = "LSP actions",
+	callback = function(event)
+		local bufmap = function(mode, lhs, rhs, desc)
+			vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
+		end
+
+		bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", "Show documentation")
+		bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "Jump to definition")
+		bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", "Jump to declaration")
+		bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", "List implementations")
+		bufmap("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Jumps to the definition of the type symbol")
+		bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "List all the references")
+		bufmap("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Display's function signature information")
+		bufmap("n", "<f2>", "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename references")
+		bufmap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", "Format current file")
+		bufmap("n", "<f4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Select code action")
+	end,
+})
