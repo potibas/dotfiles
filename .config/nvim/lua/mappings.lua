@@ -66,6 +66,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", "Show documentation")
 		bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "Jump to definition")
+		bufmap("n", "<f12>", "<cmd>lua vim.lsp.buf.definition()<cr>", "Jump to definition")
 		bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", "Jump to declaration")
 		bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", "List implementations")
 		bufmap("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Jumps to the definition of the type symbol")
