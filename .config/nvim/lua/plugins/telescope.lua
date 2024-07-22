@@ -52,5 +52,34 @@ return {
 			end,
 			desc = "Git status (telescope)",
 		},
+		{
+			"<leader>gl",
+			function()
+				require("telescope.builtin").git_commits()
+			end,
+			desc = "Git log (telescope)",
+		},
+		{
+			"<leader>gL",
+			function()
+				require("telescope.builtin").git_bcommits()
+			end,
+			desc = "Git log current file (telescope)",
+		},
+		{
+			"<leader>gl",
+			function()
+				require("telescope.builtin").git_bcommits_range()
+			end,
+			mode = { "v" },
+			desc = "Git log current range (telescope)",
+		},
+		{
+			"<leader>gf",
+			function()
+				require("telescope.builtin").git_files()
+			end,
+			desc = "Git files (telescope)",
+		},
 	},
 }
