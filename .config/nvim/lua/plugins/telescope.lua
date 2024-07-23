@@ -34,7 +34,7 @@ return {
 		{
 			"<c-p>",
 			function()
-				require("telescope.builtin").find_files({ hidden = true })
+				require("telescope.builtin").find_files()
 			end,
 			desc = "Find Files (telescope)",
 		},
@@ -44,6 +44,20 @@ return {
 				require("telescope.builtin").live_grep()
 			end,
 			desc = "Livegrep (telescope)",
+		},
+		{
+			"<leader>pp",
+			function()
+				require("telescope.builtin").find_files({ hidden = true })
+			end,
+			desc = "Find Files (all files)",
+		},
+		{
+			"<leader>pf",
+			function()
+				require("telescope.builtin").live_grep({ additional_args = { "--no-ignore", "--hidden" } })
+			end,
+			desc = "Livegrep (all files)",
 		},
 		{
 			"<c-s>",
