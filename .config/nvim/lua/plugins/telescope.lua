@@ -27,6 +27,15 @@ return {
 					},
 				},
 			},
+			pickers = {
+				buffers = {
+					mappings = {
+						i = {
+							["<c-x>"] = "delete_buffer",
+						},
+					},
+				},
+			},
 		})
 	end,
 
