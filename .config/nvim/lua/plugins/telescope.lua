@@ -46,6 +46,13 @@ return {
 			desc = "Livegrep (telescope)",
 		},
 		{
+			"<c-b>",
+			function()
+				require("telescope.builtin").buffers()
+			end,
+			desc = "Find Buffer (telescope)",
+		},
+		{
 			"<leader>pp",
 			function()
 				require("telescope.builtin").find_files({ hidden = true })
