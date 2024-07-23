@@ -36,6 +36,7 @@ brew "pgcli"
 brew "postgresql@16"
 
 # Applications
+cask "firefox"
 cask "google-chrome"
 cask "karabiner-elements"
 cask "visual-studio-code"
