@@ -76,7 +76,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", "List all the references")
 		bufmap("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Display's function signature information")
 		bufmap("n", "<f2>", "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename references")
-		bufmap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", "Format current file")
 		bufmap("n", "<f4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Select code action")
 	end,
 })
