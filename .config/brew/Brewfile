@@ -39,6 +39,7 @@ brew "postgresql@16"
 cask "firefox"
 cask "google-chrome"
 cask "karabiner-elements"
+cask "postman"
 cask "visual-studio-code"
 cask "wezterm"
 
