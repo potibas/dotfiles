@@ -46,6 +46,7 @@ vim.keymap.set("n", "<f6>", ":set list!<cr>", { silent = true, desc = "Toggle no
 vim.keymap.set("c", "q:", "<Nop>", { silent = true })
 vim.keymap.set("n", "q", ":q<cr>", { silent = true, desc = "Quit current window" })
 vim.keymap.set("n", "Q", ":qa<cr>", { silent = true, desc = "Quit all windows" })
+vim.keymap.set("n", ",Q", ":qa!<cr>", { silent = true, desc = "Quit all windows without saving (!)" })
 
 -- ctrl+/ for contextual help
 vim.keymap.set("n", "<c-/>", ":H <c-r><c-w><cr>", { silent = true, desc = "Show help for the word under the cursor" })
