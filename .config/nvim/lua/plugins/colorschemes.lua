@@ -17,6 +17,9 @@ return {
 
 						-- Git signs
 						GitSignsCurrentLineBlame = { fg = colors.overlay2, italic = true },
+
+						-- Bring attention to errors in the git commit message
+						["@gitcommit_error.gitcommit"] = { reverse = true },
 					}
 				end,
 			})
