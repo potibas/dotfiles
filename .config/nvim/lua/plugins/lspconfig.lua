@@ -9,7 +9,6 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 
-		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"intelephense",
