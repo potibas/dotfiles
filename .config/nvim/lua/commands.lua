@@ -7,4 +7,7 @@ command("W", "w", {})
 command("WQ", "wq", {})
 command("Wq", "wq", {})
 
-command("H", ":vert bo help <args>", { nargs = "*", complete = "help", desc = "Show help in a vertical split" })
+local help_opts = { nargs = "*", complete = "help", desc = "Show help in a vertical split" }
+command("Help", ":vert bo help <args>", help_opts)
+command("He", ":Help <args>", help_opts)
+command("H", ":Help <args>", help_opts)
