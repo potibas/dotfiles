@@ -14,6 +14,7 @@ return {
 			ensure_installed = {
 				"intelephense",
 				"lua_ls",
+				"tailwindcss",
 			},
 			automatic_installlation = true,
 			handlers = {
