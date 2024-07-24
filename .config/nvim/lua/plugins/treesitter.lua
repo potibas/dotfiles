@@ -8,7 +8,7 @@ return {
 				"bash", "c", "c_sharp", "cpp", "css",
 				"csv", "diff", "dockerfile", "editorconfig",
 				"eex", "elixir", "erlang", "git_config",
-				"git_rebase", "gitattributes", "gitcommit",
+				"git_rebase", "gitattributes",
 				"gitignore", "go", "gpg", "graphql",
 				"heex", "html", "http", "java", "javascript",
 				"json", "json5", "jsonc", "lua", "luadoc",
