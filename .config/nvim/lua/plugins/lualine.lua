@@ -9,6 +9,15 @@ return {
 				blobalstatus = true,
 			},
 
+			sections = {
+				lualine_c = {
+					{
+						"filename",
+						newfile_status = true,
+						path = 1,
+					},
+				},
+			},
 		})
 	end,
 }
