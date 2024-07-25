@@ -13,6 +13,7 @@ brew "gnu-tar"
 brew "wget"
 
 # Modern unix tools
+brew "bat"
 brew "fd"
 brew "rg"
 brew "z"
