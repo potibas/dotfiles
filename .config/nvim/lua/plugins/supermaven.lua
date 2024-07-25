@@ -14,4 +14,15 @@ return {
 			},
 		})
 	end,
+
+	keys = {
+		{
+			"<f7>",
+			function()
+				require("supermaven-nvim.api").toggle()
+			end,
+			silent = true,
+			desc = "Toggle Supermaven",
+		},
+	},
 }
