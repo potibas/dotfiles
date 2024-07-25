@@ -107,6 +107,24 @@ return {
 			desc = "Git log current range (telescope)",
 		},
 		{
+			"<leader>ga",
+			function()
+				require("telescope.builtin").git_commits({
+					git_command = {
+						"git",
+						"log",
+						"--all",
+						"--pretty=oneline",
+						"--abbrev-commit",
+						"--decorate",
+						"--",
+						".",
+					},
+				})
+			end,
+			desc = "Git log all branches (telescope)",
+		},
+		{
 			"<leader>gf",
 			function()
 				require("telescope.builtin").git_files()
