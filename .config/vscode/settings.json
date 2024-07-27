@@ -42,6 +42,7 @@
 
     // Auto-complete
     "editor.suggest.showWords": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
 
     // File Explorer Settings
     "explorer.compactFolders": false,
