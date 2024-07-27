@@ -37,6 +37,9 @@ brew "nginx"
 brew "pgcli"
 brew "postgresql@16"
 
+# Misc
+brew "zsh-syntax-highlighting"
+
 # Applications
 cask "firefox"
 cask "google-chrome"

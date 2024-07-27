@@ -22,6 +22,10 @@ if [[ ! -z "$BREW" ]]; then
   Z=$HOMEBREW_PREFIX/etc/profile.d/z.sh
   test -f $Z && . $Z
 
+  # zsh-syntax-highlighting
+  ZSHSH=$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  test -f $ZSHSH && source $ZSHSH
+
 fi
 
 # Environment settings
