@@ -17,6 +17,11 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.excludeGitIgnore": true,
 
+    // Startup Behaviour
+    "window.restoreWindows": "none",
+    "window.restoreFullscreen": true,
+    "workbench.startupEditor": "none",
+
     // === Git Integration ===
     "lazygit-vscode.configPath": "/Users/potz/.config/vscode/lazygit.yml",
 
