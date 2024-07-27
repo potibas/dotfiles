@@ -31,7 +31,6 @@
     "editor.scrollbar.vertical": "hidden",
     "editor.showFoldingControls": "never",
     "git.enableStatusBarSync": false,
-    "problems.visibility": false,
     "workbench.activityBar.location": "hidden",
     "workbench.editor.showTabs": "none",
 
