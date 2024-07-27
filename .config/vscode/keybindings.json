@@ -46,4 +46,11 @@
     // === LSP ===
     { "key": "f13", "command": "editor.action.goToTypeDefinition" },
     { "key": "shift+f13", "command": "editor.action.peekTypeDefinition" },
+
+    // === Testing ===
+    { "key": "cmd+t", "command": "-workbench.action.showAllSymbols" },
+    { "key": "cmd+t cmd+j", "command": "better-pest.run-previous" },
+    { "key": "cmd+t cmd+k", "command": "better-pest.run" },
+    { "key": "cmd+t cmd+f", "command": "better-pest.run-file" },
+    { "key": "cmd+t cmd+a", "command": "better-pest.run-suite" },
 ]
