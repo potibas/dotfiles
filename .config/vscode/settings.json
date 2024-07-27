@@ -51,6 +51,8 @@
 
     // === Git Integration ===
     "lazygit-vscode.configPath": "/Users/potz/.config/vscode/lazygit.yml",
+    "scm.diffDecorations": "gutter",
+    "scm.diffDecorationsGutterWidth": 5,
 
     // Keep settings files tidy
     "json.format.keepLines": true,
