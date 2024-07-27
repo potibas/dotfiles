@@ -28,12 +28,12 @@
     { "key": "cmd+k cmd+p", "command": "workbench.action.problems.focus" },
     { "key": "cmd+k cmd+o", "command": "workbench.panel.output.focus" },
     // Move around with alt+hjkl tmux-style
-    { "key": "alt+h", "command": "workbench.action.navigateLeft", "when": "!panelFocus" },
-    { "key": "alt+h", "command": "workbench.action.previousPanelView", "when": "panelFocus" },
+    { "key": "alt+h", "command": "workbench.action.navigateLeft", "when": "!terminalFocus" },
+    { "key": "alt+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus" },
     { "key": "alt+j", "command": "workbench.action.navigateDown" },
     { "key": "alt+k", "command": "workbench.action.navigateUp" },
-    { "key": "alt+l", "command": "workbench.action.navigateRight", "when": "!panelFocus" },
-    { "key": "alt+l", "command": "workbench.action.nextPanelView", "when": "panelFocus" },
+    { "key": "alt+l", "command": "workbench.action.navigateRight", "when": "!terminalFocus" },
+    { "key": "alt+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
     { "key": "alt+\\", "command": "workbench.action.navigateEditorGroups" },
     // Focus the terminal with cmd+j, use shift to toggle panel
     { "key": "cmd+j", "command": "workbench.action.terminal.focus" },
