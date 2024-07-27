@@ -64,8 +64,12 @@
     "scm.diffDecorationsGutterWidth": 5,
 
     // === PHP Integration ===
+    "laravel-pint.enable": true,
     "php.suggest.basic": false,
     "php.validate.enable": false,
+    "[php]": {
+        "editor.defaultFormatter": "open-southeners.laravel-pint",
+    },
 
     // Keep settings files tidy
     "json.format.keepLines": true,
