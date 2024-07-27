@@ -62,6 +62,10 @@
     "scm.diffDecorations": "gutter",
     "scm.diffDecorationsGutterWidth": 5,
 
+    // === PHP Integration ===
+    "php.suggest.basic": false,
+    "php.validate.enable": false,
+
     // Keep settings files tidy
     "json.format.keepLines": true,
     "json.schemas": [
