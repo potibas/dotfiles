@@ -10,4 +10,23 @@
     { "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
     { "key": "ctrl+g ctrl+l", "command": "lazygit-vscode.toggle" },
 
+    // === Navigation ===
+    { "key": "cmd+k e", "command": "workbench.view.explorer" },
+    { "key": "cmd+k x", "command": "workbench.view.extensions" },
+    { "key": "cmd+k g", "command": "workbench.view.scm" },
+    { "key": "cmd+k cmd+p", "command": "workbench.action.problems.focus" },
+    { "key": "cmd+k cmd+o", "command": "workbench.panel.output.focus" },
+    // Move around with alt+hjkl tmux-style
+    { "key": "alt+h", "command": "workbench.action.navigateLeft", "when": "!panelFocus" },
+    { "key": "alt+h", "command": "workbench.action.previousPanelView", "when": "panelFocus" },
+    { "key": "alt+j", "command": "workbench.action.navigateDown" },
+    { "key": "alt+k", "command": "workbench.action.navigateUp" },
+    { "key": "alt+l", "command": "workbench.action.navigateRight", "when": "!panelFocus" },
+    { "key": "alt+l", "command": "workbench.action.nextPanelView", "when": "panelFocus" },
+    { "key": "alt+\\", "command": "workbench.action.navigateEditorGroups" },
+    // Focus the terminal with cmd+j, use shift to toggle panel
+    { "key": "cmd+j", "command": "workbench.action.terminal.focus" },
+    { "key": "shift+cmd+j", "command": "workbench.action.togglePanel" },
+    { "key": "cmd+j", "command": "-workbench.action.togglePanel" },
+
 ]
