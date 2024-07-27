@@ -41,6 +41,7 @@
     "extensions.ignoreRecommendations": true,
 
     // Auto-complete
+    "editor.suggest.preview": true,
     "editor.suggest.showWords": false,
     "editor.suggest.snippetsPreventQuickSuggestions": true,
 
