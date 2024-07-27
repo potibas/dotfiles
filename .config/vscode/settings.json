@@ -37,6 +37,7 @@
 
     // Editor behaviour
     "editor.mouseWheelZoom": true,
+    "files.saveConflictResolution": "overwriteFileOnDisk",
 
     // File Explorer Settings
     "explorer.compactFolders": false,
