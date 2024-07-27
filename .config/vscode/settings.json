@@ -32,7 +32,7 @@
     "editor.showFoldingControls": "never",
     "git.enableStatusBarSync": false,
     "workbench.activityBar.location": "hidden",
-    "workbench.editor.showTabs": "none",
+    "workbench.editor.showTabs": "multiple",
 
     // Editor behaviour
     "editor.mouseWheelZoom": true,
