@@ -90,8 +90,7 @@
     "json.schemas": [
         { "fileMatch": [ "settings.json", "keybindings.json" ], "schema": { "allowTrailingCommas": true } }
     ],
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+    "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
+    "[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features" },
 
 }
