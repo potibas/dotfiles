@@ -43,4 +43,7 @@
     // === PHP ===
     { "key": "ctrl+l", "command": "type", "args": { "text": "->" }, "when": "editorTextFocus && editorLangId=='php'" },
 
+    // === LSP ===
+    { "key": "f13", "command": "editor.action.goToTypeDefinition" },
+    { "key": "shift+f13", "command": "editor.action.peekTypeDefinition" },
 ]
