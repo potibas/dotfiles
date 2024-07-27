@@ -74,6 +74,14 @@
         "editor.defaultFormatter": "open-southeners.laravel-pint",
     },
 
+    // === Javascript/React integration ===
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
     // Keep settings files tidy
     "json.format.keepLines": true,
     "json.schemas": [
