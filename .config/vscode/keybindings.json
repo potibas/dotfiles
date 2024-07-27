@@ -5,4 +5,9 @@
     { "key": "cmd+k s", "command": "workbench.action.openGlobalKeybindings" },
     { "key": "cmd+k shift+s", "command": "workbench.action.openDefaultKeybindingsFile" },
 
+    // === Git Integration ===
+    { "key": "shift+cmd+l", "command": "-lazygit-vscode.toggle" },
+    { "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
+    { "key": "ctrl+g ctrl+l", "command": "lazygit-vscode.toggle" },
+
 ]

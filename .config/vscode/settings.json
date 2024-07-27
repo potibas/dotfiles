@@ -8,6 +8,9 @@
     // Use the JSON settings editor by default
     "workbench.settings.editor": "json",
 
+    // === Git Integration ===
+    "lazygit-vscode.configPath": "/Users/potz/.config/vscode/lazygit.yml",
+
     // Keep settings files tidy
     "json.format.keepLines": true,
     "json.schemas": [
