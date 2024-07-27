@@ -11,6 +11,12 @@
     // Appearance
     "workbench.activityBar.location": "hidden",
 
+    // File Explorer Settings
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.excludeGitIgnore": true,
+
     // === Git Integration ===
     "lazygit-vscode.configPath": "/Users/potz/.config/vscode/lazygit.yml",
 
