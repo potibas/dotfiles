@@ -33,6 +33,7 @@
     "git.enableStatusBarSync": false,
     "workbench.activityBar.location": "hidden",
     "workbench.editor.showTabs": "multiple",
+    "terminal.integrated.tabs.enabled": false,
 
     // Editor behaviour
     "editor.mouseWheelZoom": true,
