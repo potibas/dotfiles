@@ -9,6 +9,9 @@
     { "key": "shift+cmd+l", "command": "-lazygit-vscode.toggle" },
     { "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
     { "key": "ctrl+g ctrl+l", "command": "lazygit-vscode.toggle" },
+    { "key": "ctrl+g i", "command": "git.stageSelectedRanges" },
+    { "key": "ctrl+g shift+I", "command": "git.viewStagedChanges" },
+    { "key": "ctrl+g o", "command": "git.commit" },
 
     // === Navigation ===
     { "key": "cmd+k e", "command": "workbench.view.explorer" },
