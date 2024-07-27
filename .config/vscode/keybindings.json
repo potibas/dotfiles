@@ -5,6 +5,14 @@
     { "key": "cmd+k s", "command": "workbench.action.openGlobalKeybindings" },
     { "key": "cmd+k shift+s", "command": "workbench.action.openDefaultKeybindingsFile" },
 
+    // Vim-ish things
+    { "key": "ctrl+e", "command": "-cursorLineEnd" },
+    { "key": "ctrl+o", "command": "-lineBreakInsert" },
+    { "key": "ctrl+e", "command": "scrollLineDown", "when": "editorFocus" },
+    { "key": "ctrl+y", "command": "scrollLineUp", "when": "editorFocus" },
+    { "key": "ctrl+o", "command": "workbench.action.navigateBack", "when": "canNavigateBack" },
+    { "key": "ctrl+i", "command": "workbench.action.navigateForward", "when": "canNavigateForward" },
+
     // === Git Integration ===
     { "key": "shift+cmd+l", "command": "-lazygit-vscode.toggle" },
     { "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
