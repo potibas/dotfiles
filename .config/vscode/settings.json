@@ -9,6 +9,17 @@
     "workbench.settings.editor": "json",
 
     // Appearance
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-perfect-mocha",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Iosevka Nerd Font Mono",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1.1,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 30,
+    "editor.rulers": [ 120 ],
+    "window.zoomLevel": 0,
     "workbench.activityBar.location": "hidden",
 
     // File Explorer Settings
@@ -16,6 +27,8 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.excludeGitIgnore": true,
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
 
     // Startup Behaviour
     "window.restoreWindows": "none",
