@@ -40,6 +40,9 @@
     "files.saveConflictResolution": "overwriteFileOnDisk",
     "extensions.ignoreRecommendations": true,
 
+    // Auto-complete
+    "editor.suggest.showWords": false,
+
     // File Explorer Settings
     "explorer.compactFolders": false,
     "explorer.confirmDelete": false,
