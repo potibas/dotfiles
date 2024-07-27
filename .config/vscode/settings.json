@@ -59,9 +59,12 @@
     "workbench.startupEditor": "none",
 
     // === Git Integration ===
+    "gitlens.blame.highlight.locations": [ "gutter", "line" ],
+    "gitlens.mode.statusBar.enabled": false,
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.statusBar.pullRequests.enabled": false,
     "lazygit-vscode.configPath": "/Users/potz/.config/vscode/lazygit.yml",
-    "scm.diffDecorations": "gutter",
-    "scm.diffDecorationsGutterWidth": 5,
 
     // === PHP Integration ===
     "laravel-pint.enable": true,

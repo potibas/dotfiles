@@ -62,6 +62,7 @@ cask "font-roboto-mono-nerd-font"
 # Visual Studio Code extensions
 vscode "bmewburn.vscode-intelephense-client"
 vscode "catppuccin.catppuccin-vsc"
+vscode "eamodio.gitlens"
 vscode "open-southeners.laravel-pint"
 vscode "thang-nm.catppuccin-perfect-icons"
 vscode "tompollak.lazygit-vscode"
