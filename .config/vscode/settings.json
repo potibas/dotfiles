@@ -40,6 +40,9 @@
     "files.saveConflictResolution": "overwriteFileOnDisk",
     "extensions.ignoreRecommendations": true,
 
+    // Terminal settings
+    "terminal.integrated.showExitAlert": false,
+
     // Auto-complete
     "editor.suggest.preview": true,
     "editor.suggest.showWords": false,
