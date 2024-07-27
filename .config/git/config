@@ -33,6 +33,7 @@
   rc = rebase --continue
   ri = rebase --interactive --autosquash --committer-date-is-author-date
   sa = !git add . && git stash
+  sl = stash list
   sp = stash pop
   ss = stash push -S
   squash = commit --amend --no-edit
