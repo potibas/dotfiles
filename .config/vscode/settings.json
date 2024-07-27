@@ -35,6 +35,8 @@
     "workbench.activityBar.location": "hidden",
     "workbench.editor.showTabs": "none",
 
+    // Editor behaviour
+    "editor.mouseWheelZoom": true,
 
     // File Explorer Settings
     "explorer.compactFolders": false,
