@@ -1,0 +1,8 @@
+[
+
+    // === VSCode Keybindings ===
+    { "key": "cmd+k cmd+s", "command": "workbench.action.openGlobalKeybindingsFile" },
+    { "key": "cmd+k s", "command": "workbench.action.openGlobalKeybindings" },
+    { "key": "cmd+k shift+s", "command": "workbench.action.openDefaultKeybindingsFile" },
+
+]

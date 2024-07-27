@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -e
+
+prompt_confirm() {
+    read -r -p "$1 [y/N] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
+if [ ! "$1" == "--force" ]; then
+    printf "%s\n" "This will *remove* the Visual Studio code current configuration folder."
+    if ! prompt_confirm "Do you want to proceed?"; then
+        echo "Aborted."
+        exit 1
+    fi
+fi
+
+VSCODE_ORIGIN="$HOME/Library/Application Support/Code/User"
+VSCODE_TARGET="$HOME/.config/vscode"
+
+rm -rf "$VSCODE_ORIGIN" && ln -s "$VSCODE_TARGET" "$VSCODE_ORIGIN"

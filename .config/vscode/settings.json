@@ -1,0 +1,17 @@
+{
+    // The basics
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+
+    // Use the JSON settings editor by default
+    "workbench.settings.editor": "json",
+
+    // Keep settings files tidy
+    "json.format.keepLines": true,
+    "json.schemas": [
+        { "fileMatch": [ "settings.json", "keybindings.json" ], "schema": { "allowTrailingCommas": true } }
+    ],
+
+}

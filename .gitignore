@@ -46,6 +46,12 @@
 !/.config/tmux/tmux.conf
 !/.config/tmux/tmux.terminfo
 
+!/.config/vscode
+/.config/vscode/*
+!/.config/vscode/settings.json
+!/.config/vscode/keybindings.json
+!/.config/vscode/snippets
+
 !/.config/wezterm
 /.config/wezterm/*
 !/.config/wezterm/wezterm.lua
