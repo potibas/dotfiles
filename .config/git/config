@@ -34,6 +34,7 @@
   ri = rebase --interactive --autosquash --committer-date-is-author-date
   sa = !git add . && git stash
   sp = stash pop
+  ss = stash push -S
   squash = commit --amend --no-edit
   st = status
   undo = reset HEAD^
