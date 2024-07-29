@@ -34,16 +34,19 @@
     // Resize sidebar left and right with alt+h/l (doesn't work with every sidebar view)
     { "key": "alt+shift+h", "command": "workbench.action.decreaseViewSize", "when": "!panelFocus && !editorFocus" },
     { "key": "alt+shift+l", "command": "workbench.action.increaseViewSize", "when": "!panelFocus && !editorFocus" },
+    // Switch sidebar side with alt+ctrl+backtick
+    { "key": "alt+shift+`", "command": "workbench.action.toggleSidebarPosition" },
 
-    // Navigate terminal windows with alt+[] and panes (splits) with alt+hl, when in focus
-    { "key": "alt+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus" },
+    // Navigate terminal windows with alt+[] and panes (splits) with alt+hl
+    { "key": "alt+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus && terminalCount > 1 " },
     { "key": "alt+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
     { "key": "alt+[", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
     { "key": "alt+]", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
 
     // Resize terminal up and down with alt+shift+j/k
-    { "key": "alt+shift+k", "command": "workbench.action.terminal.resizePaneUp" },
-    { "key": "alt+shift+j", "command": "workbench.action.terminal.resizePaneDown" },
+    { "key": "alt+shift+k", "command": "workbench.action.decreaseViewHeight" },
+    { "key": "alt+shift+j", "command": "workbench.action.increaseViewHeight" },
+
     // Resize terminal splits left and right with alt+h/l
     { "key": "alt+shift+h", "command": "workbench.action.terminal.resizePaneLeft", "when": "terminalFocus" },
     { "key": "alt+shift+l", "command": "workbench.action.terminal.resizePaneRight", "when": "terminalFocus" },
@@ -57,14 +60,13 @@
     // { "key": "alt+;", "command": "workbench.action.foc" },
 
 
-    { "key": "alt+shift+;", "command": "workbench.action.evenEditorWidths", "when": "sideBarVisible" },
-    { "key": "alt+shift+;", "when": "!sideBarVisible",
-        "command": "runCommands",
-        "args": {
-            "commands": [ "workbench.action.toggleSidebarVisibility", "workbench.action.evenEditorWidths" ]
-        }
-
-    },
+    // { "key": "alt+shift+;", "command": "workbench.action.evenEditorWidths", "when": "sideBarVisible" },
+    // { "key": "alt+shift+;", "when": "!sideBarVisible",
+    //     "command": "runCommands",
+    //     "args": {
+    //         "commands": [ "workbench.action.toggleSidebarVisibility", "workbench.action.evenEditorWidths" ]
+    //     }
+    // },
 
     // { "key": "alt+\\", "command": "workbench.action.maximizeEditorHideSidebar" },
     // { "key": "alt+\\", "command": "workbench.action.minimizeOtherEditorsHideSidebar" },

@@ -11,20 +11,17 @@
 
     // Appearance
     "apc.font.family": "RobotoMono Nerd Font Mono",
-    "apc.statusBar": { "fontSize": 13, "height": 30, "position": "editor-bottom" },
-    "apc.activityBar": {
-        "position": "bottom",
-        "size": 5
-    },
-    "apc.buttons": [
-        // Add commands to the statusbar
-        { "command": "Run Pest tests", "priority": 1, "tooltip": "Run test", "vscommand": "better-pest.run" }
-    ],
+    "apc.statusBar": { "fontSize": 16, "height": 30, "position": "editor-bottom" },
+    "apc.activityBar": { "position": "bottom", },
     "apc.electron": {
-        "titleBarStyle": "hiddenInset",
+        "titleBarStyle": "hidden",
         "vibrancy": "ultra-dark"
     },
     "window.titleBarStyle": "native",
+
+    // "window.customTitleBarVisibility": "windowed",
+
+
     "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "catppuccin-perfect-mocha",
     "editor.cursorStyle": "line",
@@ -55,7 +52,8 @@
     "workbench.colorCustomizations": {
         "[Night Owl]": {
             "editorGroup.border": "#5f7e97",
-            "sideBar.border": "#5f7e97"
+            "sideBar.border": "#5f7e97",
+            "actionBar.toggledBackground": "#ff0000",
         }
     },
 
@@ -149,5 +147,6 @@
     "supermaven.enable": {
         "*": true
     },
+    "workbench.sideBar.location": "left",
 
 }
