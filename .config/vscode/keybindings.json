@@ -4,85 +4,74 @@
     { "key": "cmd+k cmd+s", "command": "workbench.action.openGlobalKeybindingsFile" },
     { "key": "cmd+k s", "command": "workbench.action.openGlobalKeybindings" },
 
-    // === NAVIGATION ===
-
     // General navigation: alt+hjkl
     { "key": "alt+j", "command": "workbench.action.navigateDown" },
     { "key": "alt+k", "command": "workbench.action.navigateUp" },
     { "key": "alt+h", "command": "workbench.action.navigateLeft" },
     { "key": "alt+l", "command": "workbench.action.navigateRight" },
 
-    // Editor (tabs) navigation with alt+[]
-    { "key": "alt+[", "command": "workbench.action.previousEditor", "when": "!terminalFocus" },
-    { "key": "alt+]", "command": "workbench.action.nextEditor", "when": "!terminalFocus" },
+    // Split editors with alt+\ and alt+-
+    { "key": "alt+\\", "command": "workbench.action.splitEditorRight" },
+    { "key": "alt+-", "command": "workbench.action.splitEditorDown" },
 
-    // Panel: toggle panel with alt+\ and navigate panel views (tabs) with alt+shift+[]
-    { "key": "alt+\\", "command": "workbench.action.togglePanel" },
-    { "key": "alt+shift+[", "command": "workbench.action.previousPanelView", "when": "panelVisible" },
-    { "key": "alt+shift+]", "command": "workbench.action.nextPanelView", "when": "panelVisible" },
-
-    // Terminal: split with Ctrl+\, unsplit with Ctrl+shift+\
+    // Focus terminal and back with ctrl+;
     { "key": "ctrl+;", "command": "terminal.focus", "when": "!terminalFocus" },
-    { "key": "ctrl+;", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" },
-    { "key": "ctrl+\\", "command": "workbench.action.terminal.split", "when": "terminalFocus" },
-    { "key": "ctrl+shift+\\", "command": "workbench.action.terminal.unsplit", "when": "terminalFocus" },
+    { "key": "ctrl+;", "command": "workbench.action.focusFirstEditorGroup", "when": "terminalFocus" },
 
-    // Sidebar: toggle with alt+ctrl+\, navigate views with alt+ctrl+[],
-    { "key": "alt+ctrl+\\", "command": "workbench.action.toggleSidebarVisibility" },
-    { "key": "alt+ctrl+[", "command": "workbench.action.previousSideBarView", "when": "sideBarVisible" },
-    { "key": "alt+ctrl+]", "command": "workbench.action.nextSideBarView", "when": "sideBarVisible" },
-    // Resize sidebar left and right with alt+h/l (doesn't work with every sidebar view)
-    { "key": "alt+shift+h", "command": "workbench.action.decreaseViewSize", "when": "!panelFocus && !editorFocus" },
-    { "key": "alt+shift+l", "command": "workbench.action.increaseViewSize", "when": "!panelFocus && !editorFocus" },
-    // Switch sidebar side with alt+ctrl+backtick
-    { "key": "alt+shift+`", "command": "workbench.action.toggleSidebarPosition" },
+    // Toggle the bottom panel with alt+;
+    { "key": "alt+;", "command": "workbench.action.togglePanel" },
 
-    // Navigate terminal windows with alt+[] and panes (splits) with alt+hl
-    { "key": "alt+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus && terminalCount > 1 " },
-    { "key": "alt+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
-    { "key": "alt+[", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
-    { "key": "alt+]", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
+    // Editor (tabs) navigation with alt+[]
+    { "key": "alt+[", "command": "workbench.action.previousEditor" },
+    { "key": "alt+]", "command": "workbench.action.nextEditor" },
 
-    // Resize terminal up and down with alt+shift+j/k
+    // Resize main editor window horizontally with alt+shift+L and alt+shift+h
+    { "key": "alt+shift+l", "command": "workbench.action.increaseViewWidth" },
+    { "key": "alt+shift+h", "command": "workbench.action.decreaseViewWidth" },
+
+    // Resize panel up and down with alt+shift+j/k
     { "key": "alt+shift+k", "command": "workbench.action.decreaseViewHeight" },
     { "key": "alt+shift+j", "command": "workbench.action.increaseViewHeight" },
 
-    // Resize terminal splits left and right with alt+h/l
-    { "key": "alt+shift+h", "command": "workbench.action.terminal.resizePaneLeft", "when": "terminalFocus" },
-    { "key": "alt+shift+l", "command": "workbench.action.terminal.resizePaneRight", "when": "terminalFocus" },
+    // Sidebar: toggle with alt+shift+\, navigate views with alt+ctrl+[],
+    { "key": "alt+shift+\\", "command": "workbench.action.toggleSidebarVisibility" },
+
+    { "key": "alt+ctrl+[", "command": "workbench.action.previousSideBarView", "when": "sideBarVisible" },
+    { "key": "alt+ctrl+]", "command": "workbench.action.nextSideBarView", "when": "sideBarVisible" },
+
+    // // Resize sidebar left and right with alt+h/l (doesn't work with every sidebar view)
+    // // Switch sidebar side with alt+ctrl+backtick
+    // { "key": "alt+shift+`", "command": "workbench.action.toggleSidebarPosition" },
+
+    // // Navigate panel views (tabs) with alt+[]
+    // { "key": "alt+[", "command": "workbench.action.previousPanelView", "when": "!editorFocus" },
+    // { "key": "alt+]", "command": "workbench.action.nextPanelView", "when": "!editorFocus" },
+    // Split terminal to the right side with ctrl+\
+    // { "key": "ctrl+\\", "command": "workbench.action.createTerminalEditorSide", "when": "!terminalFocus" },
+
+    // // Navigate terminal windows with alt+[] and panes (splits) with alt+hl
+    // { "key": "alt+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus && terminalCount > 1 " },
+    // { "key": "alt+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
+    // { "key": "alt+[", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
+    // { "key": "alt+]", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
 
 
-
-    // { "key": "ctrl+\\", "command": "workbench.action.terminal.unsplit" },
-    // { "key": "alt+shift+\\", "command": "workbench.action.terminal.focusPreviousPane" },
-    //{ "key": "ctrl+alt+\\", "command": "workbench.action.terminal.focusPreviousPane" },
-    // { "key": "alt+;", "command": "workbench.action.minimizeOtherEditors" },
-    // { "key": "alt+;", "command": "workbench.action.foc" },
-
-
-    // { "key": "alt+shift+;", "command": "workbench.action.evenEditorWidths", "when": "sideBarVisible" },
-    // { "key": "alt+shift+;", "when": "!sideBarVisible",
-    //     "command": "runCommands",
-    //     "args": {
-    //         "commands": [ "workbench.action.toggleSidebarVisibility", "workbench.action.evenEditorWidths" ]
-    //     }
-    // },
-
-    // { "key": "alt+\\", "command": "workbench.action.maximizeEditorHideSidebar" },
-    // { "key": "alt+\\", "command": "workbench.action.minimizeOtherEditorsHideSidebar" },
-    // { "key": "alt+\\", "command": "workbench.action.navigateEditorGroups" },
-    // { "key": "alt+\\", "command": "workbench.action.toggleMaximizedPanel" },
-    // { "key": "alt+\\", "command": "workbench.action.toggleMaximizeEditorGroup" },
-    // { "key": "alt+\\", "command": "workbench.action.toggleMaximizedPanel" },
-    // { "key": "alt+\\", "command": "workbench.action.toggleEditorWidths" },
+    // { "key": "", "command": "workbench.action.maximizeEditorHideSidebar" },
+    // { "key": "", "command": "workbench.action.evenEditorWidths" },
+    // { "key": "", "command": "workbench.action.minimizeOtherEditorsHideSidebar" },
+    // { "key": "", "command": "workbench.action.navigateEditorGroups" },
+    // { "key": "", "command": "workbench.action.toggleMaximizedPanel" },
+    // { "key": "", "command": "workbench.action.toggleMaximizeEditorGroup" },
+    // { "key": "", "command": "workbench.action.toggleMaximizedPanel" },
+    // { "key": "", "command": "workbench.action.toggleEditorWidths" },
 
     // Vim-ish things
-    { "key": "ctrl+e", "command": "-cursorLineEnd" },
-    { "key": "ctrl+o", "command": "-lineBreakInsert" },
-    { "key": "ctrl+e", "command": "scrollLineDown", "when": "editorFocus" },
-    { "key": "ctrl+y", "command": "scrollLineUp", "when": "editorFocus" },
-    { "key": "ctrl+o", "command": "workbench.action.navigateBack", "when": "canNavigateBack" },
-    { "key": "ctrl+i", "command": "workbench.action.navigateForward", "when": "canNavigateForward" },
+    // { "key": "ctrl+e", "command": "-cursorLineEnd" },
+    // { "key": "ctrl+o", "command": "-lineBreakInsert" },
+    // { "key": "ctrl+e", "command": "scrollLineDown", "when": "editorFocus" },
+    // { "key": "ctrl+y", "command": "scrollLineUp", "when": "editorFocus" },
+    // { "key": "ctrl+o", "command": "workbench.action.navigateBack", "when": "canNavigateBack" },
+    // { "key": "ctrl+i", "command": "workbench.action.navigateForward", "when": "canNavigateForward" },
 
     // Emmet
     { "key": "alt+o", "command": "editor.emmet.action.balanceOut", "when": "editorFocus" },
@@ -121,8 +110,6 @@
         }
     },
 
-    // { "text": ";\n" }, "when": "editorTextFocus && editorLangId=='php'" },
-
     // === LSP ===
     {
         "key": "ctrl+]",
@@ -138,4 +125,14 @@
     { "key": "cmd+t cmd+k", "command": "better-pest.run" },
     { "key": "cmd+t cmd+f", "command": "better-pest.run-file" },
     { "key": "cmd+t cmd+a", "command": "better-pest.run-suite" },
+
+    // === Fake Vim mappings ===
+
+    // Close window with `q` instead of recording macro
+    {
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "key": "q"
+    },
+
 ]

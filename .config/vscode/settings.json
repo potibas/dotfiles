@@ -11,18 +11,14 @@
 
     // Appearance
     "apc.font.family": "RobotoMono Nerd Font Mono",
-    "apc.statusBar": { "fontSize": 16, "height": 30, "position": "editor-bottom" },
-    "apc.activityBar": { "position": "bottom", },
-    "apc.electron": {
-        "titleBarStyle": "hidden",
-        "vibrancy": "ultra-dark"
+    "apc.statusBar": { "fontSize": 16, "height": 30, "position": "bottom" },
+    "apc.activityBar": {
+        "position": "bottom", "itemMargin": 0, "itemSize": 50
     },
-    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+    "workbench.sideBar.location": "left",
 
-    // "window.customTitleBarVisibility": "windowed",
-
-
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "catppuccin-perfect-mocha",
     "editor.cursorStyle": "line",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
@@ -32,7 +28,6 @@
     "terminal.integrated.lineHeight": 1.1,
     "editor.fontSize": 15,
     "editor.lineHeight": 30,
-    "terminal.integrated.tabs.enabled": false,
     "editor.rulers": [ 120 ],
     "window.zoomLevel": 0,
     "window.density.editorTabHeight": "compact",
@@ -45,8 +40,8 @@
     "editor.scrollbar.vertical": "hidden",
     "editor.showFoldingControls": "never",
     "git.enableStatusBarSync": false,
-    "workbench.activityBar.location": "bottom",
     "workbench.editor.showTabs": "multiple",
+
 
     // Theme customizations
     "workbench.colorCustomizations": {
@@ -91,7 +86,9 @@
     "gitlens.blame.highlight.locations": [ "gutter", "line" ],
     "gitlens.mode.statusBar.enabled": false,
     "gitlens.plusFeatures.enabled": false,
+    "gitlens.graph.allowMultiple": false,
     "gitlens.statusBar.enabled": false,
+    "gitlens.launchpad.indicator.enabled": false,
     "gitlens.cloudPatches.enabled": false,
     "gitlens.views.workspaces.showWorktrees": false,
     "gitlens.showWelcomeOnInstall": false,
@@ -129,9 +126,9 @@
     "errorLens.statusBarMessageAlignment": "right",
 
     // Neovim?
-    "vscode-neovim.neovimClean": true,
     "vscode-neovim.logOutputToConsole": true,
-    "vscode-neovim.NVIM_APPNAME": "vscode",
+    "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
+    "vscode-neovim.statusLineSeparator": "|",
     "extensions.experimental.affinity": { "asvetliakov.vscode-neovim": 1 },
 
     // Keep settings files tidy
@@ -140,13 +137,9 @@
         { "fileMatch": [ "settings.json", "keybindings.json" ], "schema": { "allowTrailingCommas": true } }
     ],
     "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
+    "[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features" },
     "git.openRepositoryInParentFolders": "always",
-    "supermaven.enable": {
-        "*": true
-    },
-    "workbench.sideBar.location": "left",
 
+    "supermaven.enable": { "*": true },
+    "supermaven.enableFixWithSupermaven": false,
 }
