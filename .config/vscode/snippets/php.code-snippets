@@ -1,0 +1,80 @@
+{
+	"describe(\"Something\", function () {...": {
+		"prefix": "/desc",
+		"scope": "php",
+		"body": [
+			"describe(\"${1:Something}\", function () {",
+			"\t$0",
+			"});"
+		],
+		"description": "Pest describe block"
+	},
+
+	"beforeEach()->": {
+		"prefix": "/be-",
+		"scope": "php",
+		"body": [
+			"beforeEach()->$0",
+		],
+		"description": "High-order Pest beforeEach() hook"
+	},
+
+	"beforeEach(function () {...": {
+		"prefix": "/be",
+		"scope": "php",
+		"body": [
+			"beforeEach(function () {",
+			"\t${1:// Insert code here}",
+			"});",
+			"",
+			"$0"
+
+		],
+		"description": "Full Pest beforeEach() hook"
+	},
+
+	"beforeEach(fn () => ...)": {
+		"prefix": "/be.arrow",
+		"scope": "php",
+		"body": [
+			"beforeEach(fn () => ${1:someFunction()});",
+			"",
+			"$0"
+		],
+		"description": "Pest beforeEach() hook with arrow function"
+	},
+
+	"it(\"does something\", function () {...": {
+		"prefix": "/it",
+		"scope": "php",
+		"body": [
+			"it(\"${1:does something}\", function () {",
+			"\t${2:expect(true)->toBeTrue();}",
+			"});",
+			"",
+			"$0"
+		],
+		"description": "Pest `it` block"
+	},
+
+	"protected function setUp(): void {...": {
+		"prefix": "/setup",
+		"scope": "php",
+		"body": [
+			"protected function setUp(): void",
+			"{",
+			"\tparent::setUp();",
+			"",
+			"\t${0:// Setup the test environment...}",
+			"}"
+		],
+		"description": "PhpUnit `setUp()` hook"
+	},
+
+	"eval(\\Psy\\sh());": {
+		"prefix": "/tinker",
+		"scope": "php",
+		"body": "eval(\\Psy\\sh());\n",
+		"description": "Insert a statement to debug inside the Psyshell"
+	}
+}

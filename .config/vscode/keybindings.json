@@ -3,7 +3,76 @@
     // === VSCode Keybindings ===
     { "key": "cmd+k cmd+s", "command": "workbench.action.openGlobalKeybindingsFile" },
     { "key": "cmd+k s", "command": "workbench.action.openGlobalKeybindings" },
-    { "key": "cmd+k shift+s", "command": "workbench.action.openDefaultKeybindingsFile" },
+
+    // === NAVIGATION ===
+
+    // General navigation: alt+hjkl
+    { "key": "alt+j", "command": "workbench.action.navigateDown" },
+    { "key": "alt+k", "command": "workbench.action.navigateUp" },
+    { "key": "alt+h", "command": "workbench.action.navigateLeft" },
+    { "key": "alt+l", "command": "workbench.action.navigateRight" },
+
+    // Editor (tabs) navigation with alt+[]
+    { "key": "alt+[", "command": "workbench.action.previousEditor", "when": "!terminalFocus" },
+    { "key": "alt+]", "command": "workbench.action.nextEditor", "when": "!terminalFocus" },
+
+    // Panel: toggle panel with alt+\ and navigate panel views (tabs) with alt+shift+[]
+    { "key": "alt+\\", "command": "workbench.action.togglePanel" },
+    { "key": "alt+shift+[", "command": "workbench.action.previousPanelView", "when": "panelVisible" },
+    { "key": "alt+shift+]", "command": "workbench.action.nextPanelView", "when": "panelVisible" },
+
+    // Terminal: split with Ctrl+\, unsplit with Ctrl+shift+\
+    { "key": "ctrl+;", "command": "terminal.focus", "when": "!terminalFocus" },
+    { "key": "ctrl+;", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" },
+    { "key": "ctrl+\\", "command": "workbench.action.terminal.split", "when": "terminalFocus" },
+    { "key": "ctrl+shift+\\", "command": "workbench.action.terminal.unsplit", "when": "terminalFocus" },
+
+    // Sidebar: toggle with alt+ctrl+\, navigate views with alt+ctrl+[],
+    { "key": "alt+ctrl+\\", "command": "workbench.action.toggleSidebarVisibility" },
+    { "key": "alt+ctrl+[", "command": "workbench.action.previousSideBarView", "when": "sideBarVisible" },
+    { "key": "alt+ctrl+]", "command": "workbench.action.nextSideBarView", "when": "sideBarVisible" },
+    // Resize sidebar left and right with alt+h/l (doesn't work with every sidebar view)
+    { "key": "alt+shift+h", "command": "workbench.action.decreaseViewSize", "when": "!panelFocus && !editorFocus" },
+    { "key": "alt+shift+l", "command": "workbench.action.increaseViewSize", "when": "!panelFocus && !editorFocus" },
+
+    // Navigate terminal windows with alt+[] and panes (splits) with alt+hl, when in focus
+    { "key": "alt+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus" },
+    { "key": "alt+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
+    { "key": "alt+[", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
+    { "key": "alt+]", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
+
+    // Resize terminal up and down with alt+shift+j/k
+    { "key": "alt+shift+k", "command": "workbench.action.terminal.resizePaneUp" },
+    { "key": "alt+shift+j", "command": "workbench.action.terminal.resizePaneDown" },
+    // Resize terminal splits left and right with alt+h/l
+    { "key": "alt+shift+h", "command": "workbench.action.terminal.resizePaneLeft", "when": "terminalFocus" },
+    { "key": "alt+shift+l", "command": "workbench.action.terminal.resizePaneRight", "when": "terminalFocus" },
+
+
+
+    // { "key": "ctrl+\\", "command": "workbench.action.terminal.unsplit" },
+    // { "key": "alt+shift+\\", "command": "workbench.action.terminal.focusPreviousPane" },
+    //{ "key": "ctrl+alt+\\", "command": "workbench.action.terminal.focusPreviousPane" },
+    // { "key": "alt+;", "command": "workbench.action.minimizeOtherEditors" },
+    // { "key": "alt+;", "command": "workbench.action.foc" },
+
+
+    { "key": "alt+shift+;", "command": "workbench.action.evenEditorWidths", "when": "sideBarVisible" },
+    { "key": "alt+shift+;", "when": "!sideBarVisible",
+        "command": "runCommands",
+        "args": {
+            "commands": [ "workbench.action.toggleSidebarVisibility", "workbench.action.evenEditorWidths" ]
+        }
+
+    },
+
+    // { "key": "alt+\\", "command": "workbench.action.maximizeEditorHideSidebar" },
+    // { "key": "alt+\\", "command": "workbench.action.minimizeOtherEditorsHideSidebar" },
+    // { "key": "alt+\\", "command": "workbench.action.navigateEditorGroups" },
+    // { "key": "alt+\\", "command": "workbench.action.toggleMaximizedPanel" },
+    // { "key": "alt+\\", "command": "workbench.action.toggleMaximizeEditorGroup" },
+    // { "key": "alt+\\", "command": "workbench.action.toggleMaximizedPanel" },
+    // { "key": "alt+\\", "command": "workbench.action.toggleEditorWidths" },
 
     // Vim-ish things
     { "key": "ctrl+e", "command": "-cursorLineEnd" },
@@ -12,6 +81,10 @@
     { "key": "ctrl+y", "command": "scrollLineUp", "when": "editorFocus" },
     { "key": "ctrl+o", "command": "workbench.action.navigateBack", "when": "canNavigateBack" },
     { "key": "ctrl+i", "command": "workbench.action.navigateForward", "when": "canNavigateForward" },
+
+    // Emmet
+    { "key": "alt+o", "command": "editor.emmet.action.balanceOut", "when": "editorFocus" },
+    { "key": "alt+a", "command": "editor.emmet.action.wrapWithAbbreviation", "when": "editorFocus" },
 
     // === Git Integration ===
     { "key": "shift+cmd+l", "command": "-lazygit-vscode.toggle" },
@@ -27,14 +100,6 @@
     { "key": "cmd+k g", "command": "workbench.view.scm" },
     { "key": "cmd+k cmd+p", "command": "workbench.action.problems.focus" },
     { "key": "cmd+k cmd+o", "command": "workbench.panel.output.focus" },
-    // Move around with alt+hjkl tmux-style
-    { "key": "alt+h", "command": "workbench.action.navigateLeft", "when": "!terminalFocus" },
-    { "key": "alt+h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus" },
-    { "key": "alt+j", "command": "workbench.action.navigateDown" },
-    { "key": "alt+k", "command": "workbench.action.navigateUp" },
-    { "key": "alt+l", "command": "workbench.action.navigateRight", "when": "!terminalFocus" },
-    { "key": "alt+l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus" },
-    { "key": "alt+\\", "command": "workbench.action.navigateEditorGroups" },
     // Focus the terminal with cmd+j, use shift to toggle panel
     { "key": "cmd+j", "command": "workbench.action.terminal.focus" },
     { "key": "shift+cmd+j", "command": "workbench.action.togglePanel" },
@@ -42,8 +107,26 @@
 
     // === PHP ===
     { "key": "ctrl+l", "command": "type", "args": { "text": "->" }, "when": "editorTextFocus && editorLangId=='php'" },
+    {
+        "key": "cmd+enter",
+        "command": "runCommands",
+        "when": "editorTextFocus && editorLangId=='php'",
+        "args": {
+            "commands": [
+                { "command": "cursorLineEnd", },
+                { "command": "type", "args": { "text": ";\n" }, },
+            ]
+        }
+    },
+
+    // { "text": ";\n" }, "when": "editorTextFocus && editorLangId=='php'" },
 
     // === LSP ===
+    {
+        "key": "ctrl+]",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
     { "key": "f13", "command": "editor.action.goToTypeDefinition" },
     { "key": "shift+f13", "command": "editor.action.peekTypeDefinition" },
 

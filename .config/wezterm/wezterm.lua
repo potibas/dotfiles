@@ -4,8 +4,20 @@ local config = {}
 
 -- Appearance
 config.color_scheme = "Catppuccin Mocha"
-config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
-config.font_size = 20.0
+
+config.font = wezterm.font("RobotoMono Nerd Font Mono")
+--config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+config.font_size = 17.0
+config.line_height = 1.3
+
+-- config.font = wezterm.font("Monaco")
+-- config.font_size = 17.0
+-- config.line_height = 1.3
+
+-- config.font = wezterm.font("Inconsolata Nerd Font Mono")
+-- config.font_size = 20.0
+-- config.line_height = 1.3
+
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.initial_cols = 120
