@@ -1,6 +1,7 @@
 {
     // The basics
     "editor.formatOnSave": true,
+    "editor.formatOnType": true,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
@@ -9,20 +10,33 @@
     "workbench.settings.editor": "json",
 
     // Appearance
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "apc.font.family": "RobotoMono Nerd Font Mono",
+    "apc.statusBar": { "fontSize": 13, "height": 30, "position": "editor-bottom" },
+    "apc.buttons": [
+        // Add commands to the statusbar
+        { "command": "Run Pest tests", "priority": 1, "tooltip": "Run test", "vscommand": "better-pest.run" }
+    ],
+    "apc.electron": {
+        "titleBarStyle": "hiddenInset",
+        "vibrancy": "ultra-dark",
+    },
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+
+    "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "catppuccin-perfect-mocha",
+    "editor.cursorStyle": "line",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontLigatures": true,
-    "terminal.integrated.fontFamily": "Iosevka Nerd Font Mono",
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "RobotoMono Nerd Font Mono",
+    "terminal.integrated.fontSize": 13,
     "terminal.integrated.lineHeight": 1.1,
     "editor.fontSize": 15,
     "editor.lineHeight": 30,
     "editor.rulers": [ 120 ],
     "window.zoomLevel": 0,
-
-    // Hide everything I can from the UI
-    "breadcrumbs.enabled": false,
+    "window.density.editorTabHeight": "compact",
+    "window.dialogStyle": "custom",
     "editor.guides.indentation": false,
     "editor.hideCursorInOverviewRuler": true,
     "editor.minimap.enabled": false,
@@ -33,12 +47,23 @@
     "git.enableStatusBarSync": false,
     "workbench.activityBar.location": "hidden",
     "workbench.editor.showTabs": "multiple",
-    "terminal.integrated.tabs.enabled": false,
+
+    // Theme customizations
+    "workbench.colorCustomizations": {
+        "[Night Owl]": {
+            "editorGroup.border": "#5f7e97",
+            "sideBar.border": "#5f7e97"
+        }
+    },
 
     // Editor behaviour
     "editor.mouseWheelZoom": true,
     "files.saveConflictResolution": "overwriteFileOnDisk",
     "extensions.ignoreRecommendations": true,
+    "explorer.autoReveal": true,
+    "explorer.autoRevealExclude": {
+        "**/vendor": true,
+    },
 
     // Terminal settings
     "terminal.integrated.showExitAlert": false,
@@ -85,12 +110,40 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
+    // === Error Lens ===
+    "errorLens.fontFamily": "MonaspiceRn Nerd Font Mono",
+    "errorLens.fontSize": "13px",
+    "errorLens.alignMessage": { "end": 121, "minimumMargin": 10 },
+    "errorLens.messageBackgroundMode": "message",
+    "errorLens.borderRadius": "5em",
+    "errorLens.statusBarMessageEnabled": true,
+    "errorLens.statusBarMessageType": "closestProblem",
+    "errorLens.statusBarCommand": "goToLine",
+    "errorLens.statusBarColorsEnabled": true,
+    "errorLens.statusBarIconsEnabled": true,
+    "errorLens.statusBarIconsTargetProblems": "activeEditor",
+    "errorLens.statusBarMessageAlignment": "right",
+
     // Keep settings files tidy
     "json.format.keepLines": true,
     "json.schemas": [
         { "fileMatch": [ "settings.json", "keybindings.json" ], "schema": { "allowTrailingCommas": true } }
     ],
+<<<<<<< Updated upstream
+    "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "supermaven.enable": {
+        "*": true
+    },
+    "terminal.integrated.tabs.enabled": false,
+=======
     "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
-    "[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features" },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+>>>>>>> Stashed changes
 
 }
