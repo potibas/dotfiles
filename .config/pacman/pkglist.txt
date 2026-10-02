@@ -1,3 +1,4 @@
 dust
+git-delta
 pv
 yadm

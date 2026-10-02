@@ -5,6 +5,16 @@
 
 [core]
     excludesFile = ~/.config/git/ignore
+    pager = delta
+
+[delta]
+    syntax-theme = ansi
+    side-by-side = false
+    navigate = false       # use n and N to move between files
+    line-numbers = false
+
+[interactive]
+    diffFilter = delta --color-only
 
 [merge]
     conflictStyle = zdiff3
