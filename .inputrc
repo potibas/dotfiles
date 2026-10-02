@@ -1,0 +1,9 @@
+# Ctrl+P / Ctrl+N: search history by the prefix already typed
+"\C-p": history-search-backward
+"\C-n": history-search-forward
+
+# Up / Down: browse history one entry at a time
+"\e[A": previous-history
+"\e[B": next-history
+"\eOA": previous-history
+"\eOB": next-history
