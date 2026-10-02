@@ -1,0 +1,18 @@
+# ==========================================
+# Linux System & Desktop Metadata
+# ==========================================
+
+# macOS
+.DS_Store
+
+# Equivalent to macOS .DS_Store (used by KDE/Dolphin)
+.directory
+
+# Local folder configurations and thumbnail caches
+.thumbnails/
+.cache/
+
+# Removable media metadata and trash folders
+.Trash-*/
+.Spotlight-V10
+.Trashes

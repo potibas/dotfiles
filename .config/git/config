@@ -1,31 +1,80 @@
 # See https://git-scm.com/docs/git-config
 
-[alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
 [init]
-	defaultBranch = master
+    defaultBranch = main
+
+[core]
+    excludesFile = ~/.config/git/ignore
+
+[merge]
+    conflictStyle = zdiff3
+
 [pull]
-	rebase = true 			 # Rebase (instead of merge) on pull
+    rebase = true            # Rebase (instead of merge) on pull
+
 [push]
-	autoSetupRemote = true   # Automatically set upstream branch on push
+    autoSetupRemote = true   # Automatically set upstream branch on push
+
 [diff]
-	algorithm = histogram    # Clearer diffs on moved/edited lines
-	colorMoved = plain       # Highlight moved blocks in diffs
-	mnemonicPrefix = true    # More intuitive refs in diff output
+    algorithm = histogram    # Clearer diffs on moved/edited lines
+    colorMoved = plain       # Highlight moved blocks in diffs
+    mnemonicPrefix = true    # More intuitive refs in diff output
+
 [commit]
-	verbose = true           # Include diff comment in commit message template
+    verbose = true           # Include diff comment in commit message template
+
 [column]
-	ui = auto 			     # Output in columns when possible
+    ui = auto                # Output in columns when possible
+
 [branch]
-	sort = -committerdate    # Sort branches by most recent commit first
+    sort = -committerdate    # Sort branches by most recent commit first
+
 [tag]
-	sort = -version:refname  # Sort version numbers as you would expect
+    sort = -version:refname  # Sort version numbers as you would expect
+
 [rerere]
-	enabled = true           # Record and reuse conflict resolutions
-	autoupdate = true        # Apply stored conflict resolutions automatically
+    enabled = true           # Record and reuse conflict resolutions
+    autoupdate = true        # Apply stored conflict resolutions automatically
+
 [user]
-	name = Potiguar Faga
-	email = me@potibas.dev
+    name = Potiguar Faga
+    email = me@potibas.dev
+
+[color]
+    ui = auto
+
+[url "git@github.com:potibas/"]
+    insteadOf = "potibas:"
+
+[url "git@github.com:"]
+    insteadOf = "github:"
+
+[alias]
+    aa = add --all
+    amend = commit --amend
+    b = branch
+    ci = commit
+    co = checkout
+    cp = cherry-pick
+    cpn = cherry-pick --no-commit
+    dc = diff --cached
+    di = diff
+    fa = fetch --all
+    pr = pull --rebase
+    rc = rebase --continue
+    ri = rebase --interactive --autosquash --committer-date-is-author-date
+    sa = !git add . && git stash
+    sh = show --shortstat
+    s = show --stat
+    sl = stash list
+    sp = stash pop
+    ss = stash push -S
+    squash = commit --amend --no-edit
+    st = status
+    undo = reset HEAD^
+
+    # Colored logs
+    l  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset) %C(red)%d%C(reset) %C(white)%s%C(reset) - %C(ul italic cyan)%an%C(reset)'
+    la = !git l --all
+    r = !git l -10
+    ra = !git r --all
