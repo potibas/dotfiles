@@ -17,6 +17,7 @@ alias dust="dust --apparent-size --output-format si"
 alias d1="dust -d 1"
 alias gpg="gpg -z0"
 alias ll="ls -la"
+alias y="yadm"
 alias v="nvim"
 alias vi="nvim"
 
