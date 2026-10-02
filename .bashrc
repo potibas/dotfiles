@@ -11,7 +11,15 @@ set -o noclobber
 # (don't mess with these directly, just overwrite them here!)
 source "$OMARCHY_PATH/default/bash/rc"
 
-# Add your own exports, aliases, and functions here.
-#
-# Make an alias for invoking commands you use constantly
-# alias p='python'
+## Aliases
+alias d="docker"
+alias dust="dust --apparent-size --output-format si"
+alias d1="dust -d 1"
+alias gpg="gpg -z0"
+alias ll="ls -la"
+alias v="nvim"
+alias vi="nvim"
+
+# Temporary aliases until I get used to the new ones
+alias pbcopy="wl-copy"
+alias pbpaste="wl-paste"
