@@ -62,5 +62,15 @@
       ]
     }
   },
-  "plugins": []
+  "plugins": [
+    {
+      "id": "potibas.lock"
+    }
+  ],
+  "disabledPlugins": [
+    "omarchy.lock"
+  ],
+  "cloneSourceRestores": [
+    "potibas.lock"
+  ]
 }

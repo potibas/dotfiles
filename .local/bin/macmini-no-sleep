@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Reapply this Mac mini's system-wide no-sleep policy after restoring dotfiles.
+set -euo pipefail
+
+config="$(dirname "$(readlink -f -- "${BASH_SOURCE[0]}")")/../../.config/yadm/system/99-never-sleep.conf"
+[[ -f "$config" ]] || { printf 'Missing sleep configuration: %s\n' "$config" >&2; exit 1; }
+
+sudo install -d -m 0755 /etc/systemd/sleep.conf.d
+sudo install -m 0644 "$config" /etc/systemd/sleep.conf.d/99-never-sleep.conf
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+omarchy toggle idle stay-awake
