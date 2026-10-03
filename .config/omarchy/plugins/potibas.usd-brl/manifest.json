@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "potibas.usd-brl",
+  "name": "USD/BRL",
+  "version": "1.0.0",
+  "author": "potibas",
+  "description": "Small USD/BRL quote, refreshed every ten minutes or on click",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "BarWidget.qml" },
+  "barWidget": {
+    "displayName": "USD/BRL",
+    "description": "Click to refresh the latest dollar quote",
+    "category": "Info",
+    "allowMultiple": false
+  }
+}
