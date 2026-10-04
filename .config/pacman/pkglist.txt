@@ -1,4 +1,5 @@
 dust
 git-delta
 pv
+wev
 yadm
