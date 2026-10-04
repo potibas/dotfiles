@@ -30,3 +30,13 @@
 
 hl.unbind("SUPER + SHIFT + S")
 o.bind("SUPER + SHIFT + S", "Capture Screenshot", "omarchy-capture-screenshot")
+
+hl.bind(
+  "SUPER + SHIFT + bracketright",
+  hl.dsp.send_shortcut({ mods = "CTRL", key = "Tab" })
+)
+
+hl.bind(
+  "SUPER + SHIFT + bracketleft",
+  hl.dsp.send_shortcut({ mods = "SHIFT + CTRL", key = "Tab" })
+)
