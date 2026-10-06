@@ -1,0 +1,114 @@
+#!/usr/bin/python3
+"""Cache the typed keyboard layout and highlight ABNT2 borders via Hyprland IPC."""
+import json
+import os
+from pathlib import Path
+import signal
+import socket
+import subprocess
+
+ABNT2 = "Portuguese (Brazil)"
+UNTYPED = ("hl-virtual-keyboard", "power-button", "sleep-button", "lid-switch", "video-bus")
+OPTIONS = ("general:col.active_border", "general:border_size", "group:col.border_active")
+
+
+def hypr(*args):
+    return subprocess.check_output(["hyprctl", *args], text=True, timeout=3).strip()
+
+
+def defaults():
+    result = {}
+    for option in OPTIONS:
+        value = json.loads(hypr("-j", "getoption", option))
+        result[option] = str(value["int"]) if "int" in value else value["gradient"]
+    return result
+
+
+def apply(values):
+    # This installation uses Hyprland's Lua parser; keyword is legacy-only.
+    def gradient(value):
+        if value.startswith("rgb("):
+            return json.dumps(value)
+        parts = value.split()
+        colors = ["rgba(" + color[2:] + color[:2] + ")" for color in parts[:-1]]
+        return "{ colors = {" + ", ".join(map(json.dumps, colors)) + "}, angle = " + str(float(parts[-1].removesuffix("deg"))) + " }"
+
+    code = "hl.config({ general = { border_size = " + values["general:border_size"]
+    code += ", col = { active_border = " + gradient(values["general:col.active_border"]) + " } }, "
+    code += "group = { col = { border_active = " + gradient(values["group:col.border_active"]) + " } } })"
+    result = hypr("eval", code)
+    if result != "ok":
+        raise RuntimeError(result)
+
+
+def select_keyboard(keyboards, named):
+    typed = [k for k in keyboards if not k.get("name", "").startswith(UNTYPED)]
+    return next((k for k in typed if k.get("name") == named), None) or max(
+        typed, key=lambda k: k.get("active_layout_index", 0), default={})
+
+
+def main():
+    instance = os.environ["HYPRLAND_INSTANCE_SIGNATURE"]
+    directory = Path(os.environ["XDG_RUNTIME_DIR"]) / "hypr" / instance
+    state = directory / "keyboard-layout-label"
+    saved = directory / "keyboard-layout-borders.json"
+    original = json.loads(saved.read_text()) if saved.exists() else defaults()
+    saved.write_text(json.dumps(original))
+    named = ""
+    highlighted = None
+
+    def refresh(force=False):
+        nonlocal highlighted
+        keyboard = select_keyboard(json.loads(hypr("-j", "devices"))["keyboards"], named)
+        abnt2 = keyboard.get("active_keymap") == ABNT2
+        temporary = state.with_suffix(".tmp")
+        temporary.write_text("ABNT2\n" if abnt2 else "")
+        temporary.replace(state)
+        if force or abnt2 != highlighted:
+            apply({"general:col.active_border": "rgb(ff4444)",
+                   "general:border_size": str(max(3, int(original["general:border_size"]))),
+                   "group:col.border_active": "rgb(ff4444)"} if abnt2 else original)
+            highlighted = abnt2
+
+    def stop(*_):
+        raise SystemExit
+
+    signal.signal(signal.SIGTERM, stop)
+    signal.signal(signal.SIGINT, stop)
+    try:
+        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as events:
+            events.connect(str(directory / ".socket2.sock"))
+            events.settimeout(10)
+            refresh()
+            pending = ""
+            while True:
+                try:
+                    data = events.recv(65536)
+                except socket.timeout:
+                    refresh()
+                    continue
+                if not data:
+                    break
+                pending += data.decode()
+                while "\n" in pending:
+                    event, pending = pending.split("\n", 1)
+                    kind, _, payload = event.partition(">>")
+                    if kind == "activelayout":
+                        keyboard, _, _layout = payload.partition(",")
+                        if not keyboard.startswith(UNTYPED):
+                            named = keyboard
+                            refresh()
+                    elif kind == "configreloaded":
+                        original = defaults()
+                        saved.write_text(json.dumps(original))
+                        refresh(force=True)
+    finally:
+        try:
+            apply(original)
+        finally:
+            state.unlink(missing_ok=True)
+            saved.unlink(missing_ok=True)
+
+
+if __name__ == "__main__":
+    main()
