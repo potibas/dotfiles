@@ -11,9 +11,9 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/#input
 hl.config({
   input = {
-    kb_layout = "us,br",
-    kb_variant = ",abnt2",
-    kb_options = "ctrl:nocaps,shift:both_capslock_cancel,grp:alt_space_toggle,compose:ralt",
+    kb_layout = "macpt, br",
+    kb_variant = ", abnt2",
+    kb_options = "ctrl:nocaps,shift:both_capslock_cancel,grp:alts_toggle",
 
 --     -- Change speed of keyboard repeat.
 --     repeat_rate = 40,

@@ -1,0 +1,25 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "us(basic)"
+
+    name[Group1] = "US (Mac-style Portuguese accents)";
+
+    // macOS-style Option accent keys:
+    //
+    // AltGr+E     = dead acute
+    // AltGr+I     = dead circumflex
+    // AltGr+N     = dead tilde
+    // AltGr+`     = dead grave
+    // AltGr+C     = ç
+    //
+    // Shift+AltGr+C = Ç
+
+    key <AD03> { [ e, E, dead_acute,      dead_acute      ] };
+    key <AD08> { [ i, I, dead_circumflex, dead_circumflex ] };
+    key <AB06> { [ n, N, dead_tilde,      dead_tilde      ] };
+    key <TLDE> { [ grave, asciitilde, dead_grave, dead_grave ] };
+    key <AB03> { [ c, C, ccedilla, Ccedilla ] };
+
+    // Make Right Alt act as AltGr / Level 3.
+    include "level3(ralt_switch)"
+};
