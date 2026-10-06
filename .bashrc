@@ -18,6 +18,7 @@ alias d1="dust -d 1"
 alias gpg="gpg -z0"
 alias ll="ls -la"
 alias y="yadm"
+alias yy='lazygit --git-dir="$HOME/.local/share/yadm/repo.git" --work-tree="$HOME"'
 alias v="nvim"
 alias vi="nvim"
 
