@@ -1,3 +1,4 @@
+duf
 dust
 git-delta
 pv
