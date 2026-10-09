@@ -28,8 +28,8 @@
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
 
-hl.unbind("SUPER + SHIFT + S")
-o.bind("SUPER + SHIFT + S", "Capture Screenshot", "omarchy-capture-screenshot")
+hl.unbind("SUPER + CTRL + P")
+o.bind("SUPER + CTRL + P", "Capture Screenshot", "omarchy-capture-screenshot")
 
 hl.bind(
   "SUPER + SHIFT + bracketright",
