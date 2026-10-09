@@ -40,3 +40,23 @@ hl.bind(
   "SUPER + SHIFT + bracketleft",
   hl.dsp.send_shortcut({ mods = "SHIFT + CTRL", key = "Tab" })
 )
+
+-- Use Shift for moving to the scratchpad, like regular workspaces
+hl.unbind("SUPER + ALT + S")
+hl.unbind("SUPER + SHIFT + S")
+hl.bind(
+  "SUPER + SHIFT + S",
+  hl.dsp.window.move({ workspace = "special:scratchpad" })
+)
+
+-- Show/hide the coding scratchpad
+hl.bind(
+  "SUPER + semicolon",
+  hl.dsp.workspace.toggle_special("coding")
+)
+
+-- Move the focused window into it
+hl.bind(
+  "SUPER + SHIFT + semicolon",
+  hl.dsp.window.move({ workspace = "special:coding" })
+)
