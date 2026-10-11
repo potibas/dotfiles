@@ -60,3 +60,35 @@ hl.bind(
   "SUPER + SHIFT + semicolon",
   hl.dsp.window.move({ workspace = "special:coding" })
 )
+
+hl.config({
+  binds = {
+    pass_mouse_when_bound = false, -- consumes bound mouse events, so the application underneath shouldn’t scroll while you zoom.
+    scroll_event_delay = 0,        -- removes the wheel-binding cooldown, making zoom respond to every wheel step
+  },
+})
+
+local function screen_zoom(multiplier)
+  local current = hl.get_config("cursor.zoom_factor") or 1
+  hl.config({
+    cursor = {
+      zoom_factor = math.max(1, math.min(8, current * multiplier)),
+      zoom_detached_camera = false,
+    }
+  })
+end
+
+-- ALT + mouse wheel scroll up = Zoom In
+hl.bind("ALT + mouse_up", function()
+  screen_zoom(1.2)
+end)
+
+-- ALT + mouse wheel scroll down = Zoom Out
+hl.bind("ALT + mouse_down", function()
+  screen_zoom(1 / 1.2)
+end)
+
+-- ALT + right click = reset zoom
+hl.bind("ALT + mouse:273", function()
+  hl.config({ cursor = { zoom_factor = 1 } })
+end)
