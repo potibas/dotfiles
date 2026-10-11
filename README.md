@@ -7,6 +7,10 @@
 ```bash
 # Install all the packages
 pkginstall
+
+# Docker without sudo
+sudo usermod -aG docker $USER
+newgrp docker
 ```
 
 ## Mac mini sleep settings
