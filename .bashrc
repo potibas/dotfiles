@@ -31,5 +31,3 @@ yv() {
 # Temporary aliases until I get used to the new ones
 alias pbcopy="wl-copy"
 alias pbpaste="wl-paste"
-
-. "$HOME/.local/share/../bin/env"
