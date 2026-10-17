@@ -41,6 +41,13 @@ hl.bind(
   hl.dsp.send_shortcut({ mods = "SHIFT + CTRL", key = "Tab" })
 )
 
+-- Toggle keyboard layout with Super+[
+o.bind(
+  "SUPER + bracketleft",
+  "Switch keyboard layout",
+  "hyprctl switchxkblayout all next"
+)
+
 -- Use Shift for moving to the scratchpad, like regular workspaces
 hl.unbind("SUPER + ALT + S")
 hl.unbind("SUPER + SHIFT + S")

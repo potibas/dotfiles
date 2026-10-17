@@ -13,7 +13,7 @@ hl.config({
   input = {
     kb_layout = "us, br",
     kb_variant = ", abnt2",
-    kb_options = "ctrl:nocaps,shift:both_capslock_cancel,grp:alt_altgr_toggle",
+    kb_options = "ctrl:nocaps,shift:both_capslock_cancel",
 
 --     -- Change speed of keyboard repeat.
 --     repeat_rate = 40,
