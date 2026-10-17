@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+"""Check Drive access; let rclone refresh tokens, reconnect only for OAuth failures."""
+import configparser
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+config = Path.home() / '.config/rclone/rclone.conf'
+base = ['/usr/bin/rclone', '--config', str(config)]
+parser = configparser.RawConfigParser()
+parser.read(config)
+needs_login = not parser.get('gdrive', 'token', fallback='').strip()
+if not needs_login:
+    try:
+        check = subprocess.run(base + ['about', 'gdrive:', '--json', '--contimeout', '15s', '--timeout', '30s', '--retries', '1', '--low-level-retries', '1'], capture_output=True, text=True, timeout=90)
+    except subprocess.TimeoutExpired:
+        print('Drive check timed out; leaving credentials unchanged.', flush=True)
+        sys.exit(1)
+    if check.returncode == 0:
+        subprocess.run(['systemctl', '--user', 'start', 'rclone-gdrive.service'], check=True)
+        print('Drive credentials are valid.', flush=True)
+        sys.exit(0)
+    error = check.stderr.lower()
+    needs_login = any(s in error for s in ('invalid_grant', 'invalid_token', 'token has been expired or revoked', 'empty token found', 'unauthorized_client'))
+    if not needs_login:
+        print('Drive check failed without a recognized authorization error; retrying at next check.', flush=True)
+        sys.exit(1)
+
+# A desktop session is necessary to show Google's consent page.
+if not (os.environ.get('WAYLAND_DISPLAY') or os.environ.get('DISPLAY')):
+    print('Google login is needed; waiting for a desktop session.', flush=True)
+    sys.exit(1)
+subprocess.run(['systemctl', '--user', 'stop', 'rclone-gdrive.service'], check=True)
+print('Opening Google authorization in the browser.', flush=True)
+try:
+    subprocess.run(base + ['config', 'reconnect', 'gdrive:', '--auto-confirm'], check=True, timeout=840)
+except (subprocess.TimeoutExpired, subprocess.CalledProcessError):
+    print('Google authorization did not complete; the next check will retry.', flush=True)
+    sys.exit(1)
+subprocess.run(['systemctl', '--user', 'restart', 'rclone-gdrive.service'], check=True)
+print('Google authorization completed and Drive mount started.', flush=True)

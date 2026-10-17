@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+# Restore the Google Drive mount after installing these dotfiles.
+set -euo pipefail
+
+if [[ ${1:-} == --help || ${1:-} == -h ]]; then
+  printf 'Usage: setup-gdrive [Google-OAuth-client.json]\nMounts Google Drive at ~/gdrive and checks authorization daily.\n'
+  exit 0
+fi
+(( $# <= 1 )) || { printf 'Usage: setup-gdrive [Google-OAuth-client.json]\n' >&2; exit 1; }
+(( EUID != 0 )) || { printf 'Run as your desktop user, without sudo.\n' >&2; exit 1; }
+command -v python3 >/dev/null || { printf 'Install Python 3 first.\n' >&2; exit 1; }
+systemctl --user show-environment >/dev/null
+
+credentials=${1:-}
+if [[ -z $credentials ]]; then
+  read -r -e -p 'Google OAuth credentials JSON file: ' credentials
+fi
+credentials=${credentials/#\~\//$HOME/}
+[[ -f $credentials ]] || { printf 'Credentials file not found: %s\n' "$credentials" >&2; exit 1; }
+
+# Validate before installing packages or changing the current setup. Never print secrets.
+python3 - "$credentials" <<'PY'
+import json,sys
+try:
+    client=json.load(open(sys.argv[1]))['installed']
+    assert all(isinstance(client[k],str) and client[k] for k in ('client_id','client_secret'))
+except (OSError,ValueError,KeyError,TypeError,AssertionError):
+    sys.exit('Expected a Google OAuth Desktop app JSON file with installed.client_id and installed.client_secret.')
+PY
+
+if ! command -v rclone >/dev/null || ! command -v fusermount3 >/dev/null; then
+  if command -v omarchy >/dev/null; then
+    omarchy pkg add rclone fuse3
+  elif command -v pacman >/dev/null; then
+    sudo pacman -S --needed rclone fuse3
+  else
+    printf 'Install rclone and FUSE 3 with your package manager, then rerun setup-gdrive.\n' >&2
+    exit 1
+  fi
+fi
+for dependency in rclone fusermount3; do
+  command -v "$dependency" >/dev/null || { printf 'Missing dependency: %s\n' "$dependency" >&2; exit 1; }
+done
+
+# The companion files are tracked by yadm and restored alongside this command.
+for file in "$HOME/.local/bin/rclone-gdrive-check-auth" \
+  "$HOME/.config/systemd/user/rclone-gdrive.service" \
+  "$HOME/.config/systemd/user/rclone-gdrive-auth.service" \
+  "$HOME/.config/systemd/user/rclone-gdrive-auth.timer"; do
+  [[ -f $file ]] || { printf 'Restore the companion dotfile first: %s\n' "$file" >&2; exit 1; }
+done
+
+python3 - "$credentials" <<'PY'
+import configparser,json,os,pathlib,sys,tempfile
+home=pathlib.Path.home()
+mount=home/'gdrive'
+if mount.exists() and not mount.is_dir():
+    raise SystemExit('~/gdrive must be a directory.')
+if mount.exists() and not os.path.ismount(mount) and any(mount.iterdir()):
+    raise SystemExit('~/gdrive is not empty; move its local files before mounting.')
+client=json.load(open(sys.argv[1]))['installed']
+config=home/'.config/rclone/rclone.conf'
+p=configparser.RawConfigParser()
+if config.exists():
+    p.read(config)
+if p.has_section('gdrive'):
+    if any(p.get('gdrive',k,fallback='') != v for k,v in
+           {'type':'drive','client_id':client['client_id'],'client_secret':client['client_secret']}.items()):
+        raise SystemExit('Existing gdrive remote uses different credentials. Back up and remove that remote before switching accounts.')
+else:
+    p['gdrive']={'type':'drive','client_id':client['client_id'],
+                 'client_secret':client['client_secret'],'scope':'drive','team_drive':''}
+config.parent.mkdir(parents=True,exist_ok=True)
+os.chmod(config.parent,0o700)
+fd,tmp=tempfile.mkstemp(dir=config.parent,prefix='.rclone-')
+try:
+    with os.fdopen(fd,'w') as f:
+        p.write(f)
+    os.replace(tmp,config)
+finally:
+    if os.path.exists(tmp): os.unlink(tmp)
+mount.mkdir(exist_ok=True)
+PY
+
+chmod 700 "$HOME/.local/bin/rclone-gdrive-check-auth"
+systemd-analyze --user verify "$HOME/.config/systemd/user/rclone-gdrive.service" \
+  "$HOME/.config/systemd/user/rclone-gdrive-auth.service" \
+  "$HOME/.config/systemd/user/rclone-gdrive-auth.timer"
+# Allows the mount and timer to start at boot and survive logout.
+loginctl enable-linger "$USER"
+systemctl --user daemon-reload
+systemctl --user enable rclone-gdrive.service rclone-gdrive-auth.timer
+systemctl --user start rclone-gdrive-auth.timer
+printf 'Checking credentials; complete Google sign-in in your browser if prompted.\n'
+if ! systemctl --user start rclone-gdrive-auth.service; then
+  printf 'Authorization failed. See: journalctl --user -u rclone-gdrive-auth.service\n' >&2
+  exit 1
+fi
+systemctl --user is-active --quiet rclone-gdrive.service
+printf 'Google Drive is mounted at %s/gdrive. Credentials are checked daily at midnight.\n' "$HOME"

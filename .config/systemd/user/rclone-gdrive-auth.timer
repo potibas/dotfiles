@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily Google Drive credential check
+
+[Timer]
+OnCalendar=daily
+OnBootSec=2min
+Persistent=true
+Unit=rclone-gdrive-auth.service
+
+[Install]
+WantedBy=timers.target

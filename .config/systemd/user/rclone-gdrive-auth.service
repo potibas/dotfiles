@@ -1,0 +1,10 @@
+[Unit]
+Description=Check Google Drive credentials and open login if required
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/rclone-gdrive-check-auth
+TimeoutStartSec=16min
+UMask=0077
