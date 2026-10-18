@@ -1,3 +1,4 @@
+bind
 duf
 dust
 git-delta
