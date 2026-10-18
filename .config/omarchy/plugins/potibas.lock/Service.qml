@@ -34,7 +34,18 @@ Item {
   property bool strandedLock: false
   property bool strandedLockResolved: false
 
-  readonly property bool locked: lockRequested || sessionLock.locked || sessionLock.secure
+  // Read every dependency before combining them. Short-circuit bindings can
+  // retain a stale true value after the session lock finishes unlocking.
+  readonly property bool locked: {
+    var requested = root.lockRequested
+    var sessionLocked = sessionLock.locked
+    var secure = sessionLock.secure
+    return requested || sessionLocked || secure
+  }
+
+  function hasActiveLock() {
+    return root.lockRequested || sessionLock.locked || sessionLock.secure
+  }
   readonly property bool authenticating: authenticatingPassword || fingerprintAuthenticating
 
   function realScreenCount() {
@@ -513,17 +524,17 @@ Item {
 
     function lock(): string {
       if (!root.passwordPamConfigured) return "missing-pam"
-      if (!root.locked && !root.beginLock()) return "failed"
+      if (!root.hasActiveLock() && !root.beginLock()) return "failed"
       return "ok"
     }
 
     function isLocked(): string {
-      return root.locked ? "true" : "false"
+      return root.hasActiveLock() ? "true" : "false"
     }
 
     function status(): string {
       return JSON.stringify({
-        locked: root.locked,
+        locked: root.hasActiveLock(),
         requested: root.lockRequested,
         pending: root.pendingSessionLock,
         sessionLocked: sessionLock.locked,
