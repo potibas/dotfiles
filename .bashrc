@@ -11,6 +11,15 @@ set -o noclobber
 # (don't mess with these directly, just overwrite them here!)
 source "$OMARCHY_PATH/default/bash/rc"
 
+## Keep unlimited history in memory and in ~/.bash_history.
+HISTSIZE=-1
+HISTFILESIZE=-1
+shopt -s histappend
+
+## Saves to history immediately after every command, no overwrites
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+
 ## Aliases
 alias d="docker"
 alias dust="dust --apparent-size --output-format si"
