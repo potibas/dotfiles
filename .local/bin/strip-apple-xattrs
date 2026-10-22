@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+"""Remove Apple extended attributes and ._* / .DS_Store files recursively.
+
+Preview only unless --apply is given. Symbolic links are skipped.
+"""
+
+import argparse
+import os
+from pathlib import Path
+import stat
+import sys
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("folder", type=Path, help="folder to clean recursively")
+    parser.add_argument("--apply", action="store_true", help="actually remove the listed attributes and metadata files")
+    args = parser.parse_args()
+    root = args.folder.expanduser().absolute()
+    if root.is_symlink() or not root.is_dir():
+        parser.error("folder must be a directory, not a symbolic link")
+
+    found = removed = errors = scanned = 0
+    files_found = files_deleted = 0
+
+    def report_error(path, exc):
+        nonlocal errors
+        errors += 1
+        print(f"ERROR {str(path)!r}: {exc}", file=sys.stderr)
+
+    def clean(path):
+        nonlocal found, removed, scanned, files_found, files_deleted
+        try:
+            mode = os.lstat(path).st_mode
+            if not (stat.S_ISREG(mode) or stat.S_ISDIR(mode)):
+                return
+            scanned += 1
+            basename = os.path.basename(path)
+            if stat.S_ISREG(mode) and (basename == ".DS_Store" or basename.startswith("._")):
+                files_found += 1
+                if args.apply:
+                    os.unlink(path)
+                    files_deleted += 1
+                print(f"{'DELETED' if args.apply else 'WOULD DELETE'} metadata file {str(path)!r}")
+                return
+            names = os.listxattr(path, follow_symlinks=False)
+        except OSError as exc:
+            report_error(path, exc)
+            return
+        for name in sorted(names):
+            # Linux commonly exposes macOS names inside the user namespace.
+            if not name.startswith(("com.apple.", "user.com.apple.")):
+                continue
+            found += 1
+            if args.apply:
+                try:
+                    os.removexattr(path, name, follow_symlinks=False)
+                    removed += 1
+                except OSError as exc:
+                    report_error(path, exc)
+                    continue
+            print(f"{'REMOVED' if args.apply else 'WOULD REMOVE'} {name!r} from {str(path)!r}")
+
+    clean(root)
+    for current, dirs, files in os.walk(
+        root, followlinks=False, onerror=lambda exc: report_error(exc.filename, exc)
+    ):
+        for name in dirs + files:
+            clean(os.path.join(current, name))
+
+    print(f"Scanned {scanned} files/directories; found {found} Apple attributes; removed {removed}; errors {errors}.")
+    print(f"Found {files_found} metadata files; deleted {files_deleted}.")
+    if not args.apply:
+        print("Dry run only. Add --apply to remove these attributes and metadata files.")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
