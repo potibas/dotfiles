@@ -1,4 +1,4 @@
-# Prevent accidentally overwriting existing files with >
+# Prevent > from overwriting existing files; use >| to overwrite intentionally.
 set -o noclobber
 
 # Omarchy environment (OMARCHY_PATH + PATH), needed even for non-interactive shells
