@@ -2,13 +2,18 @@
 """Cache the typed keyboard layout and highlight ABNT2 borders via Hyprland IPC."""
 import json
 import os
+import re
 from pathlib import Path
 import signal
 import socket
 import subprocess
 
 ABNT2 = "Portuguese (Brazil)"
-UNTYPED = ("hl-virtual-keyboard", "power-button", "sleep-button", "lid-switch", "video-bus")
+# Match the bar widget: AVRCP devices expose media buttons, not typing keys.
+UNTYPED = re.compile(
+    r"^(hl-virtual-keyboard|power-button|sleep-button|lid-switch|video-bus|apple-smc-power/lid-events)|\(avrcp\)$",
+    re.IGNORECASE,
+)
 OPTIONS = ("general:col.active_border", "general:border_size", "group:col.border_active")
 
 
@@ -41,8 +46,12 @@ def apply(values):
         raise RuntimeError(result)
 
 
+def is_typed_keyboard(name):
+    return not UNTYPED.search(name or "")
+
+
 def select_keyboard(keyboards, named):
-    typed = [k for k in keyboards if not k.get("name", "").startswith(UNTYPED)]
+    typed = [k for k in keyboards if is_typed_keyboard(k.get("name", ""))]
     return next((k for k in typed if k.get("name") == named), None) or max(
         typed, key=lambda k: k.get("active_layout_index", 0), default={})
 
@@ -95,7 +104,7 @@ def main():
                     kind, _, payload = event.partition(">>")
                     if kind == "activelayout":
                         keyboard, _, _layout = payload.partition(",")
-                        if not keyboard.startswith(UNTYPED):
+                        if is_typed_keyboard(keyboard):
                             named = keyboard
                             refresh()
                     elif kind == "configreloaded":
