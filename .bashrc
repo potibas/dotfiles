@@ -22,8 +22,10 @@ PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
 ## Aliases
 alias d="docker"
-alias d1="dust --apparent-size --output-format si -d 1"
+alias dust="dust --apparent-size"
+alias d1="dust -d 1"
 alias gpg="gpg -z0"
+alias ls='eza -lbh --group-directories-first --icons=auto'
 alias ll="ls -la"
 alias v="nvim"
 alias vi="nvim"
