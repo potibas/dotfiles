@@ -1,0 +1,57 @@
+[[station]]
+name = "Antena 1 São Paulo, SP (ZYD823 94,7 MHz FM) [aac]"
+url = "http://antena1.newradio.it/stream?ext=.mp3"
+country = "Brazil"
+state = "São Paulo"
+bitrate = 96
+codec = "AAC+"
+tags = "adult contemporary,jazz,pop,smooth jazz"
+homepage = "http://antena1.com.br/"
+
+[[station]]
+name = "89 A Radio Rock"
+url = "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_89FM_ADP.aac?dist=site-89fm"
+country = "Brazil"
+state = "São Paulo"
+bitrate = 128
+codec = "AAC+"
+tags = "alternative rock,rock"
+homepage = "https://www.radiorock.com.br/"
+
+[[station]]
+name = "Rádio Band FM 96.1 FM"
+url = "https://playerservices.streamtheworld.com/api/livestream-redirect/BANDFM_SPAAC"
+country = "Brazil"
+state = "Sao Paulo"
+codec = "FLV"
+tags = "pop"
+homepage = "https://www.band.uol.com.br/band-fm"
+
+[[station]]
+name = "Kiss FM São Paulo"
+url = "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_KISSFMAAC.aac?1655609055880"
+country = "Brazil"
+state = "Sao Paulo (Brazil)"
+bitrate = 64
+codec = "AAC+"
+homepage = "https://kissfm.com.br/"
+
+[[station]]
+name = "CBN São Paulo"
+url = "https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_SPAAC.aac"
+country = "Brazil"
+state = "Sao Paulo"
+bitrate = 128
+codec = "AAC+"
+tags = "news,sports"
+homepage = "https://cbn.globoradio.globo.com/programas/cbn-sao-paulo/CBN-SAO-PAULO.htm"
+
+[[station]]
+name = "Rádio Mix 106.3 FM"
+url = "https://playerservices.streamtheworld.com/api/livestream-redirect/MIXFM_SAOPAULOAAC.aac"
+country = "Brazil"
+state = "Sao Paulo"
+bitrate = 64
+codec = "AAC+"
+tags = "chr,pop-rock,youth"
+homepage = "https://aovivo.radiomixfm.com.br/"

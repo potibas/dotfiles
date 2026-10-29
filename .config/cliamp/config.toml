@@ -1,0 +1,12 @@
+eq_preset = "Rock"
+eq = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+theme = ""
+shuffle = true
+visualizer = "ClassicPeak"
+[radio]
+country = "BR"
+
+[spotify]
+client_id = "a84e2bab29ad4663bd43e9a4ba2cc1ce"
+bitrate = 320
