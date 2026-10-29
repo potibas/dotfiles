@@ -1,7 +1,9 @@
 bind
 duf
 dust
+f3
 git-delta
 pv
+smartmontools
 wev
 yadm
