@@ -1,0 +1,17 @@
+#!/bin/bash
+# Move every keyboard to the same next layout. A device that connects starts on
+# layout 0 whatever the rest are on, and "switchxkblayout all next" would keep it
+# a step out of phase forever, so pick one absolute index for the whole seat.
+#
+# Late joiners only ever sit on 0, so the furthest-advanced typed keyboard holds
+# the layout actually chosen. Buttons, speakers and the fcitx5 virtual keyboard
+# are skipped, matching the bar widget.
+set -euo pipefail
+
+devs=$(hyprctl -j devices)
+count=$(jq '.keyboards[0].layout | split(",") | length' <<<"$devs")
+current=$(jq '[.keyboards[]
+  | select(.name | test("^(hl-virtual-keyboard|power-button|sleep-button|lid-switch|video-bus|apple-smc-power/lid-events)|\\(avrcp\\)$"; "i") | not)
+  | .active_layout_index] | max // 0' <<<"$devs")
+
+hyprctl switchxkblayout all $(( (current + 1) % count ))

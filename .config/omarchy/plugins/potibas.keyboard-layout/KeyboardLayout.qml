@@ -62,19 +62,24 @@ BarWidget {
     return KeyboardLayoutModel.selectKeyboard(typed, root.typedKeyboardName)
   }
 
-  // switchxkblayout is a hyprctl command rather than a dispatcher, so it has to
-  // be run rather than sent over the dispatch socket. It switches the keyboard
-  // the last reading spoke for, so a click always advances the device the label
-  // is describing. Switching the seat together would reach the typed keyboard
-  // without having to name it, but it would also carry the buttons along, and
-  // the whole read depends on those staying where they started: once a button
-  // has been advanced too, a toggle that wraps the keyboard back to the first
-  // layout leaves the button reading as the furthest along, and the label
-  // follows the button.
+  // Click and the Super+[ binding share one script, which moves the whole seat
+  // to a single absolute layout so every keyboard stays on the same one. A
+  // relative "next" per device would keep a keyboard that joined late a step
+  // out of phase for good.
   function cycleLayout() {
     if (!root.keyboardName || !root.bar) return
-    root.bar.run("hyprctl switchxkblayout " + Util.shellQuote(root.keyboardName) + " next")
+    root.bar.run("~/.local/bin/keyboard-layout-next")
     refreshTimer.restart()
+  }
+
+  // A keyboard that connects lands on the first layout and splits the seat, and
+  // raises no event to catch it by, so the poll is what finds it. Pull the whole
+  // seat onto the layout the rest of it is on; the switch announces itself and
+  // the next reading finds every keyboard in agreement.
+  function realign(typed) {
+    const index = KeyboardLayoutModel.strayLayoutIndex(typed)
+    if (index < 0 || !root.bar) return
+    root.bar.run("hyprctl switchxkblayout all " + index)
   }
 
   Component.onCompleted: {
@@ -130,6 +135,7 @@ BarWidget {
         if (!Array.isArray(listed)) return
 
         const typed = root.typedKeyboards(listed)
+        root.realign(typed)
         const kb = root.selectKeyboard(typed)
         if (!kb || !kb.active_keymap) {
           // Either the last keyboard has been unplugged, which the label has to

@@ -115,6 +115,20 @@ function selectKeyboard(typed, namedByEvent) {
   }, keyboards[0])
 }
 
+// A keyboard that connects starts on the first layout whatever the rest of the
+// seat is on, so the seat splits until something pulls it back in step. Only a
+// newcomer sits behind, which makes the furthest-advanced index the layout that
+// was actually chosen. Hand that back when the typed keyboards disagree, and -1
+// when they already agree.
+function strayLayoutIndex(typed) {
+  var keyboards = typed || []
+  if (keyboards.length < 2) return -1
+
+  var indices = keyboards.map(layoutIndex)
+  var furthest = Math.max.apply(null, indices)
+  return indices.every(function (index) { return index === furthest }) ? -1 : furthest
+}
+
 function layoutIndex(keyboard) {
   return (keyboard && keyboard.active_layout_index) || 0
 }
@@ -125,6 +139,7 @@ if (typeof module !== "undefined") {
     isTypedKeyboard: isTypedKeyboard,
     layoutBriefs: layoutBriefs,
     selectKeyboard: selectKeyboard,
-    shortLabel: shortLabel
+    shortLabel: shortLabel,
+    strayLayoutIndex: strayLayoutIndex
   }
 }

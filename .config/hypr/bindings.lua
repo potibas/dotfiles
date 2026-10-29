@@ -45,7 +45,7 @@ hl.bind(
 o.bind(
   "SUPER + bracketleft",
   "Switch keyboard layout",
-  "hyprctl switchxkblayout all next"
+  "~/.local/bin/keyboard-layout-next"
 )
 
 -- Use Shift for moving to the scratchpad, like regular workspaces
