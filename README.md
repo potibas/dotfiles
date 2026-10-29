@@ -28,6 +28,25 @@ sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.
 
 To restore idle locking and the stock lock screen, select `omarchy.lock` in place of `potibas.lock` in `~/.config/omarchy/shell.json`, remove `omarchy.lock` from `disabledPlugins`, remove `potibas.lock` from `cloneSourceRestores`, then run `omarchy restart shell` and `omarchy toggle idle allow-idle`.
 
+## Keyboard layouts
+
+Hyprland uses `us` and `br` (ABNT2), set in `~/.config/hypr/input.lua`. Super+[
+and clicking the bar widget both run `keyboard-layout-next`, which moves every
+keyboard to the same layout. A keyboard that connects starts on US whatever the
+others are on, so the `potibas.keyboard-layout` widget brings it into line with
+the rest within about 10 seconds; press Super+[ to fix it sooner.
+
+The KA-689 Bluetooth keyboard is physically Portuguese ISO and has Fn where Ctrl
+usually is, so its OS-mode combos are easy to hit by accident. In the wrong mode
+it sends the wrong keys in every app: the top-left key types `<>` and the keys
+near Enter come out in the wrong places. Hyprland still reports US, so nothing
+looks wrong in `hyprctl devices`. Hold **Fn+Q** (the key labelled iOS) to restore
+it. To check which key code a key actually sends:
+
+```bash
+wev -f wl_keyboard:key | grep -E "key: [0-9]+|sym:"
+```
+
 ## Google Drive mount
 
 After restoring the dotfiles, run `setup-gdrive`. It installs rclone and FUSE 3
