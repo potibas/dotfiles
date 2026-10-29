@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+# Wipe a USB stick and reformat it as a single exFAT partition.
+# Usage: clean-usb-stick [/dev/sdX]   (prompts to pick a USB disk if omitted)
+set -euo pipefail
+
+die() { echo "error: $*" >&2; exit 1; }
+
+for cmd in lsblk wipefs sfdisk mkfs.exfat udisksctl; do
+  command -v "$cmd" >/dev/null || die "missing required command: $cmd"
+done
+
+# Pick the device: argument, or choose from attached USB disks.
+if [[ $# -ge 1 ]]; then
+  dev=$(readlink -f "$1")
+else
+  mapfile -t disks < <(lsblk -dnpo NAME,TRAN,TYPE | awk '$2=="usb" && $3=="disk" {print $1}')
+  [[ ${#disks[@]} -gt 0 ]] || die "no USB disks found"
+  if [[ ${#disks[@]} -eq 1 ]]; then
+    dev=${disks[0]}
+  else
+    echo "USB disks:"
+    for i in "${!disks[@]}"; do
+      printf '  %d) %s\n' "$((i + 1))" "$(lsblk -dno NAME,SIZE,VENDOR,MODEL "${disks[$i]}")"
+    done
+    read -rp "Choose [1-${#disks[@]}]: " n
+    [[ $n =~ ^[0-9]+$ && $n -ge 1 && $n -le ${#disks[@]} ]] || die "invalid choice"
+    dev=${disks[$((n - 1))]}
+  fi
+fi
+
+# Safety: only ever touch whole USB disks with a real size.
+[[ -b $dev ]] || die "$dev is not a block device"
+read -r tran type size < <(lsblk -dnbo TRAN,TYPE,SIZE "$dev")
+[[ $tran == usb ]] || die "$dev is not a USB device (transport: ${tran:-none})"
+[[ $type == disk ]] || die "$dev is not a whole disk"
+[[ $size -gt 0 ]] || die "$dev reports 0 bytes (no media, or dead device)"
+
+echo
+lsblk -o NAME,SIZE,FSTYPE,LABEL,VENDOR,MODEL,MOUNTPOINTS "$dev"
+echo
+echo "ALL DATA ON $dev WILL BE DESTROYED."
+read -rp "Type YES to continue: " ok
+[[ $ok == YES ]] || die "aborted"
+
+while true; do
+  read -rp "New label (max 11 chars): " label
+  [[ -n $label && ${#label} -le 11 ]] && break
+  echo "Label must be 1-11 characters."
+done
+
+read -rp "Zero-fill the whole stick first (slow, prevents recovery)? [y/N]: " zero
+
+sudo -v
+
+# Unmount any mounted partitions.
+while read -r part mnt; do
+  [[ -n $mnt ]] && udisksctl unmount -b "$part"
+done < <(lsblk -lnpo NAME,MOUNTPOINT "$dev" | tail -n +2)
+
+echo "==> Wiping signatures"
+lsblk -lnpo NAME "$dev" | tac | xargs sudo wipefs -a
+
+if [[ $zero =~ ^[Yy]$ ]]; then
+  echo "==> Zero-filling $dev"
+  sudo dd if=/dev/zero of="$dev" bs=4M status=progress conv=fsync || true  # dd exits non-zero at end of device
+fi
+
+echo "==> Creating partition table"
+echo 'type=7' | sudo sfdisk --quiet --label dos "$dev"
+sudo partprobe "$dev" 2>/dev/null || true
+sudo udevadm settle
+
+part=$(lsblk -lnpo NAME "$dev" | sed -n 2p)
+[[ -b $part ]] || die "new partition did not appear; try: sudo partprobe $dev"
+
+echo "==> Formatting $part as exFAT ($label)"
+sudo mkfs.exfat -L "$label" "$part"
+sudo udevadm settle
+
+echo
+lsblk -o NAME,SIZE,FSTYPE,LABEL "$dev"
+echo "Done. Unplug and replug to mount it."
