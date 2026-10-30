@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+"""Safely unmount and power off a USB drive using UDisks."""
+
+import argparse
+import json
+import os
+import shlex
+import shutil
+import subprocess
+import sys
+
+
+class EjectError(Exception):
+    pass
+
+
+def inventory():
+    result = subprocess.run(
+        ["lsblk", "--json", "--paths", "--output",
+         "NAME,TYPE,TRAN,MODEL,SIZE,MOUNTPOINTS,SERIAL,MAJ:MIN"],
+        check=True, capture_output=True, text=True,
+    )
+    return [d for d in json.loads(result.stdout)["blockdevices"]
+            if d.get("type") == "disk" and d.get("tran") == "usb"]
+
+
+def descendants(device):
+    for child in device.get("children", []):
+        yield from descendants(child)
+    yield device
+
+
+def describe(device):
+    mounts = [m for d in descendants(device)
+              for m in d.get("mountpoints", []) if m]
+    return (f'{device["name"]} — {str(device.get("model") or "USB drive").strip()} '
+            f'({device["size"]})' + (f' [{", ".join(mounts)}]' if mounts else ""))
+
+
+def select_drive(drives, requested):
+    if not drives:
+        raise EjectError("No external USB drives found.")
+    if requested:
+        name = os.path.realpath(requested)
+        for drive in drives:
+            if drive["name"] == name:
+                return drive
+        raise EjectError(f"{requested} is not a whole USB drive. Use --list to see choices.")
+    if len(drives) == 1:
+        return drives[0]
+    for index, drive in enumerate(drives, 1):
+        print(f"{index}. {describe(drive)}")
+    if not sys.stdin.isatty():
+        raise EjectError("Multiple USB drives found; specify one, e.g. safe-eject /dev/sdd.")
+    choice = input("Drive number to eject (Enter to cancel): ").strip()
+    if not choice:
+        raise EjectError("Cancelled.")
+    if not choice.isdigit() or not 1 <= int(choice) <= len(drives):
+        raise EjectError("Invalid drive number; nothing was ejected.")
+    return drives[int(choice) - 1]
+
+
+def commands(drive):
+    nodes = list(descendants(drive))
+    protected = {"/", "/boot", "/boot/efi", "/efi", "/usr", "/var", "/home"}
+    for node in nodes:
+        mounts = set(filter(None, node.get("mountpoints", [])))
+        if "[SWAP]" in mounts or mounts & protected:
+            raise EjectError("Refusing to eject a drive containing active swap or a system mount.")
+    result = [["udisksctl", "unmount", "--block-device", node["name"]]
+              for node in nodes if any(node.get("mountpoints", []))]
+    result.append(["udisksctl", "power-off", "--block-device", drive["name"]])
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("device", nargs="?", help="whole USB drive, e.g. /dev/sdd (auto-detected if only one)")
+    parser.add_argument("--list", action="store_true", help="list USB drives without ejecting")
+    parser.add_argument("--dry-run", action="store_true", help="show commands without running them")
+    args = parser.parse_args()
+    if not shutil.which("lsblk"):
+        raise EjectError("Required command not found: lsblk")
+    drives = inventory()
+    if args.list:
+        for drive in drives:
+            print(describe(drive))
+        if not drives:
+            print("No external USB drives found.")
+        return
+    if not shutil.which("udisksctl"):
+        raise EjectError("Required command not found: udisksctl")
+    selected = select_drive(drives, args.device)
+    # Refresh mount state after selection, and reject a disconnected/replaced device.
+    current = next((d for d in inventory() if d["name"] == selected["name"]), None)
+    if current is None or any(current.get(k) != selected.get(k)
+                              for k in ("serial", "maj:min", "model", "size")):
+        raise EjectError("The selected drive changed or disconnected; run safe-eject again.")
+    plan = commands(current)
+    print(f'{"Would eject" if args.dry_run else "Ejecting"}: {describe(current)}', flush=True)
+    for command in plan:
+        if args.dry_run:
+            print(shlex.join(command))
+        else:
+            # No force/lazy unmount: any failure stops before power-off.
+            subprocess.run(command, check=True)
+    if not args.dry_run:
+        print(f'Safely powered off {current["name"]}. You can unplug it now.')
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except EjectError as error:
+        print(f"safe-eject: {error}", file=sys.stderr)
+        sys.exit(1)
+    except subprocess.CalledProcessError as error:
+        if error.stderr:
+            print(error.stderr.strip(), file=sys.stderr)
+        print("safe-eject: command failed; stopping. The drive has not been confirmed safe to unplug.",
+              file=sys.stderr)
+        sys.exit(1)
+    except (KeyboardInterrupt, EOFError):
+        print("\nsafe-eject: cancelled.", file=sys.stderr)
+        sys.exit(130)
