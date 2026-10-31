@@ -9,6 +9,7 @@ import socket
 import subprocess
 
 ABNT2 = "Portuguese (Brazil)"
+HIGHLIGHT = "ff4444"
 # Match the bar widget: AVRCP devices expose media buttons, not typing keys.
 UNTYPED = re.compile(
     r"^(hl-virtual-keyboard|power-button|sleep-button|lid-switch|video-bus|apple-smc-power/lid-events)|\(avrcp\)$",
@@ -56,12 +57,20 @@ def select_keyboard(keyboards, named):
         typed, key=lambda k: k.get("active_layout_index", 0), default={})
 
 
+def is_highlight(values):
+    # Borders read back while the ABNT2 highlight is live must never become the
+    # values restored on US, or the red border sticks until Hyprland restarts.
+    return values["general:col.active_border"].lower().startswith("ff" + HIGHLIGHT)
+
+
 def main():
     instance = os.environ["HYPRLAND_INSTANCE_SIGNATURE"]
     directory = Path(os.environ["XDG_RUNTIME_DIR"]) / "hypr" / instance
     state = directory / "keyboard-layout-label"
     saved = directory / "keyboard-layout-borders.json"
     original = json.loads(saved.read_text()) if saved.exists() else defaults()
+    if is_highlight(original):
+        original = defaults()
     saved.write_text(json.dumps(original))
     named = ""
     highlighted = None
@@ -74,9 +83,9 @@ def main():
         temporary.write_text("ABNT2\n" if abnt2 else "")
         temporary.replace(state)
         if force or abnt2 != highlighted:
-            apply({"general:col.active_border": "rgb(ff4444)",
+            apply({"general:col.active_border": "rgb(" + HIGHLIGHT + ")",
                    "general:border_size": str(max(3, int(original["general:border_size"]))),
-                   "group:col.border_active": "rgb(ff4444)"} if abnt2 else original)
+                   "group:col.border_active": "rgb(" + HIGHLIGHT + ")"} if abnt2 else original)
             highlighted = abnt2
 
     def stop(*_):
@@ -108,8 +117,10 @@ def main():
                             named = keyboard
                             refresh()
                     elif kind == "configreloaded":
-                        original = defaults()
-                        saved.write_text(json.dumps(original))
+                        reloaded = defaults()
+                        if not is_highlight(reloaded):
+                            original = reloaded
+                            saved.write_text(json.dumps(original))
                         refresh(force=True)
     finally:
         try:
